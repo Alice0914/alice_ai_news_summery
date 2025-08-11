@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>AI Weekly News Summary</title>
+  <style>
+    /* CLIENT-SPECIFIC RESETS */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border:0; outline:none; text-decoration:none; display:block; max-width:100%; height:auto; }
+
+    /* RESET STYLES */
+    body { margin: 0; padding: 0; background-color: #f4f6f8; }
+    table { border-collapse: collapse !important; }
+
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; }
+
+    /* GMAIL DARK MODE FIX */
+    @media (prefers-color-scheme: dark) {
+      .wrapper { background-color: #0f1115 !important; }
+      .content { background-color: #161a22 !important; color: #e6e6e6 !important; }
+      .card { background-color: #1b2130 !important; border-color: #2a3347 !important; }
+      .muted { color: #b6c0d1 !important; }
+      .link { color: #7aa2ff !important; }
+      .tag { background-color: #0e141f !important; color: #93a4c3 !important; border-color:#2a3347 !important; }
+    }
+
+    /* MOBILE */
+    @media screen and (max-width: 600px) {
+      .container { width: 100% !important; }
+      .px-24 { padding-left: 16px !important; padding-right: 16px !important; }
+      .py-24 { padding-top: 16px !important; padding-bottom: 16px !important; }
+      .h1 { font-size: 22px !important; line-height: 28px !important; }
+      .h2 { font-size: 18px !important; line-height: 24px !important; }
+    }
+
+    /* UTILITIES */
+    .h1 { font-family: Arial, Helvetica, sans-serif; font-size: 26px; line-height: 32px; font-weight: 700; margin: 0; color: #0f172a; }
+    .h2 { font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 26px; font-weight: 700; margin: 0; color: #0f172a; }
+    .p { font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 22px; margin: 0; color: #334155; }
+    .muted { color: #64748b; }
+    .link { color: #2563eb; text-decoration: underline; word-break: break-word; }
+    .btn { background-color: #2563eb; color:#ffffff !important; text-decoration: none; padding: 10px 16px; border-radius: 6px; display: inline-block; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+    .tag { display:inline-block; padding: 2px 8px; border-radius: 999px; border:1px solid #e5e7eb; font-size:12px; color:#475569; font-family: Arial, Helvetica, sans-serif; }
+    .spacer-16 { height: 16px; line-height: 16px; }
+    .spacer-24 { height: 24px; line-height: 24px; }
+    .divider { border-top:1px solid #e5e7eb; height:1px; line-height:1px; }
+    .card { border:1px solid #e5e7eb; border-radius:12px; background:#ffffff; }
+  </style>
+</head>
+<body>
+  <!-- WRAPPER -->
+  <table width="100%" bgcolor="#f4f6f8" role="presentation" class="wrapper">
+    <tr>
+      <td align="center" style="padding: 24px;">
+        <!-- CONTAINER -->
+        <table width="640" role="presentation" class="container" style="max-width:640px;">
+          <!-- HEADER -->
+          <tr>
+            <td class="card" style="padding: 20px; background:#0b1220; background: linear-gradient(135deg, #0b1220 0%, #111827 100%); border: none;">
+              <h1 class="h1" style="color:#e5edff;">AI Weekly News Summary 2025.08.04 ~ 09</h1>
+              <div class="spacer-16"></div>
+              <p class="p" style="color:#c7d2fe;">Your concise, curated roundup of this week’s most important AI developments.</p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- TOP STORY: OpenAI -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Top Story</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">OpenAI launches GPT‑5 and open‑source models</h2>
+              <div class="spacer-16"></div>
+              <p class="p">OpenAI released its next‑gen <strong>GPT‑5</strong> models, replacing prior families and boosting performance in coding, math, and writing, with Pro offering deeper reasoning. In parallel, OpenAI open‑sourced <strong>gpt‑oss‑120b</strong> and <strong>gpt‑oss‑20b</strong> (Apache 2.0), enabling high‑performance local deployment and strengthening the open ecosystem.</p>
+              <div class="spacer-16"></div>
+              <p class="p"><a class="link" href="https://openai.com/index/gpt-5-new-era-of-work/" target="_blank" rel="noopener">Source: OpenAI (GPT‑5)</a> &nbsp;•&nbsp; <a class="link" href="https://openai.com/index/introducing-gpt-oss/" target="_blank" rel="noopener">Source: OpenAI (gpt‑oss)</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- SCIENCE & RESEARCH -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Science & Research</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">Breakthroughs in bioacoustics, cell biology, and adaptive reasoning</h2>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>MIT/Harvard/Broad – PUPS:</strong> Predicts protein locations inside single human cells, generalizing to unseen proteins and cell types—accelerating disease research and drug discovery. <a class="link" href="https://news.mit.edu/2025/researchers-predict-protein-location-within-human-cell-using-ai-0515" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>DeepMind – Perch (open‑sourced):</strong> Upgraded wildlife audio analysis with broader species and environments, helping conservationists track endangered species faster. <a class="link" href="https://deepmind.google/discover/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Microsoft – CLIO:</strong> A self‑adapting reasoning framework that improves GPT‑4.1’s biomedical QA accuracy from 8.55% to 22.37%, adding steerable, trustworthy reasoning for scientific work. <a class="link" href="https://www.microsoft.com/en-us/research/blog/self-adaptive-reasoning-for-science/" target="_blank" rel="noopener">Source</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- GOVERNMENT & POLICY -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Government & Policy</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">Government adoption & global cooperation</h2>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>OpenAI + GSA:</strong> ChatGPT Enterprise offered to U.S. federal agencies for <strong>$1 per agency (1 year)</strong>, including 60 days of unlimited access to advanced features—aimed at streamlining public services. <a class="link" href="https://openai.com/index/providing-chatgpt-to-the-entire-us-federal-workforce/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>China’s AI agenda:</strong> At the World Artificial Intelligence Conference, China emphasized global cooperation and safety regulation, contrasting with a more U.S.‑centric approach. <a class="link" href="https://www.wired.com/story/china-artificial-intelligence-policy-laws-race/" target="_blank" rel="noopener">Source</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- EDUCATION & DEV WORKFLOWS -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Education & Dev Workflows</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">Guided learning for students, and developers’ evolving roles</h2>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Google – Gemini Guided Learning:</strong> Step‑by‑step tutoring with images, videos, and quizzes; free AI Pro Plan for U.S. college students to foster critical thinking. <a class="link" href="https://blog.google/products/gemini/google-ai-pro-students-learning/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>GitHub survey:</strong> Developers expect AI to write up to 90% of code in 2–5 years, shifting the role toward AI orchestration, verification, and system thinking. <a class="link" href="https://ashtom.github.io/developers-reinvented" target="_blank" rel="noopener">Source</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- MULTI‑AGENT & SIMULATION -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Multi‑Agent & Simulation</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">Parallel thinking and real‑time interactive worlds</h2>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Google – Gemini 2.5 Deep Think:</strong> A multi‑agent variant that explores solutions in parallel, scoring 34.8% on Humanity’s Last Exam and targeting complex scientific/problem‑solving tasks. <a class="link" href="https://blog.google/products/gemini/gemini-2-5-deep-think/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>DeepMind – Genie 3:</strong> Generates 720p/24fps physics‑consistent interactive environments from a single text prompt—promising for gaming and embodied AI training. <a class="link" href="https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>xAI – Grok Imagine:</strong> Now on iOS for SuperGrok & Premium+ subscribers; converts text/images into 15‑second videos (with audio) in seconds, prioritizing speed and playful style. <a class="link" href="https://www.techradar.com/ai-platforms-assistants/grok-rolls-out-ai-video-creator-for-x-with-bonus-spicy-mode" target="_blank" rel="noopener">Source</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- SAFETY & RELIABILITY -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Safety & Reliability</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">Safety tooling, persona control, and high‑stakes failures</h2>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>OpenAI – mental distress safeguards:</strong> New rubrics and nudges help detect distress and promote healthy use with evidence‑based resources ahead of GPT‑5. <a class="link" href="https://openai.com/index/how-we%27re-optimizing-chatgpt/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Anthropic – Persona Vectors:</strong> Identifies neural activation patterns linked to traits like sycophancy or hallucination, enabling mitigation and safer model behavior. <a class="link" href="https://www.anthropic.com/research/persona-vectors" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Anthropic – Safety framework for agents:</strong> Proposes principles such as human control and transparency to rein in unruly autonomous systems. <a class="link" href="https://winbuzzer.com/2025/08/05/anthropic-pitches-safety-framework-as-a-reckoning-for-unruly-ai-agents-xcxwbn/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Healthcare caution – Google Med‑Gemini error:</strong> A paper described a non‑existent “basilar ganglia,” underscoring risks of AI hallucinations in medical contexts and the need for rigorous oversight. <a class="link" href="https://www.theverge.com/health/718049/google-med-gemini-basilar-ganglia-paper-typo-hallucination" target="_blank" rel="noopener">Source</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- DATA, ETHICS & INDUSTRY DEBATES -->
+          <tr>
+            <td class="card px-24 py-24" style="padding:24px;">
+              <span class="tag">Data, Ethics & Industry</span>
+              <div class="spacer-16"></div>
+              <h2 class="h2">Scraping disputes, advertising debates, and platform shifts</h2>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Perplexity scraping accusations:</strong> Cloudflare alleges Perplexity bypassed anti‑scraping measures by disguising crawlers—raising consent and compliance concerns. <a class="link" href="https://techcrunch.com/2025/08/04/perplexity-accused-of-scraping-websites-that-explicitly-blocked-ai-scraping/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Vogue’s AI ad controversy:</strong> Highlights tension between cost‑saving AI‑generated talent and impacts on jobs and diversity in creative industries. <a class="link" href="https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/" target="_blank" rel="noopener">Source</a></p>
+              <div class="spacer-16"></div>
+              <p class="p"><strong>Search indexing change:</strong> OpenAI removed public‑chat indexing due to accidental exposure risks; conversations are no longer discoverable by search engines. <a class="link" href="https://techcrunch.com/2025/07/31/your-public-chatgpt-queries-are-getting-indexed-by-google-and-other-search-engines/" target="_blank" rel="noopener">Source</a></p>
+            </td>
+          </tr>
+
+          <tr><td class="spacer-24"></td></tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td class="card" style="padding: 20px; text-align: center;">
+              <p class="p muted">You’re receiving this newsletter because you subscribed to AI Weekly.</p>
+              <div class="spacer-16"></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
