@@ -561,7 +561,7 @@ const FilterPage = ({
 
   return (
     <div className="fixed inset-0 z-[100] bg-[#0f111a] flex items-center justify-center animate-in fade-in duration-200">
-      <div className="w-full max-w-2xl bg-[#141724] h-[90vh] max-h-[800px] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden relative">
+      <div className="w-full max-w-2xl bg-[#141724] max-h-[85vh] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden relative">
 
         {/* Close Button */}
         <button
@@ -1797,16 +1797,16 @@ const App = () => {
                       <div className="flex items-center justify-center gap-4 px-16 overflow-hidden">
                         {/* Left Peek Card */}
                         <div
-                          className="flex-shrink-0 w-[258px] opacity-50 scale-90 blur-[1px] transition-all duration-500 cursor-pointer hover:opacity-70"
+                          className="flex-shrink-0 w-[310px] opacity-50 scale-90 blur-[1px] transition-all duration-500 cursor-pointer hover:opacity-70"
                           onClick={handlePrevTop}
                         >
                           {(() => {
                             const prevIndex = (currentTopIndex - 1 + topNews.length) % topNews.length;
                             const news = topNews[prevIndex];
                             return (
-                              <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[515px] flex flex-col">
-                                {/* Image 45% */}
-                                <div className="relative h-[45%] overflow-hidden">
+                              <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[380px] flex flex-col">
+                                {/* Image 60% (Increased another 5%) */}
+                                <div className="relative h-[60%] overflow-hidden">
                                   <img
                                     alt={news.title}
                                     className="w-full h-full object-cover"
@@ -1834,13 +1834,13 @@ const App = () => {
                         </div>
 
                         {/* Center Card - Full Focus */}
-                        <div className="flex-shrink-0 w-[359px] scale-100 transition-all duration-500 z-10">
+                        <div className="flex-shrink-0 w-[430px] scale-100 transition-all duration-500 z-10">
                           {(() => {
                             const news = topNews[currentTopIndex];
                             return (
-                              <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[530px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
-                                {/* Image Fixed Height (Reduced another 5%) */}
-                                <div className="relative h-[235px] overflow-hidden">
+                              <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[390px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
+                                {/* Image Fixed Height (Increased another 5%) */}
+                                <div className="relative h-[205px] overflow-hidden">
                                   <img
                                     alt={news.title}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
@@ -1929,16 +1929,16 @@ const App = () => {
 
                         {/* Right Peek Card */}
                         <div
-                          className="flex-shrink-0 w-[280px] opacity-50 scale-90 blur-[1px] transition-all duration-500 cursor-pointer hover:opacity-70"
+                          className="flex-shrink-0 w-[310px] opacity-50 scale-90 blur-[1px] transition-all duration-500 cursor-pointer hover:opacity-70"
                           onClick={handleNextTop}
                         >
                           {(() => {
                             const nextIndex = (currentTopIndex + 1) % topNews.length;
                             const news = topNews[nextIndex];
                             return (
-                              <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[560px] flex flex-col">
-                                {/* Image 45% */}
-                                <div className="relative h-[45%] overflow-hidden">
+                              <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[380px] flex flex-col">
+                                {/* Image 60% (Increased another 5%) */}
+                                <div className="relative h-[60%] overflow-hidden">
                                   <img
                                     alt={news.title}
                                     className="w-full h-full object-cover"
