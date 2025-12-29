@@ -15,7 +15,8 @@ import {
   CATEGORIES as DATA_CATEGORIES,
   PRODUCT_SERVICES as DATA_SERVICES,
   CORE_ELEMENTS as DATA_CORE,
-  PERIODS, TIME_RANGES
+  PERIODS, TIME_RANGES,
+  CATEGORY_ID_MAP, SERVICE_ID_MAP, CORE_ID_MAP, migrateIds
 } from './constants';
 
 import OnboardingAuth from './components/auth/OnboardingAuth';
@@ -217,198 +218,230 @@ const SelectionStep = ({
 
 
 // 2. Feature News Card (Top 5) with Visuals
-const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLike, isLiked }) => (
-  <article className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-2xl backdrop-blur-md hover:bg-white/[0.05] transition-all duration-300 h-full flex flex-col">
-    {/* Conditional Image Rendering: Priority 1: news.imageUrl, Priority 2: Gradient/Fallback */}
-    {news.imageUrl ? (
-      <div className="absolute top-0 right-0 w-full h-full">
-        <img
-          src={news.imageUrl}
-          alt={news.title}
-          className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f111a]/10 via-[#0f111a]/80 to-[#0f111a] pointer-events-none"></div>
-      </div>
-    ) : (
-      <div className="absolute top-0 right-0 w-full h-64 bg-gradient-to-b from-blue-500/10 to-transparent opacity-50"></div>
-    )}
+const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLike, isLiked, selectedInterests, selectedServices, selectedCore }) => {
+  // Logic to determine which category/service/core to show on the badge (top left)
+  // Priority: 1. Matching Category 2. Matching Service 3. Matching Core Element 4. Default Category
+  const displayCategory =
+    (news.categories || []).find(cat => selectedInterests?.includes(cat)) ||
+    (news.productServices || []).find(svc => selectedServices?.includes(svc)) ||
+    (news.coreElements || []).find(core => selectedCore?.includes(core)) ||
+    news.categories?.[0] || 'AI News';
 
-    <div className="p-5 flex flex-col gap-4 flex-1 relative z-10">
-      {/* Visual Area for Top News - Optional: We can hide this if we have a full background,
+  // Logic for tags: Show all categories/services/core EXCEPT the one displayed on the badge
+  const otherCategories = (news.categories || []).filter(cat => cat !== displayCategory);
+  const otherServices = (news.productServices || []).filter(svc => svc !== displayCategory);
+  const otherCore = (news.coreElements || []).filter(core => core !== displayCategory);
+
+  return (
+    <article className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-2xl backdrop-blur-md hover:bg-white/[0.05] transition-all duration-300 h-auto flex flex-col">
+      {/* Conditional Image Rendering: Priority 1: news.imageUrl, Priority 2: Gradient/Fallback */}
+      {news.imageUrl ? (
+        <div className="absolute top-0 right-0 w-full h-full">
+          <img
+            src={news.imageUrl}
+            alt={news.title}
+            className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0f111a]/10 via-[#0f111a]/80 to-[#0f111a] pointer-events-none"></div>
+        </div>
+      ) : (
+        <div className="absolute top-0 right-0 w-full h-64 bg-gradient-to-b from-blue-500/10 to-transparent opacity-50"></div>
+      )}
+
+      <div className="p-5 flex flex-col gap-4 flex-1 relative z-10">
+        {/* Visual Area for Top News - Optional: We can hide this if we have a full background,
           OR keep it as a smaller thumbnail if intended.
           Given the prompt "show image", let's assume the background IS the image visualization.
-          But the previous code had a specific "Visual Area" block.
-          Let's restore the structure cleanly.
-      */}
+          But we need the badge. */}
 
-      {/* If we have a dedicated image passed as prop (the demo images), we might want to respect that too?
-          The previous logic passed `image` prop from SAMPLE_IMAGES.
-          Let's use `news.imageUrl` if available, otherwise `image` prop (demo), otherwise gradient.
-      */}
-
-      <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/5 flex-shrink-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101922] via-transparent to-transparent opacity-60 z-10"></div>
-        <img
-          alt={news.title}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-          src={news.imageUrl || image}
-        />
-        <div className="absolute top-3 left-3 z-20">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-600/90 text-white backdrop-blur-sm shadow-[0_0_15px_rgba(19,127,236,0.5)]">
-            {news.categories?.[0] || 'AI News'}
-          </span>
-        </div>
-      </div>
-      <div className="flex flex-col gap-2 flex-1">
-        <h3 className="text-xl font-bold leading-tight text-white group-hover:text-blue-400 transition-colors">
-          {news.title}
-        </h3>
-        <p className="text-white/60 text-sm leading-relaxed">
-          {news.summary}
-        </p>
-
-        {/* Keywords */}
-        <div className="flex flex-wrap gap-2 mt-2">
-          {(news.searchKeywords || []).map(k => (
-            <span key={k} className="text-blue-400 text-xs px-1">#{k.replace(/\s+/g, '')}</span>
-          ))}
-        </div>
-
-        {/* Filter Tags */}
-        <div className="flex flex-wrap gap-2 mt-auto pt-2">
-          {(news.productServices || []).map(id => (
-            <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
-              {DATA_SERVICES.find(s => s.id === id)?.label || id}
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/5 flex-shrink-0">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#101922] via-transparent to-transparent opacity-60 z-10"></div>
+          <img
+            alt={news.title}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+            src={news.imageUrl || image}
+          />
+          <div className="absolute top-3 left-3 z-20">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-600/90 text-white backdrop-blur-sm shadow-[0_0_15px_rgba(19,127,236,0.5)]">
+              {displayCategory}
             </span>
-          ))}
-          {(news.coreElements || []).map(id => (
-            <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
-              {DATA_CORE.find(c => c.id === id)?.label || id}
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 flex-1">
+          <h3 className="text-base sm:text-lg lg:text-xl font-bold leading-tight text-white group-hover:text-blue-400 transition-colors">
+            {news.title}
+          </h3>
+          <p className="text-white/60 text-sm leading-relaxed">
+            {news.summary}
+          </p>
+
+          {/* Keywords */}
+          <div className="flex flex-wrap gap-2 mt-2">
+            {(news.searchKeywords || []).map(k => (
+              <span key={k} className="text-blue-400 text-xs px-1">#{k.replace(/\s+/g, '')}</span>
+            ))}
+          </div>
+
+          {/* Filter Tags - Remaining Categories + All Services & Core Elements */}
+          <div className="flex flex-wrap gap-2 mt-auto pt-2">
+            {otherCategories.map(cat => (
+              <span key={cat} className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-medium border border-blue-500/20">
+                {cat}
+              </span>
+            ))}
+            {otherServices.map(id => (
+              <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
+                {id}
+              </span>
+            ))}
+            {otherCore.map(id => (
+              <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
+                {id}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-1">
+          <div className="flex items-center gap-4 text-xs font-medium text-white/40">
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-[14px]"></span>
+              {news.publishedDate}
             </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-1">
-        <div className="flex items-center gap-4 text-xs font-medium text-white/40">
-          <span className="flex items-center gap-1">
-            <span className="material-symbols-outlined text-[14px]"></span>
-            {news.publishedDate}
-          </span>
-          <button onClick={() => onToggleLike && onToggleLike(news)} className={`flex items-center gap-1 p-1 rounded-full hover:bg-white/10 transition-colors ${isLiked ? 'text-rose-500' : 'text-white/60'}`}>
-            <Heart className={`w-3 h-3 ${isLiked ? 'fill-current' : ''}`} /> {news.likes || 0}
-          </button>
-        </div>
-        <div className="flex items-center gap-1">
-          <button onClick={() => onShare(news)} className="p-2 rounded-full hover:bg-white/10 text-white/60 transition-colors">
-            <Share2 className="w-5 h-5" />
-          </button>
-          <button onClick={() => onSave && onSave(news)} className={`p-2 rounded-full hover:bg-white/10 transition-colors ${isSaved ? 'text-blue-500' : 'text-white/60'}`}>
-            <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
-          </button>
-          {news.sourceUrl && (
-            <a
-              href={news.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 px-4 py-1.5 rounded-lg bg-white/10 hover:bg-blue-600/20 hover:text-blue-400 text-white text-sm font-medium transition-colors border border-white/5 flex items-center gap-1"
-            >
-              더 읽기 <ArrowRight className="w-4 h-4" />
-            </a>
-          )}
-        </div>
-      </div>
-    </div >
-  </article >
-);
-
-// 3. Simple News List Item (Text Only)
-const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, onToggleLike, isLiked }) => (
-  <article
-    className={`
-      group flex flex-col gap-2 p-4 rounded-xl border backdrop-blur-sm transition-all duration-300
-      ${isExpanded
-        ? 'bg-white/[0.08] border-blue-500/30 shadow-lg'
-        : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06]'}
-    `}
-  >
-    <div className="flex justify-between items-start gap-3">
-      <div className="flex-1 cursor-pointer" onClick={onToggle}>
-        <div className="flex items-center gap-2 mb-1.5">
-          <span className="text-[10px] font-bold text-blue-400 tracking-wide uppercase">
-            {news.categories?.[0]}
-          </span>
-          <span className="w-1 h-1 rounded-full bg-white/20"></span>
-          <span className="text-[10px] text-white/40">{news.publishedDate}</span>
-        </div>
-        <h3 className={`text-base font-bold text-white leading-snug transition-colors ${isExpanded ? 'text-blue-300' : 'group-hover:text-blue-400'}`}>
-          {news.title}
-        </h3>
-      </div>
-      <button
-        onClick={(e) => { e.stopPropagation(); onToggle(); }}
-        className="p-1 rounded-full hover:bg-white/10 text-white/30 hover:text-white transition-colors"
-      >
-        <ChevronLeft className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? '-rotate-90 text-blue-400' : 'rotate-180'}`} />
-      </button>
-    </div>
-
-    {/* Expanded Details */}
-    {isExpanded && (
-      <div className="mt-2 text-sm text-white/70 animate-in fade-in slide-in-from-top-1 duration-200">
-        <p className="leading-relaxed mb-2">
-          {news.summary}
-        </p>
-
-        {/* Keywords */}
-        <div className="flex flex-wrap gap-2 mb-3 border-b border-white/5 pb-3">
-          {(news.searchKeywords || []).map(k => (
-            <span key={k} className="text-blue-400 text-xs px-1">#{k.replace(/\s+/g, '')}</span>
-          ))}
-        </div>
-
-        {/* Filter Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {(news.productServices || []).map(id => (
-            <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
-              {DATA_SERVICES.find(s => s.id === id)?.label || id}
-            </span>
-          ))}
-          {(news.coreElements || []).map(id => (
-            <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
-              {DATA_CORE.find(c => c.id === id)?.label || id}
-            </span>
-          ))}
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="flex gap-3">
-            <button onClick={(e) => { e.stopPropagation(); onToggleLike && onToggleLike(news); }} className={`flex items-center gap-1 text-xs p-1 rounded-full hover:bg-white/10 transition-colors ${isLiked ? 'text-rose-500' : 'text-white/60'}`}>
+            <button onClick={() => onToggleLike && onToggleLike(news)} className={`flex items-center gap-1 p-1 rounded-full hover:bg-white/10 transition-colors ${isLiked ? 'text-rose-500' : 'text-white/60'}`}>
               <Heart className={`w-3 h-3 ${isLiked ? 'fill-current' : ''}`} /> {news.likes || 0}
             </button>
           </div>
-          <div className="flex gap-2">
-            <button onClick={(e) => { e.stopPropagation(); onSave && onSave(news); }} className={`p-1.5 hover:bg-white/10 rounded-full ${isSaved ? 'text-blue-500' : 'text-white/60'}`}>
-              <Bookmark className={`w-4 h-4 ${isSaved ? 'fill-current' : ''}`} />
+          <div className="flex items-center gap-1">
+            <button onClick={() => onShare(news)} className="p-2 rounded-full hover:bg-white/10 text-white/60 transition-colors">
+              <Share2 className="w-5 h-5" />
             </button>
-            <button onClick={(e) => { e.stopPropagation(); onShare(news); }} className="p-1.5 hover:bg-white/10 rounded-full text-white/60">
-              <Share2 className="w-4 h-4" />
+            <button onClick={() => onSave && onSave(news)} className={`p-2 rounded-full hover:bg-white/10 transition-colors ${isSaved ? 'text-blue-500' : 'text-white/60'}`}>
+              <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
             </button>
             {news.sourceUrl && (
               <a
-                href={news.sourceUrl} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs font-bold text-blue-400 hover:text-blue-300 ml-2"
-                onClick={(e) => e.stopPropagation()}
+                href={news.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 px-4 py-1.5 rounded-lg bg-white/10 hover:bg-blue-600/20 hover:text-blue-400 text-white text-sm font-medium transition-colors border border-white/5 flex items-center gap-1"
               >
-                원문 <ArrowRight className="w-3 h-3" />
+                더 읽기 <ArrowRight className="w-4 h-4" />
               </a>
             )}
           </div>
         </div>
+        ```
+      </div >
+    </article >
+  );
+};
+
+// 3. Simple News List Item (Text Only)
+const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, onToggleLike, isLiked, selectedInterests, selectedServices, selectedCore }) => {
+  // Logic to determine which category/service/core to show on the badge (top left)
+  const displayCategory =
+    (news.categories || []).find(cat => selectedInterests?.includes(cat)) ||
+    (news.productServices || []).find(svc => selectedServices?.includes(svc)) ||
+    (news.coreElements || []).find(core => selectedCore?.includes(core)) ||
+    news.categories?.[0] || 'AI News';
+
+  const otherCategories = (news.categories || []).filter(cat => cat !== displayCategory);
+  const otherServices = (news.productServices || []).filter(svc => svc !== displayCategory);
+  const otherCore = (news.coreElements || []).filter(core => core !== displayCategory);
+
+  return (
+    <article
+      className={`
+      group flex flex-col gap-2 p-4 rounded-xl border backdrop-blur-sm transition-all duration-300
+      ${isExpanded
+          ? 'bg-white/[0.08] border-blue-500/30 shadow-lg'
+          : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06]'}
+    `}
+    >
+      <div className="flex justify-between items-start gap-3">
+        <div className="flex-1 cursor-pointer" onClick={onToggle}>
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="text-[10px] font-bold text-blue-400 tracking-wide uppercase">
+              {displayCategory}
+            </span>
+            <span className="w-1 h-1 rounded-full bg-white/20"></span>
+            <span className="text-[10px] text-white/40">{news.publishedDate}</span>
+          </div>
+          <h3 className={`text-base font-bold text-white leading-snug transition-colors ${isExpanded ? 'text-blue-300' : 'group-hover:text-blue-400'}`}>
+            {news.title}
+          </h3>
+        </div>
+        <button
+          onClick={(e) => { e.stopPropagation(); onToggle(); }}
+          className="p-1 rounded-full hover:bg-white/10 text-white/30 hover:text-white transition-colors"
+        >
+          <ChevronLeft className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? '-rotate-90 text-blue-400' : 'rotate-180'}`} />
+        </button>
       </div>
-    )}
-  </article>
-);
+
+      {/* Expanded Details */}
+      {isExpanded && (
+        <div className="mt-2 text-sm text-white/70 animate-in fade-in slide-in-from-top-1 duration-200">
+          <p className="leading-relaxed mb-2">
+            {news.summary}
+          </p>
+
+          {/* Keywords */}
+          <div className="flex flex-wrap gap-2 mb-3 border-b border-white/5 pb-3">
+            {(news.searchKeywords || []).map(k => (
+              <span key={k} className="text-blue-400 text-xs px-1">#{k.replace(/\s+/g, '')}</span>
+            ))}
+          </div>
+
+          {/* Filter Tags - All Categories, Services, Core Elements (Smart Display) */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {otherCategories.map(cat => (
+              <span key={cat} className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-medium border border-blue-500/20">
+                {cat}
+              </span>
+            ))}
+            {otherServices.map(id => (
+              <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
+                {id}
+              </span>
+            ))}
+            {otherCore.map(id => (
+              <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
+                {id}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex gap-3">
+              <button onClick={(e) => { e.stopPropagation(); onToggleLike && onToggleLike(news); }} className={`flex items-center gap-1 text-xs p-1 rounded-full hover:bg-white/10 transition-colors ${isLiked ? 'text-rose-500' : 'text-white/60'}`}>
+                <Heart className={`w-3 h-3 ${isLiked ? 'fill-current' : ''}`} /> {news.likes || 0}
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <button onClick={(e) => { e.stopPropagation(); onSave && onSave(news); }} className={`p-1.5 hover:bg-white/10 rounded-full ${isSaved ? 'text-blue-500' : 'text-white/60'}`}>
+                <Bookmark className={`w-4 h-4 ${isSaved ? 'fill-current' : ''}`} />
+              </button>
+              <button onClick={(e) => { e.stopPropagation(); onShare(news); }} className="p-1.5 hover:bg-white/10 rounded-full text-white/60">
+                <Share2 className="w-4 h-4" />
+              </button>
+              {news.sourceUrl && (
+                <a
+                  href={news.sourceUrl} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs font-bold text-blue-400 hover:text-blue-300 ml-2"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  원문 <ArrowRight className="w-3 h-3" />
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </article>
+  );
+};
 
 
 // Filter Constants
@@ -757,10 +790,11 @@ const App = () => {
           // Only initialize filter state ONCE on first load (not on every update)
           if (!hasInitializedFilters.current) {
             hasInitializedFilters.current = true;
-            if (preferences.categories) setSelectedInterests(preferences.categories);
-            if (preferences.productServices) setSelectedServices(preferences.productServices);
-            if (preferences.coreElements) setSelectedCore(preferences.coreElements);
-            console.log('✅ Filters initialized from saved preferences (one-time)');
+            // Apply ID migration for backwards compatibility (old English IDs -> new Korean IDs)
+            if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP));
+            if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP));
+            if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP));
+            console.log('✅ Filters initialized from saved preferences (migrated to Korean IDs)');
           }
         }
       });
@@ -1005,7 +1039,24 @@ const App = () => {
       filtered.sort((a, b) => (b.impactScore || 0) - (a.impactScore || 0));
     }
 
-    // 4. Filter by selections if applied (simplified for demo)
+    // 4. Filter by selected categories, services, and core elements
+    // Only filter if user has made selections (if no selections, show all)
+    // 4. Filter by selected categories, services, and core elements (OR logic)
+    // Only filter if at least one filter group is active
+    const hasInterests = selectedInterests.length > 0;
+    const hasServices = selectedServices.length > 0;
+    const hasCore = selectedCore.length > 0;
+
+    if (hasInterests || hasServices || hasCore) {
+      filtered = filtered.filter(news => {
+        const matchInterests = hasInterests && news.categories && news.categories.some(cat => selectedInterests.includes(cat));
+        const matchServices = hasServices && news.productServices && news.productServices.some(svc => selectedServices.includes(svc));
+        const matchCore = hasCore && news.coreElements && news.coreElements.some(core => selectedCore.includes(core));
+
+        return matchInterests || matchServices || matchCore;
+      });
+    }
+
     return filtered;
   };
 
@@ -1249,8 +1300,7 @@ const App = () => {
             <span className="font-medium">마이페이지</span>
           </button>
 
-          <div className="!mt-6 pt-4 border-t border-white/5">
-            <p className="px-4 text-[10px] text-white/30 uppercase tracking-wider mb-2">외부 링크</p>
+          <div className="!mt-6 pt-4">
             <a
               href="https://www.youtube.com"
               target="_blank"
@@ -1266,15 +1316,15 @@ const App = () => {
               rel="noreferrer"
               className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left text-white/60 hover:text-[#5865F2] hover:bg-white/5 transition-all"
             >
-              <DiscordIcon className="w-5 h-5" />
-              <span className="font-medium">Discord</span>
+              <DiscordIcon className="w-8 h-8 -ml-1.5" />
+              <span className="font-medium -ml-1.5">Discord</span>
             </a>
           </div>
         </nav>
 
         {/* Sidebar Footer - User Info */}
         {user && !user.isAnonymous && (
-          <div className="p-4 border-t border-white/5">
+          <div className="p-4">
             <div className="flex items-center gap-3 p-2 rounded-xl bg-white/5">
               <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
                 {user.photoURL ? (
@@ -1298,7 +1348,7 @@ const App = () => {
       <div className="relative z-10 flex flex-col min-h-screen w-full lg:pl-64 pb-20 lg:pb-0">
 
         {/* Header - Mobile only, hidden on desktop */}
-        <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#101922]/85 border-b border-white/5 shadow-lg shadow-black/20">
+        <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#101922]/85 shadow-lg shadow-black/20">
           {/* Mobile header */}
           <div className="flex lg:hidden items-center justify-between max-w-7xl mx-auto w-full px-4 py-3 h-[60px]">
 
@@ -1366,24 +1416,27 @@ const App = () => {
             )}
           </div>
 
-          {/* Desktop: Combined Search + Filters Row */}
-          <div className="hidden lg:flex px-8 py-4 w-full max-w-7xl mx-auto items-center gap-4">
-            {/* Welcome Message + Search Bar */}
-            <div className="flex flex-col flex-1 max-w-md">
-              <p className="text-xs text-white/50 mb-1 pl-1">
+
+
+          {/* Desktop: Two-Row Header Layout */}
+          <div className="hidden lg:flex flex-col px-8 py-4 w-full max-w-7xl mx-auto gap-4">
+            {/* Row 1: Personalized Greeting (Left) + Search Bar (Right) */}
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center text-xl text-white/90 font-semibold whitespace-nowrap">
+                <Sparkles className="w-5 h-5 text-blue-400 mr-2" />
                 {user && !user.isAnonymous
-                  ? <><span className="text-blue-400 font-medium">{user.displayName || '사용자'}</span>님의 AI 뉴스를 제공합니다</>
-                  : '당신만의 AI 뉴스를 제공합니다'
+                  ? <><span className="text-blue-400 font-bold">{user.displayName || '사용자'}</span>님을 위한 뉴스 브리핑</>
+                  : '당신을 위한 뉴스 브리핑'
                 }
-              </p>
-              <div className="relative">
+              </div>
+              <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="뉴스 검색 (제목, 요약, 키워드)"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-2 pl-11 pr-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 focus:bg-white/10 placeholder:text-white/30 transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg py-2 pl-11 pr-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 focus:bg-white/10 placeholder:text-white/30 transition-all"
                 />
                 {searchQuery && (
                   <button
@@ -1396,59 +1449,59 @@ const App = () => {
               </div>
             </div>
 
-            {/* Separator */}
-            <div className="h-6 w-px bg-white/10"></div>
+            {/* Row 2: Sort Buttons (Left) + Filter Button (Right) */}
+            <div className="flex items-center justify-between mt-2">
+              {/* Sort Buttons - Joined Style (Excel-like) */}
+              <div className="flex items-center isolate">
+                <button
+                  onClick={() => setFilterPeriod('latest')}
+                  className={`relative px-4 py-1.5 rounded-l-md rounded-r-none text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'latest' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
+                >
+                  최신순
+                </button>
+                <button
+                  onClick={() => setFilterPeriod('popular')}
+                  className={`relative px-4 py-1.5 rounded-none -ml-px text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'popular' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
+                >
+                  인기순
+                </button>
+                <button
+                  onClick={() => setFilterPeriod('important')}
+                  className={`relative px-4 py-1.5 rounded-r-md rounded-l-none -ml-px text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'important' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
+                >
+                  중요도순
+                </button>
+              </div>
 
-            {/* Sort Buttons */}
-            <div className="flex items-center gap-2">
+              {/* Filter Button - Image Style */}
               <button
-                onClick={() => setFilterPeriod('latest')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'latest' ? 'bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}
+                onClick={() => setFilterModalOpen(true)}
+                className="flex items-center justify-center gap-2 px-3 py-1.5 rounded-md bg-transparent hover:bg-white/5 text-white/50 hover:text-white/80 transition-colors border border-white/20 hover:border-white/40"
               >
-                최신순
-              </button>
-              <button
-                onClick={() => setFilterPeriod('popular')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'popular' ? 'bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}
-              >
-                인기순
-              </button>
-              <button
-                onClick={() => setFilterPeriod('important')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'important' ? 'bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}
-              >
-                중요도순
+                <Filter className="w-4 h-4" />
+                <span className="text-sm font-medium">필터</span>
               </button>
             </div>
-
-            {/* Filter Button */}
-            <button
-              onClick={() => setFilterModalOpen(true)}
-              className="flex-shrink-0 flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/70 border border-white/10 transition-colors backdrop-blur-md"
-            >
-              <Filter className="w-4 h-4" />
-              <span className="text-xs font-medium">필터</span>
-            </button>
           </div>
 
           {/* Mobile: Original Filter Bar */}
           <div className="lg:hidden px-4 pb-3 pt-0 w-full max-w-7xl mx-auto flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+            <div className="flex items-center isolate overflow-x-auto scrollbar-hide">
               <button
                 onClick={() => setFilterPeriod('latest')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'latest' ? 'bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}
+                className={`relative px-4 py-1.5 rounded-l-xl rounded-r-none text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'latest' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
               >
                 최신순
               </button>
               <button
                 onClick={() => setFilterPeriod('popular')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'popular' ? 'bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}
+                className={`relative px-4 py-1.5 rounded-none -ml-px text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'popular' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
               >
                 인기순
               </button>
               <button
                 onClick={() => setFilterPeriod('important')}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'important' ? 'bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white'}`}
+                className={`relative px-4 py-1.5 rounded-r-xl rounded-l-none -ml-px text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'important' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
               >
                 중요도순
               </button>
@@ -1646,7 +1699,7 @@ const App = () => {
               {/* Section: Today's Top 5 */}
               <section className="mb-8 relative">
                 <div className="flex items-center justify-between mb-4 px-1">
-                  <h2 className="text-[20px] lg:text-2xl font-bold text-white tracking-tight flex items-center gap-2">
+                  <h2 className="text-base sm:text-lg lg:text-2xl font-bold text-white tracking-tight flex items-center gap-2 whitespace-nowrap">
                     <span className="w-1.5 h-6 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.6)]"></span>
                     {(() => {
                       const prefix = {
@@ -1736,13 +1789,13 @@ const App = () => {
                         </div>
 
                         {/* Center Card - Full Focus */}
-                        <div className="flex-shrink-0 w-[320px] scale-100 transition-all duration-500 z-10">
+                        <div className="flex-shrink-0 w-[390px] scale-100 transition-all duration-500 z-10">
                           {(() => {
                             const news = topNews[currentTopIndex];
                             return (
-                              <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-[560px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
-                                {/* Image 45% */}
-                                <div className="relative h-[45%] overflow-hidden">
+                              <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[560px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
+                                {/* Image Fixed Height */}
+                                <div className="relative h-[250px] overflow-hidden">
                                   <img
                                     alt={news.title}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
@@ -1751,17 +1804,20 @@ const App = () => {
                                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#101922]"></div>
                                   <div className="absolute top-3 left-3">
                                     <span className="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-lg shadow-blue-500/30">
-                                      {news.categories?.[0] || 'AI News'}
+                                      {(news.categories || []).find(cat => selectedInterests.includes(cat)) ||
+                                        (news.productServices || []).find(svc => selectedServices.includes(svc)) ||
+                                        (news.coreElements || []).find(core => selectedCore.includes(core)) ||
+                                        news.categories?.[0] || 'AI News'}
                                     </span>
                                   </div>
                                 </div>
 
-                                {/* Content 45% */}
-                                <div className="flex-1 p-5 flex flex-col gap-3 overflow-hidden">
-                                  <h3 className="text-lg font-bold text-white leading-tight group-hover:text-blue-400 transition-colors line-clamp-2">
+                                {/* Content Auto Height */}
+                                <div className="flex-1 p-5 flex flex-col gap-3">
+                                  <h3 className="text-base sm:text-lg font-bold text-white leading-tight group-hover:text-blue-400 transition-colors">
                                     {news.title}
                                   </h3>
-                                  <p className="text-sm text-white/60 leading-relaxed line-clamp-3">
+                                  <p className="text-sm text-white/60 leading-relaxed">
                                     {news.summary}
                                   </p>
                                   {/* Keywords */}
@@ -1770,23 +1826,28 @@ const App = () => {
                                       <span key={k} className="text-blue-400 text-xs">#{k.replace(/\s+/g, '')}</span>
                                     ))}
                                   </div>
-                                  {/* Tags */}
+                                  {/* Tags - All Categories, Services, Core Elements (Smart Display) */}
                                   <div className="flex flex-wrap gap-1.5">
-                                    {(news.productServices || []).slice(0, 2).map(id => (
-                                      <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
-                                        {DATA_SERVICES.find(s => s.id === id)?.label || id}
+                                    {(news.categories || []).filter(c => c !== ((news.categories || []).find(cat => selectedInterests.includes(cat)) || (news.productServices || []).find(svc => selectedServices.includes(svc)) || (news.coreElements || []).find(core => selectedCore.includes(core)) || news.categories?.[0] || 'AI News')).map(cat => (
+                                      <span key={cat} className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-medium border border-blue-500/20">
+                                        {cat}
                                       </span>
                                     ))}
-                                    {(news.coreElements || []).slice(0, 2).map(id => (
+                                    {(news.productServices || []).filter(s => s !== ((news.categories || []).find(cat => selectedInterests.includes(cat)) || (news.productServices || []).find(svc => selectedServices.includes(svc)) || (news.coreElements || []).find(core => selectedCore.includes(core)) || news.categories?.[0] || 'AI News')).map(id => (
+                                      <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
+                                        {id}
+                                      </span>
+                                    ))}
+                                    {(news.coreElements || []).filter(c => c !== ((news.categories || []).find(cat => selectedInterests.includes(cat)) || (news.productServices || []).find(svc => selectedServices.includes(svc)) || (news.coreElements || []).find(core => selectedCore.includes(core)) || news.categories?.[0] || 'AI News')).map(id => (
                                       <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
-                                        {DATA_CORE.find(c => c.id === id)?.label || id}
+                                        {id}
                                       </span>
                                     ))}
                                   </div>
                                 </div>
 
-                                {/* Actions 10% */}
-                                <div className="h-[10%] px-4 flex items-center justify-between border-t border-white/5 bg-white/[0.02]">
+                                {/* Actions Fixed Height */}
+                                <div className="h-[60px] px-4 flex items-center justify-between border-t border-white/5 bg-white/[0.02]">
                                   <div className="flex items-center gap-3 text-xs text-white/40">
                                     <span>{news.publishedDate}</span>
                                     <button
@@ -1884,44 +1945,49 @@ const App = () => {
                     </div>
 
                     {/* Mobile: Single carousel item */}
-                    <div className="lg:hidden relative group">
-                      <div className="absolute top-1/2 -left-4 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
-                        <button onClick={handlePrevTop} className="p-2 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm border border-white/10 shadow-lg transition-all">
-                          <ChevronLeft className="w-6 h-6" />
-                        </button>
-                      </div>
+                    {topNews.length > 0 && (
+                      <div className="lg:hidden relative group">
+                        <div className="absolute top-1/2 -left-4 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                          <button onClick={handlePrevTop} className="p-2 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm border border-white/10 shadow-lg transition-all">
+                            <ChevronLeft className="w-6 h-6" />
+                          </button>
+                        </div>
 
-                      <TopNewsCard
-                        key={topNews[currentTopIndex].id}
-                        news={topNews[currentTopIndex]}
-                        image={SAMPLE_IMAGES[(currentTopIndex + (new Date().getDate() * 5)) % SAMPLE_IMAGES.length]}
-                        onShare={handleShare}
-                        onSave={handleToggleSave}
-                        isSaved={savedNewsIds.has(topNews[currentTopIndex].id)}
-                        isLiked={likedNewsIds.has(topNews[currentTopIndex].id)}
-                        onToggleLike={handleToggleLike}
-                      />
+                        <TopNewsCard
+                          key={topNews[currentTopIndex % topNews.length].id}
+                          news={topNews[currentTopIndex % topNews.length]}
+                          image={SAMPLE_IMAGES[((currentTopIndex % topNews.length) + (new Date().getDate() * 5)) % SAMPLE_IMAGES.length]}
+                          onShare={handleShare}
+                          onSave={handleToggleSave}
+                          isSaved={savedNewsIds.has(topNews[currentTopIndex % topNews.length].id)}
+                          isLiked={likedNewsIds.has(topNews[currentTopIndex % topNews.length].id)}
+                          onToggleLike={handleToggleLike}
+                          selectedInterests={selectedInterests}
+                          selectedServices={selectedServices}
+                          selectedCore={selectedCore}
+                        />
 
-                      <div className="absolute top-1/2 -right-4 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
-                        <button onClick={handleNextTop} className="p-2 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm border border-white/10 shadow-lg transition-all">
-                          <ChevronRight className="w-6 h-6" />
-                        </button>
-                      </div>
+                        <div className="absolute top-1/2 -right-4 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                          <button onClick={handleNextTop} className="p-2 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm border border-white/10 shadow-lg transition-all">
+                            <ChevronRight className="w-6 h-6" />
+                          </button>
+                        </div>
 
-                      {/* Mobile Indicators */}
-                      <div className="flex justify-center mt-4 gap-1.5">
-                        {topNews.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentTopIndex(index)}
-                            className={`w-1.5 h-1.5 rounded-full transition-all ${index === currentTopIndex
-                              ? 'bg-blue-500 w-4'
-                              : 'bg-white/20'
-                              }`}
-                          />
-                        ))}
+                        {/* Mobile Indicators */}
+                        <div className="flex justify-center mt-4 gap-1.5">
+                          {topNews.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentTopIndex(index)}
+                              className={`w-1.5 h-1.5 rounded-full transition-all ${index === (currentTopIndex % topNews.length)
+                                ? 'bg-blue-500 w-4'
+                                : 'bg-white/20'
+                                }`}
+                            />
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </>
                 )}
               </section>
@@ -1950,6 +2016,9 @@ const App = () => {
                         isSaved={savedNewsIds.has(news.id)}
                         isLiked={likedNewsIds.has(news.id)}
                         onToggleLike={handleToggleLike}
+                        selectedInterests={selectedInterests}
+                        selectedServices={selectedServices}
+                        selectedCore={selectedCore}
                       />
                     </div>
                   ))}
