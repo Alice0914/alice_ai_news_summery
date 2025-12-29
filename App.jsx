@@ -1325,8 +1325,8 @@ const App = () => {
         {/* Sidebar Footer - User Info */}
         {user && !user.isAnonymous && (
           <div className="p-4">
-            <div className="flex items-center gap-3 p-2 rounded-xl bg-white/5">
-              <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+            <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 group transition-colors hover:bg-white/10">
+              <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 shrink-0">
                 {user.photoURL ? (
                   <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
                 ) : (
@@ -1339,6 +1339,13 @@ const App = () => {
                 <p className="text-sm font-medium text-white truncate">{user.displayName || '사용자'}</p>
                 <p className="text-[10px] text-white/40 truncate">{user.email}</p>
               </div>
+              <button
+                onClick={handleLogout}
+                className="p-2 rounded-lg text-white/40 hover:text-red-400 hover:bg-white/5 transition-all"
+                title="로그아웃"
+              >
+                <LogOut className="w-4 h-4" />
+              </button>
             </div>
           </div>
         )}
