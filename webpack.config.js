@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
@@ -98,6 +99,18 @@ module.exports = (env) => {
         template: './public/index.html',
         filename: 'index.html',
         inject: 'body',
+      }),
+      // Copy static assets from public folder to dist
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: 'public',
+            to: '',
+            globOptions: {
+              ignore: ['**/index.html'], // index.html is handled by HtmlWebpackPlugin
+            },
+          },
+        ],
       }),
       // Expose selected environment variables to the client bundle
       new webpack.DefinePlugin({
