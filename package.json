@@ -1,0 +1,47 @@
+{
+  "name": "ai-trend-one-minute",
+  "version": "1.0.0",
+  "description": "AI 1분 트렌드 - AI 트렌드 확인하고 바로 공유까지, 딱 1분!",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development --open --port 3002",
+    "admintools": "webpack serve --mode development --env admin=true"
+  },
+  "keywords": [
+    "react",
+    "ai",
+    "trend",
+    "news"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
+    "firebase": "^11.10.0",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "@babel/preset-react": "^7.23.0",
+    "autoprefixer": "^10.4.16",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "dotenv": "^16.4.5",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "json-loader": "^0.5.7",
+    "postcss": "^8.4.32",
+    "postcss-loader": "^7.3.4",
+    "style-loader": "^3.3.3",
+    "tailwindcss": "^3.3.6",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
