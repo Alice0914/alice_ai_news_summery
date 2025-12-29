@@ -748,67 +748,84 @@ const App = () => {
   const [savedPreferences, setSavedPreferences] = useState({ categories: [], productServices: [], coreElements: [] });
   const hasInitializedFilters = useRef(false); // To prevent re-initializing on every subscription update
 
+  // Track initialization to distinguish between app load and manual login
+  const isFirstCheck = useRef(true);
+
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
 
-      // Auth flow logic
-      if (currentUser && !currentUser.isAnonymous) {
-        // Logged in user -> go directly to news feed
-        setStep(5);
-        console.log('✅ User logged in, redirecting to news feed');
-      } else {
-        // Not logged in -> show login page (step 0 = AuthPage)
-        setStep(0);
-        console.log('🔒 User not logged in, showing login page');
+      // 1. Initial App Load (Auto-login check)
+      if (isFirstCheck.current) {
+        if (currentUser && !currentUser.isAnonymous) {
+          console.log('✅ Auto-login: Redirecting to news feed');
+          setStep(5);
+        } else {
+          console.log('🔒 Auto-login failed: Showing login page');
+          setStep(0);
+        }
+        isFirstCheck.current = false;
+        setAuthLoading(false);
+        return;
       }
-      setAuthLoading(false); // Hide splash screen
+
+      // 2. Subsequent Auth Changes (Manual Login/Logout)
+      if (currentUser && !currentUser.isAnonymous) {
+        // User just logged in manually
+        console.log('✅ Manual Login: Showing toast then redirecting...');
+        setShowLoginToast(true);
+        setTimeout(() => {
+          setShowLoginToast(false);
+          setStep(5);
+        }, 2000);
+      } else {
+        // User logged out
+        setStep(0);
+      }
     });
 
     let unsubscribeUserData = () => { };
 
-    if (user && !user.isAnonymous) {
-      // Unified Subscription (1 Read per update)
-      unsubscribeUserData = subscribeToUserData(user.uid, ({ likes, bookmarks, preferences }) => {
-        // Likes (Array of IDs)
-        setLikedNewsIds(new Set(likes));
+    // Set up data subscription if user is logged in
+    // Note: We access the current 'user' state variable effectively via the listener's 'currentUser' 
+    // but for the subscription we need to react to state changes if we keep this here.
+    // However, mixing the auth listener (run once) and data listener (depends on user) in one effect is tricky.
+    // Ideally, we split them. But for minimal disruption, we'll keep the auth listener here and move data sub to a separate effect.
 
-        // Bookmarks (Array of Objects)
+    return () => {
+      unsubscribeAuth();
+    };
+  }, []); // Run ONCE on mount
+
+  // Separate effect for User Data Subscription
+  useEffect(() => {
+    if (user && !user.isAnonymous) {
+      const unsubscribeUserData = subscribeToUserData(user.uid, ({ likes, bookmarks, preferences }) => {
+        setLikedNewsIds(new Set(likes));
         setSavedNewsItems(bookmarks);
         setSavedNewsIds(new Set(bookmarks.map(b => b.id)));
 
-        // NEW: Apply User Preferences (Default Filters)
         if (preferences) {
-          console.log('🎯 Loading saved preferences:', preferences);
-          // Always update saved preferences (for PreferencesPage) and MIGRATE IDs for display
           setSavedPreferences({
             categories: migrateIds(preferences.categories || [], CATEGORY_ID_MAP),
             productServices: migrateIds(preferences.productServices || [], SERVICE_ID_MAP),
             coreElements: migrateIds(preferences.coreElements || [], CORE_ID_MAP)
           });
 
-          // Only initialize filter state ONCE on first load (not on every update)
           if (!hasInitializedFilters.current) {
             hasInitializedFilters.current = true;
-            // Apply ID migration for backwards compatibility (old English IDs -> new Korean IDs)
             if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP));
             if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP));
             if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP));
-            console.log('✅ Filters initialized from saved preferences (migrated to Korean IDs)');
           }
         }
       });
-
+      return () => unsubscribeUserData();
     } else {
       setSavedNewsItems([]);
       setSavedNewsIds(new Set());
       setLikedNewsIds(new Set());
     }
-
-    return () => {
-      unsubscribeAuth();
-      unsubscribeUserData();
-    };
   }, [user]);
 
   const handleLogin = async () => {
@@ -822,16 +839,17 @@ const App = () => {
   };
 
   const handleLogout = async () => {
-    try {
-      await logout();
-      setShowLogoutToast(true);
-      setTimeout(() => {
+    setShowLogoutToast(true);
+    // Delay actual logout to let user see the toast
+    setTimeout(async () => {
+      try {
+        await logout();
         setShowLogoutToast(false);
         setIsAuthModalOpen(true);
-      }, 2000);
-    } catch (error) {
-      console.error("Logout failed", error);
-    }
+      } catch (error) {
+        console.error("Logout failed", error);
+      }
+    }, 1500);
   };
 
   const [filterPeriod, setFilterPeriod] = useState('important'); // Default: Important
@@ -1117,10 +1135,23 @@ const App = () => {
   // 0. Login Page (for logged-out users)
   if (step === 0) {
     return (
-      <AuthPage
-        onAuthSuccess={() => setStep(5)}
-        onSignupClick={() => setStep(1)} // Go to onboarding for new users
-      />
+      <>
+        <AuthPage
+          onAuthSuccess={() => { }} // Logic handled by onAuthStateChanged listener
+          onSignupClick={() => setStep(1)} // Go to onboarding for new users
+        />
+        {/* Login Success Toast (Must be rendered here because of early return) */}
+        {showLoginToast && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
+            <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300">
+              <div className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center mb-1">
+                <PartyPopper className="w-10 h-10 text-blue-400 animate-bounce" strokeWidth={2} />
+              </div>
+              <span className="text-white font-bold text-2xl">로그인 되었습니다!</span>
+            </div>
+          </div>
+        )}
+      </>
     );
   }
 
