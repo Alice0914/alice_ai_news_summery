@@ -1797,14 +1797,14 @@ const App = () => {
                       <div className="flex items-center justify-center gap-4 px-16 overflow-hidden">
                         {/* Left Peek Card */}
                         <div
-                          className="flex-shrink-0 w-[280px] opacity-50 scale-90 blur-[1px] transition-all duration-500 cursor-pointer hover:opacity-70"
+                          className="flex-shrink-0 w-[258px] opacity-50 scale-90 blur-[1px] transition-all duration-500 cursor-pointer hover:opacity-70"
                           onClick={handlePrevTop}
                         >
                           {(() => {
                             const prevIndex = (currentTopIndex - 1 + topNews.length) % topNews.length;
                             const news = topNews[prevIndex];
                             return (
-                              <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[560px] flex flex-col">
+                              <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[515px] flex flex-col">
                                 {/* Image 45% */}
                                 <div className="relative h-[45%] overflow-hidden">
                                   <img
@@ -1834,13 +1834,13 @@ const App = () => {
                         </div>
 
                         {/* Center Card - Full Focus */}
-                        <div className="flex-shrink-0 w-[390px] scale-100 transition-all duration-500 z-10">
+                        <div className="flex-shrink-0 w-[359px] scale-100 transition-all duration-500 z-10">
                           {(() => {
                             const news = topNews[currentTopIndex];
                             return (
-                              <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[560px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
-                                {/* Image Fixed Height */}
-                                <div className="relative h-[250px] overflow-hidden">
+                              <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[530px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
+                                {/* Image Fixed Height (Reduced another 5%) */}
+                                <div className="relative h-[235px] overflow-hidden">
                                   <img
                                     alt={news.title}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
