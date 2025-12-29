@@ -780,11 +780,11 @@ const App = () => {
         // NEW: Apply User Preferences (Default Filters)
         if (preferences) {
           console.log('🎯 Loading saved preferences:', preferences);
-          // Always update saved preferences (for PreferencesPage)
+          // Always update saved preferences (for PreferencesPage) and MIGRATE IDs for display
           setSavedPreferences({
-            categories: preferences.categories || [],
-            productServices: preferences.productServices || [],
-            coreElements: preferences.coreElements || []
+            categories: migrateIds(preferences.categories || [], CATEGORY_ID_MAP),
+            productServices: migrateIds(preferences.productServices || [], SERVICE_ID_MAP),
+            coreElements: migrateIds(preferences.coreElements || [], CORE_ID_MAP)
           });
 
           // Only initialize filter state ONCE on first load (not on every update)
@@ -1558,7 +1558,14 @@ const App = () => {
           ) : activeTab === 'profile' ? (
             /* --- PROFILE VIEW --- */
             <section className="animate-in fade-in slide-in-from-bottom-2 duration-300 py-4 lg:py-8">
-              <div className="bg-white/5 rounded-2xl p-6 lg:p-8 border border-white/10 flex flex-col items-start text-left max-w-2xl mx-auto lg:max-w-3xl">
+              <div className="relative bg-white/5 rounded-2xl p-6 lg:p-8 border border-white/10 flex flex-col items-start text-left max-w-2xl mx-auto lg:max-w-3xl">
+                {/* Close Button */}
+                <button
+                  onClick={() => setActiveTab('home')}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all"
+                >
+                  <X className="w-5 h-5" />
+                </button>
 
                 {/* Profile Header - Centered */}
                 <div className="w-full flex flex-col items-center text-center mb-6">
