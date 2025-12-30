@@ -561,6 +561,18 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
         throw error;
     }
 };
+/**
+ * Generate DiceBear Avatar URL
+ * @param {string} seed - User name or email or random string
+ * @returns {string} Avatar URL
+ */
+export const getDiceBearAvatar = (seed) => {
+    // Using 'notionists' style which is professional and clean
+    // Fallback to 'initials' if no seed provided
+    const safeSeed = seed ? encodeURIComponent(seed) : 'User';
+    return `https://api.dicebear.com/9.x/notionists/svg?seed=${safeSeed}&backgroundColor=b6e3f4,c0aede,d1d4f9`;
+};
+
 
 /**
  * Subscribe to user's bookmarks

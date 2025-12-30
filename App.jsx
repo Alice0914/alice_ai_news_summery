@@ -23,14 +23,16 @@ import {
 import OnboardingAuth from './components/auth/OnboardingAuth';
 import AuthPage from './components/auth/AuthPage';
 import PreferencesPage from './components/PreferencesPage'; // NEW: Dedicated preferences editor
-import { onAuthStateChanged } from 'firebase/auth'; // Added import
+import { onAuthStateChanged, updateProfile } from 'firebase/auth'; // Added updateProfile
 import {
   db, auth, logUserAccess, signInWithGoogle, logout, saveBookmark,
   removeBookmark,
   toggleLike,
   subscribeToUserData,
   saveUserPreferences,
-  reauthenticateAndUpdatePassword // RESTORED
+  reauthenticateAndUpdatePassword, // RESTORED
+  getDiceBearAvatar, // Added
+  saveUserToFirestore // Added: to sync changes
 } from './firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -866,6 +868,24 @@ const App = () => {
     }
   };
 
+  const handleRandomAvatar = async () => {
+    if (!user) return;
+    const randomSeed = Math.random().toString(36).substring(7);
+    const newAvatarUrl = getDiceBearAvatar(randomSeed);
+
+    try {
+      await updateProfile(user, { photoURL: newAvatarUrl });
+      // Sync to Firestore
+      await saveUserToFirestore(user);
+      // Force refresh/reload might be needed or handled by AuthState?
+      // AuthState usually updates automatically.
+      alert("프로필 이미지가 변경되었습니다! ✨");
+    } catch (error) {
+      console.error("Error updating avatar:", error);
+      alert("프로필 이미지 변경에 실패했습니다.");
+    }
+  };
+
   const handlePasswordChange = async (e) => {
     e.preventDefault();
     setPasswordError('');
@@ -1664,14 +1684,31 @@ const App = () => {
                 {/* Profile Header - Centered */}
                 <div className="w-full flex flex-col items-center text-center mb-6">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-[2px] mb-4 shadow-lg shadow-blue-500/20">
-                    <div className="w-full h-full rounded-full bg-[#101922] flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-full rounded-full bg-[#101922] flex items-center justify-center overflow-hidden relative group">
                       {user?.photoURL ? (
                         <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
                       ) : (
                         <User className="w-10 h-10 text-white/80" />
                       )}
+
+                      {/* Randomize Button Overlay */}
+                      <button
+                        onClick={handleRandomAvatar}
+                        className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                        title="랜덤 프로필 생성"
+                      >
+                        <Sparkles className="w-6 h-6 text-yellow-400" />
+                      </button>
                     </div>
                   </div>
+
+                  {/* Text Button below avatar */}
+                  <button
+                    onClick={handleRandomAvatar}
+                    className="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1 mb-3 transition-colors"
+                  >
+                    <Sparkles className="w-3 h-3" /> 랜덤 프로필 변경
+                  </button>
 
                   <h2 className="text-xl font-bold text-white mb-1">
                     {(!user || user.isAnonymous) ? '익명 사용자' : (user.displayName || '사용자')}
