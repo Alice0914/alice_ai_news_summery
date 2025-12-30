@@ -29,6 +29,7 @@ import {
     updatePassword, // Added: Password Change
     reauthenticateWithCredential, // Added: Password Change
     EmailAuthProvider, // Added: Password Change
+    sendPasswordResetEmail, // Added: Password Reset
 } from 'firebase/auth';
 
 // Firebase configuration pulled from environment variables
@@ -374,6 +375,20 @@ export const reauthenticateAndUpdatePassword = async (user, currentPassword, new
         console.log("Password updated successfully");
     } catch (error) {
         console.error("Error updating password:", error);
+        throw error;
+    }
+};
+
+/**
+ * Send Password Reset Email
+ * @param {string} email
+ */
+export const sendResetEmail = async (email) => {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        console.log("Password reset email sent to:", email);
+    } catch (error) {
+        console.error("Error sending reset email:", error);
         throw error;
     }
 };

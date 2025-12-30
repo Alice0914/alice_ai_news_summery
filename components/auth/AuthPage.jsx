@@ -4,7 +4,8 @@ import {
     signInWithTwitter,
     signInWithLinkedIn,
     signUpWithEmail,
-    signInWithEmail
+    signInWithEmail,
+    sendResetEmail // Added
 } from '../../firebaseConfig';
 import { ChevronLeft, Mail, Lock, User, Check, AlertCircle, X } from 'lucide-react';
 import { YoutubeIcon, DiscordIcon } from '../ui/Icons'; // Re-using existing icons if available, else we'll use Lucide or text
@@ -81,6 +82,23 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
             handleAuthComplete();
         } catch (err) {
             setError(`Failed to sign in with ${providerName}. ${err.message}`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handlePasswordReset = async () => {
+        if (!email) {
+            setError("비밀번호 재설정 링크를 받으려면 이메일을 입력해주세요.");
+            return;
+        }
+        setError(null);
+        setLoading(true);
+        try {
+            await sendResetEmail(email);
+            alert(`비밀번호 재설정 이메일을 ${email}로 보냈습니다.\n\n[체크포인트]\n1. 스팸 메일함을 꼭 확인해주세요.\n2. 구글/소셜 로그인 사용자는 비밀번호 재설정이 불가능합니다.`);
+        } catch (err) {
+            setError("이메일 전송에 실패했습니다. 올바른 이메일인지 확인해주세요.");
         } finally {
             setLoading(false);
         }
@@ -176,6 +194,18 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                                 required
                             />
                         </div>
+
+                        {!isSignUp && (
+                            <div className="flex justify-center">
+                                <button
+                                    type="button"
+                                    onClick={handlePasswordReset}
+                                    className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                                >
+                                    비밀번호를 잊으셨나요?
+                                </button>
+                            </div>
+                        )}
 
                         <button
                             type="submit"
