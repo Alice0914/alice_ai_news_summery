@@ -26,6 +26,9 @@ import {
     signInWithEmailAndPassword, // Added
     updateProfile, // Added
     signOut,
+    updatePassword, // Added: Password Change
+    reauthenticateWithCredential, // Added: Password Change
+    EmailAuthProvider, // Added: Password Change
 } from 'firebase/auth';
 
 // Firebase configuration pulled from environment variables
@@ -353,6 +356,28 @@ export const signInWithLinkedIn = async () => {
 };
 
 export { app, db, auth, ensureLoggedIn };
+
+/**
+ * Re-authenticate and Update Password
+ * @param {object} user 
+ * @param {string} currentPassword 
+ * @param {string} newPassword 
+ */
+export const reauthenticateAndUpdatePassword = async (user, currentPassword, newPassword) => {
+    if (!user || !user.email) throw new Error("Invalid user");
+
+    const credential = EmailAuthProvider.credential(user.email, currentPassword);
+
+    try {
+        await reauthenticateWithCredential(user, credential);
+        await updatePassword(user, newPassword);
+        console.log("Password updated successfully");
+    } catch (error) {
+        console.error("Error updating password:", error);
+        throw error;
+    }
+};
+
 
 /**
  * Save a news item to user's bookmarks (Array)

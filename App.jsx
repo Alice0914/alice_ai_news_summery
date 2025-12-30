@@ -5,7 +5,8 @@ import {
   Briefcase, TrendingUp, HeartPulse, Clapperboard, GraduationCap, Scale,
   Cpu, Coffee, Shield, Bot, Lightbulb, Zap,
   FileText, Image as ImageIcon, Film, Mic, Sparkles, Workflow, Layers, Code,
-  Smartphone, Watch, Database, Share2, Server, ShieldCheck, MessageSquare, Heart, PartyPopper, LogOut
+  Smartphone, Watch, Database, Share2, Server, ShieldCheck, MessageSquare, Heart, PartyPopper, LogOut,
+  Lock, AlertCircle, Eye, EyeOff // Added icons
 } from 'lucide-react';
 
 // import MOCK_NEWS_DATA from './data/final_data_ko.json';
@@ -28,7 +29,8 @@ import {
   removeBookmark,
   toggleLike,
   subscribeToUserData,
-  saveUserPreferences, // NEW: For preferences persistence
+  saveUserPreferences,
+  reauthenticateAndUpdatePassword // RESTORED
 } from './firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -747,6 +749,13 @@ const App = () => {
   const [likedNewsIds, setLikedNewsIds] = useState(new Set()); // NEW: Like State
   const [activeTab, setActiveTab] = useState('home'); // 'home', 'saved', 'profile', 'youtube', 'discord'
 
+  // Password Features State
+  const [showPasswordChange, setShowPasswordChange] = useState(false);
+  const [passwordData, setPasswordData] = useState({ current: '', new: '', confirm: '' });
+  const [passwordError, setPasswordError] = useState('');
+  const [passwordSuccess, setPasswordSuccess] = useState('');
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false); // Toggle visibility for current password
+
   // NEW: Separate state for saved preferences (from DB) vs temporary filters
   const [savedPreferences, setSavedPreferences] = useState({ categories: [], productServices: [], coreElements: [] });
   const hasInitializedFilters = useRef(false); // To prevent re-initializing on every subscription update
@@ -854,6 +863,38 @@ const App = () => {
       // setStep(5); 
     } catch (error) {
       console.error("Login failed", error);
+    }
+  };
+
+  const handlePasswordChange = async (e) => {
+    e.preventDefault();
+    setPasswordError('');
+    setPasswordSuccess('');
+
+    if (passwordData.new !== passwordData.confirm) {
+      setPasswordError("새 비밀번호가 일치하지 않습니다.");
+      return;
+    }
+    if (passwordData.new.length < 6) {
+      setPasswordError("비밀번호는 6자리 이상이어야 합니다.");
+      return;
+    }
+
+    try {
+      await reauthenticateAndUpdatePassword(user, passwordData.current, passwordData.new);
+      setPasswordSuccess("비밀번호가 성공적으로 변경되었습니다.");
+      setPasswordData({ current: '', new: '', confirm: '' });
+      setTimeout(() => {
+        setShowPasswordChange(false);
+        setPasswordSuccess('');
+      }, 2000);
+    } catch (error) {
+      console.error("Password change failed", error);
+      if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+        setPasswordError("현재 비밀번호가 올바르지 않습니다.");
+      } else {
+        setPasswordError("비밀번호 변경에 실패했습니다. 다시 시도해주세요.");
+      }
     }
   };
 
@@ -1701,6 +1742,100 @@ const App = () => {
                       <Compass className="w-5 h-5" />
                       관심사 설정 변경
                     </button>
+                  )}
+
+                  {/* Password Management Section (Added) */}
+                  {user && !user.isAnonymous && user.providerData[0]?.providerId === 'password' && (
+                    <div className="w-full rounded-xl bg-white/5 border border-white/10 overflow-hidden transition-all">
+                      <button
+                        onClick={() => setShowPasswordChange(!showPasswordChange)}
+                        className="w-full px-5 py-4 flex items-center justify-between text-white hover:bg-white/5 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 rounded-lg bg-indigo-500/20 text-indigo-400">
+                            <Lock className="w-5 h-5" />
+                          </div>
+                          <div className="text-left">
+                            <span className="block font-bold text-sm">비밀번호 관리</span>
+                            <span className="block text-xs text-slate-400">주기적인 변경으로 계정을 보호하세요</span>
+                          </div>
+                        </div>
+                        <ChevronRight className={`w-5 h-5 text-slate-500 transition-transform duration-300 ${showPasswordChange ? 'rotate-90' : ''}`} />
+                      </button>
+
+                      {showPasswordChange && (
+                        <div className="p-5 pt-0 animate-in slide-in-from-top-2 duration-200">
+                          <form onSubmit={handlePasswordChange} className="space-y-4">
+
+                            <div>
+                              <label className="block text-xs font-semibold text-slate-400 mb-1.5 ml-1">현재 비밀번호</label>
+                              <div className="relative">
+                                <input
+                                  type={showCurrentPassword ? "text" : "password"}
+                                  value={passwordData.current}
+                                  onChange={(e) => setPasswordData({ ...passwordData, current: e.target.value })}
+                                  className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-4 pr-10 text-sm text-white focus:border-indigo-500 outline-none transition-all"
+                                  placeholder="현재 비밀번호를 입력하세요"
+                                  required
+                                />
+                                <button type="button" onClick={() => setShowCurrentPassword(!showCurrentPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white">
+                                  {showCurrentPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                                </button>
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-3">
+                              <div>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1.5 ml-1">새 비밀번호</label>
+                                <input
+                                  type="password"
+                                  value={passwordData.new}
+                                  onChange={(e) => setPasswordData({ ...passwordData, new: e.target.value })}
+                                  className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 px-4 text-sm text-white focus:border-indigo-500 outline-none transition-all"
+                                  placeholder="새 비밀번호"
+                                  required
+                                  minLength={6}
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1.5 ml-1">비밀번호 확인</label>
+                                <input
+                                  type="password"
+                                  value={passwordData.confirm}
+                                  onChange={(e) => setPasswordData({ ...passwordData, confirm: e.target.value })}
+                                  className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 px-4 text-sm text-white focus:border-indigo-500 outline-none transition-all"
+                                  placeholder="재입력"
+                                  required
+                                  minLength={6}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Status Messages */}
+                            {passwordError && (
+                              <div className="flex items-center gap-2 text-xs text-red-400 bg-red-500/10 p-3 rounded-lg border border-red-500/20">
+                                <AlertCircle className="w-4 h-4" /> {passwordError}
+                              </div>
+                            )}
+                            {passwordSuccess && (
+                              <div className="flex items-center gap-2 text-xs text-green-400 bg-green-500/10 p-3 rounded-lg border border-green-500/20">
+                                <Check className="w-4 h-4" /> {passwordSuccess}
+                              </div>
+                            )}
+
+                            <div className="flex justify-end">
+                              <button
+                                type="submit"
+                                className="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-500/20 transition-all flex items-center gap-2"
+                              >
+                                <ShieldCheck className="w-4 h-4" />
+                                변경하기
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      )}
+                    </div>
                   )}
                   <button
                     onClick={() => {
