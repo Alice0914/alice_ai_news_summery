@@ -734,7 +734,10 @@ const App = () => {
   const [filterModalOpen, setFilterModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false); // New Auth Modal State
   const [showLoginToast, setShowLoginToast] = useState(false); // Login Toast State
+  const [showSignupToast, setShowSignupToast] = useState(false); // Signup Toast State
   const [showLogoutToast, setShowLogoutToast] = useState(false); // Logout Toast State
+
+  const isSigningUp = useRef(false); // Track if user is signing up
 
   // Auth State
   const [user, setUser] = useState(null);
@@ -769,15 +772,25 @@ const App = () => {
         return;
       }
 
-      // 2. Subsequent Auth Changes (Manual Login/Logout)
+      // 2. Subsequent Auth Changes (Manual Login/Logout/Signup)
       if (currentUser && !currentUser.isAnonymous) {
-        // User just logged in manually
-        console.log('✅ Manual Login: Showing toast then redirecting...');
-        setShowLoginToast(true);
-        setTimeout(() => {
-          setShowLoginToast(false);
-          setStep(5);
-        }, 2000);
+        // User just authenticated
+        if (isSigningUp.current) {
+          console.log('🎉 Signup Success: Showing welcome toast then redirecting...');
+          setShowSignupToast(true);
+          setTimeout(() => {
+            setShowSignupToast(false);
+            setStep(5);
+            isSigningUp.current = false; // Reset
+          }, 2000);
+        } else {
+          console.log('✅ Manual Login: Retrieving user data and showing toast...');
+          setShowLoginToast(true);
+          setStep(5); // Immediate redirect to feed to prevent login form flash
+          setTimeout(() => {
+            setShowLoginToast(false);
+          }, 2000);
+        }
       } else {
         // User logged out
         setStep(0);
@@ -797,9 +810,15 @@ const App = () => {
     };
   }, []); // Run ONCE on mount
 
-  // Separate effect for User Data Subscription
+  // Separate effect for User Data Subscription & Safety Redirect
   useEffect(() => {
     if (user && !user.isAnonymous) {
+      // Safety Redirect: If user is logged in but stuck on Login Page (0) or Auth Gate (4.5), go to Feed (5)
+      if (step === 0 || step === 4.5) {
+        console.log("⚠️ State Mismatch detected: User logged in but on Step 0/4.5. Forcing redirect to Feed.");
+        setStep(5);
+      }
+
       const unsubscribeUserData = subscribeToUserData(user.uid, ({ likes, bookmarks, preferences }) => {
         setLikedNewsIds(new Set(likes));
         setSavedNewsItems(bookmarks);
@@ -826,7 +845,7 @@ const App = () => {
       setSavedNewsIds(new Set());
       setLikedNewsIds(new Set());
     }
-  }, [user]);
+  }, [user, step]); // Added step to dependencies
 
   const handleLogin = async () => {
     try {
@@ -1134,23 +1153,14 @@ const App = () => {
 
   // 0. Login Page (for logged-out users)
   if (step === 0) {
+    // If login success toast is active, show ONLY the toast on a background
     return (
       <>
         <AuthPage
           onAuthSuccess={() => { }} // Logic handled by onAuthStateChanged listener
           onSignupClick={() => setStep(1)} // Go to onboarding for new users
+          onSignupStart={() => isSigningUp.current = true}
         />
-        {/* Login Success Toast (Must be rendered here because of early return) */}
-        {showLoginToast && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
-            <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300">
-              <div className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center mb-1">
-                <PartyPopper className="w-10 h-10 text-blue-400 animate-bounce" strokeWidth={2} />
-              </div>
-              <span className="text-white font-bold text-2xl">로그인 되었습니다!</span>
-            </div>
-          </div>
-        )}
       </>
     );
   }
@@ -1242,7 +1252,12 @@ const App = () => {
   // 4.5 Onboarding Auth Gate
   if (step === 4.5) {
     return (
-      <OnboardingAuth setStep={setStep} />
+      <>
+        <OnboardingAuth
+          setStep={setStep}
+          onSignupStart={() => isSigningUp.current = true}
+        />
+      </>
     );
   }
 
@@ -2153,20 +2168,6 @@ const App = () => {
         }}
       />
 
-      {/* Login Success Toast */}
-      {
-        showLoginToast && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
-            <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300">
-              <div className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center mb-1">
-                <PartyPopper className="w-10 h-10 text-blue-400 animate-bounce" strokeWidth={2} />
-              </div>
-              <span className="text-white font-bold text-2xl">로그인 되었습니다!</span>
-            </div>
-          </div>
-        )
-      }
-
       {/* Logout Toast */}
       {
         showLogoutToast && (
@@ -2204,6 +2205,33 @@ const App = () => {
         initialServices={savedPreferences.productServices}
         initialCore={savedPreferences.coreElements}
       />
+
+      {/* GLOBAL TOASTS - Rendered regardless of step */}
+
+      {/* Login Success Toast */}
+      {showLoginToast && (
+        <div className="fixed inset-0 z-[150] flex items-center justify-center pointer-events-none">
+          <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300 pointer-events-auto">
+            <div className="w-20 h-20 rounded-full bg-blue-500/20 flex items-center justify-center mb-1">
+              <PartyPopper className="w-10 h-10 text-blue-400 animate-bounce" strokeWidth={2} />
+            </div>
+            <span className="text-white font-bold text-2xl">로그인 되었습니다!</span>
+          </div>
+        </div>
+      )}
+
+      {/* Signup Success Toast */}
+      {showSignupToast && (
+        <div className="fixed inset-0 z-[150] flex items-center justify-center pointer-events-none">
+          <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300 pointer-events-auto">
+            <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-1">
+              <Check className="w-10 h-10 text-green-400 animate-bounce" strokeWidth={3} />
+            </div>
+            <span className="text-white font-bold text-2xl">회원가입 성공!</span>
+            <p className="text-white/60 text-sm">환영합니다! 곧 홈으로 이동합니다.</p>
+          </div>
+        </div>
+      )}
 
     </div >
   );

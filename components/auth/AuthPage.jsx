@@ -31,7 +31,7 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupClick }) => {
+const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupClick, onSignupStart }) => {
     const [isSignUp, setIsSignUp] = useState(false); // Toggle between Login and Signup
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -58,6 +58,7 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
 
         try {
             if (isSignUp) {
+                if (onSignupStart) onSignupStart();
                 await signUpWithEmail(email, password, name);
             } else {
                 await signInWithEmail(email, password);
