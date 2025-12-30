@@ -1276,15 +1276,15 @@ const App = () => {
       {/* Desktop Sidebar - Hidden on mobile */}
       <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 bg-[#0d1117]/95 backdrop-blur-xl border-r border-white/5 z-40 flex-col sidebar">
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-white/5">
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="App Logo" className="w-12 h-12 rounded-xl object-contain shadow-[0_0_20px_rgba(59,130,246,0.3)]" />
-            <div>
-              <h1 className="text-lg font-bold tracking-tight">
+        <div className="p-6">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="App Logo" className="w-12 h-12 rounded-xl object-contain shadow-[0_0_20px_rgba(59,130,246,0.3)]" />
+              <h1 className="text-[20px] font-bold tracking-tight">
                 <span className="gradient-text">AI</span> 1분 트렌드
               </h1>
-              <p className="text-[10px] text-white/40">AI 트렌드를 1분 안에</p>
             </div>
+            <p className="text-[14px] text-white/40 pl-1">AI 트렌드를 1분 안에</p>
           </div>
         </div>
 
