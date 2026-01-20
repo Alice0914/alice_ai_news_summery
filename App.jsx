@@ -1753,7 +1753,7 @@ const App = () => {
               <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 group transition-colors hover:bg-white/10">
                 <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 shrink-0">
                   {user.photoURL ? (
-                    <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
+                    <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                       <User className="w-5 h-5 text-white" />
@@ -1849,7 +1849,7 @@ const App = () => {
                         onClick={() => setActiveTab('profile')}
                         className="w-9 h-9 rounded-full overflow-hidden border border-white/10 shadow-lg relative ml-2 lg:hidden"
                       >
-                        <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
+                        <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                       </button>
                     ) : (
                       <button
@@ -2021,7 +2021,7 @@ const App = () => {
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-[2px] mb-4 shadow-lg shadow-blue-500/20">
                     <div className="w-full h-full rounded-full bg-[#101922] flex items-center justify-center overflow-hidden relative group">
                       {user?.photoURL ? (
-                        <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" />
+                        <img src={user.photoURL} alt="Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                       ) : (
                         <User className="w-10 h-10 text-white/80" />
                       )}
