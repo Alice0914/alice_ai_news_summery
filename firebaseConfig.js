@@ -235,8 +235,10 @@ export const logUserAccess = async () => {
             console.error('❌ Firestore permission denied. Check your Firestore security rules.');
             console.error('   You need to allow writes to the "user_log" collection.');
             console.error('   Example rule: allow write: if true; (for testing only)');
+        } else {
+            console.error("Error logging user access:", error);
         }
-        throw error;
+        // Do not re-throw to prevent app crash
     }
 };
 
@@ -411,7 +413,7 @@ export const saveBookmark = async (userId, newsItem) => {
         });
     } catch (error) {
         console.error('Error saving bookmark:', error);
-        throw error;
+        // throw error; // Prevent crash
     }
 };
 
@@ -437,7 +439,7 @@ export const removeBookmark = async (userId, newsId) => {
         });
     } catch (error) {
         console.error('Error removing bookmark:', error);
-        throw error;
+        // throw error; // Prevent crash
     }
 };
 
@@ -460,6 +462,10 @@ export const subscribeToUserData = (userId, callback) => {
         } else {
             callback({ likes: [], bookmarks: [], preferences: null });
         }
+    }, (error) => {
+        console.error("Error subscribing to user data:", error);
+        // Optionally callback with empty data or handle error state
+        callback({ likes: [], bookmarks: [], preferences: null });
     });
 };
 
@@ -477,11 +483,9 @@ export const saveUserPreferences = async (userId, preferences) => {
         console.log('✅ User preferences saved:', preferences);
     } catch (error) {
         console.error('Error saving preferences:', error);
-        throw error;
+        // throw error; // Prevent crash
     }
 };
-
-
 
 /**
  * Toggle Like on a news item (Transaction)
@@ -558,7 +562,7 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
         console.log(`Like toggled successfully.`);
     } catch (error) {
         console.error("Transaction failed: ", error);
-        throw error;
+        // throw error; // Prevent crash
     }
 };
 /**

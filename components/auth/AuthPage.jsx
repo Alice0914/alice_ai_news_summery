@@ -32,16 +32,36 @@ const LinkedInIcon = () => (
     </svg>
 );
 
+import { useTranslation } from 'react-i18next'; // Added
+
+// ... (icons remain same)
+
 const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupClick, onSignupStart }) => {
-    const [isSignUp, setIsSignUp] = useState(false); // Toggle between Login and Signup
+    const { t } = useTranslation();
+    // 'login' | 'signup' | 'reset'
+    const [authMode, setAuthMode] = useState('login');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
 
     // Determine if this is standalone page mode or modal mode
     const isStandalone = !onClose;
+
+    // Reset state when modal closes or opens
+    React.useEffect(() => {
+        if (!isOpen) {
+            // Reset when closed
+            setAuthMode('login');
+            setEmail('');
+            setPassword('');
+            setName('');
+            setError(null);
+            setSuccessMessage('');
+        }
+    }, [isOpen]);
 
     // If modal mode and not open, return null
     if (!isStandalone && !isOpen) return null;
@@ -55,16 +75,25 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
+        setSuccessMessage('');
         setLoading(true);
 
         try {
-            if (isSignUp) {
+            if (authMode === 'reset') {
+                if (!email) {
+                    throw new Error(t('enter_email_reset'));
+                }
+                await sendResetEmail(email);
+                setSuccessMessage(t('reset_email_sent'));
+            } else if (authMode === 'signup') {
                 if (onSignupStart) onSignupStart();
                 await signUpWithEmail(email, password, name);
+                handleAuthComplete();
             } else {
+                // login
                 await signInWithEmail(email, password);
+                handleAuthComplete();
             }
-            handleAuthComplete();
         } catch (err) {
             setError(err.message);
         } finally {
@@ -87,22 +116,8 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
         }
     };
 
-    const handlePasswordReset = async () => {
-        if (!email) {
-            setError("비밀번호 재설정 링크를 받으려면 이메일을 입력해주세요.");
-            return;
-        }
-        setError(null);
-        setLoading(true);
-        try {
-            await sendResetEmail(email);
-            alert(`비밀번호 재설정 이메일을 ${email}로 보냈습니다.\n\n[체크포인트]\n1. 스팸 메일함을 꼭 확인해주세요.\n2. 구글/소셜 로그인 사용자는 비밀번호 재설정이 불가능합니다.`);
-        } catch (err) {
-            setError("이메일 전송에 실패했습니다. 올바른 이메일인지 확인해주세요.");
-        } finally {
-            setLoading(false);
-        }
-    };
+    const isResetMode = authMode === 'reset';
+    const isSignUp = authMode === 'signup';
 
     return (
         <div className={isStandalone ? "min-h-[100dvh] bg-[#0f111a] flex items-center justify-center p-4" : "fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"}>
@@ -122,38 +137,45 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                     {/* Welcome Text */}
                     <div className="mb-6 text-center">
                         <h2 className="text-xl font-bold mb-2 text-white">
-                            {isSignUp ? '계정 생성' : '로그인'}
+                            {isResetMode ? t('forgot_password') : (isSignUp ? t('create_account') : t('sign_in'))}
                         </h2>
-                        <p className="text-white/60 text-sm">
-                            당신만의 AI 뉴스를 확인하려면 로그인하세요.
+                        <p className={`text-white/60 text-sm ${isResetMode ? 'whitespace-nowrap' : ''}`}>
+                            {isResetMode ? t('enter_email_reset') : t('auth_subtitle')}
                         </p>
                     </div>
 
-                    {/* Error Message */}
+                    {/* Error / Success Message */}
                     {error && (
                         <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-200 text-xs flex items-start gap-2">
                             <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
                             <span>{error}</span>
                         </div>
                     )}
+                    {successMessage && (
+                        <div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-green-200 text-xs flex items-start gap-2">
+                            <Check className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                            <span>{successMessage}</span>
+                        </div>
+                    )}
 
-                    {/* Social Buttons (Google First) */}
-                    <button
-                        onClick={() => handleSocialLogin('google')}
-                        className="w-full py-3 mb-4 rounded-xl bg-white text-black font-bold text-sm shadow-lg hover:bg-gray-100 transition-all flex items-center justify-center gap-2"
-                    >
-                        <GoogleIcon />
-                        <span>Google로 {isSignUp ? '계속하기' : '로그인'}</span>
-                    </button>
+                    {/* Social Buttons (Hidden in Reset Mode) */}
+                    {!isResetMode && (
+                        <>
+                            <button
+                                onClick={() => handleSocialLogin('google')}
+                                className="w-full py-3 mb-4 rounded-xl bg-white text-black font-bold text-sm shadow-lg hover:bg-gray-100 transition-all flex items-center justify-center gap-2"
+                            >
+                                <GoogleIcon />
+                                <span>{isSignUp ? t('continue_with_google') : t('signin_with_google')}</span>
+                            </button>
 
-
-
-                    {/* Divider */}
-                    <div className="relative flex py-2 items-center mb-4">
-                        <div className="flex-grow border-t border-white/10"></div>
-                        <span className="flex-shrink-0 mx-3 text-white/30 text-[10px]">또는 이메일로 {isSignUp ? '가입' : '로그인'}</span>
-                        <div className="flex-grow border-t border-white/10"></div>
-                    </div>
+                            <div className="relative flex py-2 items-center mb-4">
+                                <div className="flex-grow border-t border-white/10"></div>
+                                <span className="flex-shrink-0 mx-3 text-white/30 text-[10px]">{isSignUp ? t('or_signup_email') : t('or_signin_email')}</span>
+                                <div className="flex-grow border-t border-white/10"></div>
+                            </div>
+                        </>
+                    )}
 
                     {/* Form */}
                     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -165,8 +187,8 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
-                                    placeholder="이름"
-                                    required
+                                    placeholder={t('name_placeholder')}
+                                    required={isSignUp}
                                 />
                             </div>
                         )}
@@ -178,31 +200,37 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
-                                placeholder="이메일"
+                                placeholder={t('email_placeholder')}
                                 required
                             />
                         </div>
 
-                        <div className="relative">
-                            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
-                                placeholder="비밀번호"
-                                required
-                            />
-                        </div>
+                        {!isResetMode && (
+                            <div className="relative">
+                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                                <input
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
+                                    placeholder={t('password_placeholder')}
+                                    required
+                                />
+                            </div>
+                        )}
 
-                        {!isSignUp && (
+                        {!isResetMode && !isSignUp && (
                             <div className="flex justify-center">
                                 <button
                                     type="button"
-                                    onClick={handlePasswordReset}
+                                    onClick={() => {
+                                        setAuthMode('reset');
+                                        setError(null);
+                                        setSuccessMessage('');
+                                    }}
                                     className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
                                 >
-                                    비밀번호를 잊으셨나요?
+                                    {t('forgot_password')}
                                 </button>
                             </div>
                         )}
@@ -212,28 +240,40 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                             disabled={loading}
                             className="w-full py-3 mt-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30 font-bold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            {loading ? '처리중...' : (isSignUp ? '이메일로 가입하기' : '이메일로 로그인')}
+                            {loading ? t('processing') : (isResetMode ? t('send_reset_link') : (isSignUp ? t('signup_with_email') : t('signin_with_email')))}
                         </button>
                     </form>
 
-                    {/* Switch Toggle */}
+                    {/* Switch Toggle or Back Button */}
                     <div className="mt-4 text-center">
-                        <p className="text-white/40 text-xs">
-                            {isSignUp ? '계정이 있으신가요?' : '계정이 없으신가요?'}
+                        {isResetMode ? (
                             <button
                                 onClick={() => {
-                                    // If in standalone mode and clicking signup, go to onboarding
-                                    if (isStandalone && !isSignUp && onSignupClick) {
-                                        onSignupClick();
-                                    } else {
-                                        setIsSignUp(!isSignUp);
-                                    }
+                                    setAuthMode('login');
+                                    setError(null);
+                                    setSuccessMessage('');
                                 }}
-                                className="ml-2 text-blue-400 hover:text-blue-300 font-bold transition-colors"
+                                className="text-white/40 hover:text-white text-xs transition-colors"
                             >
-                                {isSignUp ? '로그인' : '회원가입'}
+                                {t('back_to_login')}
                             </button>
-                        </p>
+                        ) : (
+                            <p className="text-white/40 text-xs">
+                                {isSignUp ? t('already_have_account') : t('dont_have_account')}
+                                <button
+                                    onClick={() => {
+                                        if (isStandalone && !isSignUp && onSignupClick) {
+                                            onSignupClick();
+                                        } else {
+                                            setAuthMode(isSignUp ? 'login' : 'signup');
+                                        }
+                                    }}
+                                    className="ml-2 text-blue-400 hover:text-blue-300 font-bold transition-colors"
+                                >
+                                    {isSignUp ? t('sign_in') : t('signup')}
+                                </button>
+                            </p>
+                        )}
                     </div>
 
                 </div>

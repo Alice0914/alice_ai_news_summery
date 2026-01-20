@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, ArrowLeft, Sparkles } from 'lucide-react';
+import { X, Check, ArrowLeft, Sparkles, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PreferencesPage - Dedicated page for editing user preferences.
@@ -14,11 +15,14 @@ const PreferencesPage = ({
     coreElements,
     initialCategories = [],
     initialServices = [],
-    initialCore = []
+    initialCore = [],
+    initialLanguage = 'en'
 }) => {
+    const { t, i18n } = useTranslation();
     const [selectedCategories, setSelectedCategories] = useState(initialCategories);
     const [selectedServices, setSelectedServices] = useState(initialServices);
     const [selectedCore, setSelectedCore] = useState(initialCore);
+    const [selectedLanguage, setSelectedLanguage] = useState(initialLanguage);
 
     // Reset to initial values when modal opens
     useEffect(() => {
@@ -26,8 +30,9 @@ const PreferencesPage = ({
             setSelectedCategories(initialCategories);
             setSelectedServices(initialServices);
             setSelectedCore(initialCore);
+            setSelectedLanguage(initialLanguage);
         }
-    }, [isOpen, initialCategories, initialServices, initialCore]);
+    }, [isOpen, initialCategories, initialServices, initialCore, initialLanguage]);
 
     const handleToggle = (setter, current, id) => {
         if (current.includes(id)) {
@@ -41,7 +46,10 @@ const PreferencesPage = ({
         onSave({
             categories: selectedCategories,
             productServices: selectedServices,
-            coreElements: selectedCore
+            categories: selectedCategories,
+            productServices: selectedServices,
+            coreElements: selectedCore,
+            language: selectedLanguage
         });
         onClose();
     };
@@ -59,19 +67,52 @@ const PreferencesPage = ({
                     </button>
                     <h2 className="text-lg font-bold text-white flex items-center gap-2">
                         <Sparkles className="w-5 h-5 text-blue-400" />
-                        내 기본 설정
+                        {t('preferences')}
                     </h2>
                     <div className="w-9" /> {/* Spacer for balance */}
                 </div>
 
                 {/* Content */}
                 <div className="p-4 space-y-6">
+                    {/* Language Section */}
+                    <section>
+                        <h3 className="text-sm font-bold text-white/80 mb-3 flex items-center gap-2">
+                            <Globe className="w-5 h-5 text-white/60" />
+                            {t('language')}
+                        </h3>
+                        <div className="flex gap-2 bg-white/5 p-1 rounded-xl border border-white/10">
+                            <button
+                                onClick={() => {
+                                    i18n.changeLanguage('en');
+                                    setSelectedLanguage('en');
+                                }}
+                                className={`flex-1 py-1.5 rounded-lg text-[10px] font-medium transition-all flex items-center justify-center gap-2 ${selectedLanguage === 'en'
+                                    ? 'bg-blue-600 text-white shadow-lg'
+                                    : 'text-white/40 hover:text-white/60'
+                                    }`}
+                            >
+                                <span className="text-xs">🇺🇸</span> {t('english')}
+                            </button>
+                            <button
+                                onClick={() => {
+                                    i18n.changeLanguage('ko');
+                                    setSelectedLanguage('ko');
+                                }}
+                                className={`flex-1 py-1.5 rounded-lg text-[10px] font-medium transition-all flex items-center justify-center gap-2 ${selectedLanguage === 'ko'
+                                    ? 'bg-blue-600 text-white shadow-lg'
+                                    : 'text-white/40 hover:text-white/60'
+                                    }`}
+                            >
+                                <span className="text-xs">🇰🇷</span> {t('korean')}
+                            </button>
+                        </div>
+                    </section>
 
                     {/* Categories Section */}
                     <section>
                         <h3 className="text-sm font-bold text-white/80 mb-3 flex items-center gap-2">
                             <span className="w-1.5 h-5 rounded-full bg-blue-500"></span>
-                            관심 분야
+                            {t('interests')}
                         </h3>
                         <div className="flex flex-wrap gap-1.5">
                             {categories.map(item => (
@@ -84,7 +125,7 @@ const PreferencesPage = ({
                                         }`}
                                 >
                                     {item.icon && <item.icon className="w-3 h-3 inline mr-1" />}
-                                    {item.label}
+                                    {t(item.id)}
                                     {selectedCategories.includes(item.id) && <Check className="w-2.5 h-2.5 inline ml-1" />}
                                 </button>
                             ))}
@@ -95,7 +136,7 @@ const PreferencesPage = ({
                     <section>
                         <h3 className="text-sm font-bold text-white/80 mb-3 flex items-center gap-2">
                             <span className="w-1.5 h-5 rounded-full bg-purple-500"></span>
-                            AI 서비스
+                            {t('ai_services')}
                         </h3>
                         <div className="flex flex-wrap gap-1.5">
                             {productServices.map(item => (
@@ -108,7 +149,7 @@ const PreferencesPage = ({
                                         }`}
                                 >
                                     {item.icon && <item.icon className="w-3 h-3 inline mr-1" />}
-                                    {item.label}
+                                    {t(item.id)}
                                     {selectedServices.includes(item.id) && <Check className="w-2.5 h-2.5 inline ml-1" />}
                                 </button>
                             ))}
@@ -119,7 +160,7 @@ const PreferencesPage = ({
                     <section>
                         <h3 className="text-sm font-bold text-white/80 mb-3 flex items-center gap-2">
                             <span className="w-1.5 h-5 rounded-full bg-emerald-500"></span>
-                            핵심 요소
+                            {t('core_elements')}
                         </h3>
                         <div className="flex flex-wrap gap-1.5">
                             {coreElements.map(item => (
@@ -132,7 +173,7 @@ const PreferencesPage = ({
                                         }`}
                                 >
                                     {item.icon && <item.icon className="w-3 h-3 inline mr-1" />}
-                                    {item.label}
+                                    {t(item.id)}
                                     {selectedCore.includes(item.id) && <Check className="w-2.5 h-2.5 inline ml-1" />}
                                 </button>
                             ))}
@@ -148,7 +189,7 @@ const PreferencesPage = ({
                         className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-sm transition-all shadow-lg shadow-blue-900/30 flex items-center justify-center gap-2"
                     >
                         <Check className="w-5 h-5" />
-                        설정 완료
+                        {t('save_preferences')}
                     </button>
                 </div>
 

@@ -33,7 +33,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
             // Success handled by main App.jsx listener
         } catch (err) {
             console.error(err);
-            setError('Google 로그인 실패. 다시 시도해주세요.');
+            setError('Google Sign-In failed. Please try again.');
         } finally {
             setLoading(false);
         }
@@ -61,13 +61,13 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
         } catch (err) {
             console.error(err);
             if (err.code === 'auth/email-already-in-use') {
-                setError('이미 사용 중인 이메일입니다.');
+                setError('Email is already in use.');
             } else if (err.code === 'auth/weak-password') {
-                setError('비밀번호는 6자리 이상이어야 합니다.');
+                setError('Password should be at least 6 characters.');
             } else if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password') {
-                setError('이메일 또는 비밀번호가 올바르지 않습니다.');
+                setError('Invalid email or password.');
             } else {
-                setError('오류가 발생했습니다. 다시 시도해주세요.');
+                setError('An error occurred. Please try again.');
             }
         } finally {
             setLoading(false);
@@ -81,10 +81,10 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                 {/* Header */}
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-white mb-2">
-                        {isLogin ? '로그인' : '회원가입'}
+                        {isLogin ? 'Sign In' : 'Sign Up'}
                     </h2>
                     <p className="text-slate-400">
-                        {isLogin ? '계정에 로그인하여 시작하세요' : '1분이면 충분합니다. 지금 시작하세요!'}
+                        {isLogin ? 'Sign in to your account to continue' : 'It only takes a minute. Start now!'}
                     </p>
                 </div>
 
@@ -103,7 +103,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                             <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.24-1.19-2.5-3.66 2.84z" />
                             <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                         </svg>
-                        Google로 계속하기
+                        Continue with Google
                     </button>
 
                     <div className="relative mb-6">
@@ -118,14 +118,14 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                     <form onSubmit={handleEmailAuth} className="space-y-4">
                         {!isLogin && (
                             <div>
-                                <label className="block text-xs font-semibold text-slate-400 mb-1 ml-1">이름</label>
+                                <label className="block text-xs font-semibold text-slate-400 mb-1 ml-1">Name</label>
                                 <div className="relative">
                                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
                                     <input
                                         type="text"
                                         required
                                         className="w-full bg-black/20 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-white placeholder-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all"
-                                        placeholder="홍길동"
+                                        placeholder="Minzy"
                                         value={name}
                                         onChange={e => setName(e.target.value)}
                                     />
@@ -134,7 +134,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                         )}
 
                         <div>
-                            <label className="block text-xs font-semibold text-slate-400 mb-1 ml-1">이메일</label>
+                            <label className="block text-xs font-semibold text-slate-400 mb-1 ml-1">Email</label>
                             <div className="relative">
                                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
                                 <input
@@ -149,7 +149,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                         </div>
 
                         <div>
-                            <label className="block text-xs font-semibold text-slate-400 mb-1 ml-1">비밀번호</label>
+                            <label className="block text-xs font-semibold text-slate-400 mb-1 ml-1">Password</label>
                             <div className="relative">
                                 <ShieldCheck className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
                                 <input
@@ -180,7 +180,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                             ) : (
                                 <>
                                     <Check className="w-5 h-5" />
-                                    {isLogin ? '로그인' : '계정 만들기'}
+                                    {isLogin ? 'Sign In' : 'Create Account'}
                                 </>
                             )}
                         </button>
@@ -193,9 +193,9 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                             className="text-slate-400 text-sm hover:text-white transition-colors"
                         >
                             {isLogin ? (
-                                <>계정이 없으신가요? <span className="text-blue-400 font-bold ml-1">회원가입</span></>
+                                <>Don't have an account? <span className="text-blue-400 font-bold ml-1">Sign Up</span></>
                             ) : (
-                                <>이미 계정이 있으신가요? <span className="text-blue-400 font-bold ml-1">로그인</span></>
+                                <>Already have an account? <span className="text-blue-400 font-bold ml-1">Sign In</span></>
                             )}
                         </button>
                     </div>
@@ -203,13 +203,15 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                 </div>
 
                 {/* Back Button */}
-                <button
-                    onClick={() => setStep(3)} // Use prop or history back
-                    className="w-full mt-6 py-3 text-slate-500 hover:text-slate-300 transition-colors flex items-center justify-center gap-2 text-sm"
-                >
-                    <ArrowLeft className="w-4 h-4" />
-                    이전 단계로
-                </button>
+                <div className="mt-6 text-center">
+                    <button
+                        onClick={() => setStep(3)} // Use prop or history back
+                        className="w-full py-3 text-slate-500 hover:text-slate-300 transition-colors flex items-center justify-center gap-2 text-sm"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        Go Back
+                    </button>
+                </div>
 
             </div>
         </div>
