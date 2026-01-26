@@ -7,7 +7,7 @@ import {
   Cpu, Coffee, Shield, Bot, Lightbulb, Zap,
   FileText, Image as ImageIcon, Film, Mic, Sparkles, Workflow, Layers, Code,
   Smartphone, Watch, Database, Share2, Server, ShieldCheck, MessageSquare, Heart, PartyPopper, LogOut,
-  Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn // Added icons
+  Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List // Added icons
 } from 'lucide-react';
 
 // import MOCK_NEWS_DATA from './data/final_data_ko.json';
@@ -359,14 +359,21 @@ const LanguageSelectionStep = ({ onNext, onPrev, onSkip }) => {
 
 // 2. Feature News Card (Top 5) with Visuals
 const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLike, isLiked, selectedInterests, selectedServices, selectedCore, onNext, onPrev, current, total }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // Helper: Convert English tag to Korean if language is 'ko'
+  const getLocalizedTag = (tag) => {
+    if (i18n.language !== 'ko') return tag; // English: use as-is from Firebase
+    return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
+  };
+
   // Logic to determine which category/service/core to show on the badge (top left)
   // Priority: 1. Matching Category 2. Matching Service 3. Matching Core Element 4. Default Category
   const displayCategory =
     (news.categories || []).find(cat => selectedInterests?.includes(cat)) ||
     (news.productServices || []).find(svc => selectedServices?.includes(svc)) ||
     (news.coreElements || []).find(core => selectedCore?.includes(core)) ||
-    news.categories?.[0] || 'AI News';
+    news.categories?.[0] || t('ai_news_fallback');
 
   // Logic for tags: Show all categories/services/core EXCEPT the one displayed on the badge
   const otherCategories = (news.categories || []).filter(cat => cat !== displayCategory);
@@ -404,7 +411,7 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
           />
           <div className="absolute top-3 left-3 z-20">
             <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-600/90 text-white backdrop-blur-sm shadow-[0_0_15px_rgba(19,127,236,0.5)]">
-              {displayCategory}
+              {getLocalizedTag(displayCategory)}
             </span>
           </div>
 
@@ -454,17 +461,17 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
           <div className="flex flex-wrap gap-2 mt-auto pt-2">
             {otherCategories.map(cat => (
               <span key={cat} className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-medium border border-blue-500/20">
-                {cat}
+                {getLocalizedTag(cat)}
               </span>
             ))}
             {otherServices.map(id => (
               <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
-                {id}
+                {getLocalizedTag(id)}
               </span>
             ))}
             {otherCore.map(id => (
               <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
-                {id}
+                {getLocalizedTag(id)}
               </span>
             ))}
           </div>
@@ -494,7 +501,7 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
                 rel="noopener noreferrer"
                 className="ml-2 px-4 py-1.5 rounded-lg bg-white/10 hover:bg-blue-600/20 hover:text-blue-400 text-white text-sm font-medium transition-colors border border-white/5 flex items-center gap-1"
               >
-                {t('read_more')} <ArrowRight className="w-4 h-4" />
+                {i18n.language === 'ko' ? '출처' : 'Source'} <ArrowRight className="w-4 h-4" />
               </a>
             )}
           </div>
@@ -507,7 +514,14 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
 
 // 3. Simple News List Item (Text Only)
 const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, onToggleLike, isLiked, selectedInterests, selectedServices, selectedCore }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // Helper: Convert English tag to Korean if language is 'ko'
+  const getLocalizedTag = (tag) => {
+    if (i18n.language !== 'ko') return tag; // English: use as-is from Firebase
+    return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
+  };
+
   // Logic to determine which category/service/core to show on the badge (top left)
   const displayCategory =
     (news.categories || []).find(cat => selectedInterests?.includes(cat)) ||
@@ -532,7 +546,7 @@ const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, 
         <div className="flex-1 cursor-pointer" onClick={onToggle}>
           <div className="flex items-center gap-2 mb-1.5">
             <span className="text-[10px] font-bold text-blue-400 tracking-wide uppercase">
-              {displayCategory}
+              {getLocalizedTag(displayCategory)}
             </span>
             <span className="w-1 h-1 rounded-full bg-white/20"></span>
             <span className="text-[10px] text-white/40">{news.publishedDate}</span>
@@ -567,17 +581,17 @@ const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, 
           <div className="flex flex-wrap gap-2 mb-4">
             {otherCategories.map(cat => (
               <span key={cat} className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-medium border border-blue-500/20">
-                {cat}
+                {getLocalizedTag(cat)}
               </span>
             ))}
             {otherServices.map(id => (
               <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
-                {id}
+                {getLocalizedTag(id)}
               </span>
             ))}
             {otherCore.map(id => (
               <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
-                {id}
+                {getLocalizedTag(id)}
               </span>
             ))}
           </div>
@@ -721,8 +735,14 @@ const FilterPage = ({
   selectedServices, setSelectedServices,
   selectedCore, setSelectedCore
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   if (!isOpen) return null;
+
+  // Helper: Convert English tag to Korean if language is 'ko'
+  const getLocalizedTag = (tag) => {
+    if (i18n.language !== 'ko') return tag; // English: use as-is
+    return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
+  };
 
   // Helpers for toggling
   const toggleSelection = (current, setter, id) => {
@@ -812,7 +832,7 @@ const FilterPage = ({
                         : 'bg-white/5 border-white/5 text-white/50 hover:bg-white/10'}
                     `}
                   >
-                    <span className="text-xs font-medium">{t(item.id)}</span>
+                    <span className="text-xs font-medium">{getLocalizedTag(item.id)}</span>
                   </button>
                 );
               })}
@@ -839,7 +859,7 @@ const FilterPage = ({
                         : 'bg-white/5 border-white/10 text-white/50 hover:bg-white/10'}
                     `}
                   >
-                    {t(item.id)}
+                    {getLocalizedTag(item.id)}
                   </button>
                 );
               })}
@@ -867,7 +887,7 @@ const FilterPage = ({
                     `}
                   >
                     {item.icon && <item.icon className="w-3 h-3" />}
-                    {t(item.id)}
+                    {getLocalizedTag(item.id)}
                     {isSelected && <Check className="w-2.5 h-2.5" />}
                   </button>
                 );
@@ -1032,17 +1052,17 @@ const App = () => {
             i18n.changeLanguage(preferences.language);
           }
           setSavedPreferences({
-            categories: migrateIds(preferences.categories || [], CATEGORY_ID_MAP),
-            productServices: migrateIds(preferences.productServices || [], SERVICE_ID_MAP),
-            coreElements: migrateIds(preferences.coreElements || [], CORE_ID_MAP),
+            categories: preferences.categories || [],
+            productServices: preferences.productServices || [],
+            coreElements: preferences.coreElements || [],
             language: preferences.language || 'en'
           });
 
           if (!hasInitializedFilters.current) {
             hasInitializedFilters.current = true;
-            if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP));
-            if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP));
-            if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP));
+            if (preferences.categories) setSelectedInterests(preferences.categories);
+            if (preferences.productServices) setSelectedServices(preferences.productServices);
+            if (preferences.coreElements) setSelectedCore(preferences.coreElements);
           }
         }
       });
@@ -1141,14 +1161,32 @@ const App = () => {
       return;
     }
 
+    const isSaved = savedNewsIds.has(newsItem.id);
+
+    // Optimistic Update
+    const newSavedIds = new Set(savedNewsIds);
+    let newSavedItems = [...savedNewsItems];
+
+    if (isSaved) {
+      newSavedIds.delete(newsItem.id);
+      newSavedItems = newSavedItems.filter(item => item.id !== newsItem.id);
+    } else {
+      newSavedIds.add(newsItem.id);
+      newSavedItems.push(newsItem);
+    }
+
+    setSavedNewsIds(newSavedIds);
+    setSavedNewsItems(newSavedItems);
+
     try {
-      if (savedNewsIds.has(newsItem.id)) {
+      if (isSaved) {
         await removeBookmark(user.uid, newsItem.id);
       } else {
         await saveBookmark(user.uid, newsItem);
       }
     } catch (error) {
       console.error("Failed to toggle bookmark", error);
+      // Revert on error could be implemented here
     }
   };
 
@@ -1213,7 +1251,7 @@ const App = () => {
       try {
         console.log(`Fetching news for months: ${targetDocs.join(', ')}...`);
 
-        const fetchPromises = targetDocs.map(id => getDoc(doc(db, 'news_data', id)));
+        const fetchPromises = targetDocs.map(id => getDoc(doc(db, 'news_feeds', id)));
         const snapshots = await Promise.all(fetchPromises);
 
         let allNews = [];
@@ -1234,13 +1272,8 @@ const App = () => {
         // Remove duplicates just in case (though unlikely with distinct docs)
         let uniqueNews = Array.from(new Map(allNews.map(item => [item.id, item])).values());
 
-        // Migrate tags for backward compatibility with old English data
-        uniqueNews = uniqueNews.map(news => ({
-          ...news,
-          categories: migrateIds(news.categories || [], CATEGORY_ID_MAP),
-          productServices: migrateIds(news.productServices || [], SERVICE_ID_MAP),
-          coreElements: migrateIds(news.coreElements || [], CORE_ID_MAP),
-        }));
+        // Data is stored in English - no migration needed
+        // Localization to Korean happens at display time via getLocalizedTag()
 
         // Sort by date descending (optional here, as getFilteredNews handles it, but good for initial state)
         uniqueNews.sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
@@ -1296,7 +1329,15 @@ const App = () => {
   };
 
   const getFilteredNews = () => {
-    let filtered = [...currentNews];
+    // 0. Localize Data based on current language
+    const isKo = i18n.language === 'ko';
+    let filtered = currentNews.map(item => ({
+      ...item,
+      title: (isKo && item.title_ko) ? item.title_ko : item.title,
+      summary: (isKo && item.summary_ko) ? item.summary_ko : item.summary,
+      why_it_matters: (isKo && item.why_it_matters_ko) ? item.why_it_matters_ko : item.why_it_matters,
+      searchKeywords: (isKo && item.searchKeywords_ko) ? item.searchKeywords_ko : item.searchKeywords
+    }));
 
     // 1. Search Filter
     if (searchQuery.trim()) {
@@ -1522,9 +1563,15 @@ const App = () => {
     );
   }
 
-  const localizedCategories = DATA_CATEGORIES.map(item => ({ ...item, label: t(item.id) }));
-  const localizedServices = DATA_SERVICES.map(item => ({ ...item, label: t(item.id) }));
-  const localizedCore = DATA_CORE.map(item => ({ ...item, label: t(item.id) }));
+  // Helper for converting Onboarding items
+  const getLocalizedLabel = (tag) => {
+    if (i18n.language !== 'ko') return tag;
+    return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
+  };
+
+  const localizedCategories = DATA_CATEGORIES.map(item => ({ ...item, label: getLocalizedLabel(item.id) }));
+  const localizedServices = DATA_SERVICES.map(item => ({ ...item, label: getLocalizedLabel(item.id) }));
+  const localizedCore = DATA_CORE.map(item => ({ ...item, label: getLocalizedLabel(item.id) }));
 
   // 1.5 Language Selection
   if (step === 1.5) {
@@ -1605,12 +1652,18 @@ const App = () => {
   const displayNews = activeTab === 'saved' ? savedNewsItems : filteredNews;
 
   // Determine top news count based on date filter
-  // For monthly views (longer periods), show more top stories (10)
+  // For longer periods (monthly), show more top stories (10)
   // For daily/weekly views, show the standard amount (5)
   const topNewsCount = (dateFilter === 'this_month' || dateFilter === 'last_month') ? 10 : 5;
 
   const topNews = displayNews.slice(0, topNewsCount);
   const otherNews = displayNews.slice(topNewsCount);
+
+  // Helper: Convert English tag to Korean if language is 'ko'
+  const getLocalizedTag = (tag) => {
+    if (i18n.language !== 'ko') return tag; // English: use as-is from Firebase
+    return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
+  };
 
   const handleNextTop = () => {
     setCurrentTopIndex((prev) => (prev + 1) % topNews.length);
@@ -1618,6 +1671,37 @@ const App = () => {
 
   const handlePrevTop = () => {
     setCurrentTopIndex((prev) => (prev - 1 + topNews.length) % topNews.length);
+  };
+
+  const handleCopyAll = async () => {
+    const periodText = dateFilter.replace('_', ' ');
+    // Using simple bold characters for the header to match user request style
+    const header = `💡 Here are the Top ${topNews.length} important AI news stories of the ${periodText}`;
+
+    const itemsText = topNews.map((news, index) => {
+      // Create number emoji up to 10, fallback to number
+      const numEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
+      const numEmoji = numEmojis[index] || `${index + 1}️⃣`;
+
+      // Labels based on current language
+      const whyLabel = i18n.language === 'ko' ? '왜 중요한가' : 'Why it matters';
+      const sourceLabel = i18n.language === 'ko' ? '출처' : 'Source';
+
+      // Note: news.why_it_matters is already localized by getFilteredNews
+      const whyText = news.why_it_matters || '';
+
+      // Format: Title \n Number+Summary \n Why It Matters \n Source
+      return `${news.title}\n${numEmoji}${news.summary}\n➡️ ${whyLabel}: ${whyText}\n👉${sourceLabel}: ${news.sourceUrl}`;
+    }).join('\n\n');
+
+    const fullText = `${header}\n${itemsText}`;
+
+    try {
+      await navigator.clipboard.writeText(fullText);
+      alert(i18n.language === 'ko' ? '클립보드에 복사되었습니다!' : 'Copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy', err);
+    }
   };
 
   return (
@@ -2356,7 +2440,7 @@ const App = () => {
                                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#101922]/80"></div>
                                   <div className="absolute top-3 left-3">
                                     <span className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-blue-600/90 text-white">
-                                      {news.categories?.[0] || 'AI News'}
+                                      {getLocalizedTag(news.categories?.[0] || 'AI News')}
                                     </span>
                                   </div>
                                 </div>
@@ -2377,7 +2461,7 @@ const App = () => {
                         {/* Center Card - Full Focus */}
                         <div className="flex-shrink-0 w-[430px] scale-100 transition-all duration-500 z-10">
                           {(() => {
-                            const news = topNews[currentTopIndex];
+                            const news = topNews[currentTopIndex % topNews.length];
                             return (
                               <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[390px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
                                 {/* Image Fixed Height (Increased another 5%) */}
@@ -2390,10 +2474,10 @@ const App = () => {
                                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#101922]"></div>
                                   <div className="absolute top-3 left-3">
                                     <span className="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-lg shadow-blue-500/30">
-                                      {(news.categories || []).find(cat => selectedInterests.includes(cat)) ||
+                                      {getLocalizedTag((news.categories || []).find(cat => selectedInterests.includes(cat)) ||
                                         (news.productServices || []).find(svc => selectedServices.includes(svc)) ||
                                         (news.coreElements || []).find(core => selectedCore.includes(core)) ||
-                                        news.categories?.[0] || 'AI News'}
+                                        news.categories?.[0] || 'AI News')}
                                     </span>
                                   </div>
                                   <div className="absolute top-3 right-3">
@@ -2411,6 +2495,16 @@ const App = () => {
                                   <p className="text-sm text-white/60 leading-relaxed">
                                     {news.summary}
                                   </p>
+
+                                  <div className="mt-1 p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                                    <p className="text-[11px] font-bold text-blue-400 mb-1 uppercase tracking-wider">
+                                      <Sparkles className="w-3 h-3 inline-block mr-1" />
+                                      {i18n.language === 'ko' ? '왜 중요한가' : 'Why It Matters'}
+                                    </p>
+                                    <p className="text-xs text-white/80 leading-relaxed font-medium">
+                                      {news.why_it_matters}
+                                    </p>
+                                  </div>
                                   {/* Keywords */}
                                   <div className="flex flex-wrap gap-1.5 mt-auto">
                                     {(news.searchKeywords || []).slice(0, 4).map(k => (
@@ -2421,17 +2515,17 @@ const App = () => {
                                   <div className="flex flex-wrap gap-1.5">
                                     {(news.categories || []).filter(c => c !== ((news.categories || []).find(cat => selectedInterests.includes(cat)) || (news.productServices || []).find(svc => selectedServices.includes(svc)) || (news.coreElements || []).find(core => selectedCore.includes(core)) || news.categories?.[0] || 'AI News')).map(cat => (
                                       <span key={cat} className="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 text-[10px] font-medium border border-blue-500/20">
-                                        {cat}
+                                        {getLocalizedTag(cat)}
                                       </span>
                                     ))}
                                     {(news.productServices || []).filter(s => s !== ((news.categories || []).find(cat => selectedInterests.includes(cat)) || (news.productServices || []).find(svc => selectedServices.includes(svc)) || (news.coreElements || []).find(core => selectedCore.includes(core)) || news.categories?.[0] || 'AI News')).map(id => (
                                       <span key={id} className="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 text-[10px] font-medium border border-pink-500/20">
-                                        {id}
+                                        {getLocalizedTag(id)}
                                       </span>
                                     ))}
                                     {(news.coreElements || []).filter(c => c !== ((news.categories || []).find(cat => selectedInterests.includes(cat)) || (news.productServices || []).find(svc => selectedServices.includes(svc)) || (news.coreElements || []).find(core => selectedCore.includes(core)) || news.categories?.[0] || 'AI News')).map(id => (
                                       <span key={id} className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 text-[10px] font-medium border border-emerald-500/20">
-                                        {id}
+                                        {getLocalizedTag(id)}
                                       </span>
                                     ))}
                                   </div>
@@ -2463,7 +2557,7 @@ const App = () => {
                                         rel="noopener noreferrer"
                                         className="ml-1 px-3 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 text-xs font-medium transition-colors flex items-center gap-1"
                                       >
-                                        더 읽기 <ArrowRight className="w-3 h-3" />
+                                        {i18n.language === 'ko' ? '출처' : 'Source'} <ArrowRight className="w-3 h-3" />
                                       </a>
                                     )}
                                   </div>
@@ -2493,7 +2587,7 @@ const App = () => {
                                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#101922]/80"></div>
                                   <div className="absolute top-3 left-3">
                                     <span className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-blue-600/90 text-white">
-                                      {news.categories?.[0] || 'AI News'}
+                                      {getLocalizedTag(news.categories?.[0] || 'AI News')}
                                     </span>
                                   </div>
                                 </div>
@@ -2572,6 +2666,102 @@ const App = () => {
 
                   </>
                 )}
+              </section>
+
+              {/* NEW: Top News Text Summary List (Vertical - Unified) */}
+              <section className="mt-12 mb-16 px-1">
+                <div className="flex items-center gap-2 mb-6">
+                  <List className="w-5 h-5 text-blue-400" />
+                  <h2 className="text-xl font-bold text-white tracking-tight">
+                    {i18n.language === 'ko' ? '주요 뉴스 요약' : 'Summary List'}
+                  </h2>
+                </div>
+
+                <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-6 lg:p-8 relative overflow-hidden">
+                  {/* Decorative Background */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -z-10"></div>
+
+                  <div className="flex flex-col">
+                    {topNews.map((news, index) => (
+                      <div key={news.id} className="mb-8 last:mb-0 border-b border-white/5 last:border-0 pb-8 last:pb-0">
+                        <div className="flex items-start gap-4">
+                          <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm border border-blue-500/20">
+                            {index + 1}
+                          </span>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                              {news.title}
+                            </h3>
+                            <p className="text-white/70 text-sm leading-relaxed mb-3">
+                              {news.summary}
+                            </p>
+
+                            {/* Why It Matters */}
+                            {news.why_it_matters && (
+                              <div className="mb-3 pl-3 border-l-2 border-blue-500/30">
+                                <p className="text-xs font-bold text-blue-400 mb-0.5 uppercase tracking-wide">
+                                  {i18n.language === 'ko' ? '왜 중요한가' : 'Why it matters'}
+                                </p>
+                                <p className="text-sm text-white/80">
+                                  {news.why_it_matters}
+                                </p>
+                              </div>
+                            )}
+
+                            {/* Hashtags */}
+                            <div className="flex flex-wrap gap-2 mb-3">
+                              {(news.searchKeywords || []).map(k => (
+                                <span key={k} className="text-xs text-slate-500">#{k.replace(/\s+/g, '')}</span>
+                              ))}
+                            </div>
+
+                            {/* Simplified Actions Row */}
+                            <div className="flex items-center gap-4 mt-2">
+                              {/* Like/Save compact */}
+                              <div className="flex items-center gap-3">
+                                <button
+                                  onClick={() => handleToggleLike(news)}
+                                  className={`flex items-center gap-1.5 text-xs transition-colors ${likedNewsIds.has(news.id) ? 'text-rose-500' : 'text-slate-500 hover:text-slate-300'}`}
+                                >
+                                  <Heart className={`w-3.5 h-3.5 ${likedNewsIds.has(news.id) ? 'fill-current' : ''}`} />
+                                  {news.likes || 0}
+                                </button>
+                                <button
+                                  onClick={() => handleToggleSave(news)}
+                                  className={`flex items-center gap-1.5 text-xs transition-colors ${savedNewsIds.has(news.id) ? 'text-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
+                                >
+                                  <Bookmark className={`w-3.5 h-3.5 ${savedNewsIds.has(news.id) ? 'fill-current' : ''}`} />
+                                </button>
+                              </div>
+
+                              {news.sourceUrl && (
+                                <a
+                                  href={news.sourceUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs font-medium text-blue-400 hover:text-blue-300 flex items-center gap-1 ml-auto"
+                                >
+                                  {i18n.language === 'ko' ? '출처' : 'Source'} <ExternalLink className="w-3 h-3" />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Copy All Button - Inside the container, bottom */}
+                  <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
+                    <button
+                      onClick={handleCopyAll}
+                      className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-blue-500/20 hover:scale-105 transition-transform flex items-center gap-2"
+                    >
+                      <Copy className="w-5 h-5" />
+                      {i18n.language === 'ko' ? '전체 기사 복사하기' : 'Copy All Articles'}
+                    </button>
+                  </div>
+                </div>
               </section>
 
               {/* Section: Latest News List */}
