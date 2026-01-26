@@ -24,6 +24,7 @@ import {
 import OnboardingAuth from './components/auth/OnboardingAuth';
 import AuthPage from './components/auth/AuthPage';
 import PreferencesPage from './components/PreferencesPage'; // NEW: Dedicated preferences editor
+import AdminUpload from './components/AdminUpload'; // NEW: Admin Upload Page
 import { onAuthStateChanged, updateProfile } from 'firebase/auth'; // Added updateProfile
 import {
   db, auth, logUserAccess, signInWithGoogle, logout, saveBookmark,
@@ -895,6 +896,19 @@ const FilterPage = ({
 
 
 const App = () => {
+  // Simple Client-Side Routing for Admin
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handlePopState = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  if (currentPath === '/admin') {
+    return <AdminUpload />;
+  }
+
   const { t, i18n } = useTranslation(); // Init hook
   const [step, setStep] = useState(0); // Start at 0 (loading)
   const [authLoading, setAuthLoading] = useState(true); // Splash screen state
