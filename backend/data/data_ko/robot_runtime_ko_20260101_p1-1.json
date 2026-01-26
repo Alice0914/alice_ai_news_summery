@@ -1,0 +1,198 @@
+[
+  {
+    "id": "self-driving-cars-20260101",
+    "title": "자율주행차, 탑승객 뇌 신호 읽어 안전과 편안함 높인다",
+    "summary": "중국 연구진이 탑승객의 뇌 신호를 읽어 차량의 주행 방식을 조절하는 자율주행 소프트웨어를 개발 중이에요. 이 시스템은 탑승객이 스트레스를 느낄 때 차량 속도를 줄이거나 움직임을 조절하여 안전과 편안함을 향상시키고, 자율주행 기술에 대한 신뢰를 높일 것으로 기대돼요.",
+    "source": "HealthDay",
+    "sourceUrl": "https://www.healthday.com/health-news/first-aid-and-emergencies/passengers-brain-signals-may-help-self-driving-cars-make-safer-choices",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 86,
+    "impactDetails": {
+      "industry": 28,
+      "tech": 24,
+      "reach": 19,
+      "longTerm": 7,
+      "socialEthics": 8
+    },
+    "categories": [
+      "연구/혁신",
+      "로보틱스/물리 AI",
+      "의료/과학"
+    ],
+    "productServices": [
+      "자동화 AI",
+      "웨어러블 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "안전/윤리",
+      "알고리즘",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "자율주행차",
+      "뇌 신호",
+      "자율주행",
+      "딥러닝",
+      "탑승객 안전"
+    ]
+  },
+  {
+    "id": "unitree-robotics-20260101",
+    "title": "유니트리, JD닷컴과 손잡고 첫 로봇 오프라인 매장 개점...소비자 시장 공략 본격화",
+    "summary": "중국 로봇 기업 유니트리가 JD닷컴과 협력하여 베이징에 첫 오프라인 로봇 매장을 열었어요. 이 매장에서 고객들은 유니트리의 휴머노이드 및 4족 보행 로봇을 직접 체험하고 구매할 수 있어요. 이번 매장 개점은 유니트리가 단순한 하드웨어 판매를 넘어 로봇 기술 생태계를 구축하며 주류 소비자 시장으로 진출하려는 중요한 전환점이에요.",
+    "source": "Yicai Global",
+    "sourceUrl": "https://x.com/yicaichina/status/2005825202731581918",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 44,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 4,
+      "reach": 16,
+      "longTerm": 7,
+      "socialEthics": 1
+    },
+    "categories": [
+      "비즈니스",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [],
+    "searchKeywords": [
+      "유니트리",
+      "로보틱스",
+      "소매",
+      "휴머노이드 로봇",
+      "JD닷컴"
+    ]
+  },
+  {
+    "id": "robotics-pnas-20260101",
+    "title": "로봇, '고통' 느끼는 인공 피부로 즉각적인 반사 작용 가능해졌어요",
+    "summary": "중국 연구진이 로봇이 중앙 처리 장치를 거치지 않고도 위험에 즉각적으로 반응할 수 있는 신경 형태의 전자 피부를 개발했어요. 이 혁신적인 4겹 피부는 생체 신경을 모방하여 접촉을 스파이크-트레인 펄스로 변환하고, 자가 진단 및 유해 자극으로부터의 빠른 회피를 가능하게 해요.",
+    "source": "PNAS",
+    "sourceUrl": "https://www.pnas.org/doi/10.1073/pnas.2520922122",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 70,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 22,
+      "reach": 14,
+      "longTerm": 7,
+      "socialEthics": 7
+    },
+    "categories": [
+      "의료/과학",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "로보틱스",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "알고리즘",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "인공 피부",
+      "로보틱스",
+      "신경 형태 전자 피부",
+      "로봇 안전",
+      "반사 작용"
+    ]
+  },
+  {
+    "id": "robotics-20260101",
+    "title": "맨체스터대, 로봇에 '야간 투시' 능력 부여하는 AI 시스템 개발",
+    "summary": "맨체스터 대학교 연구진이 로봇이 완전한 어둠 속에서도 볼 수 있도록 하는 CLEAR-IR이라는 머신러닝 시스템을 개발했어요. 이 시스템은 적외선 카메라 피드를 선명한 가시광선 이미지로 변환하여, 기존 로봇이 하드웨어 변경이나 재훈련 없이도 주간 수준의 상황 인지 능력을 갖추게 하여 수색 및 구조, 지하 인프라 매핑 등 다양한 위험 환경에서의 활용 가능성을 열었어요.",
+    "source": "The University of Manchester",
+    "sourceUrl": "https://www.manchester.ac.uk/about/news/enabling-robotic-vision-in-low-light-conditions/",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 74,
+    "impactDetails": {
+      "industry": 25,
+      "tech": 24,
+      "reach": 14,
+      "longTerm": 7,
+      "socialEthics": 4
+    },
+    "categories": [
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "국방/보안",
+      "의료/과학"
+    ],
+    "productServices": [
+      "이미지 AI",
+      "로보틱스",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "알고리즘",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "로보틱스",
+      "야간 투시",
+      "적외선",
+      "머신러닝",
+      "클리어-IR"
+    ]
+  },
+  {
+    "id": "ubtech-robotics-20260101",
+    "title": "유비테크, 휴머노이드 로봇 '워커 S2' 1,000대 생산 돌파",
+    "summary": "중국 로봇 기업 유비테크가 류저우 공장에서 1,000번째 워커 S2 휴머노이드 로봇을 생산하며 중요한 이정표를 세웠어요. 이는 첨단 휴머노이드 로봇의 대량 생산 능력을 입증하는 중요한 성과예요.",
+    "source": "UBTECH",
+    "sourceUrl": "https://www.youtube.com/watch?v=lBW3YlbZ6tY",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 42,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 10,
+      "reach": 6,
+      "longTerm": 7,
+      "socialEthics": 4
+    },
+    "categories": [
+      "로보틱스/물리 AI",
+      "하드웨어",
+      "비즈니스",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "로보틱스"
+    ],
+    "coreElements": [],
+    "searchKeywords": [
+      "유비테크",
+      "워커 S2",
+      "휴머노이드 로봇",
+      "생산",
+      "이정표"
+    ]
+  }
+]

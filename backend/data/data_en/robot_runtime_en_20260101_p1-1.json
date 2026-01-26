@@ -1,0 +1,198 @@
+[
+  {
+    "id": "self-driving-cars-20260101",
+    "title": "Autonomous Vehicles Learn to Read Minds for Enhanced Passenger Safety and Comfort",
+    "summary": "Chinese researchers are developing self-driving software that interprets passengers' brain signals to dynamically adjust vehicle behavior, such as slowing down or stiffening the ride, when stress is detected. This 'brain-in-the-loop' system, utilizing fNIRS headbands and deep reinforcement learning, aims to significantly improve safety and comfort by allowing AVs to respond to human emotions, potentially transforming passenger trust in autonomous technology.",
+    "source": "HealthDay",
+    "sourceUrl": "https://www.healthday.com/health-news/first-aid-and-emergencies/passengers-brain-signals-may-help-self-driving-cars-make-safer-choices",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 86,
+    "impactDetails": {
+      "industry": 28,
+      "tech": 24,
+      "reach": 19,
+      "longTerm": 7,
+      "socialEthics": 8
+    },
+    "categories": [
+      "Research/Innovation",
+      "Robotics/Physical AI",
+      "Healthcare/Science"
+    ],
+    "productServices": [
+      "Automation AI",
+      "Wearable AI",
+      "Agent AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics",
+      "Algorithm",
+      "Data"
+    ],
+    "searchKeywords": [
+      "self-driving cars",
+      "brain signals",
+      "autonomous vehicles",
+      "deep reinforcement learning",
+      "passenger safety"
+    ]
+  },
+  {
+    "id": "unitree-robotics-20260101",
+    "title": "Unitree Opens First Physical Robot Store, Eyes Mainstream Consumer Market",
+    "summary": "Chinese robotics giant Unitree has launched its first brick-and-mortar robot store in Beijing, partnering with JD.com to allow consumers to interact with and purchase its humanoid and quadruped robots. This strategic move signifies Unitree's pivot towards mainstream consumer retail, aiming to build an ecosystem around robot skills rather than solely focusing on hardware sales.",
+    "source": "Yicai Global",
+    "sourceUrl": "https://x.com/yicaichina/status/2005825202731581918",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 44,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 4,
+      "reach": 16,
+      "longTerm": 7,
+      "socialEthics": 1
+    },
+    "categories": [
+      "Business",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "coreElements": [],
+    "searchKeywords": [
+      "unitree",
+      "robotics",
+      "retail",
+      "humanoid robots",
+      "jd.com"
+    ]
+  },
+  {
+    "id": "robotics-pnas-20260101",
+    "title": "Robots Gain Reflexive \"Pain\" Response with Advanced Synthetic Skin",
+    "summary": "Chinese researchers have developed a neuromorphic e-skin that enables robots to react to danger with immediate reflex actions, bypassing their central processor. This innovative four-layer skin mimics biological nerves, converting touch into spike-train pulses and allowing for self-diagnosis and rapid withdrawal from harmful stimuli.",
+    "source": "PNAS",
+    "sourceUrl": "https://www.pnas.org/doi/10.1073/pnas.2520922122",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 70,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 22,
+      "reach": 14,
+      "longTerm": 7,
+      "socialEthics": 7
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation"
+    ],
+    "productServices": [
+      "Robotics",
+      "Edge/On-Device AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "searchKeywords": [
+      "synthetic skin",
+      "robotics",
+      "neuromorphic e-skin",
+      "robot safety",
+      "reflex actions"
+    ]
+  },
+  {
+    "id": "robotics-20260101",
+    "title": "Robots Gain Advanced Night Vision with New AI System",
+    "summary": "Researchers at the University of Manchester have developed CLEAR-IR, a machine-learning system that enables robots to 'see' in total darkness by converting grainy infrared feeds into clear, visible-light images. This innovation allows existing infrared-equipped robots to achieve daylight-grade situational awareness without hardware upgrades or retraining, significantly enhancing capabilities for search-and-rescue, infrastructure mapping, and disaster zone operations.",
+    "source": "The University of Manchester",
+    "sourceUrl": "https://www.manchester.ac.uk/about/news/enabling-robotic-vision-in-low-light-conditions/",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 74,
+    "impactDetails": {
+      "industry": 25,
+      "tech": 24,
+      "reach": 14,
+      "longTerm": 7,
+      "socialEthics": 4
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Defense/Security",
+      "Healthcare/Science"
+    ],
+    "productServices": [
+      "Image AI",
+      "Robotics",
+      "Edge/On-Device AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Data"
+    ],
+    "searchKeywords": [
+      "robotics",
+      "night vision",
+      "infrared",
+      "machine learning",
+      "clear-ir"
+    ]
+  },
+  {
+    "id": "ubtech-robotics-20260101",
+    "title": "UBTECH Achieves Major Production Milestone with 1,000th Walker S2 Humanoid Robot",
+    "summary": "Chinese robotics firm UBTECH has announced a significant manufacturing achievement, rolling its 1,000th Walker S2 humanoid robot off the production line. This milestone, reached at its Liuzhou plant, underscores the company's progress in scaling the production of advanced humanoid robotics.",
+    "source": "UBTECH",
+    "sourceUrl": "https://www.youtube.com/watch?v=lBW3YlbZ6tY",
+    "publishedDate": "2026-01-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 42,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 10,
+      "reach": 6,
+      "longTerm": 7,
+      "socialEthics": 4
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Hardware",
+      "Business",
+      "Research/Innovation"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "coreElements": [],
+    "searchKeywords": [
+      "ubtech",
+      "walker s2",
+      "humanoid robot",
+      "manufacturing",
+      "milestone"
+    ]
+  }
+]
