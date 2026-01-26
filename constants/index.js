@@ -101,6 +101,11 @@ export const CORE_ID_MAP = {
     "Safety/Ethics": "안전/윤리"
 };
 
+// Reverse Mappings (Korean -> English) for migration of old data
+export const CATEGORY_ID_MAP_REV = Object.fromEntries(Object.entries(CATEGORY_ID_MAP).map(([k, v]) => [v, k]));
+export const SERVICE_ID_MAP_REV = Object.fromEntries(Object.entries(SERVICE_ID_MAP).map(([k, v]) => [v, k]));
+export const CORE_ID_MAP_REV = Object.fromEntries(Object.entries(CORE_ID_MAP).map(([k, v]) => [v, k]));
+
 // Migration Helper
 export const migrateIds = (list, map) => {
     if (!Array.isArray(list)) return [];

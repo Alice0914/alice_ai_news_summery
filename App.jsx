@@ -18,7 +18,8 @@ import {
   PRODUCT_SERVICES as DATA_SERVICES,
   CORE_ELEMENTS as DATA_CORE,
   PERIODS, TIME_RANGES,
-  CATEGORY_ID_MAP, SERVICE_ID_MAP, CORE_ID_MAP, migrateIds
+  CATEGORY_ID_MAP, SERVICE_ID_MAP, CORE_ID_MAP, migrateIds,
+  CATEGORY_ID_MAP_REV, SERVICE_ID_MAP_REV, CORE_ID_MAP_REV
 } from './constants';
 
 import OnboardingAuth from './components/auth/OnboardingAuth';
@@ -1060,9 +1061,9 @@ const App = () => {
 
           if (!hasInitializedFilters.current) {
             hasInitializedFilters.current = true;
-            if (preferences.categories) setSelectedInterests(preferences.categories);
-            if (preferences.productServices) setSelectedServices(preferences.productServices);
-            if (preferences.coreElements) setSelectedCore(preferences.coreElements);
+            if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP_REV));
+            if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP_REV));
+            if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP_REV));
           }
         }
       });
@@ -1446,6 +1447,15 @@ const App = () => {
     }
 
     return filtered;
+  };
+
+  const resetFilters = () => {
+    setSelectedInterests([]);
+    setSelectedServices([]);
+    setSelectedCore([]);
+    setSearchQuery('');
+    // Optionally reset date filter but maybe keep it to 'last_week' as baseline
+    setDateFilter('last_week');
   };
 
   // Onboarding Completion Handler
@@ -2669,100 +2679,102 @@ const App = () => {
               </section>
 
               {/* NEW: Top News Text Summary List (Vertical - Unified) */}
-              <section className="mt-12 mb-16 px-1">
-                <div className="flex items-center gap-2 mb-6">
-                  <List className="w-5 h-5 text-blue-400" />
-                  <h2 className="text-xl font-bold text-white tracking-tight">
-                    {i18n.language === 'ko' ? '주요 뉴스 요약' : 'Summary List'}
-                  </h2>
-                </div>
+              {topNews.length > 0 && (
+                <section className="mt-12 mb-16 px-1">
+                  <div className="flex items-center gap-2 mb-6">
+                    <List className="w-5 h-5 text-blue-400" />
+                    <h2 className="text-xl font-bold text-white tracking-tight">
+                      {i18n.language === 'ko' ? 'Top 5 주요 뉴스 요약 리스트' : 'Top 5 News Summary List'}
+                    </h2>
+                  </div>
 
-                <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-6 lg:p-8 relative overflow-hidden">
-                  {/* Decorative Background */}
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -z-10"></div>
+                  <div className="rounded-2xl bg-white/[0.03] border border-white/10 p-6 lg:p-8 relative overflow-hidden">
+                    {/* Decorative Background */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] -z-10"></div>
 
-                  <div className="flex flex-col">
-                    {topNews.map((news, index) => (
-                      <div key={news.id} className="mb-8 last:mb-0 border-b border-white/5 last:border-0 pb-8 last:pb-0">
-                        <div className="flex items-start gap-4">
-                          <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm border border-blue-500/20">
-                            {index + 1}
-                          </span>
-                          <div className="flex-1">
-                            <h3 className="text-lg font-bold text-white mb-2 leading-tight">
-                              {news.title}
-                            </h3>
-                            <p className="text-white/70 text-sm leading-relaxed mb-3">
-                              {news.summary}
-                            </p>
+                    <div className="flex flex-col">
+                      {topNews.map((news, index) => (
+                        <div key={news.id} className="mb-8 last:mb-0 border-b border-white/5 last:border-0 pb-8 last:pb-0">
+                          <div className="flex items-start gap-4">
+                            <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm border border-blue-500/20">
+                              {index + 1}
+                            </span>
+                            <div className="flex-1">
+                              <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                                {news.title}
+                              </h3>
+                              <p className="text-white/70 text-sm leading-relaxed mb-3">
+                                {news.summary}
+                              </p>
 
-                            {/* Why It Matters */}
-                            {news.why_it_matters && (
-                              <div className="mb-3 pl-3 border-l-2 border-blue-500/30">
-                                <p className="text-xs font-bold text-blue-400 mb-0.5 uppercase tracking-wide">
-                                  {i18n.language === 'ko' ? '왜 중요한가' : 'Why it matters'}
-                                </p>
-                                <p className="text-sm text-white/80">
-                                  {news.why_it_matters}
-                                </p>
-                              </div>
-                            )}
-
-                            {/* Hashtags */}
-                            <div className="flex flex-wrap gap-2 mb-3">
-                              {(news.searchKeywords || []).map(k => (
-                                <span key={k} className="text-xs text-slate-500">#{k.replace(/\s+/g, '')}</span>
-                              ))}
-                            </div>
-
-                            {/* Simplified Actions Row */}
-                            <div className="flex items-center gap-4 mt-2">
-                              {/* Like/Save compact */}
-                              <div className="flex items-center gap-3">
-                                <button
-                                  onClick={() => handleToggleLike(news)}
-                                  className={`flex items-center gap-1.5 text-xs transition-colors ${likedNewsIds.has(news.id) ? 'text-rose-500' : 'text-slate-500 hover:text-slate-300'}`}
-                                >
-                                  <Heart className={`w-3.5 h-3.5 ${likedNewsIds.has(news.id) ? 'fill-current' : ''}`} />
-                                  {news.likes || 0}
-                                </button>
-                                <button
-                                  onClick={() => handleToggleSave(news)}
-                                  className={`flex items-center gap-1.5 text-xs transition-colors ${savedNewsIds.has(news.id) ? 'text-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
-                                >
-                                  <Bookmark className={`w-3.5 h-3.5 ${savedNewsIds.has(news.id) ? 'fill-current' : ''}`} />
-                                </button>
-                              </div>
-
-                              {news.sourceUrl && (
-                                <a
-                                  href={news.sourceUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-xs font-medium text-blue-400 hover:text-blue-300 flex items-center gap-1 ml-auto"
-                                >
-                                  {i18n.language === 'ko' ? '출처' : 'Source'} <ExternalLink className="w-3 h-3" />
-                                </a>
+                              {/* Why It Matters */}
+                              {news.why_it_matters && (
+                                <div className="mb-3 pl-3 border-l-2 border-blue-500/30">
+                                  <p className="text-xs font-bold text-blue-400 mb-0.5 uppercase tracking-wide">
+                                    {i18n.language === 'ko' ? '왜 중요한가' : 'Why it matters'}
+                                  </p>
+                                  <p className="text-sm text-white/80">
+                                    {news.why_it_matters}
+                                  </p>
+                                </div>
                               )}
+
+                              {/* Hashtags */}
+                              <div className="flex flex-wrap gap-2 mb-3">
+                                {(news.searchKeywords || []).map(k => (
+                                  <span key={k} className="text-xs text-slate-500">#{k.replace(/\s+/g, '')}</span>
+                                ))}
+                              </div>
+
+                              {/* Simplified Actions Row */}
+                              <div className="flex items-center gap-4 mt-2">
+                                {/* Like/Save compact */}
+                                <div className="flex items-center gap-3">
+                                  <button
+                                    onClick={() => handleToggleLike(news)}
+                                    className={`flex items-center gap-1.5 text-xs transition-colors ${likedNewsIds.has(news.id) ? 'text-rose-500' : 'text-slate-500 hover:text-slate-300'}`}
+                                  >
+                                    <Heart className={`w-3.5 h-3.5 ${likedNewsIds.has(news.id) ? 'fill-current' : ''}`} />
+                                    {news.likes || 0}
+                                  </button>
+                                  <button
+                                    onClick={() => handleToggleSave(news)}
+                                    className={`flex items-center gap-1.5 text-xs transition-colors ${savedNewsIds.has(news.id) ? 'text-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
+                                  >
+                                    <Bookmark className={`w-3.5 h-3.5 ${savedNewsIds.has(news.id) ? 'fill-current' : ''}`} />
+                                  </button>
+                                </div>
+
+                                {news.sourceUrl && (
+                                  <a
+                                    href={news.sourceUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-medium text-blue-400 hover:text-blue-300 flex items-center gap-1 ml-auto"
+                                  >
+                                    {i18n.language === 'ko' ? '출처' : 'Source'} <ExternalLink className="w-3 h-3" />
+                                  </a>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
 
-                  {/* Copy All Button - Inside the container, bottom */}
-                  <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
-                    <button
-                      onClick={handleCopyAll}
-                      className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-blue-500/20 hover:scale-105 transition-transform flex items-center gap-2"
-                    >
-                      <Copy className="w-5 h-5" />
-                      {i18n.language === 'ko' ? '전체 기사 복사하기' : 'Copy All Articles'}
-                    </button>
+                    {/* Copy All Button - Inside the container, bottom */}
+                    <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
+                      <button
+                        onClick={handleCopyAll}
+                        className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-blue-500/20 hover:scale-105 transition-transform flex items-center gap-2"
+                      >
+                        <Copy className="w-5 h-5" />
+                        {i18n.language === 'ko' ? '전체 기사 복사하기' : 'Copy All Articles'}
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </section>
+                </section>
+              )}
 
               {/* Section: Latest News List */}
               <section>
@@ -2786,23 +2798,43 @@ const App = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-                  {otherNews.map((news, index) => (
-                    <div key={news.id} className="news-card-hover page-transition" style={{ animationDelay: `${index * 0.05}s` }}>
-                      <SimpleNewsItem
-                        news={news}
-                        isExpanded={expandedNewsId === news.id}
-                        onToggle={() => setExpandedNewsId(expandedNewsId === news.id ? null : news.id)}
-                        onShare={handleShare}
-                        onSave={handleToggleSave}
-                        isSaved={savedNewsIds.has(news.id)}
-                        isLiked={likedNewsIds.has(news.id)}
-                        onToggleLike={handleToggleLike}
-                        selectedInterests={selectedInterests}
-                        selectedServices={selectedServices}
-                        selectedCore={selectedCore}
-                      />
+                  {otherNews.length > 0 ? (
+                    otherNews.map((news, index) => (
+                      <div key={news.id} className="news-card-hover page-transition" style={{ animationDelay: `${index * 0.05}s` }}>
+                        <SimpleNewsItem
+                          news={news}
+                          isExpanded={expandedNewsId === news.id}
+                          onToggle={() => setExpandedNewsId(expandedNewsId === news.id ? null : news.id)}
+                          onShare={handleShare}
+                          onSave={handleToggleSave}
+                          isSaved={savedNewsIds.has(news.id)}
+                          isLiked={likedNewsIds.has(news.id)}
+                          onToggleLike={handleToggleLike}
+                          selectedInterests={selectedInterests}
+                          selectedServices={selectedServices}
+                          selectedCore={selectedCore}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div className="lg:col-span-2 py-20 flex flex-col items-center justify-center text-center px-4 animate-in fade-in duration-500">
+                      <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+                        <Filter className="w-10 h-10 text-white/20" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {i18n.language === 'ko' ? '검색 결과가 없습니다' : 'No articles found'}
+                      </h3>
+                      <p className="text-white/50 text-sm max-w-xs mb-8">
+                        {i18n.language === 'ko' ? '선택하신 필터나 검색어에 맞는 기사가 없습니다. 필터를 초기화해보세요.' : 'No articles match your current filters or search. Try resetting them to see more.'}
+                      </p>
+                      <button
+                        onClick={resetFilters}
+                        className="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-lg shadow-blue-900/40"
+                      >
+                        {i18n.language === 'ko' ? '필터 및 검색 초기화' : 'Reset Filters & Search'}
+                      </button>
                     </div>
-                  ))}
+                  )}
                 </div>
               </section>
             </>
