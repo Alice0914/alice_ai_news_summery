@@ -789,31 +789,7 @@ const FilterPage = ({
             </div>
           </section>
 
-          {/* 2. Date Period */}
-          <section>
-            <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2 opacity-80">
-              <span className="w-1 h-3 bg-teal-500 rounded-full"></span>
-              {t('time_range')}
-            </h3>
-            <div className="grid grid-cols-3 gap-2">
-              {TIME_RANGES.map((range) => (
-                <button
-                  key={range.id}
-                  onClick={() => setDateFilter(range.id)}
-                  className={`
-                    py-1.5 px-3 rounded-lg font-medium text-xs transition-all border text-center
-                    ${dateFilter === range.id
-                      ? 'bg-teal-600 border-teal-500 text-white shadow-lg shadow-teal-900/20'
-                      : 'bg-white/5 border-white/10 text-white/50 hover:bg-white/10'}
-                  `}
-                >
-                  {t(range.id)}
-                </button>
-              ))}
-            </div>
-          </section>
-
-          {/* 3. Categories */}
+          {/* 2. Categories */}
           <section>
             <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2 opacity-80">
               <span className="w-1 h-3 bg-purple-500 rounded-full"></span>
@@ -840,7 +816,7 @@ const FilterPage = ({
             </div>
           </section>
 
-          {/* 4. Services & Core Elements (Simplified for space if needed, keeping as is for now) */}
+          {/* 3. Services */}
           <section>
             <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2 opacity-80">
               <span className="w-1 h-3 bg-pink-500 rounded-full"></span>
@@ -867,7 +843,7 @@ const FilterPage = ({
             </div>
           </section>
 
-          {/* 5. Core Elements */}
+          {/* 4. Core Elements */}
           <section>
             <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2 opacity-80">
               <span className="w-1 h-3 bg-emerald-500 rounded-full"></span>
