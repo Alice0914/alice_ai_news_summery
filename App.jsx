@@ -955,10 +955,19 @@ const App = () => {
       if (isFirstCheck.current) {
         if (currentUser && !currentUser.isAnonymous) {
           console.log('✅ Auto-login: Redirecting to news feed');
+          // Mark that this user has logged in before
+          localStorage.setItem('hasLoggedInBefore', 'true');
           setStep(5);
         } else {
-          console.log('🔒 Auto-login failed: Showing landing page');
-          setStep(1); // Changed from 0 to 1
+          // Check if user has logged in before
+          const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
+          if (hasLoggedInBefore) {
+            console.log('🔒 Returning user: Showing login page');
+            setStep(0); // Show login page for returning users
+          } else {
+            console.log('👋 First-time visitor: Showing landing page');
+            setStep(1); // Show landing page for new users
+          }
         }
         isFirstCheck.current = false;
         setAuthLoading(false);
@@ -970,6 +979,7 @@ const App = () => {
         // User just authenticated
         if (isSigningUp.current) {
           console.log('🎉 Signup Success: Showing welcome toast then redirecting...');
+          localStorage.setItem('hasLoggedInBefore', 'true');
           setShowSignupToast(true);
           setTimeout(() => {
             setShowSignupToast(false);
@@ -978,6 +988,7 @@ const App = () => {
           }, 2000);
         } else {
           console.log('✅ Manual Login: Retrieving user data and showing toast...');
+          localStorage.setItem('hasLoggedInBefore', 'true');
           setShowLoginToast(true);
           setStep(5); // Immediate redirect to feed to prevent login form flash
           setTimeout(() => {
