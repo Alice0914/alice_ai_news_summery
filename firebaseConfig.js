@@ -266,26 +266,49 @@ export const saveUserToFirestore = async (user) => {
 };
 
 /**
- * Detect if user is on mobile device
+ * Detect if running in an embedded WebView (not a regular mobile browser)
+ * WebViews that block OAuth popups have specific user agent patterns
  */
-const isMobileDevice = () => {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const isEmbeddedWebView = () => {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Detect common problematic WebViews:
+    // - Facebook (FBAN/FBAV)
+    // - Instagram (Instagram)
+    // - Line (Line/)
+    // - KakaoTalk (KAKAOTALK)
+    // - WeChat (MicroMessenger)
+    // - Naver (NAVER)
+    // - Twitter/X in-app browser
+    // - Generic Android WebView (wv)
+    const webviewPatterns = [
+        /FBAN|FBAV/i,           // Facebook
+        /Instagram/i,            // Instagram
+        /Line\//i,               // LINE
+        /KAKAOTALK/i,            // KakaoTalk
+        /MicroMessenger/i,       // WeChat
+        /NAVER/i,                // Naver
+        /Twitter|X/i,            // Twitter/X app
+        /\bwv\b/i,               // Android WebView marker
+    ];
+
+    return webviewPatterns.some(pattern => pattern.test(ua));
 };
 
 /**
- * Sign in with Google (uses redirect on mobile, popup on desktop)
+ * Sign in with Google (uses redirect for WebViews, popup otherwise)
  */
 export const signInWithGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
 
-        if (isMobileDevice()) {
-            // Mobile: Use redirect to avoid WebView issues
+        if (isEmbeddedWebView()) {
+            // WebView: Use redirect to avoid OAuth blocking
+            console.log('🔄 WebView detected, using signInWithRedirect');
             await signInWithRedirect(auth, provider);
-            // Note: Result will be handled by getRedirectResult in App.jsx
             return null;
         } else {
-            // Desktop: Use popup
+            // Regular browser (including mobile Chrome/Safari): Use popup
             const result = await signInWithPopup(auth, provider);
             await saveUserToFirestore(result.user);
             return result.user;
