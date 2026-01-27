@@ -2684,7 +2684,7 @@ const App = () => {
                   <div className="flex items-center gap-2 mb-6">
                     <List className="w-5 h-5 text-blue-400" />
                     <h2 className="text-xl font-bold text-white tracking-tight">
-                      {i18n.language === 'ko' ? 'Top 5 주요 뉴스 요약 리스트' : 'Top 5 News Summary List'}
+                      {i18n.language === 'ko' ? `Top ${topNews.length} 주요 뉴스 요약 리스트` : `Top ${topNews.length} News Summary List`}
                     </h2>
                   </div>
 
