@@ -22,6 +22,8 @@ import {
     OAuthProvider,
     TwitterAuthProvider, // Added
     signInWithPopup,
+    signInWithRedirect, // Added: For mobile
+    getRedirectResult, // Added: For mobile
     createUserWithEmailAndPassword, // Added
     signInWithEmailAndPassword, // Added
     updateProfile, // Added
@@ -264,16 +266,49 @@ export const saveUserToFirestore = async (user) => {
 };
 
 /**
- * Sign in with Google
+ * Detect if user is on mobile device
+ */
+const isMobileDevice = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
+
+/**
+ * Sign in with Google (uses redirect on mobile, popup on desktop)
  */
 export const signInWithGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-        await saveUserToFirestore(result.user);
-        return result.user;
+
+        if (isMobileDevice()) {
+            // Mobile: Use redirect to avoid WebView issues
+            await signInWithRedirect(auth, provider);
+            // Note: Result will be handled by getRedirectResult in App.jsx
+            return null;
+        } else {
+            // Desktop: Use popup
+            const result = await signInWithPopup(auth, provider);
+            await saveUserToFirestore(result.user);
+            return result.user;
+        }
     } catch (error) {
         console.error('Error signing in with Google', error);
+        throw error;
+    }
+};
+
+/**
+ * Handle redirect result (call this on app load)
+ */
+export const handleGoogleRedirectResult = async () => {
+    try {
+        const result = await getRedirectResult(auth);
+        if (result && result.user) {
+            await saveUserToFirestore(result.user);
+            return result.user;
+        }
+        return null;
+    } catch (error) {
+        console.error('Error handling redirect result', error);
         throw error;
     }
 };

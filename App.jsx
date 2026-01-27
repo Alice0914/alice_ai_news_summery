@@ -35,7 +35,8 @@ import {
   saveUserPreferences,
   reauthenticateAndUpdatePassword, // RESTORED
   getDiceBearAvatar, // Added
-  saveUserToFirestore // Added: to sync changes
+  saveUserToFirestore, // Added: to sync changes
+  handleGoogleRedirectResult // Added: For mobile redirect
 } from './firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -946,6 +947,20 @@ const App = () => {
 
   // Track initialization to distinguish between app load and manual login
   const isFirstCheck = useRef(true);
+
+  // Handle mobile Google redirect result on app load
+  useEffect(() => {
+    handleGoogleRedirectResult()
+      .then((user) => {
+        if (user) {
+          console.log('✅ Mobile redirect login successful');
+          localStorage.setItem('hasLoggedInBefore', 'true');
+        }
+      })
+      .catch((error) => {
+        console.error('Mobile redirect error:', error);
+      });
+  }, []);
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
