@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Check, ArrowLeft, Sparkles, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { CATEGORY_ID_MAP, SERVICE_ID_MAP, CORE_ID_MAP } from '../constants';
 
 /**
  * PreferencesPage - Dedicated page for editing user preferences.
@@ -40,6 +41,12 @@ const PreferencesPage = ({
         } else {
             setter([...current, id]);
         }
+    };
+
+    // Helper: Convert English tag to Korean if language is 'ko'
+    const getLocalizedTag = (tag) => {
+        if (i18n.language !== 'ko') return tag;
+        return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
     };
 
     const handleSave = () => {
@@ -125,7 +132,7 @@ const PreferencesPage = ({
                                         }`}
                                 >
                                     {item.icon && <item.icon className="w-3 h-3 inline mr-1" />}
-                                    {t(item.id)}
+                                    {getLocalizedTag(item.id)}
                                     {selectedCategories.includes(item.id) && <Check className="w-2.5 h-2.5 inline ml-1" />}
                                 </button>
                             ))}
@@ -149,7 +156,7 @@ const PreferencesPage = ({
                                         }`}
                                 >
                                     {item.icon && <item.icon className="w-3 h-3 inline mr-1" />}
-                                    {t(item.id)}
+                                    {getLocalizedTag(item.id)}
                                     {selectedServices.includes(item.id) && <Check className="w-2.5 h-2.5 inline ml-1" />}
                                 </button>
                             ))}
@@ -173,7 +180,7 @@ const PreferencesPage = ({
                                         }`}
                                 >
                                     {item.icon && <item.icon className="w-3 h-3 inline mr-1" />}
-                                    {t(item.id)}
+                                    {getLocalizedTag(item.id)}
                                     {selectedCore.includes(item.id) && <Check className="w-2.5 h-2.5 inline ml-1" />}
                                 </button>
                             ))}

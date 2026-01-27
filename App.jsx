@@ -2161,7 +2161,7 @@ const App = () => {
                         <span className="text-[10px] text-white/40 mb-1 block">{t('interests')}</span>
                         <div className="flex flex-wrap gap-1">
                           {savedPreferences.categories.slice(0, 3).map(id => {
-                            return <span key={id} className="text-[10px] px-2 py-1 rounded bg-blue-500/20 text-blue-300">{t(id)}</span>;
+                            return <span key={id} className="text-[10px] px-2 py-1 rounded bg-blue-500/20 text-blue-300">{getLocalizedTag(id)}</span>;
                           })}
                           {(savedPreferences.categories.length > 3) && <span className="text-[10px] px-2 py-1 rounded bg-blue-500/20 text-blue-300">+{savedPreferences.categories.length - 3}</span>}
                         </div>
@@ -2174,7 +2174,7 @@ const App = () => {
                         <span className="text-[10px] text-white/40 mb-1 block">{t('ai_services')}</span>
                         <div className="flex flex-wrap gap-1">
                           {savedPreferences.productServices.slice(0, 3).map(id => {
-                            return <span key={id} className="text-[10px] px-2 py-1 rounded bg-purple-500/20 text-purple-300">{t(id)}</span>;
+                            return <span key={id} className="text-[10px] px-2 py-1 rounded bg-purple-500/20 text-purple-300">{getLocalizedTag(id)}</span>;
                           })}
                           {(savedPreferences.productServices.length > 3) && <span className="text-[10px] px-2 py-1 rounded bg-purple-500/20 text-purple-300">+{savedPreferences.productServices.length - 3}</span>}
                         </div>
@@ -2187,7 +2187,7 @@ const App = () => {
                         <span className="text-[10px] text-white/40 mb-1 block">{t('core_elements')}</span>
                         <div className="flex flex-wrap gap-1">
                           {savedPreferences.coreElements.slice(0, 3).map(id => {
-                            return <span key={id} className="text-[10px] px-2 py-1 rounded bg-emerald-500/20 text-emerald-300">{t(id)}</span>;
+                            return <span key={id} className="text-[10px] px-2 py-1 rounded bg-emerald-500/20 text-emerald-300">{getLocalizedTag(id)}</span>;
                           })}
                           {(savedPreferences.coreElements.length > 3) && <span className="text-[10px] px-2 py-1 rounded bg-emerald-500/20 text-emerald-300">+{savedPreferences.coreElements.length - 3}</span>}
                         </div>
