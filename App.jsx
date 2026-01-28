@@ -1070,9 +1070,11 @@ const App = () => {
 
   // Separate effect for User Data Subscription & Safety Redirect
   useEffect(() => {
+    addDebugLog(`🔍 SafetyRedirect effect: user=${user ? (user.isAnonymous ? 'ANON' : 'USER') : 'NULL'}, step=${step}`);
     if (user && !user.isAnonymous) {
       // Safety Redirect: If user is logged in but stuck on Login Page (0) or Auth Gate (4.5), go to Feed (5)
       if (step === 0 || step === 4.5) {
+        addDebugLog('🚀 SafetyRedirect: Forcing redirect to Feed (step 5)');
         console.log("⚠️ State Mismatch detected: User logged in but on Step 0/4.5. Forcing redirect to Feed.");
         setStep(5);
       }
