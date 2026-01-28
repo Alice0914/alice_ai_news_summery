@@ -16,19 +16,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- SEO Meta Tags - English Default -->
+  <!-- SEO & GEO Meta Tags - English Default -->
   <title>AI 1-Minute Trend | Daily AI News & Updates</title>
   <meta name="description"
     content="Get daily AI trends, news, and tech updates in just 1 minute! Stay informed on ChatGPT, artificial intelligence tools, machine learning, and the latest tech innovations.">
   <meta name="keywords"
     content="AI news, AI trends, ChatGPT, artificial intelligence, machine learning, tech news, AI updates, GPT-4, AI tools, deep learning, AI 뉴스, AI 트렌드, 인공지능">
   <meta name="author" content="AI 1-Minute Trend">
+
+  <!-- GEO: Allow full AI snippet access for AI Overviews and AI Mode -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ai-news-trend-en-ko.vercel.app/">
 
-  <!-- Language Alternates for International SEO -->
+  <!-- Language Alternates for International SEO/GEO -->
   <link rel="alternate" hreflang="en" href="https://ai-news-trend-en-ko.vercel.app/?lang=en">
   <link rel="alternate" hreflang="ko" href="https://ai-news-trend-en-ko.vercel.app/?lang=ko">
   <link rel="alternate" hreflang="x-default" href="https://ai-news-trend-en-ko.vercel.app/">
@@ -42,6 +46,7 @@
   <meta property="og:image" content="https://ai-news-trend-en-ko.vercel.app/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AI 1-Minute Trend - Daily AI News and Updates">
   <meta property="og:site_name" content="AI 1-Minute Trend">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ko_KR">
@@ -53,6 +58,7 @@
   <meta name="twitter:description"
     content="Get daily AI trends, news, and tech updates in just 1 minute! Stay informed on ChatGPT, AI tools, and more.">
   <meta name="twitter:image" content="https://ai-news-trend-en-ko.vercel.app/og-image.png">
+  <meta name="twitter:image:alt" content="AI 1-Minute Trend - Daily AI News">
 
   <!-- Mobile App Meta Tags -->
   <meta name="theme-color" content="#0f111a">
@@ -70,21 +76,30 @@
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
 
-  <!-- Preconnect for Performance -->
+  <!-- Preconnect for Performance (GEO: Great Page Experience) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com">
 
-  <!-- Structured Data - WebSite -->
+  <!-- GEO: Enhanced Structured Data - WebSite with FAQ for AI Search -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "AI 1-Minute Trend",
-    "alternateName": ["AI 1분 트렌드", "AI One Minute Trend"],
+    "alternateName": ["AI 1분 트렌드", "AI One Minute Trend", "AI Trends Daily"],
     "url": "https://ai-news-trend-en-ko.vercel.app/",
-    "description": "Get daily AI trends, news, and tech updates in just 1 minute!",
+    "description": "Get daily AI trends, news, and tech updates in just 1 minute! Your go-to source for ChatGPT, GPT-4, machine learning, and artificial intelligence news.",
     "inLanguage": ["en", "ko"],
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI 1-Minute Trend",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ai-news-trend-en-ko.vercel.app/logo.png"
+      }
+    },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -96,19 +111,25 @@
   }
   </script>
 
-  <!-- Structured Data - Organization -->
+  <!-- GEO: Organization Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "AI 1-Minute Trend",
+    "alternateName": "AI 1분 트렌드",
     "url": "https://ai-news-trend-en-ko.vercel.app/",
     "logo": "https://ai-news-trend-en-ko.vercel.app/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": ["English", "Korean"]
+    },
     "sameAs": []
   }
   </script>
 
-  <!-- Structured Data - WebApplication -->
+  <!-- GEO: WebApplication Schema for App Discovery -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -118,27 +139,172 @@
     "url": "https://ai-news-trend-en-ko.vercel.app/",
     "applicationCategory": "NewsApplication",
     "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "1.0",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
+    "featureList": [
+      "Daily AI news updates",
+      "Personalized news filtering",
+      "Multi-language support (English, Korean)",
+      "AI trends and insights",
+      "Save and bookmark articles",
+      "Clean, modern interface"
+    ],
+    "screenshot": "https://ai-news-trend-en-ko.vercel.app/og-image.png",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
-      "ratingCount": "150"
+      "ratingCount": "150",
+      "bestRating": "5"
     }
+  }
+  </script>
+
+  <!-- GEO: FAQ Schema for AI Overviews - English -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AI 1-Minute Trend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI 1-Minute Trend is a web application that provides daily AI news, trends, and technology updates in a quick, easy-to-digest format. Users can stay informed about ChatGPT, GPT-4, machine learning, and other AI developments in just one minute."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I get personalized AI news?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After logging in, you can set your preferences to filter AI news by categories like ChatGPT, Machine Learning, Robotics, AI Tools, and more. The app will show you personalized news based on your interests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AI 1-Minute Trend free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, AI 1-Minute Trend is completely free to use. You can access all AI news and features without any subscription or payment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What languages does AI 1-Minute Trend support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI 1-Minute Trend supports both English and Korean (한국어). You can switch between languages using the language toggle in the app."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- GEO: FAQ Schema for AI Overviews - Korean -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "ko",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "AI 1분 트렌드란 무엇인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI 1분 트렌드는 매일 AI 뉴스, 트렌드, 기술 업데이트를 빠르고 이해하기 쉬운 형식으로 제공하는 웹 애플리케이션입니다. 사용자는 ChatGPT, GPT-4, 머신러닝 및 기타 AI 개발에 대해 단 1분 만에 정보를 얻을 수 있습니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "맞춤형 AI 뉴스는 어떻게 받나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "로그인 후 ChatGPT, 머신러닝, 로보틱스, AI 도구 등의 카테고리별로 AI 뉴스를 필터링하도록 환경설정을 지정할 수 있습니다. 앱에서 관심사에 따라 맞춤형 뉴스를 보여줍니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI 1분 트렌드는 무료인가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "네, AI 1분 트렌드는 완전 무료입니다. 구독이나 결제 없이 모든 AI 뉴스와 기능을 이용할 수 있습니다."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- GEO: ItemList Schema for News Feed Discovery -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI News Categories",
+    "description": "Browse AI news by category",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "ChatGPT & LLMs", "url": "https://ai-news-trend-en-ko.vercel.app/?category=chatgpt"},
+      {"@type": "ListItem", "position": 2, "name": "AI Tools", "url": "https://ai-news-trend-en-ko.vercel.app/?category=tools"},
+      {"@type": "ListItem", "position": 3, "name": "Machine Learning", "url": "https://ai-news-trend-en-ko.vercel.app/?category=ml"},
+      {"@type": "ListItem", "position": 4, "name": "Robotics", "url": "https://ai-news-trend-en-ko.vercel.app/?category=robotics"},
+      {"@type": "ListItem", "position": 5, "name": "AI Industry", "url": "https://ai-news-trend-en-ko.vercel.app/?category=industry"}
+    ]
+  }
+  </script>
+
+  <!-- GEO: SpeakableSpecification for Voice Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "AI 1-Minute Trend",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".news-title", ".news-summary"]
+    },
+    "url": "https://ai-news-trend-en-ko.vercel.app/"
   }
   </script>
 </head>
 
 <body>
-  <!-- Noscript fallback for SEO -->
+  <!-- GEO: Noscript fallback with rich content for crawler accessibility -->
   <noscript>
-    <div style="padding: 20px; text-align: center; font-family: sans-serif;">
-      <h1>AI 1-Minute Trend</h1>
-      <p>Get daily AI trends, news, and tech updates in just 1 minute!</p>
-      <p>Please enable JavaScript to use this application.</p>
+    <div
+      style="padding: 20px; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto;">
+      <h1>AI 1-Minute Trend | AI 1분 트렌드</h1>
+      <p><strong>Your daily source for AI news and trends</strong></p>
+      <p>Get the latest updates on artificial intelligence, ChatGPT, machine learning, and tech innovations in just 1
+        minute!</p>
+
+      <h2>What We Cover</h2>
+      <ul style="text-align: left; display: inline-block;">
+        <li><strong>ChatGPT & LLMs</strong> - Latest developments in large language models</li>
+        <li><strong>AI Tools</strong> - New AI applications and productivity tools</li>
+        <li><strong>Machine Learning</strong> - Research and breakthroughs in ML</li>
+        <li><strong>Robotics & Physical AI</strong> - Humanoid robots and automation</li>
+        <li><strong>AI Industry</strong> - Business news and market trends</li>
+      </ul>
+
+      <h2>Features</h2>
+      <ul style="text-align: left; display: inline-block;">
+        <li>Daily curated AI news</li>
+        <li>Personalized news filtering</li>
+        <li>English and Korean language support</li>
+        <li>Save and bookmark articles</li>
+        <li>Clean, modern interface</li>
+      </ul>
+
+      <h2>AI 1분 트렌드 - 한국어</h2>
+      <p>인공지능, ChatGPT, 머신러닝, 기술 혁신에 대한 최신 업데이트를 단 1분 만에 확인하세요!</p>
+
+      <p style="margin-top: 30px;"><em>Please enable JavaScript to use this application.</em></p>
     </div>
   </noscript>
   <div id="root"></div>
