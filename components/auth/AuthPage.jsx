@@ -105,11 +105,14 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
         setError(null);
         setLoading(true);
         try {
-            if (providerName === 'google') await signInWithGoogle();
-            if (providerName === 'twitter') await signInWithTwitter();
-            if (providerName === 'linkedin') await signInWithLinkedIn();
-            // Don't call handleAuthComplete here - let onAuthStateChanged in App.jsx handle the navigation
-            // This is important for mobile where popup behavior is different
+            let user = null;
+            if (providerName === 'google') user = await signInWithGoogle();
+            if (providerName === 'twitter') user = await signInWithTwitter();
+            if (providerName === 'linkedin') user = await signInWithLinkedIn();
+            // Now using signInWithPopup, we get the user back immediately
+            if (user) {
+                handleAuthComplete();
+            }
         } catch (err) {
             setError(`Failed to sign in with ${providerName}. ${err.message}`);
             setLoading(false);
