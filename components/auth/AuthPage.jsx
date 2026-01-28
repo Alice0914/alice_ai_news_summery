@@ -104,16 +104,20 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
     const handleSocialLogin = async (providerName) => {
         setError(null);
         setLoading(true);
+        if (window.addDebugLog) window.addDebugLog(`🔵 handleSocialLogin: ${providerName}`);
         try {
             let user = null;
             if (providerName === 'google') user = await signInWithGoogle();
             if (providerName === 'twitter') user = await signInWithTwitter();
             if (providerName === 'linkedin') user = await signInWithLinkedIn();
+            if (window.addDebugLog) window.addDebugLog(`🔵 User returned: ${user ? user.uid?.slice(0, 5) : 'NULL'}`);
             // Now using signInWithPopup, we get the user back immediately
             if (user) {
+                if (window.addDebugLog) window.addDebugLog('🔵 Calling handleAuthComplete...');
                 handleAuthComplete();
             }
         } catch (err) {
+            if (window.addDebugLog) window.addDebugLog(`🔴 Social Login Error: ${err.message}`);
             setError(`Failed to sign in with ${providerName}. ${err.message}`);
             setLoading(false);
         }
