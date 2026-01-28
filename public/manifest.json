@@ -1,0 +1,35 @@
+{
+    "name": "AI 1-Minute Trend",
+    "short_name": "AI 1분 트렌드",
+    "description": "Get daily AI trends, news, and tech updates in just 1 minute! 1분 만에 AI 트렌드를 확인하세요!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f111a",
+    "theme_color": "#0f111a",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": [
+        "news",
+        "technology",
+        "education"
+    ],
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [],
+    "prefer_related_applications": false,
+    "related_applications": []
+}
