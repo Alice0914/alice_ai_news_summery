@@ -966,40 +966,21 @@ const App = () => {
   // Track if user has successfully logged in during this session
   const wasLoggedIn = useRef(false);
 
-  // DEBUG STATE
-  const [debugLogs, setDebugLogs] = useState([]);
-  const addDebugLog = (msg) => {
-    setDebugLogs(prev => [...prev, `${new Date().toISOString().slice(11, 19)} ${msg}`]);
-  };
-
-  // Expose to window for external logging (firebaseConfig, etc.)
-  useEffect(() => {
-    window.addDebugLog = addDebugLog;
-    addDebugLog(`📱 Device Info: ${navigator.userAgent.slice(0, 50)}...`);
-    return () => { delete window.addDebugLog; };
-  }, []);
-
   // Handle mobile Google redirect result on app load
   useEffect(() => {
-    addDebugLog("Checking Redirect Result...");
     handleGoogleRedirectResult()
       .then((user) => {
         if (user) {
-          addDebugLog(`✅ Redirect Success: ${user.uid.slice(0, 5)}...`);
           console.log('✅ Mobile redirect login successful:', user.uid);
           localStorage.setItem('hasLoggedInBefore', 'true');
           wasLoggedIn.current = true;
           setUser(user);
           setIsAuthModalOpen(false);
           setStep(5);
-        } else {
-          addDebugLog("ℹ️ Redirect Result: NULL");
         }
       })
       .catch((error) => {
-        addDebugLog(`❌ Redirect Error: ${error.code} - ${error.message}`);
         console.error('Mobile redirect error:', error);
-        alert(`Login Failed: ${error.message} (${error.code})`);
       });
   }, []);
 
@@ -3067,12 +3048,6 @@ const App = () => {
         )
       }
 
-      {/* DEBUG CONSOLE OVERLAY */}
-      <div className="fixed bottom-0 left-0 right-0 bg-black/80 text-green-400 text-xs p-2 max-h-40 overflow-y-auto z-[9999] pointer-events-none font-mono">
-        {debugLogs.map((log, i) => (
-          <div key={i}>{log}</div>
-        ))}
-      </div>
     </div >
   );
 }

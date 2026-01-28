@@ -280,16 +280,11 @@ const isMobileDevice = () => {
 export const signInWithGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
-        if (window.addDebugLog) window.addDebugLog("🚀 signInWithGoogle Called");
-
         // Always use popup - redirect has cross-origin storage issues on mobile
-        if (window.addDebugLog) window.addDebugLog("🔐 Using signInWithPopup");
         const result = await signInWithPopup(auth, provider);
         await saveUserToFirestore(result.user);
-        if (window.addDebugLog) window.addDebugLog(`✅ Login Success: ${result.user.uid.slice(0, 5)}...`);
         return result.user;
     } catch (error) {
-        if (window.addDebugLog) window.addDebugLog(`❌ Sign In Error: ${error.code}`);
         console.error('Error signing in with Google', error);
         throw error;
     }
