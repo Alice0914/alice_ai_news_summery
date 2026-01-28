@@ -910,6 +910,21 @@ const App = () => {
   const { t, i18n } = useTranslation(); // Init hook
   const [step, setStep] = useState(0); // Start at 0 (loading)
   const [authLoading, setAuthLoading] = useState(true); // Splash screen state
+
+  // Fallback: Force release authLoading after 3 seconds in case Firebase is slow
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (authLoading) {
+        console.warn('⚠️ Auth loading timeout - forcing release');
+        setAuthLoading(false);
+        // Default to news feed if returning user, else landing
+        const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
+        setStep(hasLoggedInBefore ? 5 : 1);
+      }
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [authLoading]);
+
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedCore, setSelectedCore] = useState([]);
