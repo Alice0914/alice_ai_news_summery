@@ -1,0 +1,17 @@
+﻿# AI 1-Minute Trend - robots.txt
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+Sitemap: https://ai-news-trend-en-ko.vercel.app/sitemap.xml
