@@ -990,7 +990,7 @@ const App = () => {
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
-      addDebugLog(`Auth State Change: ${currentUser ? 'User Found' : 'No User'}`);
+      addDebugLog(`Auth Change: ${currentUser ? (currentUser.isAnonymous ? 'ANON' : 'USER') : 'NULL'} (${currentUser?.uid?.slice(0, 5)})`);
       setUser(currentUser);
 
       // 1. Initial App Load (Auto-login check)
