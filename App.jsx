@@ -967,6 +967,8 @@ const App = () => {
       })
       .catch((error) => {
         console.error('Mobile redirect error:', error);
+        // Show error to user (since they can't see console on mobile)
+        alert(`Login Failed: ${error.message} (${error.code})`);
       });
   }, []);
 
