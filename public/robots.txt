@@ -1,4 +1,4 @@
-﻿# AI 1-Minute Trend - robots.txt
+# AI 1-Minute Trend - robots.txt
 User-agent: *
 Allow: /
 
@@ -14,4 +14,4 @@ Allow: /
 User-agent: NaverBot
 Allow: /
 
-Sitemap: https://ai-news-trend-en-ko.vercel.app/sitemap.xml
+Sitemap: https://ai-news-trend.vercel.app/sitemap.xml
