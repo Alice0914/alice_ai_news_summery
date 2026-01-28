@@ -956,9 +956,13 @@ const App = () => {
     handleGoogleRedirectResult()
       .then((user) => {
         if (user) {
-          console.log('✅ Mobile redirect login successful');
+          console.log('✅ Mobile redirect login successful:', user.uid);
           localStorage.setItem('hasLoggedInBefore', 'true');
           wasLoggedIn.current = true;
+          // Force update state to ensure UI reflects login immediately
+          setUser(user);
+          setIsAuthModalOpen(false);
+          setStep(5);
         }
       })
       .catch((error) => {
