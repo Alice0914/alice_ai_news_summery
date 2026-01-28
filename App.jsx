@@ -1033,6 +1033,7 @@ const App = () => {
           }, 2000);
         } else {
           console.log('✅ Manual Login: Retrieving user data and showing toast...');
+          addDebugLog('✅ onAuthStateChanged: Manual login detected, calling setStep(5)');
           localStorage.setItem('hasLoggedInBefore', 'true');
           setShowLoginToast(true);
           setStep(5); // Immediate redirect to feed to prevent login form flash
