@@ -957,6 +957,13 @@ const App = () => {
     setDebugLogs(prev => [...prev, `${new Date().toISOString().slice(11, 19)} ${msg}`]);
   };
 
+  // Expose to window for external logging (firebaseConfig, etc.)
+  useEffect(() => {
+    window.addDebugLog = addDebugLog;
+    addDebugLog(`📱 Device Info: ${navigator.userAgent.slice(0, 50)}...`);
+    return () => { delete window.addDebugLog; };
+  }, []);
+
   // Handle mobile Google redirect result on app load
   useEffect(() => {
     addDebugLog("Checking Redirect Result...");

@@ -280,19 +280,23 @@ const isMobileDevice = () => {
 export const signInWithGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
+        if (window.addDebugLog) window.addDebugLog("🚀 signInWithGoogle Called");
 
         if (isMobileDevice()) {
+            if (window.addDebugLog) window.addDebugLog("📱 Mobile detected -> signInWithRedirect");
             // Mobile: Always use redirect - popup behavior is unreliable on mobile browsers
             console.log('📱 Mobile detected, using signInWithRedirect');
             await signInWithRedirect(auth, provider);
             return null;
         } else {
+            if (window.addDebugLog) window.addDebugLog("💻 Desktop detected -> signInWithPopup");
             // Desktop: Use popup for seamless experience
             const result = await signInWithPopup(auth, provider);
             await saveUserToFirestore(result.user);
             return result.user;
         }
     } catch (error) {
+        if (window.addDebugLog) window.addDebugLog(`❌ Sign In Error: ${error.message}`);
         console.error('Error signing in with Google', error);
         throw error;
     }
