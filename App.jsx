@@ -1183,6 +1183,7 @@ const App = () => {
   const [filterPeriod, setFilterPeriod] = useState('important'); // Default: Important
   const [dateFilter, setDateFilter] = useState('last_week'); // NEW: Date Filter (Default: Last Week)
   const [currentNews, setCurrentNews] = useState([]);
+  const [newsLoading, setNewsLoading] = useState(true); // NEW: Track news loading state
   const [preferencesModalOpen, setPreferencesModalOpen] = useState(false); // NEW: For PreferencesPage modal
 
   const handleToggleSave = async (newsItem) => {
@@ -1310,10 +1311,12 @@ const App = () => {
         uniqueNews.sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
 
         setCurrentNews(uniqueNews);
+        setNewsLoading(false); // Data loaded
         console.log(`Total loaded news items: ${uniqueNews.length}`);
 
       } catch (error) {
         console.error("Error fetching news from Firestore:", error);
+        setNewsLoading(false); // Still mark as loaded even on error
       }
     };
 
@@ -2847,6 +2850,11 @@ const App = () => {
                         />
                       </div>
                     ))
+                  ) : newsLoading ? (
+                    <div className="lg:col-span-2 py-20 flex flex-col items-center justify-center text-center px-4 animate-in fade-in duration-500">
+                      <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin mb-4"></div>
+                      <p className="text-white/50 text-sm">{i18n.language === 'ko' ? '뉴스를 불러오는 중...' : 'Loading news...'}</p>
+                    </div>
                   ) : (
                     <div className="lg:col-span-2 py-20 flex flex-col items-center justify-center text-center px-4 animate-in fade-in duration-500">
                       <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10">
