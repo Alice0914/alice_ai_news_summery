@@ -5,9 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './locales/en.json';
 import ko from './locales/ko.json';
 
-// Detect language manually to enforce: "If ko -> ko, else -> en" default
-const userLang = navigator.language || navigator.userLanguage;
-const defaultLang = userLang && userLang.toLowerCase().includes('ko') ? 'ko' : 'en';
+const defaultLang = 'en'; // Force English as default for new users
 
 // Check localStorage first
 // Clean up 'en-US' -> 'en' to match resource keys
