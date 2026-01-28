@@ -951,29 +951,39 @@ const App = () => {
   // Track if user has successfully logged in during this session
   const wasLoggedIn = useRef(false);
 
+  // DEBUG STATE
+  const [debugLogs, setDebugLogs] = useState([]);
+  const addDebugLog = (msg) => {
+    setDebugLogs(prev => [...prev, `${new Date().toISOString().slice(11, 19)} ${msg}`]);
+  };
+
   // Handle mobile Google redirect result on app load
   useEffect(() => {
+    addDebugLog("Checking Redirect Result...");
     handleGoogleRedirectResult()
       .then((user) => {
         if (user) {
+          addDebugLog(`✅ Redirect Success: ${user.uid.slice(0, 5)}...`);
           console.log('✅ Mobile redirect login successful:', user.uid);
           localStorage.setItem('hasLoggedInBefore', 'true');
           wasLoggedIn.current = true;
-          // Force update state to ensure UI reflects login immediately
           setUser(user);
           setIsAuthModalOpen(false);
           setStep(5);
+        } else {
+          addDebugLog("ℹ️ Redirect Result: NULL");
         }
       })
       .catch((error) => {
+        addDebugLog(`❌ Redirect Error: ${error.code} - ${error.message}`);
         console.error('Mobile redirect error:', error);
-        // Show error to user (since they can't see console on mobile)
         alert(`Login Failed: ${error.message} (${error.code})`);
       });
   }, []);
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
+      addDebugLog(`Auth State Change: ${currentUser ? 'User Found' : 'No User'}`);
       setUser(currentUser);
 
       // 1. Initial App Load (Auto-login check)
