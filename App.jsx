@@ -1559,7 +1559,14 @@ const App = () => {
     return (
       <>
         <AuthPage
-          onAuthSuccess={() => { }} // Logic handled by onAuthStateChanged listener
+          onAuthSuccess={() => {
+            // Immediately navigate to news feed after successful login
+            localStorage.setItem('hasLoggedInBefore', 'true');
+            wasLoggedIn.current = true;
+            setShowLoginToast(true);
+            setStep(5);
+            setTimeout(() => setShowLoginToast(false), 2000);
+          }}
           onSignupClick={() => setStep(1)} // Go to onboarding for new users
           onSignupStart={() => isSigningUp.current = true}
         />
