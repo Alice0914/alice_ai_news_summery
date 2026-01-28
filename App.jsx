@@ -1569,6 +1569,14 @@ const App = () => {
 
   // 0. Login Page (for logged-out users)
   if (step === 0) {
+    // If user is already logged in, show loading while redirect happens
+    if (user && !user.isAnonymous) {
+      return (
+        <div className="min-h-[100dvh] bg-[#0f111a] flex items-center justify-center">
+          <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+        </div>
+      );
+    }
     // If login success toast is active, show ONLY the toast on a background
     return (
       <>
