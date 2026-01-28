@@ -948,6 +948,9 @@ const App = () => {
   // Track initialization to distinguish between app load and manual login
   const isFirstCheck = useRef(true);
 
+  // Track if user has successfully logged in during this session
+  const wasLoggedIn = useRef(false);
+
   // Handle mobile Google redirect result on app load
   useEffect(() => {
     handleGoogleRedirectResult()
@@ -955,6 +958,7 @@ const App = () => {
         if (user) {
           console.log('✅ Mobile redirect login successful');
           localStorage.setItem('hasLoggedInBefore', 'true');
+          wasLoggedIn.current = true;
         }
       })
       .catch((error) => {
@@ -972,13 +976,14 @@ const App = () => {
           console.log('✅ Auto-login: Redirecting to news feed');
           // Mark that this user has logged in before
           localStorage.setItem('hasLoggedInBefore', 'true');
+          wasLoggedIn.current = true;
           setStep(5);
         } else {
           // Check if user has logged in before
           const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
           if (hasLoggedInBefore) {
-            console.log('🔒 Returning user: Showing login page');
-            setStep(0); // Show login page for returning users
+            console.log('🔒 Returning user: Showing news feed (Guest Mode)');
+            setStep(5); // Show News Feed for returning users (Guest Mode)
           } else {
             console.log('👋 First-time visitor: Showing landing page');
             setStep(1); // Show landing page for new users
@@ -991,7 +996,9 @@ const App = () => {
 
       // 2. Subsequent Auth Changes (Manual Login/Logout/Signup)
       if (currentUser && !currentUser.isAnonymous) {
+        wasLoggedIn.current = true; // Mark session as active
         // User just authenticated
+        setIsAuthModalOpen(false); // Ensure modal is closed
         if (isSigningUp.current) {
           console.log('🎉 Signup Success: Showing welcome toast then redirecting...');
           localStorage.setItem('hasLoggedInBefore', 'true');
@@ -1011,14 +1018,12 @@ const App = () => {
           }, 2000);
         }
       } else {
-        // User logged out - handled by handleLogout mostly, but this is a safety net
-        // If we are actively using the app, we might want to go to landing page or login
-        // But per request, Logout -> Login (Step 0)
-        // Initial Load -> Landing (Step 1)
-        // Since this listener fires on load too, we need to rely on isFirstCheck for that.
-        // For actual logout event:
-        if (!isFirstCheck.current) {
+        // User logged out
+        // Only redirect to Login (0) if we were previously logged in during this session
+        if (wasLoggedIn.current) {
+          console.log('👋 User logged out: Redirecting to login page');
           setStep(0);
+          wasLoggedIn.current = false;
         }
       }
     });
@@ -1465,6 +1470,7 @@ const App = () => {
     // If user is logged in, save preferences (handled by useEffect) and go to feed
     // If not logged in, go to feed (step 5) or maybe a specific "Guest Feed"?
     // For now, let's assume step 5 is the main feed.
+    localStorage.setItem('hasLoggedInBefore', 'true');
     setStep(5);
   };
 
