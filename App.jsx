@@ -993,6 +993,14 @@ const App = () => {
       addDebugLog(`Auth Change: ${currentUser ? (currentUser.isAnonymous ? 'ANON' : 'USER') : 'NULL'} (${currentUser?.uid?.slice(0, 5)})`);
       setUser(currentUser);
 
+      // SIMPLE FIX: If user just logged in (non-anonymous), go to feed immediately
+      if (currentUser && !currentUser.isAnonymous) {
+        addDebugLog('🚀 SIMPLE FIX: Logged in user detected, setStep(5)');
+        localStorage.setItem('hasLoggedInBefore', 'true');
+        wasLoggedIn.current = true;
+        setStep(5);
+      }
+
       // 1. Initial App Load (Auto-login check)
       if (isFirstCheck.current) {
         if (currentUser && !currentUser.isAnonymous) {
