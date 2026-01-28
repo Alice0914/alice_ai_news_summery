@@ -1018,11 +1018,14 @@ const App = () => {
       }
 
       // 2. Subsequent Auth Changes (Manual Login/Logout/Signup)
+      addDebugLog(`🔍 Subsequent check: user=${currentUser ? 'YES' : 'NO'}, anon=${currentUser?.isAnonymous}, isSigningUp=${isSigningUp.current}`);
       if (currentUser && !currentUser.isAnonymous) {
+        addDebugLog('🔍 Entered non-anonymous user block');
         wasLoggedIn.current = true; // Mark session as active
         // User just authenticated
         setIsAuthModalOpen(false); // Ensure modal is closed
         if (isSigningUp.current) {
+          addDebugLog('🔍 isSigningUp.current is TRUE - taking signup path');
           console.log('🎉 Signup Success: Showing welcome toast then redirecting...');
           localStorage.setItem('hasLoggedInBefore', 'true');
           setShowSignupToast(true);
