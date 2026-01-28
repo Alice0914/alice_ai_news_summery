@@ -1555,7 +1555,6 @@ const App = () => {
         <AuthPage
           onAuthSuccess={() => {
             // Immediately navigate to news feed after successful login
-            addDebugLog('🚀 onAuthSuccess CALLED - navigating to step 5');
             localStorage.setItem('hasLoggedInBefore', 'true');
             wasLoggedIn.current = true;
             setShowLoginToast(true);
