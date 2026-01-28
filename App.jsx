@@ -3024,6 +3024,12 @@ const App = () => {
         )
       }
 
+      {/* DEBUG CONSOLE OVERLAY */}
+      <div className="fixed bottom-0 left-0 right-0 bg-black/80 text-green-400 text-xs p-2 max-h-40 overflow-y-auto z-[9999] pointer-events-none font-mono">
+        {debugLogs.map((log, i) => (
+          <div key={i}>{log}</div>
+        ))}
+      </div>
     </div >
   );
 }
