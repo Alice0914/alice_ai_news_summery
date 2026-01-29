@@ -7,7 +7,7 @@ import {
   Cpu, Coffee, Shield, Bot, Lightbulb, Zap,
   FileText, Image as ImageIcon, Film, Mic, Sparkles, Workflow, Layers, Code,
   Smartphone, Watch, Database, Share2, Server, ShieldCheck, MessageSquare, Heart, PartyPopper, LogOut,
-  Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List // Added icons
+  Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List, Mail // Added icons
 } from 'lucide-react';
 
 // import MOCK_NEWS_DATA from './data/final_data_ko.json';
@@ -668,66 +668,120 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
     }
   };
 
+  // AddToAny share handler (Updated to include full text + message)
+  const handleSNSShare = (platform) => {
+    // We already have fullShareText constructed above with Message + Title + Summary + Hashtags + URL
+    const encodedFullText = encodeURIComponent(fullShareText);
+    const encodedUrl = encodeURIComponent(shareUrl);
+    const encodedTitle = encodeURIComponent(news.title);
+
+    const shareUrls = {
+      threads: `https://www.threads.net/intent/post?text=${encodedFullText}`,
+      x: `https://twitter.com/intent/tweet?text=${encodedFullText}`, // X takes text parameter
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedFullText}`, // Facebook might ignore quote, but we try
+      whatsapp: `https://api.whatsapp.com/send?text=${encodedFullText}`,
+      sms: `sms:?body=${encodedFullText}`,
+      reddit: `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}&text=${encodedFullText}`,
+      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedFullText}`,
+      email: `mailto:?subject=${encodedTitle}&body=${encodedFullText}`
+    };
+
+    window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+  };
+
+  // Futuristic Minimal Styles
+  // Brands: Threads, X, Facebook, LinkedIn, Reddit, WhatsApp, SMS, Email
+  const snsButtons = [
+    { id: 'threads', label: 'Threads', icon: <img src="https://cdn.simpleicons.org/threads/white" alt="Threads" className="w-4 h-4" /> },
+    { id: 'x', label: 'X', icon: <img src="https://cdn.simpleicons.org/x/white" alt="X" className="w-4 h-4" /> },
+    { id: 'facebook', label: 'Facebook', icon: <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook" className="w-4 h-4" /> },
+    { id: 'linkedin', label: 'LinkedIn', icon: <Linkedin className="w-4 h-4 text-white" /> }, // Use Lucide icon for reliability
+    { id: 'reddit', label: 'Reddit', icon: <img src="https://cdn.simpleicons.org/reddit/white" alt="Reddit" className="w-4 h-4" /> },
+    { id: 'whatsapp', label: 'WhatsApp', icon: <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp" className="w-4 h-4" /> },
+    { id: 'sms', label: 'SMS', icon: <MessageSquare className="w-4 h-4 text-white" /> },
+    { id: 'email', label: 'Email', icon: <Mail className="w-4 h-4 text-white" /> },
+  ];
+
   return (
-    <div className="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
-      <div className="w-full max-w-md bg-[#1a1f2e] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-[110] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
+      <div className="w-full max-w-sm bg-[#0f111a] border border-white/10 rounded-3xl shadow-2xl shadow-blue-900/20 overflow-hidden flex flex-col max-h-[85vh]">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-white/5 flex-shrink-0">
-          <h3 className="text-lg font-bold text-white flex items-center gap-2">
-            <Share2 className="w-5 h-5 text-blue-400" />
-            {t('share_modal_title')}
+        <div className="flex items-center justify-between p-4 border-b border-white/5 flex-shrink-0 bg-white/[0.02]">
+          <h3 className="text-sm font-bold text-white flex items-center gap-2 uppercase tracking-widest">
+            <Share2 className="w-4 h-4 text-blue-500" />
+            {t('share_modal_title') || 'Share'}
           </h3>
-          <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 text-white/50 hover:text-white transition-colors">
-            <X className="w-5 h-5" />
+          <button onClick={onClose} className="p-1.5 rounded-full hover:bg-white/10 text-white/40 hover:text-white transition-colors">
+            <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Scrollable Content */}
-        <div className="p-5 space-y-4 overflow-y-auto custom-scrollbar">
+        <div className="p-4 space-y-6 overflow-y-auto custom-scrollbar">
 
-          {/* Custom Message Input */}
-          <div>
-            <label className="block text-xs font-semibold text-white/70 mb-1.5 uppercase tracking-wider">
-              {t('add_message')}
+          {/* 1. Message & Preview Section (First) */}
+          <div className="space-y-3">
+            <label className="block text-[10px] font-bold text-blue-400 uppercase tracking-widest">
+              Message & Preview
             </label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder={t('share_message_placeholder')}
-              className="w-full h-20 bg-black/20 text-white text-sm p-3 rounded-xl border border-white/10 focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 outline-none resize-none placeholder:text-white/20"
+              placeholder="Add a custom message..."
+              className="w-full h-16 bg-black/40 text-white text-xs p-3 rounded-xl border border-white/5 focus:border-blue-500/30 outline-none resize-none placeholder:text-white/20 transition-all font-sans"
             />
+            <div className="bg-black/40 rounded-xl p-3 border border-white/5">
+              <pre className="text-white/60 text-[10px] leading-relaxed whitespace-pre-wrap font-mono max-h-32 overflow-y-auto custom-scrollbar">
+                {fullShareText}
+              </pre>
+            </div>
           </div>
 
-          {/* Preview Card */}
-          <div className="bg-white/5 rounded-xl p-4 border border-white/10 relative group">
-            <div className="absolute top-2 right-2 opacity-50 text-[10px] text-white/40 uppercase tracking-widest font-bold">{t('preview')}</div>
-            <pre className="text-white/80 text-xs leading-relaxed whitespace-pre-wrap font-sans">
-              {fullShareText}
-            </pre>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="p-4 border-t border-white/5 bg-white/[0.02] flex gap-3 flex-shrink-0">
+          {/* 2. Copy Button (Clean, Centered) */}
           <button
             onClick={handleCopy}
-            className={`flex-1 py-3 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 border ${copied ? 'bg-green-500/10 border-green-500/50 text-green-400' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'}`}
+            className={`w-full py-3 rounded-xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${copied
+              ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+              : 'bg-blue-600 hover:bg-blue-500 text-white border border-transparent shadow-blue-600/20 hover:shadow-blue-500/30'
+              }`}
           >
             {copied ? <Check className="w-4 h-4" /> : <Layers className="w-4 h-4" />}
-            {copied ? t('copied') : t('copy_text')}
+            {copied ? 'Copied to Clipboard' : 'Copy Full Text'}
           </button>
-          <button
-            onClick={handleShareClick}
-            className="flex-[1.5] py-3 rounded-xl font-bold text-white bg-blue-600 hover:bg-blue-500 transition-colors shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 text-sm"
-          >
-            <Share2 className="w-4 h-4" />
-            {t('share_via_app')}
-          </button>
+
+          {/* Divider */}
+          <div className="relative flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center px-4">
+              <div className="w-full h-px bg-white/5"></div>
+            </div>
+            <span className="relative bg-[#0f111a] px-2 text-[9px] text-white/20 uppercase tracking-widest font-bold">or share via</span>
+          </div>
+
+          {/* 3. Quick Share Grid (Last) */}
+          <div>
+            <div className="grid grid-cols-4 gap-2">
+              {snsButtons.map((btn) => (
+                <button
+                  key={btn.id}
+                  onClick={() => handleSNSShare(btn.id)}
+                  className="group bg-white/5 hover:bg-white/10 hover:border-blue-500/30 border border-white/5 p-2.5 rounded-2xl transition-all duration-300 flex flex-col items-center gap-1.5"
+                >
+                  <div className="p-1.5 rounded-full bg-white/5 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300 text-white">
+                    {btn.icon}
+                  </div>
+                  <span className="text-[9px] font-medium text-white/40 group-hover:text-white transition-colors">{btn.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   );
 };
+
+
 
 const FilterPage = ({
   isOpen, onClose,
