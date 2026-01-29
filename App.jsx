@@ -10,6 +10,7 @@ import {
   Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List, Mail // Added icons
 } from 'lucide-react';
 import logo from './assets/logo.png';
+import discordIconImg from './assets/discord_icon.png';
 
 // import MOCK_NEWS_DATA from './data/final_data_ko.json';
 
@@ -51,7 +52,7 @@ import krFlag from './assets/kr_flag.png';
 
 const DiscordIcon = ({ className }) => (
   <img
-    src="/discord_icon.png"
+    src={discordIconImg}
     alt="Discord"
     className={className}
     style={{ objectFit: 'contain' }}
