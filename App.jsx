@@ -639,7 +639,7 @@ const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, 
 
 // 4. Share Modal Component
 const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [message, setMessage] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -723,12 +723,12 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
           {/* 1. Message & Preview Section (First) */}
           <div className="space-y-3">
             <label className="block text-[10px] font-bold text-blue-400 uppercase tracking-widest">
-              Message & Preview
+              {i18n.language === 'ko' ? '메시지 & 미리보기' : 'Message & Preview'}
             </label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Add a custom message..."
+              placeholder={i18n.language === 'ko' ? '추가 메시지를 입력하세요...' : 'Add a custom message...'}
               className="w-full h-16 bg-black/40 text-white text-xs p-3 rounded-xl border border-white/5 focus:border-blue-500/30 outline-none resize-none placeholder:text-white/20 transition-all font-sans"
             />
             <div className="bg-black/40 rounded-xl p-3 border border-white/5">
@@ -747,7 +747,9 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
               }`}
           >
             {copied ? <Check className="w-4 h-4" /> : <Layers className="w-4 h-4" />}
-            {copied ? 'Copied to Clipboard' : 'Copy Full Text'}
+            {copied
+              ? (i18n.language === 'ko' ? '복사 완료!' : 'Copied to Clipboard')
+              : (i18n.language === 'ko' ? '전체 내용 복사' : 'Copy Full Text')}
           </button>
 
           {/* Divider */}
@@ -755,7 +757,9 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
             <div className="absolute inset-0 flex items-center px-4">
               <div className="w-full h-px bg-white/5"></div>
             </div>
-            <span className="relative bg-[#0f111a] px-2 text-[9px] text-white/20 uppercase tracking-widest font-bold">or share via</span>
+            <span className="relative bg-[#0f111a] px-2 text-[9px] text-white/20 uppercase tracking-widest font-bold">
+              {i18n.language === 'ko' ? '또는 SNS로 공유' : 'or share via'}
+            </span>
           </div>
 
           {/* 3. Quick Share Grid (Last) */}
