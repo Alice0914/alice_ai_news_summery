@@ -9,6 +9,7 @@ import {
   Smartphone, Watch, Database, Share2, Server, ShieldCheck, MessageSquare, Heart, PartyPopper, LogOut,
   Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List, Mail // Added icons
 } from 'lucide-react';
+import logo from './assets/logo.png';
 
 // import MOCK_NEWS_DATA from './data/final_data_ko.json';
 
@@ -1632,7 +1633,7 @@ const App = () => {
 
         <div className="text-center max-w-lg z-10 flex flex-col items-center justify-center h-full">
           <div className="mb-4 relative inline-block">
-            <img src="/logo.png" alt="AI 1분 트렌드" className="w-32 h-32 object-contain relative z-10" />
+            <img src={logo} alt="AI 1분 트렌드" className="w-32 h-32 object-contain relative z-10" />
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
@@ -1820,7 +1821,7 @@ const App = () => {
         <div className="p-6">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="App Logo" className="w-12 h-12 rounded-xl object-contain shadow-[0_0_20px_rgba(59,130,246,0.3)]" />
+              <img src={logo} alt="App Logo" className="w-12 h-12 rounded-xl object-contain shadow-[0_0_20px_rgba(59,130,246,0.3)]" />
               <h1 className="text-[20px] font-bold tracking-tight">
                 <span className="gradient-text">AI</span> {t('app_title')}
               </h1>
@@ -2025,7 +2026,7 @@ const App = () => {
                 <>
                   {/* Logo - Hidden on desktop (shown in sidebar) */}
                   <div className="flex items-center gap-3 lg:hidden">
-                    <img src="/logo.png" alt="App Logo" className="w-11 h-11 rounded-xl object-contain shadow-[0_0_15px_rgba(19,127,236,0.2)]" />
+                    <img src={logo} alt="App Logo" className="w-11 h-11 rounded-xl object-contain shadow-[0_0_15px_rgba(19,127,236,0.2)]" />
                     <h1 className="text-lg font-bold tracking-tight text-white/95">{t('mobile_app_title')}</h1>
                   </div>
 
