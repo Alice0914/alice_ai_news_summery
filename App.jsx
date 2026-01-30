@@ -361,9 +361,59 @@ const LanguageSelectionStep = ({ onNext, onPrev, onSkip }) => {
 };
 
 
+// Helper Component for Image Loading
+const AsyncImage = ({ src, alt, className, placeholderClassName }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(false);
+    const img = new Image();
+    img.onload = () => setLoaded(true);
+    img.src = src;
+  }, [src]);
+
+  return (
+    <>
+      {!loaded && (
+        <div className={`absolute inset-0 bg-[#0f111a] flex items-center justify-center ${placeholderClassName || ''}`}>
+          <div className="w-8 h-8 border-2 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+        </div>
+      )}
+      {loaded && (
+        <img
+          src={src}
+          alt={alt}
+          className={`${className} animate-in fade-in duration-500`}
+        />
+      )}
+    </>
+  );
+};
+
 // 2. Feature News Card (Top 5) with Visuals
 const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLike, isLiked, selectedInterests, selectedServices, selectedCore, onNext, onPrev, current, total }) => {
   const { t, i18n } = useTranslation();
+  const [bgLoaded, setBgLoaded] = useState(false);
+  const [thumbLoaded, setThumbLoaded] = useState(false);
+
+  useEffect(() => {
+    if (news.imageUrl) {
+      setBgLoaded(false);
+      const img = new Image();
+      img.onload = () => setBgLoaded(true);
+      img.src = news.imageUrl;
+    }
+  }, [news.imageUrl]);
+
+  useEffect(() => {
+    const imgSrc = news.imageUrl || image;
+    if (imgSrc) {
+      setThumbLoaded(false);
+      const img = new Image();
+      img.onload = () => setThumbLoaded(true);
+      img.src = imgSrc;
+    }
+  }, [news.imageUrl, image]);
 
   // Helper: Convert English tag to Korean if language is 'ko'
   const getLocalizedTag = (tag) => {
@@ -388,12 +438,17 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
     <article className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-2xl backdrop-blur-md hover:bg-white/[0.05] transition-all duration-300 h-auto flex flex-col">
       {/* Conditional Image Rendering: Priority 1: news.imageUrl, Priority 2: Gradient/Fallback */}
       {news.imageUrl ? (
-        <div className="absolute top-0 right-0 w-full h-full">
-          <img
-            src={news.imageUrl}
-            alt={news.title}
-            className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-500"
-          />
+        <div className="absolute top-0 right-0 w-full h-full bg-[#0f111a]">
+          {!bgLoaded && (
+            <div className="absolute inset-0 bg-white/5 animate-pulse" />
+          )}
+          {bgLoaded && (
+            <img
+              src={news.imageUrl}
+              alt={news.title}
+              className="w-full h-full object-cover group-hover:opacity-70 transition-opacity duration-500 opacity-60"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f111a]/10 via-[#0f111a]/80 to-[#0f111a] pointer-events-none"></div>
         </div>
       ) : (
@@ -401,18 +456,23 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
       )}
 
       <div className="p-5 flex flex-col gap-4 flex-1 relative z-10">
-        {/* Visual Area for Top News - Optional: We can hide this if we have a full background,
-          OR keep it as a smaller thumbnail if intended.
-          Given the prompt "show image", let's assume the background IS the image visualization.
-          But we need the badge. */}
-
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/5 flex-shrink-0">
+        {/* Visual Area for Top News */}
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-white/5 flex-shrink-0 bg-[#0f111a]">
           <div className="absolute inset-0 bg-gradient-to-t from-[#101922] via-transparent to-transparent opacity-60 z-10"></div>
-          <img
-            alt={news.title}
-            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-            src={news.imageUrl || image}
-          />
+
+          {!thumbLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white/5">
+              <div className="w-8 h-8 border-2 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+            </div>
+          )}
+
+          {thumbLoaded && (
+            <img
+              alt={news.title}
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-700"
+              src={news.imageUrl || image}
+            />
+          )}
           <div className="absolute top-3 left-3 z-20">
             <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-600/90 text-white backdrop-blur-sm shadow-[0_0_15px_rgba(19,127,236,0.5)]">
               {getLocalizedTag(displayCategory)}
@@ -1600,10 +1660,7 @@ const App = () => {
   if (authLoading) {
     return (
       <div className="min-h-[100dvh] bg-[#0f111a] flex flex-col items-center justify-center p-6">
-        <div className="mb-4 relative inline-block">
-          <img src="/logo.png" alt="AI 1분 트렌드" className="w-24 h-24 object-contain animate-pulse" />
-        </div>
-        <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -2536,8 +2593,8 @@ const App = () => {
                             return (
                               <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[380px] flex flex-col">
                                 {/* Image 60% (Increased another 5%) */}
-                                <div className="relative h-[60%] overflow-hidden">
-                                  <img
+                                <div className="relative h-[60%] overflow-hidden bg-[#0f111a]">
+                                  <AsyncImage
                                     alt={news.title}
                                     className="w-full h-full object-cover"
                                     src={news.imageUrl || SAMPLE_IMAGES[(prevIndex + (new Date().getDate() * 5)) % SAMPLE_IMAGES.length]}
@@ -2570,8 +2627,8 @@ const App = () => {
                             return (
                               <article className="group relative overflow-hidden rounded-2xl bg-white/[0.05] border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] h-auto min-h-[390px] flex flex-col transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]">
                                 {/* Image Fixed Height (Increased another 5%) */}
-                                <div className="relative h-[205px] overflow-hidden">
-                                  <img
+                                <div className="relative h-[205px] overflow-hidden bg-[#0f111a]">
+                                  <AsyncImage
                                     alt={news.title}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                     src={news.imageUrl || SAMPLE_IMAGES[(currentTopIndex + (new Date().getDate() * 5)) % SAMPLE_IMAGES.length]}
@@ -2683,8 +2740,8 @@ const App = () => {
                             return (
                               <article className="relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 shadow-xl h-[380px] flex flex-col">
                                 {/* Image 60% (Increased another 5%) */}
-                                <div className="relative h-[60%] overflow-hidden">
-                                  <img
+                                <div className="relative h-[60%] overflow-hidden bg-[#0f111a]">
+                                  <AsyncImage
                                     alt={news.title}
                                     className="w-full h-full object-cover"
                                     src={news.imageUrl || SAMPLE_IMAGES[(nextIndex + (new Date().getDate() * 5)) % SAMPLE_IMAGES.length]}
@@ -2913,10 +2970,9 @@ const App = () => {
                     ))
                   ) : newsLoading ? (
                     <div className="lg:col-span-2 py-20 flex flex-col items-center justify-center text-center px-4 animate-in fade-in duration-500">
-                      <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin mb-4"></div>
-                      <p className="text-white/50 text-sm">{i18n.language === 'ko' ? '뉴스를 불러오는 중...' : 'Loading news...'}</p>
+                      <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
                     </div>
-                  ) : (
+                  ) : displayNews.length === 0 ? (
                     <div className="lg:col-span-2 py-20 flex flex-col items-center justify-center text-center px-4 animate-in fade-in duration-500">
                       <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10">
                         <Filter className="w-10 h-10 text-white/20" />
@@ -2934,7 +2990,7 @@ const App = () => {
                         {i18n.language === 'ko' ? '필터 및 검색 초기화' : 'Reset Filters & Search'}
                       </button>
                     </div>
-                  )}
+                  ) : null}
                 </div>
               </section>
             </>
