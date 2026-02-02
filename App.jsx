@@ -707,12 +707,28 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
   if (!isOpen || !news) return null;
 
   const hashtags = news.searchKeywords ? news.searchKeywords.map(k => `#${k.replace(/\s+/g, '')}`).join(' ') : '';
+
+  // Helper to render bold text for preview
+  const renderPreview = (text) => {
+    return text.split(/(\*[^*\n]+\*)/g).map((part, index) => {
+      if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+        return <span key={index} className="text-blue-300 font-bold">{part.slice(1, -1)}</span>;
+      }
+      return part;
+    });
+  };
   const shareUrl = news.sourceUrl || window.location.href;
 
   // Construct the full text for preview and sharing
   let fullShareText = '';
   if (message.trim()) fullShareText += `${message}\n\n`;
-  fullShareText += `[${news.title}]\n\n${news.summary}\n\n${hashtags}\n\n${shareUrl}`;
+
+  if (news.isSummaryList) {
+    fullShareText += `${news.summary}\n\n✨ [${news.title}]: ${shareUrl}\n\n${hashtags}`;
+  } else {
+    // Single Article Format: 📌 Title -> Summary -> 👉 Source URL -> Hashtags
+    fullShareText += `📌 [${news.title}]\n\n${news.summary}\n\n👉 Source: ${shareUrl}\n\n${hashtags}`;
+  }
 
   const handleShareClick = () => {
     onConfirm(message);
@@ -722,11 +738,37 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(fullShareText);
+      // Create HTML version of the text
+      // 1. Escape HTML formatting characters in the original text (except our bold markers)
+      //    (Simplification: Assuming normal text usage, but replacing newlines and bold markers)
+      // 2. Replace newlines with <br>
+      // 3. Replace *bold* with <b>bold</b>
+
+      const htmlContent = fullShareText
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\n/g, "<br>")
+        .replace(/\*([^*\n]+)\*/g, "<b>$1</b>"); // Bold conversion
+
+      const clipboardItem = new ClipboardItem({
+        'text/plain': new Blob([fullShareText], { type: 'text/plain' }),
+        'text/html': new Blob([htmlContent], { type: 'text/html' })
+      });
+
+      await navigator.clipboard.write([clipboardItem]);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error('Failed to copy', err);
+      // Fallback for browsers that might not support ClipboardItem or restrictive contexts
+      try {
+        await navigator.clipboard.writeText(fullShareText);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed', fallbackErr);
+      }
     }
   };
 
@@ -744,7 +786,7 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
       whatsapp: `https://api.whatsapp.com/send?text=${encodedFullText}`,
       sms: `sms:?body=${encodedFullText}`,
       reddit: `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}&text=${encodedFullText}`,
-      linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedFullText}`,
+      linkedin: `https://www.linkedin.com/feed/?shareActive=true&text=${encodedFullText}`, // Direct post creation
       email: `mailto:?subject=${encodedTitle}&body=${encodedFullText}`
     };
 
@@ -793,8 +835,8 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
               className="w-full h-16 bg-black/40 text-white text-xs p-3 rounded-xl border border-white/5 focus:border-blue-500/30 outline-none resize-none placeholder:text-white/20 transition-all font-sans"
             />
             <div className="bg-black/40 rounded-xl p-3 border border-white/5">
-              <pre className="text-white/60 text-[10px] leading-relaxed whitespace-pre-wrap font-mono max-h-32 overflow-y-auto custom-scrollbar">
-                {fullShareText}
+              <pre className="text-white/60 text-[10px] leading-relaxed whitespace-pre-wrap font-sans max-h-32 overflow-y-auto custom-scrollbar">
+                {renderPreview(fullShareText)}
               </pre>
             </div>
           </div>
@@ -1835,10 +1877,11 @@ const App = () => {
     setCurrentTopIndex((prev) => (prev - 1 + topNews.length) % topNews.length);
   };
 
-  const handleCopyAll = async () => {
+  const handleShareList = () => {
     const periodText = dateFilter.replace('_', ' ');
-    // Using simple bold characters for the header to match user request style
-    const header = `💡 Here are the Top ${topNews.length} important AI news stories of the ${periodText}`;
+    const header = i18n.language === 'ko'
+      ? `*💡 ${periodText} 주요 AI 뉴스 Top ${topNews.length}*`
+      : `*💡 Top ${topNews.length} important AI news stories of the ${periodText}*`;
 
     const itemsText = topNews.map((news, index) => {
       // Create number emoji up to 10, fallback to number
@@ -1852,18 +1895,18 @@ const App = () => {
       // Note: news.why_it_matters is already localized by getFilteredNews
       const whyText = news.why_it_matters || '';
 
-      // Format: Title \n Number+Summary \n Why It Matters \n Source
-      return `${news.title}\n${numEmoji}${news.summary}\n➡️ ${whyLabel}: ${whyText}\n👉${sourceLabel}: ${news.sourceUrl}`;
+      // Format: Number + Bold Title \n Summary \n Why It Matters \n Source
+      return `${numEmoji} *${news.title}*\n${news.summary}\n➡️ ${whyLabel}: ${whyText}\n👉${sourceLabel}: ${news.sourceUrl}`;
     }).join('\n\n');
 
-    const fullText = `${header}\n${itemsText}`;
-
-    try {
-      await navigator.clipboard.writeText(fullText);
-      alert(i18n.language === 'ko' ? '클립보드에 복사되었습니다!' : 'Copied to clipboard!');
-    } catch (err) {
-      console.error('Failed to copy', err);
-    }
+    setShareNewsItem({
+      title: i18n.language === 'ko' ? 'AI 1분 트렌드' : 'AI 1-Minute Trend',
+      summary: `${header}\n\n${itemsText}`,
+      searchKeywords: ['AI', 'Trend', 'News'],
+      sourceUrl: window.location.href,
+      isSummaryList: true
+    });
+    setIsShareModalOpen(true);
   };
 
   return (
@@ -2917,11 +2960,11 @@ const App = () => {
                     {/* Copy All Button - Inside the container, bottom */}
                     <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
                       <button
-                        onClick={handleCopyAll}
+                        onClick={handleShareList}
                         className="px-8 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-lg shadow-blue-500/20 hover:scale-105 transition-transform flex items-center gap-2"
                       >
-                        <Copy className="w-5 h-5" />
-                        {i18n.language === 'ko' ? '전체 기사 복사하기' : 'Copy All Articles'}
+                        <Share2 className="w-5 h-5" />
+                        {i18n.language === 'ko' ? '전체 리스트 공유하기' : 'Share Summary List'}
                       </button>
                     </div>
                   </div>
