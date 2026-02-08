@@ -1323,18 +1323,21 @@ const App = () => {
   };
 
   const handleLogout = async () => {
-    setShowLogoutToast(true);
-    // Delay actual logout to let user see the toast
-    setTimeout(async () => {
-      try {
-        await logout();
+    try {
+      // Immediately log out first
+      await logout();
+      // Show toast after successful logout
+      setShowLogoutToast(true);
+      setIsAuthModalOpen(false); // Ensure modal is closed
+      // Navigate to login page (step 0)
+      setStep(0);
+      // Hide toast after delay
+      setTimeout(() => {
         setShowLogoutToast(false);
-        setStep(0); // Go to Login Screen explicitly
-        setIsAuthModalOpen(false); // Ensure modal is closed
-      } catch (error) {
-        console.error("Logout failed", error);
-      }
-    }, 1500);
+      }, 2000);
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
   };
 
   const [filterPeriod, setFilterPeriod] = useState('important'); // Default: Important
