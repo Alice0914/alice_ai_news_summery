@@ -1325,26 +1325,33 @@ const App = () => {
   };
 
   const handleLogout = async () => {
+    // 1. Immediate UI Feedback
+    setShowLogoutToast(true);
+    setIsAuthModalOpen(false); // Ensure modal is closed
+
+    // 2. Prevent automatic redirect in onAuthStateChanged
+    wasLoggedIn.current = false;
+
     try {
-      // Prevent automatic redirect in onAuthStateChanged
-      wasLoggedIn.current = false;
+      // 3. Run logout and delay in parallel
+      // This ensures we show the message for AT LEAST 2 seconds, 
+      // but also don't wait extra if logout is fast.
+      // If logout is slow, the user sees the "Logged Out" message while it happens.
+      await Promise.all([
+        logout(),
+        new Promise(resolve => setTimeout(resolve, 2000))
+      ]);
 
-      // Immediately log out
-      await logout();
-
-      // Show toast after successful logout
-      setShowLogoutToast(true);
-      setIsAuthModalOpen(false); // Ensure modal is closed
+      // 4. Navigate after delay
+      setShowLogoutToast(false);
       setActiveTab('home'); // Reset tab for next login
+      setStep(0); // Go to Login Screen explicitly
 
-      // Show toast for 2 seconds, THEN navigate to login page
-      setTimeout(() => {
-        setShowLogoutToast(false);
-        setStep(0); // Go to Login Screen explicitly
-      }, 2000);
     } catch (error) {
       console.error("Logout failed", error);
-      // Restore flag if failed
+      // Restore flag if failed, but we might still want to redirect to login if it's a "token expired" issue
+      // For now, just hide toast
+      setShowLogoutToast(false);
       wasLoggedIn.current = true;
     }
   };
