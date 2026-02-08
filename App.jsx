@@ -1252,6 +1252,9 @@ const App = () => {
 
   // Separate effect for User Data Subscription & Safety Redirect
   useEffect(() => {
+    let dataLoadTimeout;
+    let unsubscribeUserData = () => { };
+
     if (user && !user.isAnonymous) {
       // Safety Redirect: If user is logged in but stuck on Login Page (0) or Auth Gate (4.5), go to Feed (5)
       if (step === 0 || step === 4.5) {
@@ -1259,36 +1262,46 @@ const App = () => {
         setStep(5);
       }
 
-      const unsubscribeUserData = subscribeToUserData(user.uid, ({ likes, bookmarks, preferences }) => {
-        setLikedNewsIds(new Set(likes));
-        setSavedNewsItems(bookmarks);
-        setSavedNewsIds(new Set(bookmarks.map(b => b.id)));
+      // OPTIMIZATION: Defer data loading to prevent blocking UI transition on mobile
+      // Show feed immediately (50ms delay for UI to render), then load data in background
+      dataLoadTimeout = setTimeout(() => {
+        console.log('📊 Loading user data in background...');
 
-        if (preferences) {
-          if (preferences.language) {
-            i18n.changeLanguage(preferences.language);
-          }
-          setSavedPreferences({
-            categories: preferences.categories || [],
-            productServices: preferences.productServices || [],
-            coreElements: preferences.coreElements || [],
-            language: preferences.language || 'en'
-          });
+        unsubscribeUserData = subscribeToUserData(user.uid, ({ likes, bookmarks, preferences }) => {
+          setLikedNewsIds(new Set(likes));
+          setSavedNewsItems(bookmarks);
+          setSavedNewsIds(new Set(bookmarks.map(b => b.id)));
 
-          if (!hasInitializedFilters.current) {
-            hasInitializedFilters.current = true;
-            if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP_REV));
-            if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP_REV));
-            if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP_REV));
+          if (preferences) {
+            if (preferences.language) {
+              i18n.changeLanguage(preferences.language);
+            }
+            setSavedPreferences({
+              categories: preferences.categories || [],
+              productServices: preferences.productServices || [],
+              coreElements: preferences.coreElements || [],
+              language: preferences.language || 'en'
+            });
+
+            if (!hasInitializedFilters.current) {
+              hasInitializedFilters.current = true;
+              if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP_REV));
+              if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP_REV));
+              if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP_REV));
+            }
           }
-        }
-      });
-      return () => unsubscribeUserData();
+        });
+      }, 50);
     } else {
       setSavedNewsItems([]);
       setSavedNewsIds(new Set());
       setLikedNewsIds(new Set());
     }
+
+    return () => {
+      if (dataLoadTimeout) clearTimeout(dataLoadTimeout);
+      unsubscribeUserData();
+    };
   }, [user, step]); // Added step to dependencies
 
   const handleLogin = async () => {
@@ -1352,48 +1365,28 @@ const App = () => {
   };
 
   const handleLogout = async () => {
-    // 1. Immediate UI Feedback
+    // 1. IMMEDIATE UI Transition (for fast mobile UX)
+    setStep(0); // Show login screen immediately
+    setActiveTab('home'); // Reset tab
+    wasLoggedIn.current = false; // Prevent auto-redirect
+
+    // 2. Show logout toast (non-blocking)
     setShowLogoutToast(true);
-    setIsAuthModalOpen(false); // Ensure modal is closed
+    setTimeout(() => setShowLogoutToast(false), 2000);
 
-    // 2. Prevent automatic redirect in onAuthStateChanged
-    wasLoggedIn.current = false;
+    // 3. Close any modals
+    setIsAuthModalOpen(false);
 
-    try {
-      // 3. Run logout and delay in parallel
-      // This ensures we show the message for AT LEAST 2 seconds, 
-      // but also don't wait extra if logout is fast.
-      // If logout is slow, the user sees the "Logged Out" message while it happens.
-      await Promise.all([
-        logout(),
-        new Promise(resolve => setTimeout(resolve, 2000))
-      ]);
-
-      // 4. Navigate after delay
-      setShowLogoutToast(false);
-      setActiveTab('home'); // Reset tab for next login
-      setStep(0); // Go to Login Screen explicitly
-
-    } catch (error) {
-      console.error("Logout failed", error);
-      // Even if logout fails (e.g. network), we should still clear local state and show the message for a bit
-      // to let the user know we tried.
-      // Wait for the remaining time of the 2s delay if needed, 
-      // but simplistic approach: just hide it after a fallback delay or let the user be redirected anyway?
-      // Actually, if logout fails, we probably shouldn't redirect to login page immediately 
-      // OR we should force a client-side cleanup.
-
-      // For now, let's just ensure we hide the toast after 2s and redirect, 
-      // because "Logout failed" usually means server-side token revocation failed,
-      // but client-side we can still clear the session.
-      setTimeout(() => {
-        setShowLogoutToast(false);
-        setActiveTab('home');
-        setStep(0);
-      }, 2000);
-
-      wasLoggedIn.current = true; // Restore? No, we are forcing logout client-side.
-    }
+    // 4. Run cleanup in background (non-blocking)
+    setTimeout(async () => {
+      try {
+        await logout();
+        console.log('✅ Logout cleanup completed');
+      } catch (error) {
+        console.error('⚠️ Logout cleanup failed (non-critical):', error);
+        // Non-critical: user already sees login screen
+      }
+    }, 0);
   };
 
   const [filterPeriod, setFilterPeriod] = useState('important'); // Default: Important
