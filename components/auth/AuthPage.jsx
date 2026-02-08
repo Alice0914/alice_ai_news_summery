@@ -203,39 +203,16 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                                     <h3 className="text-amber-300 font-semibold text-sm mb-2">
                                         {i18n.language === 'ko' ? '외부 브라우저에서 열어주세요' : 'Open in External Browser'}
                                     </h3>
-                                    <p className="text-amber-200/80 text-xs leading-relaxed mb-3">
+                                    <p className="text-amber-200/80 text-xs leading-relaxed">
                                         {i18n.language === 'ko'
-                                            ? 'Google 로그인은 인앱 브라우저에서 지원되지 않습니다. 아래 방법으로 외부 브라우저에서 열어주세요:'
-                                            : 'Google Sign-in is not supported in in-app browsers. Please open this link in your default browser:'}
+                                            ? 'Google 로그인은 인앱 브라우저에서 지원되지 않습니다. 우측 상단의 메뉴(⋯ 또는 ⋮)를 탭하여 외부 브라우저에서 열어주세요.'
+                                            : 'Google Sign-in is not supported in in-app browsers. Tap the menu (⋯ or ⋮) at the top right to open in your browser.'}
                                     </p>
-                                    <ul className="text-amber-200/70 text-xs space-y-1.5">
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-amber-400">•</span>
-                                            <span>
-                                                {i18n.language === 'ko'
-                                                    ? 'iOS: 우측 상단 메뉴(⋯) → "Safari에서 열기"'
-                                                    : 'iOS: Tap menu (⋯) → "Open in Safari"'}
-                                            </span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-amber-400">•</span>
-                                            <span>
-                                                {i18n.language === 'ko'
-                                                    ? 'Android: 우측 상단 메뉴(⋮) → "Chrome에서 열기"'
-                                                    : 'Android: Tap menu (⋮) → "Open in Chrome"'}
-                                            </span>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
-                            <button
-                                onClick={() => setShowInAppWarning(false)}
-                                className="mt-3 w-full py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-xs font-medium transition-colors"
-                            >
-                                {i18n.language === 'ko' ? '이메일로 계속하기' : 'Continue with Email Instead'}
-                            </button>
                         </div>
                     )}
+
 
                     {/* Social Buttons (Hidden in Reset Mode) */}
                     {!isResetMode && (
