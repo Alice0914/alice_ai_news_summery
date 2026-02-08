@@ -1349,10 +1349,23 @@ const App = () => {
 
     } catch (error) {
       console.error("Logout failed", error);
-      // Restore flag if failed, but we might still want to redirect to login if it's a "token expired" issue
-      // For now, just hide toast
-      setShowLogoutToast(false);
-      wasLoggedIn.current = true;
+      // Even if logout fails (e.g. network), we should still clear local state and show the message for a bit
+      // to let the user know we tried.
+      // Wait for the remaining time of the 2s delay if needed, 
+      // but simplistic approach: just hide it after a fallback delay or let the user be redirected anyway?
+      // Actually, if logout fails, we probably shouldn't redirect to login page immediately 
+      // OR we should force a client-side cleanup.
+
+      // For now, let's just ensure we hide the toast after 2s and redirect, 
+      // because "Logout failed" usually means server-side token revocation failed,
+      // but client-side we can still clear the session.
+      setTimeout(() => {
+        setShowLogoutToast(false);
+        setActiveTab('home');
+        setStep(0);
+      }, 2000);
+
+      wasLoggedIn.current = true; // Restore? No, we are forcing logout client-side.
     }
   };
 
@@ -3151,8 +3164,8 @@ const App = () => {
       {/* Logout Toast */}
       {
         showLogoutToast && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none">
-            <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300">
+          <div className="fixed inset-0 z-[200] flex items-center justify-center pointer-events-none">
+            <div className="bg-[#1a1f2e]/95 backdrop-blur-xl px-10 py-8 rounded-3xl border border-white/10 shadow-2xl flex flex-col items-center gap-5 animate-in zoom-in fade-in duration-300 pointer-events-auto">
               <div className="w-20 h-20 rounded-full bg-red-500/20 flex items-center justify-center mb-1">
                 <LogOut className="w-10 h-10 text-red-400" strokeWidth={2} />
               </div>
