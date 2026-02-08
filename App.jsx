@@ -128,12 +128,13 @@ const SelectionStep = ({
 
   return (
     <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col font-sans h-[100dvh]">
-      <div className="w-full h-full relative flex flex-col">
+      {/* Helper for mobile browser safe areas */}
+      <div className="w-full h-full flex flex-col max-w-2xl mx-auto relative">
 
-        {/* Content Container with Padding for Fixed Footer */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar w-full max-w-2xl mx-auto p-6 pb-32">
+        {/* Scrollable Content Area */}
+        <div className="flex-1 overflow-y-auto custom-scrollbar p-6 w-full">
           {/* Header */}
-          <div className="mb-8 md:mb-12 text-center flex-none pt-4 md:pt-10">
+          <div className="mb-6 md:mb-10 text-center pt-4 md:pt-8">
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-3">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse">AI</span>
               <span className="text-white ml-2">{t('app_title')}</span>
@@ -143,7 +144,7 @@ const SelectionStep = ({
             </p>
           </div>
 
-          <div className="flex items-end justify-between mb-6 px-1">
+          <div className="flex items-end justify-between mb-6 px-1 sticky top-0 bg-[#0f111a]/95 backdrop-blur-md z-10 py-4 border-b border-white/5">
             <div>
               <h2 className="text-xl md:text-2xl font-bold text-white mb-1">{title}</h2>
               {subtitle && <p className="text-sm text-slate-400">{subtitle}</p>}
@@ -154,7 +155,7 @@ const SelectionStep = ({
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4">
             {items.map((item) => {
               const isSelected = selectedIds.includes(item.id);
               const Icon = item.icon;
@@ -164,20 +165,17 @@ const SelectionStep = ({
                   key={item.id}
                   onClick={() => onToggle(selectedIds, isSelected, item.id)}
                   className={`
-                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-300 w-full
+                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-200 w-full
                   ${isSelected
-                      ? 'bg-slate-800 border-slate-500 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.5),0_0_12px_-2px_rgba(255,255,255,0.1)] translate-y-[-2px] translate-x-0'
-                      : 'bg-[#1a1d2d]/80 border-slate-700 hover:bg-[#1a1d2d] hover:border-slate-500 hover:shadow-lg'}
+                      ? 'bg-slate-800 border-slate-500 shadow-md translate-y-[-1px]'
+                      : 'bg-[#1a1d2d]/80 border-slate-700 hover:bg-[#1a1d2d] hover:border-slate-500'}
                 `}
                 >
-                  {/* Glow Effect */}
-                  <div className={`absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br ${item.gradient} opacity-0 blur-xl rounded-full transition-opacity duration-500 ${isSelected ? 'opacity-25' : 'group-hover:opacity-15'}`} />
-
                   {/* Icon */}
-                  <div className={`relative z-10 mr-4 transition-transform duration-300 ${isSelected ? 'scale-110' : 'group-hover:scale-110'}`}>
+                  <div className={`relative z-10 mr-4 transition-transform duration-200 ${isSelected ? 'scale-110' : 'group-hover:scale-105'}`}>
                     <Icon
                       size={24}
-                      className={`drop-shadow-md transition-colors duration-300 ${item.color}`}
+                      className={`transition-colors duration-200 ${item.color}`}
                       strokeWidth={isSelected ? 2 : 1.5}
                     />
                   </div>
@@ -189,9 +187,9 @@ const SelectionStep = ({
 
                   {/* Checkbox UI */}
                   <div className={`
-                  w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border
+                  w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 border
                   ${isSelected
-                      ? `bg-gradient-to-br ${item.gradient} border-transparent text-white shadow-lg scale-100`
+                      ? `bg-gradient-to-br ${item.gradient} border-transparent text-white shadow-sm scale-100`
                       : 'bg-slate-900/50 border-slate-700 text-transparent scale-95'}
                 `}>
                     <Check size={14} strokeWidth={3} />
@@ -202,9 +200,9 @@ const SelectionStep = ({
           </div>
         </div>
 
-        {/* Footer Navigation (Fixed Viewport) */}
-        <div className="fixed bottom-0 left-0 w-full p-6 pb-8 bg-[#0f111a]/95 backdrop-blur-xl border-t border-white/5 z-[60] flex items-center justify-center shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-          <div className="w-full max-w-2xl flex items-center gap-3">
+        {/* Footer Navigation (Static Flex Child) */}
+        <div className="w-full p-6 pb-8 bg-[#0f111a] border-t border-white/5 z-20 flex-none shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+          <div className="flex items-center gap-3">
             {onPrev && (
               <button onClick={onPrev} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
                 {t('prev')}
@@ -224,7 +222,7 @@ const SelectionStep = ({
               flex-1 py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-lg
               ${selectedIds.length > 0
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:scale-[1.02] shadow-blue-900/20'
-                  : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}
+                  : 'bg-slate-800 text-slate-600 border border-slate-700 opacity-60'}
             `}
             >
               <span>{nextLabel || 'Next'}</span>
