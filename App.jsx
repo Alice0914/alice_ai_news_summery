@@ -1803,14 +1803,21 @@ const App = () => {
   }
 
   // Helper for converting Onboarding items
-  const getLocalizedLabel = (tag) => {
-    if (i18n.language !== 'ko') return tag;
-    return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
-  };
+  // Memoized to prevent re-calculation on every render which might cause delays
+  const localizedCategories = React.useMemo(() =>
+    DATA_CATEGORIES.map(item => ({ ...item, label: getLocalizedLabel(item.id) })),
+    [i18n.language]
+  );
 
-  const localizedCategories = DATA_CATEGORIES.map(item => ({ ...item, label: getLocalizedLabel(item.id) }));
-  const localizedServices = DATA_SERVICES.map(item => ({ ...item, label: getLocalizedLabel(item.id) }));
-  const localizedCore = DATA_CORE.map(item => ({ ...item, label: getLocalizedLabel(item.id) }));
+  const localizedServices = React.useMemo(() =>
+    DATA_SERVICES.map(item => ({ ...item, label: getLocalizedLabel(item.id) })),
+    [i18n.language]
+  );
+
+  const localizedCore = React.useMemo(() =>
+    DATA_CORE.map(item => ({ ...item, label: getLocalizedLabel(item.id) })),
+    [i18n.language]
+  );
 
   // 1.5 Language Selection
   if (step === 1.5) {
