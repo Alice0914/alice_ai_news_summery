@@ -1,0 +1,14 @@
+{
+  "total_articles_processed": 5,
+  "unique_articles_count": 4,
+  "duplicates_removed_count": 1,
+  "duplicates_details": [
+    {
+      "dropped_article": "From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+      "kept_article": "Crypto.com places $70M bet on AI.com domain ahead of Super Bowl",
+      "similarity_score": 0.8556580428031271,
+      "dropped_source": "TechCrunch",
+      "kept_source": "TechCrunch"
+    }
+  ]
+}
