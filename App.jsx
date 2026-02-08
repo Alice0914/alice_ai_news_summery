@@ -125,16 +125,6 @@ const SelectionStep = ({
   title, subtitle, items, selectedIds, onToggle, onNext, nextLabel, onPrev, onSkip
 }) => {
   const { t } = useTranslation();
-  const [isContentReady, setIsContentReady] = useState(false);
-
-  // Defer the heavy list rendering to the next frame/tick
-  // This ensures the layout (Header + Footer) paints immediately
-  useEffect(() => {
-    const timer = requestAnimationFrame(() => {
-      setIsContentReady(true);
-    });
-    return () => cancelAnimationFrame(timer);
-  }, []);
 
   return (
     <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col font-sans h-[100dvh]">
@@ -164,9 +154,9 @@ const SelectionStep = ({
             </span>
           </div>
 
-          {/* Grid - Rendered only after initial paint */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4">
-            {isContentReady ? items.map((item) => {
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 content-visibility-auto">
+            {items.map((item) => {
               const isSelected = selectedIds.includes(item.id);
               const Icon = item.icon;
 
@@ -175,7 +165,7 @@ const SelectionStep = ({
                   key={item.id}
                   onClick={() => onToggle(selectedIds, isSelected, item.id)}
                   className={`
-                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-200 w-full animate-in fade-in zoom-in duration-300
+                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-200 w-full
                   ${isSelected
                       ? 'bg-slate-800 border-slate-500 shadow-md translate-y-[-1px]'
                       : 'bg-[#1a1d2d]/80 border-slate-700 hover:bg-[#1a1d2d] hover:border-slate-500'}
@@ -206,13 +196,7 @@ const SelectionStep = ({
                   </div>
                 </button>
               );
-            }) : (
-              /* Simple skeleton or spacer to prevent header jump is optional, 
-                 but empty is fine if we want prioritized footer paint */
-              <div className="col-span-1 sm:col-span-2 h-40 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-              </div>
-            )}
+            })}
           </div>
         </div>
 
