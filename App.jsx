@@ -127,7 +127,7 @@ const SelectionStep = ({
   const { t } = useTranslation();
 
   return (
-    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col font-sans h-[100dvh]">
+    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col font-sans">
       {/* Helper for mobile browser safe areas */}
       <div className="w-full h-full flex flex-col max-w-2xl mx-auto relative">
 
@@ -136,7 +136,7 @@ const SelectionStep = ({
           {/* Header */}
           <div className="mb-6 md:mb-10 text-center pt-4 md:pt-8">
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-3">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse">AI</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">AI</span>
               <span className="text-white ml-2">{t('app_title')}</span>
             </h1>
             <p className="text-slate-400 text-sm md:text-base">
@@ -165,17 +165,17 @@ const SelectionStep = ({
                   key={item.id}
                   onClick={() => onToggle(selectedIds, isSelected, item.id)}
                   className={`
-                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-200 w-full
+                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-100 w-full
                   ${isSelected
                       ? 'bg-slate-800 border-slate-500 shadow-md translate-y-[-1px]'
                       : 'bg-[#1a1d2d]/80 border-slate-700 hover:bg-[#1a1d2d] hover:border-slate-500'}
                 `}
                 >
                   {/* Icon */}
-                  <div className={`relative z-10 mr-4 transition-transform duration-200 ${isSelected ? 'scale-110' : 'group-hover:scale-105'}`}>
+                  <div className={`relative z-10 mr-4 transition-transform duration-100 ${isSelected ? 'scale-110' : 'group-hover:scale-105'}`}>
                     <Icon
                       size={24}
-                      className={`transition-colors duration-200 ${item.color}`}
+                      className={`transition-colors duration-100 ${item.color}`}
                       strokeWidth={isSelected ? 2 : 1.5}
                     />
                   </div>
@@ -187,7 +187,7 @@ const SelectionStep = ({
 
                   {/* Checkbox UI */}
                   <div className={`
-                  w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 border
+                  w-6 h-6 rounded-full flex items-center justify-center transition-all duration-100 border
                   ${isSelected
                       ? `bg-gradient-to-br ${item.gradient} border-transparent text-white shadow-sm scale-100`
                       : 'bg-slate-900/50 border-slate-700 text-transparent scale-95'}
