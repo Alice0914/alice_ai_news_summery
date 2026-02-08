@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     signInWithGoogle,
     signInWithTwitter,
@@ -7,7 +7,7 @@ import {
     signInWithEmail,
     sendResetEmail // Added
 } from '../../firebaseConfig';
-import { ChevronLeft, Mail, Lock, User, Check, AlertCircle, X } from 'lucide-react';
+import { ChevronLeft, Mail, Lock, User, Check, AlertCircle, X, ExternalLink } from 'lucide-react';
 import { YoutubeIcon, DiscordIcon } from '../ui/Icons'; // Re-using existing icons if available, else we'll use Lucide or text
 
 // Simple Social Icons (using text or placeholders if SVG not available)
@@ -34,10 +34,33 @@ const LinkedInIcon = () => (
 
 import { useTranslation } from 'react-i18next'; // Added
 
+// Helper function to detect in-app browsers
+const isInAppBrowser = () => {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for common in-app browser patterns
+    const inAppPatterns = [
+        'FBAN',           // Facebook App
+        'FBAV',           // Facebook App
+        'Instagram',      // Instagram
+        'LinkedIn',       // LinkedIn
+        'KAKAOTALK',      // KakaoTalk
+        'Line/',          // LINE
+        'Twitter',        // Twitter/X App
+        'Snapchat',       // Snapchat
+        'WeChat',         // WeChat
+        'MicroMessenger', // WeChat
+        'Slack',          // Slack
+        'Discord',        // Discord
+    ];
+
+    return inAppPatterns.some(pattern => ua.includes(pattern));
+};
+
 // ... (icons remain same)
 
 const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupClick, onSignupStart }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     // 'login' | 'signup' | 'reset'
     const [authMode, setAuthMode] = useState('login');
     const [email, setEmail] = useState('');
@@ -46,6 +69,15 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
+    const [showInAppWarning, setShowInAppWarning] = useState(false);
+
+    // Check for in-app browser on mount
+    useEffect(() => {
+        if (isInAppBrowser()) {
+            setShowInAppWarning(true);
+        }
+    }, []);
+
 
     // Determine if this is standalone page mode or modal mode
     const isStandalone = !onClose;
@@ -159,6 +191,49 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                         <div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/20 text-green-200 text-xs flex items-start gap-2">
                             <Check className="w-4 h-4 mt-0.5 flex-shrink-0" />
                             <span>{successMessage}</span>
+                        </div>
+                    )}
+
+                    {/* In-App Browser Warning */}
+                    {showInAppWarning && (
+                        <div className="mb-4 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30">
+                            <div className="flex items-start gap-3">
+                                <ExternalLink className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                                <div className="flex-1">
+                                    <h3 className="text-amber-300 font-semibold text-sm mb-2">
+                                        {i18n.language === 'ko' ? '외부 브라우저에서 열어주세요' : 'Open in External Browser'}
+                                    </h3>
+                                    <p className="text-amber-200/80 text-xs leading-relaxed mb-3">
+                                        {i18n.language === 'ko'
+                                            ? 'Google 로그인은 인앱 브라우저에서 지원되지 않습니다. 아래 방법으로 외부 브라우저에서 열어주세요:'
+                                            : 'Google Sign-in is not supported in in-app browsers. Please open this link in your default browser:'}
+                                    </p>
+                                    <ul className="text-amber-200/70 text-xs space-y-1.5">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-amber-400">•</span>
+                                            <span>
+                                                {i18n.language === 'ko'
+                                                    ? 'iOS: 우측 상단 메뉴(⋯) → "Safari에서 열기"'
+                                                    : 'iOS: Tap menu (⋯) → "Open in Safari"'}
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-amber-400">•</span>
+                                            <span>
+                                                {i18n.language === 'ko'
+                                                    ? 'Android: 우측 상단 메뉴(⋮) → "Chrome에서 열기"'
+                                                    : 'Android: Tap menu (⋮) → "Open in Chrome"'}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button
+                                onClick={() => setShowInAppWarning(false)}
+                                className="mt-3 w-full py-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-xs font-medium transition-colors"
+                            >
+                                {i18n.language === 'ko' ? '이메일로 계속하기' : 'Continue with Email Instead'}
+                            </button>
                         </div>
                     )}
 
