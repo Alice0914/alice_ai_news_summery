@@ -127,80 +127,83 @@ const SelectionStep = ({
   const { t } = useTranslation();
 
   return (
-    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col items-center justify-center p-4 sm:p-6 font-sans overflow-hidden">
-      <div className="w-full max-w-2xl flex flex-col h-full max-h-full sm:max-h-[90vh]">
+    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col items-center justify-center font-sans overflow-hidden">
+      <div className="w-full max-w-2xl flex flex-col h-full relative">
 
-        {/* Header */}
-        <div className="mb-8 md:mb-12 text-center flex-none">
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-3">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse">AI</span>
-            <span className="text-white ml-2">{t('app_title')}</span>
-          </h1>
-          <p className="text-slate-400 text-sm md:text-base">
-            <span className="text-blue-400 font-bold">{t('selection_header_subtitle')}</span>
-          </p>
-        </div>
-
-        <div className="flex items-end justify-between mb-6 px-1">
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-white mb-1">{title}</h2>
-            {subtitle && <p className="text-sm text-slate-400">{subtitle}</p>}
+        {/* Content Container with Padding for Footer */}
+        <div className="flex-1 flex flex-col p-6 pb-32 overflow-y-auto custom-scrollbar">
+          {/* Header */}
+          <div className="mb-8 md:mb-12 text-center flex-none">
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-3">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse">AI</span>
+              <span className="text-white ml-2">{t('app_title')}</span>
+            </h1>
+            <p className="text-slate-400 text-sm md:text-base">
+              <span className="text-blue-400 font-bold">{t('selection_header_subtitle')}</span>
+            </p>
           </div>
-          <span className="text-xs font-medium text-slate-500 bg-slate-800/50 px-3 py-1 rounded-full border border-slate-700">
-            {t('count_selected', { count: selectedIds.length })}
-          </span>
+
+          <div className="flex items-end justify-between mb-6 px-1">
+            <div>
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-1">{title}</h2>
+              {subtitle && <p className="text-sm text-slate-400">{subtitle}</p>}
+            </div>
+            <span className="text-xs font-medium text-slate-500 bg-slate-800/50 px-3 py-1 rounded-full border border-slate-700">
+              {t('count_selected', { count: selectedIds.length })}
+            </span>
+          </div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {items.map((item) => {
+              const isSelected = selectedIds.includes(item.id);
+              const Icon = item.icon;
+
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => onToggle(selectedIds, isSelected, item.id)}
+                  className={`
+                  relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-300 w-full
+                  ${isSelected
+                      ? 'bg-slate-800 border-slate-500 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.5),0_0_12px_-2px_rgba(255,255,255,0.1)] translate-y-[-2px] translate-x-0'
+                      : 'bg-[#1a1d2d]/80 border-slate-700 hover:bg-[#1a1d2d] hover:border-slate-500 hover:shadow-lg'}
+                `}
+                >
+                  {/* Glow Effect */}
+                  <div className={`absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br ${item.gradient} opacity-0 blur-xl rounded-full transition-opacity duration-500 ${isSelected ? 'opacity-25' : 'group-hover:opacity-15'}`} />
+
+                  {/* Icon */}
+                  <div className={`relative z-10 mr-4 transition-transform duration-300 ${isSelected ? 'scale-110' : 'group-hover:scale-110'}`}>
+                    <Icon
+                      size={24}
+                      className={`drop-shadow-md transition-colors duration-300 ${item.color}`}
+                      strokeWidth={isSelected ? 2 : 1.5}
+                    />
+                  </div>
+
+                  {/* Label */}
+                  <span className="flex-grow text-base md:text-lg font-semibold tracking-wide text-white">
+                    {item.label}
+                  </span>
+
+                  {/* Checkbox UI */}
+                  <div className={`
+                  w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border
+                  ${isSelected
+                      ? `bg-gradient-to-br ${item.gradient} border-transparent text-white shadow-lg scale-100`
+                      : 'bg-slate-900/50 border-slate-700 text-transparent scale-95'}
+                `}>
+                    <Check size={14} strokeWidth={3} />
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="flex-1 min-h-0 grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto p-2 pb-4 pr-1 custom-scrollbar">
-          {items.map((item) => {
-            const isSelected = selectedIds.includes(item.id);
-            const Icon = item.icon;
-
-            return (
-              <button
-                key={item.id}
-                onClick={() => onToggle(selectedIds, isSelected, item.id)}
-                className={`
-                relative group flex items-center p-4 rounded-2xl border text-left transition-all duration-300 w-full
-                ${isSelected
-                    ? 'bg-slate-800 border-slate-500 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.5),0_0_12px_-2px_rgba(255,255,255,0.1)] translate-y-[-2px] translate-x-0'
-                    : 'bg-[#1a1d2d]/80 border-slate-700 hover:bg-[#1a1d2d] hover:border-slate-500 hover:shadow-lg'}
-              `}
-              >
-                {/* Glow Effect */}
-                <div className={`absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gradient-to-br ${item.gradient} opacity-0 blur-xl rounded-full transition-opacity duration-500 ${isSelected ? 'opacity-25' : 'group-hover:opacity-15'}`} />
-
-                {/* Icon */}
-                <div className={`relative z-10 mr-4 transition-transform duration-300 ${isSelected ? 'scale-110' : 'group-hover:scale-110'}`}>
-                  <Icon
-                    size={24}
-                    className={`drop-shadow-md transition-colors duration-300 ${item.color}`}
-                    strokeWidth={isSelected ? 2 : 1.5}
-                  />
-                </div>
-
-                {/* Label */}
-                <span className="flex-grow text-base md:text-lg font-semibold tracking-wide text-white">
-                  {item.label}
-                </span>
-
-                {/* Checkbox UI */}
-                <div className={`
-                w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 border
-                ${isSelected
-                    ? `bg-gradient-to-br ${item.gradient} border-transparent text-white shadow-lg scale-100`
-                    : 'bg-slate-900/50 border-slate-700 text-transparent scale-95'}
-              `}>
-                  <Check size={14} strokeWidth={3} />
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Footer Navigation */}
-        <div className="mt-auto pt-6 pb-20 sm:pb-6 flex items-center gap-3 relative z-50">
+        {/* Footer Navigation (Fixed Absolute) */}
+        <div className="absolute bottom-0 left-0 w-full p-6 pb-8 bg-[#0f111a]/95 backdrop-blur-xl border-t border-white/5 z-[60] flex items-center gap-3 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
           {onPrev && (
             <button onClick={onPrev} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
               {t('prev')}
