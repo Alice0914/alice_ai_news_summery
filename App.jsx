@@ -1332,11 +1332,10 @@ const App = () => {
       setShowLogoutToast(true);
       setIsAuthModalOpen(false); // Ensure modal is closed
       setActiveTab('home'); // Reset tab for next login
-      // Navigate to login page (step 0)
-      setStep(0);
-      // Hide toast after delay
+      // Show toast for 2 seconds, then navigate to login page
       setTimeout(() => {
         setShowLogoutToast(false);
+        setStep(0); // Navigate to login page after toast
       }, 2000);
     } catch (error) {
       console.error("Logout failed", error);
