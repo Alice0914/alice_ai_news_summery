@@ -1139,6 +1139,23 @@ const App = () => {
   // Track if user has successfully logged in during this session
   const wasLoggedIn = useRef(false);
 
+  // Helper for converting Onboarding items - MUST be at top before any conditional returns
+  // Memoized to prevent re-calculation on every render which might cause delays
+  const localizedCategories = React.useMemo(() =>
+    DATA_CATEGORIES.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
+    [i18n.language]
+  );
+
+  const localizedServices = React.useMemo(() =>
+    DATA_SERVICES.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
+    [i18n.language]
+  );
+
+  const localizedCore = React.useMemo(() =>
+    DATA_CORE.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
+    [i18n.language]
+  );
+
   // Handle mobile Google redirect result on app load
   useEffect(() => {
     handleGoogleRedirectResult()
@@ -1809,22 +1826,6 @@ const App = () => {
     );
   }
 
-  // Helper for converting Onboarding items
-  // Memoized to prevent re-calculation on every render which might cause delays
-  const localizedCategories = React.useMemo(() =>
-    DATA_CATEGORIES.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
-    [i18n.language]
-  );
-
-  const localizedServices = React.useMemo(() =>
-    DATA_SERVICES.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
-    [i18n.language]
-  );
-
-  const localizedCore = React.useMemo(() =>
-    DATA_CORE.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
-    [i18n.language]
-  );
 
   // 1.5 Language Selection
   if (step === 1.5) {
