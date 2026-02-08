@@ -1,0 +1,3561 @@
+[
+  {
+    "id": "anthropic-claude-guides-nasa-perseverance-mars-rover",
+    "title": "Anthropic's Claude AI Guides NASA's Perseverance Rover in First Assisted Mars Drive",
+    "title_ko": "앤트로픽의 클로드 AI, NASA 퍼서비어런스 로버의 첫 AI 지원 화성 주행을 안내하다",
+    "summary": "In a historic first, NASA's Jet Propulsion Laboratory used Anthropic's Claude AI to help plan a 400-meter drive for the Perseverance rover on Mars. The AI successfully analyzed Martian terrain images and generated navigation commands, demonstrating a new potential for automating and accelerating interplanetary exploration.",
+    "summary_ko": "사상 최초로 NASA 제트추진연구소(JPL)가 앤트로픽의 클로드 AI를 이용해 화성 탐사 로버 퍼서비어런스의 400미터 주행 경로 계획을 지원했습니다. 이 AI는 화성 지형 이미지를 성공적으로 분석하고 주행 명령을 생성하여, 행성 간 탐사를 자동화하고 가속화할 새로운 가능성을 보여주었습니다.",
+    "why_it_matters": "This marks a significant milestone in applying generative AI to automate high-stakes, real-world robotics and enhance the efficiency of space exploration.",
+    "why_it_matters_ko": "이는 생성형 AI를 고위험 실제 로보틱스 자동화에 적용하고 우주 탐사의 효율성을 향상시키는 중요한 이정표입니다.",
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/features/claude-on-mars",
+    "publishedDate": "2026-01-30",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 88,
+    "impactDetails": {
+      "industry": 35,
+      "tech": 30,
+      "reach": 8,
+      "longTerm": 10,
+      "socialEthics": 5
+    },
+    "categories": [
+      "AI",
+      "Space Exploration",
+      "Robotics"
+    ],
+    "productServices": [
+      "Claude"
+    ],
+    "coreElements": [
+      "Autonomous Systems",
+      "Interplanetary Exploration",
+      "AI-Powered Automation"
+    ],
+    "searchKeywords": [
+      "NASA",
+      "JPL",
+      "Anthropic",
+      "Claude",
+      "Perseverance Rover",
+      "Mars",
+      "AI Space Exploration",
+      "Autonomous Driving"
+    ],
+    "searchKeywords_ko": [
+      "나사",
+      "JPL",
+      "앤트로픽",
+      "클로드",
+      "퍼서비어런스 로버",
+      "화성",
+      "AI 우주 탐사",
+      "자율 주행"
+    ]
+  },
+  {
+    "id": "waabi-secures-1b-funding-to-challenge-autonomous-driving-leaders",
+    "title": "Waabi Secures $1 Billion Funding to Challenge Autonomous Driving Leaders",
+    "title_ko": "와비, 자율주행 선두주자들에 도전하기 위해 10억 달러 투자 유치",
+    "summary": "Toronto-based Waabi has raised $1 billion, backed by Uber, to deploy its 'AV 2.0' end-to-end AI system. The funding supports the launch of 25,000 robotaxis on Uber's platform and aims for commercial autonomous trucking by 2027 using a single AI model.",
+    "summary_ko": "토론토 기반의 와비가 우버의 지원을 받아 10억 달러의 투자를 유치하여 'AV 2.0' 엔드투엔드 AI 시스템을 배포합니다. 이 자금은 우버 플랫폼에 25,000대의 로보택시를 출시하고 단일 AI 모델을 사용하여 2027년까지 상용 자율주행 트럭을 운행하는 것을 목표로 합니다.",
+    "why_it_matters": "Waabi's unified AI model for both trucking and robotaxis, backed by a landmark Uber deal, could dramatically accelerate the scalability and economics of autonomous vehicle deployment.",
+    "why_it_matters_ko": "트럭과 로보택시 모두에 적용되는 와비의 통합 AI 모델은 우버와의 기념비적인 계약을 통해 자율주행차 배포의 확장성과 경제성을 크게 가속화할 수 있습니다.",
+    "source": "Waabi",
+    "sourceUrl": "https://waabi.ai/insights/waabi-secures-1-billion-in-new-funding-to-lead-physical-ai-revolution",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 84,
+    "impactDetails": {
+      "industry": 30,
+      "tech": 24,
+      "reach": 15,
+      "longTerm": 10,
+      "socialEthics": 5
+    },
+    "categories": [
+      "AI",
+      "Autonomous Vehicles",
+      "Funding",
+      "Logistics"
+    ],
+    "productServices": [
+      "Waabi Driver",
+      "Autonomous Trucking",
+      "Robotaxi Service"
+    ],
+    "coreElements": [
+      "End-to-End AI",
+      "Generative AI",
+      "AV 2.0"
+    ],
+    "searchKeywords": [
+      "Waabi",
+      "Uber",
+      "Autonomous Driving",
+      "Robotaxi",
+      "AI Funding",
+      "Raquel Urtasun"
+    ],
+    "searchKeywords_ko": [
+      "와비",
+      "우버",
+      "자율주행",
+      "로보택시",
+      "AI 투자",
+      "라켈 우르타순"
+    ]
+  },
+  {
+    "id": "new-ai-labs-rethink-learning-with-major-funding",
+    "title": "Two New AI Labs Secure Over $1B to Challenge Big Tech's Approach to AI",
+    "title_ko": "두 신생 AI 연구소, 빅테크 AI 접근법에 도전하며 10억 달러 이상 투자 유치",
+    "summary": "Two AI startups, Flapping Airplanes and ex-OpenAI researcher Jerry Tworek's Core Automation, have secured major funding to develop AI that learns more efficiently and continuously. They represent a significant bet against the current 'scaling-only' approach of major AI labs.",
+    "summary_ko": "AI 스타트업 '플래핑 에어플레인스'와 전 OpenAI 연구원 제리 트워렉의 '코어 오토메이션'이 더 효율적이고 지속적으로 학습하는 AI 개발을 위해 대규모 투자를 유치했습니다. 이는 기존 대형 AI 연구소들의 '스케일링' 중심 접근법에 대한 중요한 대항마로 평가됩니다.",
+    "why_it_matters": "Investors are betting billions that smaller, contrarian AI labs may discover the path to AGI that larger incumbents are missing.",
+    "why_it_matters_ko": "투자자들은 소규모의 반대론적 AI 연구소가 기존 대기업들이 놓치고 있는 AGI 경로를 발견할 가능성에 수십억 달러를 베팅하고 있습니다.",
+    "source": "The Information",
+    "sourceUrl": "https://www.theinformation.com/articles/ex-openai-researchers-startup-targets-1-billion-funding-develop-new-type-ai?rc=a8sc5q",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 82,
+    "impactDetails": {
+      "industry": 25,
+      "tech": 28,
+      "reach": 10,
+      "longTerm": 12,
+      "socialEthics": 7
+    },
+    "categories": [
+      "AI",
+      "Venture Capital"
+    ],
+    "productServices": [
+      "AI Research Labs",
+      "Foundation Models"
+    ],
+    "coreElements": [
+      "Continual Learning",
+      "AGI",
+      "AI Model Architecture"
+    ],
+    "searchKeywords": [
+      "AI Funding",
+      "Flapping Airplanes",
+      "Core Automation",
+      "Jerry Tworek",
+      "AGI",
+      "Continual Learning"
+    ],
+    "searchKeywords_ko": [
+      "AI 투자",
+      "플래핑 에어플레인스",
+      "코어 오토메이션",
+      "제리 트워렉",
+      "AGI",
+      "연속 학습"
+    ]
+  },
+  {
+    "id": "china-five-year-tech-plan-humanoid-robots-2026",
+    "title": "China's Five-Year Tech Plan Prioritizes Humanoid Robot Development",
+    "title_ko": "중국, 5개년 기술 계획에서 휴머노이드 로봇 개발을 최우선 과제로 선정",
+    "summary": "China's new five-year technology plan places humanoid robots at the center of its industrial strategy. The plan sets ambitious targets for major revenue growth in the robotics sector by 2030.",
+    "summary_ko": "중국의 새로운 5개년 기술 계획은 휴머노이드 로봇을 산업 전략의 핵심으로 지정했습니다. 이 계획은 2030년까지 로봇 공학 부문에서 막대한 수익 성장을 목표로 하고 있습니다.",
+    "why_it_matters": "This signals a major state-level push by China to dominate the future of robotics and advanced manufacturing.",
+    "why_it_matters_ko": "이는 미래 로봇 공학 및 첨단 제조 분야를 장악하려는 중국의 강력한 국가적 의지를 보여줍니다.",
+    "source": "Tech in Asia",
+    "sourceUrl": "https://www.techinasia.com/china-five-year-plan-prioritizes-humanoid-robots",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 35,
+      "tech": 25,
+      "reach": 5,
+      "longTerm": 10,
+      "socialEthics": 0
+    },
+    "categories": [
+      "Robotics",
+      "Government Policy"
+    ],
+    "productServices": [
+      "Humanoid Robots"
+    ],
+    "coreElements": [
+      "Industrial Strategy",
+      "Five-Year Plan"
+    ],
+    "searchKeywords": [
+      "China robotics",
+      "humanoid robot",
+      "five-year plan",
+      "industrial strategy"
+    ],
+    "searchKeywords_ko": [
+      "중국 로봇",
+      "휴머노이드 로봇",
+      "5개년 계획",
+      "산업 전략"
+    ]
+  },
+  {
+    "id": "openai-unveils-prism-ai-workspace-for-science",
+    "title": "OpenAI Unveils Prism, an AI-Native Workspace for Scientific Collaboration",
+    "title_ko": "OpenAI, 과학 협업을 위한 AI 네이티브 워크스페이스 '프리즘' 공개",
+    "summary": "OpenAI has launched Prism, a free, AI-native workspace designed to streamline scientific research, writing, and collaboration. Powered by GPT-5.2, it integrates drafting, revision, and literature search into a single, cloud-based LaTeX-native platform.",
+    "summary_ko": "OpenAI가 과학 연구, 글쓰기, 협업을 간소화하기 위해 설계된 무료 AI 네이티브 워크스페이스 '프리즘'을 출시했습니다. GPT-5.2로 구동되는 이 플랫폼은 초안 작성, 수정, 문헌 검색 기능을 하나의 클라우드 기반 LaTeX 네이티브 환경에 통합합니다.",
+    "why_it_matters": "Prism aims to accelerate scientific discovery by unifying the fragmented tools used for research writing and collaboration into a single, AI-powered platform.",
+    "why_it_matters_ko": "프리즘은 연구 논문 작성 및 협업에 사용되는 분산된 도구들을 단일 AI 기반 플랫폼으로 통합하여 과학적 발견의 속도를 높이는 것을 목표로 합니다.",
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/introducing-prism/",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 61,
+    "impactDetails": {
+      "industry": 26,
+      "tech": 15,
+      "reach": 4,
+      "longTerm": 8,
+      "socialEthics": 8
+    },
+    "categories": [
+      "AI/ML",
+      "Scientific Research"
+    ],
+    "productServices": [
+      "Prism"
+    ],
+    "coreElements": [
+      "AI-Native Workspace",
+      "GPT-5.2"
+    ],
+    "searchKeywords": [
+      "OpenAI Prism",
+      "AI for science",
+      "GPT-5.2",
+      "scientific writing",
+      "LaTeX editor"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI 프리즘",
+      "과학용 AI",
+      "GPT-5.2",
+      "과학적 글쓰기",
+      "LaTeX 편집기"
+    ]
+  },
+  {
+    "id": "deepminds-alphagenome-ai-breakthrough-for-predicting-disease-from-genetic-code",
+    "title": "DeepMind's AlphaGenome: An AI Breakthrough for Predicting Disease from Genetic Code",
+    "title_ko": "딥마인드 알파지놈: 유전 코드로 질병을 예측하는 AI 혁신",
+    "summary": "Google DeepMind has released the research and model for AlphaGenome, an AI tool that scans genetic code to predict how mutations cause disease. Now freely available, the model can identify complex, long-range genetic connections that previously took researchers years to find.",
+    "summary_ko": "구글 딥마인드가 유전 코드 돌연변이가 어떻게 질병을 유발하는지 예측하는 AI 도구 '알파지놈'의 연구와 모델을 공개했습니다. 이제 무료로 사용할 수 있는 이 모델은 과거 연구자들이 수년간 찾아 헤맸던 복잡하고 원거리의 유전적 연결고리를 식별할 수 있습니다.",
+    "why_it_matters": "By providing researchers an open-access map to the human genome, this tool could dramatically accelerate the discovery of genetic disease causes.",
+    "why_it_matters_ko": "연구자들에게 인간 게놈에 대한 오픈 액세스 지도를 제공함으로써, 이 도구는 유전 질환 원인 발견을 극적으로 가속화할 수 있습니다.",
+    "source": "Google DeepMind",
+    "sourceUrl": "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 86,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 28,
+      "reach": 10,
+      "longTerm": 25,
+      "socialEthics": 8
+    },
+    "categories": [
+      "AI",
+      "Biotechnology"
+    ],
+    "productServices": [
+      "AlphaGenome"
+    ],
+    "coreElements": [
+      "Predictive AI",
+      "Genomics"
+    ],
+    "searchKeywords": [
+      "AlphaGenome",
+      "DeepMind",
+      "AI",
+      "genetics",
+      "disease prediction",
+      "DNA"
+    ],
+    "searchKeywords_ko": [
+      "알파지놈",
+      "딥마인드",
+      "인공지능",
+      "유전학",
+      "질병 예측",
+      "DNA"
+    ]
+  },
+  {
+    "id": "google-enhances-gemini-3-flash-with-agentic-vision",
+    "title": "Google Boosts Gemini 3 Flash Visual Accuracy with Agentic Vision Feature",
+    "title_ko": "구글, '에이전틱 비전' 기능으로 제미나이 3 플래시의 시각적 정확도 향상",
+    "summary": "Google has introduced 'Agentic Vision' to its Gemini 3 Flash model, allowing it to interactively zoom, annotate, and edit images to answer questions. This new capability has reportedly boosted the model's accuracy on visual tasks by 5-10%.",
+    "summary_ko": "구글이 제미나이 3 플래시 모델에 '에이전틱 비전' 기능을 도입하여, 질문에 답하기 위해 이미지를 확대, 주석 추가, 편집하는 등 상호작용할 수 있게 되었습니다. 이 새로운 기능으로 시각적 과제 정확도가 5-10% 향상되었습니다.",
+    "why_it_matters": "This marks a shift from passive image analysis to active, human-like visual interaction for more accurate AI problem-solving.",
+    "why_it_matters_ko": "이는 수동적 이미지 분석에서 벗어나, 더 정확한 AI 문제 해결을 위한 능동적이고 인간과 유사한 시각적 상호작용으로의 전환을 의미합니다.",
+    "source": "Google",
+    "sourceUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 58,
+    "impactDetails": {
+      "industry": 23,
+      "tech": 26,
+      "reach": 2,
+      "longTerm": 6,
+      "socialEthics": 1
+    },
+    "categories": [
+      "AI/ML",
+      "Computer Vision"
+    ],
+    "productServices": [
+      "Gemini 3 Flash",
+      "Google AI"
+    ],
+    "coreElements": [
+      "Agentic Vision",
+      "LLM",
+      "Multimodality"
+    ],
+    "searchKeywords": [
+      "Agentic Vision",
+      "Gemini 3 Flash",
+      "Google AI",
+      "computer vision",
+      "multimodal AI"
+    ],
+    "searchKeywords_ko": [
+      "에이전틱 비전",
+      "제미나이 3 플래시",
+      "구글 AI",
+      "컴퓨터 비전",
+      "멀티모달 AI"
+    ]
+  },
+  {
+    "id": "figure-unveils-helix-02-unified-ai-brain-for-humanoids",
+    "title": "Figure Unveils Helix 02, a Unified AI Brain Revolutionizing Humanoid Robot Control",
+    "title_ko": "피규어, 휴머노이드 로봇 제어를 혁신할 통합 AI 브레인 '헬릭스 02' 공개",
+    "summary": "Figure introduced Helix 02, a 10M-parameter neural network that replaces 109K lines of C++ to control its humanoid robots. This unified AI brain enables complex, autonomous tasks by fusing walking, grasping, and sensing into a single learned system for more human-like movement.",
+    "summary_ko": "피규어가 10만 9천 줄의 C++ 코드를 대체하는 1,000만 파라미터 신경망 '헬릭스 02'를 공개했습니다. 이 통합 AI 브레인은 걷기, 잡기, 감지 기능을 단일 학습 시스템으로 융합하여 더 인간과 유사한 움직임으로 복잡한 자율 작업을 수행할 수 있게 합니다.",
+    "why_it_matters": "This shift from complex manual code to a single learned AI model is a crucial step toward creating general-purpose robots that can operate autonomously in unpredictable environments.",
+    "why_it_matters_ko": "복잡한 수동 코드에서 단일 학습 AI 모델로의 전환은 예측 불가능한 환경에서 자율적으로 작동할 수 있는 범용 로봇을 만드는 데 있어 중요한 단계입니다.",
+    "source": "Figure",
+    "sourceUrl": "https://www.figure.ai/news/helix-02",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 58,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 25,
+      "reach": 2,
+      "longTerm": 8,
+      "socialEthics": 1
+    },
+    "categories": [
+      "Robotics",
+      "Artificial Intelligence"
+    ],
+    "productServices": [
+      "Helix 02"
+    ],
+    "coreElements": [
+      "Neural Networks",
+      "Humanoid Robots",
+      "Autonomous Systems"
+    ],
+    "searchKeywords": [
+      "Figure",
+      "Helix 02",
+      "humanoid robot",
+      "AI control system",
+      "robotics",
+      "neural network",
+      "Figure 03"
+    ],
+    "searchKeywords_ko": [
+      "피규어",
+      "헬릭스 02",
+      "휴머노이드 로봇",
+      "AI 제어 시스템",
+      "로보틱스",
+      "신경망",
+      "피규어 03"
+    ]
+  },
+  {
+    "id": "hyundai-union-vows-to-block-atlas-robot-deployment-over-job-loss-fears",
+    "title": "Hyundai Union Vows to Block Atlas Robot Deployment Over Job Loss Fears",
+    "title_ko": "현대차 노조, 일자리 감소 우려로 아틀라스 로봇 도입 저지 선언",
+    "summary": "Hyundai's South Korean union is threatening to block the deployment of Boston Dynamics' Atlas robots, demanding a job protection agreement before the humanoids are introduced at a new U.S. plant in 2028. The union argues the robots are aimed at cutting labor costs and will cause significant employment disruption.",
+    "summary_ko": "현대자동차의 한국 노조가 2028년 미국 신공장에 보스턴 다이내믹스의 아틀라스 로봇을 배치하는 계획에 대해 고용 보장 협약 체결을 요구하며 저지를 예고했습니다. 노조는 이 로봇이 인건비 절감을 목표로 하며 심각한 고용 불안을 초래할 것이라고 주장합니다.",
+    "why_it_matters": "This dispute highlights the growing tension between automakers' push for AI-driven automation and organized labor's fight to protect human jobs.",
+    "why_it_matters_ko": "이번 갈등은 AI 기반 자동화를 추진하는 자동차 제조업체와 인간의 일자리를 지키려는 노동조합 간의 고조되는 긴장감을 보여줍니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/hyundai-humanoids-not-allowed-without-agreement",
+    "publishedDate": "2026-01-23",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 58,
+    "impactDetails": {
+      "industry": 26,
+      "tech": 12,
+      "reach": 3,
+      "longTerm": 8,
+      "socialEthics": 9
+    },
+    "categories": [
+      "AI & Robotics",
+      "Automotive",
+      "Labor Relations"
+    ],
+    "productServices": [
+      "Hyundai",
+      "Boston Dynamics Atlas"
+    ],
+    "coreElements": [
+      "Labor Union Dispute",
+      "Manufacturing Automation",
+      "Job Displacement"
+    ],
+    "searchKeywords": [
+      "Hyundai union",
+      "Atlas robot",
+      "Boston Dynamics",
+      "automotive automation",
+      "job loss",
+      "robot labor"
+    ],
+    "searchKeywords_ko": [
+      "현대차 노조",
+      "아틀라스 로봇",
+      "보스턴 다이내믹스",
+      "자동차 공장 자동화",
+      "일자리 감소",
+      "로봇 노동"
+    ]
+  },
+  {
+    "id": "eyou-robot-unveils-automated-humanoid-joint-factory-20260122",
+    "title": "China's Eyou Robot Technology Unveils World's First Automated Factory for Humanoid Joints",
+    "title_ko": "중국 Eyou 로보틱스, 세계 최초 휴머노이드 관절 자동화 공장 공개",
+    "summary": "China's Eyou Robot Technology has launched what it claims is the world's first fully automated production line for humanoid robot joints. The new facility boasts an annual production capacity of 100,000 units, aiming to resolve a key manufacturing bottleneck for the industry.",
+    "summary_ko": "중국의 Eyou 로봇 테크놀로지가 세계 최초라고 주장하는 휴머노이드 로봇 관절 완전 자동화 생산 라인을 가동했습니다. 이 신규 시설은 연간 10만 개 생산 능력을 갖추어, 업계의 핵심 제조 병목 현상을 해결하는 것을 목표로 합니다.",
+    "why_it_matters": "Mass production of a core humanoid component could significantly lower costs and accelerate the commercialization of the entire robotics industry.",
+    "why_it_matters_ko": "핵심 휴머노이드 부품의 대량 생산은 로봇 제작 비용을 크게 낮추고 로봇 산업 전체의 상용화를 가속화할 수 있습니다.",
+    "source": "Yicai Global",
+    "sourceUrl": "https://www.yicaiglobal.com/news/worlds-first-automated-production-line-for-humanoid-robot-joints-kicks-off-operation-in-shanghai",
+    "publishedDate": "2026-01-22",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 60,
+    "impactDetails": {
+      "industry": 28,
+      "tech": 20,
+      "reach": 5,
+      "longTerm": 5,
+      "socialEthics": 2
+    },
+    "categories": [
+      "Robotics",
+      "Automation",
+      "Manufacturing"
+    ],
+    "productServices": [
+      "Humanoid Robot Joints"
+    ],
+    "coreElements": [
+      "Humanoid Robots",
+      "Automated Production"
+    ],
+    "searchKeywords": [
+      "Eyou Robot",
+      "humanoid robot",
+      "robot joints",
+      "automated factory",
+      "robotics manufacturing"
+    ],
+    "searchKeywords_ko": [
+      "이유 로봇",
+      "휴머노이드 로봇",
+      "로봇 관절",
+      "자동화 공장",
+      "로봇 제조"
+    ]
+  },
+  {
+    "id": "synthesia-secures-200m-google-ventures-ai-training-agents",
+    "title": "Synthesia Raises $200M Led by Google Ventures to Build AI Training Agents",
+    "title_ko": "신시시아, 구글 벤처스 주도로 2억 달러 투자 유치… AI 교육 에이전트 개발 목표",
+    "summary": "AI video platform Synthesia has raised $200 million in a new funding round led by Google Ventures, reaching a $4 billion valuation. The company plans to use the capital to develop AI agents that can upskill employees through interactive video training.",
+    "summary_ko": "AI 비디오 플랫폼 신시시아가 구글 벤처스가 주도한 펀딩 라운드에서 2억 달러를 유치하며 40억 달러의 기업 가치를 인정받았습니다. 회사는 이 자금을 활용하여 대화형 비디오 교육으로 직원의 기술을 향상시키는 AI 에이전트를 개발할 계획입니다.",
+    "why_it_matters": "This funding highlights the growing demand for AI-driven corporate training solutions to automate and personalize employee upskilling.",
+    "why_it_matters_ko": "이번 투자는 직원 역량 강화를 자동화하고 개인화하기 위한 AI 기반 기업 교육 솔루션의 수요 증가를 보여줍니다.",
+    "source": "Synthesia",
+    "sourceUrl": "https://www.synthesia.io/post/series-d-200-million-4-billion-valuation-ai-training-agents",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 65,
+    "impactDetails": {
+      "industry": 28,
+      "tech": 20,
+      "reach": 7,
+      "longTerm": 8,
+      "socialEthics": 2
+    },
+    "categories": [
+      "AI",
+      "Corporate Training"
+    ],
+    "productServices": [
+      "AI Training Agents"
+    ],
+    "coreElements": [
+      "Interactive Video"
+    ],
+    "searchKeywords": [
+      "Synthesia",
+      "AI Training",
+      "Google Ventures",
+      "Corporate Upskilling",
+      "AI Agents"
+    ],
+    "searchKeywords_ko": [
+      "신시시아",
+      "AI 교육",
+      "구글 벤처스",
+      "기업 역량 강화",
+      "AI 에이전트"
+    ]
+  },
+  {
+    "id": "waymo-launches-driverless-robotaxi-service-miami",
+    "title": "Waymo Rolls Out Driverless Robotaxi Service to Miami Public",
+    "title_ko": "웨이모, 마이애미에서 무인 로보택시 서비스 일반에 공개",
+    "summary": "Waymo has launched its fully driverless robotaxi service to the public in Miami, initially serving 10,000 waitlisted residents. The service operates within a 60-square-mile area of the city.",
+    "summary_ko": "웨이모가 마이애미에서 완전 무인 로보택시 서비스를 일반 대중에게 공개했으며, 우선 1만 명의 대기자 명단 등록자에게 제공됩니다. 해당 서비스는 도시 내 60제곱마일 지역 내에서 운영됩니다.",
+    "why_it_matters": "The launch marks a significant expansion for the autonomous vehicle industry into another major US metropolitan area, signaling growing confidence in the technology.",
+    "why_it_matters_ko": "이번 출시는 자율주행 자동차 산업이 미국의 또 다른 주요 대도시로 확장하는 중요한 이정표이며, 기술에 대한 신뢰가 커지고 있음을 보여줍니다.",
+    "source": "Waymo",
+    "sourceUrl": "https://link.therundown.ai/uUhE1H",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 25,
+      "tech": 25,
+      "reach": 10,
+      "longTerm": 10,
+      "socialEthics": 5
+    },
+    "categories": [
+      "Autonomous Vehicles",
+      "Transportation",
+      "Artificial Intelligence"
+    ],
+    "productServices": [
+      "Waymo One",
+      "Robotaxi Service"
+    ],
+    "coreElements": [
+      "Driverless Technology",
+      "Ride-Hailing",
+      "Service Expansion"
+    ],
+    "searchKeywords": [
+      "Waymo",
+      "robotaxi",
+      "Miami",
+      "driverless",
+      "autonomous vehicle"
+    ],
+    "searchKeywords_ko": [
+      "웨이모",
+      "로보택시",
+      "마이애미",
+      "무인주행",
+      "자율주행차"
+    ]
+  },
+  {
+    "id": "chinese-university-unveils-humanoid-robot-for-autism-intervention",
+    "title": "Chinese University Unveils Humanoid Robot for Autism Intervention",
+    "title_ko": "중국 대학, 자폐 아동 치료용 휴머노이드 로봇 공개",
+    "summary": "A Chinese university has introduced Fuxiaozhi F1-D, a humanoid robot designed to support autism intervention in children. The robot uses a non-invasive brain-computer interface to provide therapeutic assistance.",
+    "summary_ko": "중국의 한 대학이 아동 자폐증 치료 지원을 위해 설계된 휴머노이드 로봇 '푸샤오즈 F1-D'를 공개했습니다. 이 로봇은 비침습적 뇌-컴퓨터 인터페이스를 활용하여 치료를 지원합니다.",
+    "why_it_matters": "This development merges humanoid robotics with non-invasive BCI, offering a potentially new therapeutic tool for neurodevelopmental disorders.",
+    "why_it_matters_ko": "이 개발은 휴머노이드 로봇 공학과 비침습적 BCI를 융합하여 신경발달 장애에 대한 새로운 치료 도구의 가능성을 제시합니다.",
+    "source": "Global Times",
+    "sourceUrl": "https://www.globaltimes.cn/page/202601/1354123.shtml",
+    "publishedDate": "2026-01-25",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 25,
+      "reach": 12,
+      "longTerm": 10,
+      "socialEthics": 10
+    },
+    "categories": [
+      "Robotics",
+      "Healthcare"
+    ],
+    "productServices": [
+      "Fuxiaozhi F1-D"
+    ],
+    "coreElements": [
+      "Humanoid Robot",
+      "Brain-Computer Interface (BCI)"
+    ],
+    "searchKeywords": [
+      "Autism Intervention",
+      "Humanoid Robot",
+      "Brain-Computer Interface",
+      "Fuxiaozhi F1-D"
+    ],
+    "searchKeywords_ko": [
+      "자폐증 치료",
+      "휴머노이드 로봇",
+      "뇌-컴퓨터 인터페이스",
+      "푸샤오즈 F1-D"
+    ]
+  },
+  {
+    "id": "google-infuses-chrome-with-agentic-ai-and-gemini",
+    "title": "Google Infuses Chrome with Agentic AI and Enhanced Gemini Capabilities",
+    "title_ko": "구글, 크롬에 에이전트 AI 및 강화된 제미나이 기능 통합",
+    "summary": "Google is embedding new AI features into Chrome, including an agentic 'Auto Browse' feature, a persistent Gemini sidebar for cross-tab queries, and built-in image generation. These updates aim to leverage Chrome's market dominance against emerging AI-first browsers.",
+    "summary_ko": "구글이 크롬에 새로운 AI 기능들을 탑재합니다. 여기에는 에이전트 기술인 '오토 브라우즈', 여러 탭에 걸쳐 질문할 수 있는 제미나이 사이드바, 그리고 내장 이미지 생성 기능이 포함됩니다. 이는 신흥 AI 브라우저에 맞서 크롬의 시장 지배력을 활용하려는 전략입니다.",
+    "why_it_matters": "Google is leveraging Chrome's massive user base to integrate its AI, aiming to win the AI-first browser race by enhancing its existing platform rather than starting anew.",
+    "why_it_matters_ko": "구글은 크롬의 방대한 사용자 기반을 활용하여 AI를 통합함으로써, 새로운 플랫폼을 시작하기보다 기존 플랫폼을 강화하여 AI 브라우저 경쟁에서 승리하고자 합니다.",
+    "source": "Google",
+    "sourceUrl": "https://blog.google/products/chrome/new-gemini-features-agentic-ai-2026/",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 49,
+    "impactDetails": {
+      "industry": 14,
+      "tech": 18,
+      "reach": 4,
+      "longTerm": 7,
+      "socialEthics": 6
+    },
+    "categories": [
+      "Artificial Intelligence",
+      "Web Browsers"
+    ],
+    "productServices": [
+      "Google Chrome",
+      "Gemini"
+    ],
+    "coreElements": [
+      "Agentic AI",
+      "Generative AI"
+    ],
+    "searchKeywords": [
+      "Google Chrome",
+      "Gemini",
+      "Agentic AI",
+      "AI Browser",
+      "Auto Browse"
+    ],
+    "searchKeywords_ko": [
+      "구글 크롬",
+      "제미나이",
+      "에이전트 AI",
+      "AI 브라우저",
+      "오토 브라우즈"
+    ]
+  },
+  {
+    "id": "google-deepmind-launches-project-genie-ai-world-generator",
+    "title": "Google DeepMind Launches 'Project Genie,' an AI World Generator for Subscribers",
+    "title_ko": "구글 딥마인드, 구독자 대상 AI 월드 생성기 '프로젝트 지니' 출시",
+    "summary": "Google DeepMind has launched Project Genie, a real-time AI world generator powered by the Genie 3 model. Access is currently limited to 'AI Ultra tier' subscribers, allowing them to create and explore prompt-based worlds for 60-second sessions.",
+    "summary_ko": "구글 딥마인드가 실시간 AI 월드 생성기 '프로젝트 지니'를 출시했습니다. 현재 'AI 울트라' 등급 구독자에게만 제한적으로 제공되며, 프롬프트를 기반으로 60초간 생성된 세계를 탐험할 수 있습니다.",
+    "why_it_matters": "The launch of user-accessible world simulators like Genie 3 signifies a major step towards realizing practical applications in gaming, robotics, and design.",
+    "why_it_matters_ko": "지니 3와 같은 사용자 접근 가능 월드 시뮬레이터의 등장은 게임, 로보틱스, 설계 분야의 실용화를 향한 중요한 진전을 의미합니다.",
+    "source": "Google DeepMind",
+    "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/project-genie/",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 65,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 22,
+      "reach": 8,
+      "longTerm": 15,
+      "socialEthics": 5
+    },
+    "categories": [
+      "Generative AI",
+      "Simulation",
+      "AI Models"
+    ],
+    "productServices": [
+      "Project Genie",
+      "Google AI Ultra"
+    ],
+    "coreElements": [
+      "AI World Generation"
+    ],
+    "searchKeywords": [
+      "Google DeepMind",
+      "Project Genie",
+      "AI World Generator",
+      "Generative AI",
+      "Simulation",
+      "Genie 3"
+    ],
+    "searchKeywords_ko": [
+      "구글 딥마인드",
+      "프로젝트 지니",
+      "AI 월드 생성기",
+      "생성형 AI",
+      "시뮬레이션",
+      "지니 3"
+    ]
+  },
+  {
+    "id": "ukaea-pioneers-drone-inspection-for-jet-fusion-reactor",
+    "title": "UKAEA Pioneers Drone Inspection for JET Fusion Reactor",
+    "title_ko": "영국 원자력청, JET 핵융합 원자로 드론 검사 선도",
+    "summary": "The UK Atomic Energy Authority (UKAEA) has successfully utilized sensor-equipped drones to conduct the first-ever aerial inspection of the JET fusion reactor. This innovative method enhances safety by reducing human exposure to hazardous environments while efficiently capturing detailed imagery for site maintenance.",
+    "summary_ko": "영국 원자력청(UKAEA)이 사상 최초로 센서 장착 드론을 활용하여 JET 핵융합 원자로의 항공 검사를 성공적으로 수행했습니다. 이 혁신적인 방식은 위험한 환경에 대한 인간의 노출을 줄여 안전성을 높이는 동시에, 시설 유지를 위한 상세 이미지를 효율적으로 확보합니다.",
+    "why_it_matters": "This marks a significant advancement in using robotics for safer, more efficient maintenance of critical nuclear fusion infrastructure.",
+    "why_it_matters_ko": "이는 핵심 핵융합 기반 시설의 더 안전하고 효율적인 유지를 위해 로봇 공학을 활용하는 중요한 진전을 의미합니다.",
+    "source": "UK Atomic Energy Authority",
+    "sourceUrl": "https://www.ukaea.org/news/drones-in-fusion-a-first-of-its-kind-aerial-inspection-at-jet/",
+    "publishedDate": "2026-01-20",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 60,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 20,
+      "reach": 8,
+      "longTerm": 7,
+      "socialEthics": 5
+    },
+    "categories": [
+      "Energy",
+      "Robotics"
+    ],
+    "productServices": [
+      "Remote Inspection"
+    ],
+    "coreElements": [
+      "Drone Inspection"
+    ],
+    "searchKeywords": [
+      "drone inspection",
+      "fusion reactor",
+      "UKAEA",
+      "robotics"
+    ],
+    "searchKeywords_ko": [
+      "드론 검사",
+      "핵융합 원자로",
+      "영국 원자력청",
+      "로보틱스"
+    ]
+  },
+  {
+    "id": "anthropic-ceo-dario-amodei-warns-ai-civilizational-risks-essay",
+    "title": "Anthropic CEO Dario Amodei Warns of 'Civilizational' AI Risks in New Essay",
+    "title_ko": "앤스로픽 CEO 다리오 아모데이, 새로운 에세이에서 AI의 '문명적' 위험 경고",
+    "summary": "Anthropic CEO Dario Amodei's new essay warns of severe AI risks like bioterrorism, mass job loss, and AI-powered dictatorships, arguing the technology is like an uncontrollable 'country of geniuses'. He calls for urgent action, including chip export bans and greater transparency, stating the next few years will determine humanity's fate.",
+    "summary_ko": "앤스로픽 CEO 다리오 아모데이의 새 에세이는 생물 테러, 대규모 실업, AI 독재와 같은 심각한 AI 위험을 경고하며, 이 기술이 통제 불가능한 '천재들의 국가'와 같다고 주장합니다. 그는 칩 수출 금지와 투명성 강화를 포함한 시급한 조치를 촉구하며, 앞으로 몇 년이 인류의 운명을 결정할 것이라고 말합니다.",
+    "why_it_matters": "The head of a leading AI lab is issuing a stark, public warning about the catastrophic potential of the technology his own company is building.",
+    "why_it_matters_ko": "선도적인 AI 연구소의 책임자가 자신의 회사가 개발 중인 기술의 재앙적 잠재력에 대해 공개적으로 엄중한 경고를 보내고 있습니다.",
+    "source": "Dario Amodei",
+    "sourceUrl": "https://www.darioamodei.com/essay/the-adolescence-of-technology",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 48,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 8,
+      "reach": 6,
+      "longTerm": 10,
+      "socialEthics": 9
+    },
+    "categories": [
+      "AI Safety",
+      "Ethics & Governance"
+    ],
+    "productServices": [
+      "Anthropic Claude"
+    ],
+    "coreElements": [
+      "Existential Risk",
+      "AI Governance"
+    ],
+    "searchKeywords": [
+      "Dario Amodei",
+      "Anthropic",
+      "AI Safety",
+      "Existential Risk",
+      "AI Essay"
+    ],
+    "searchKeywords_ko": [
+      "다리오 아모데이",
+      "앤스로픽",
+      "AI 안전",
+      "실존적 위험",
+      "AI 에세이"
+    ]
+  },
+  {
+    "id": "chinese-scientists-unveil-humanoid-robot-growhr",
+    "title": "Chinese Scientists Unveil GrowHR, a Humanoid Robot That Can Float, Swim, and Fly",
+    "title_ko": "중국 과학자, 물에 뜨고 수영하며 비행까지 가능한 휴머노이드 로봇 'GrowHR' 공개",
+    "summary": "Chinese researchers have developed GrowHR, a novel humanoid robot with a lightweight, bone-inspired structure. This design enables it to float, swim, walk on water, and perform short flights, showcasing unprecedented versatility.",
+    "summary_ko": "중국 연구진이 가벼운 뼈 구조에서 영감을 받은 새로운 휴머노이드 로봇 'GrowHR'을 개발했습니다. 이 로봇은 물에 뜨고, 수영하고, 물 위를 걸으며, 단거리 비행까지 가능해 전례 없는 다재다능함을 보여줍니다.",
+    "why_it_matters": "This multi-modal robot could revolutionize search and rescue, environmental monitoring, and disaster response operations.",
+    "why_it_matters_ko": "이 다중 모드 로봇은 수색 구조, 환경 모니터링 및 재난 대응 작전에 혁명을 일으킬 수 있습니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/china-humanoid-robot-floats-swims-flies",
+    "publishedDate": "2026-01-23",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 30,
+      "reach": 10,
+      "longTerm": 12,
+      "socialEthics": 3
+    },
+    "categories": [
+      "Robotics",
+      "Artificial Intelligence"
+    ],
+    "productServices": [
+      "GrowHR Humanoid Robot"
+    ],
+    "coreElements": [
+      "Humanoid Robotics",
+      "Multi-Modal Locomotion",
+      "Bio-inspired Design"
+    ],
+    "searchKeywords": [
+      "Humanoid Robot",
+      "GrowHR",
+      "Flying Robot",
+      "Swimming Robot",
+      "Chinese Robotics"
+    ],
+    "searchKeywords_ko": [
+      "휴머노이드 로봇",
+      "GrowHR",
+      "비행 로봇",
+      "수영 로봇",
+      "중국 로봇공학"
+    ]
+  },
+  {
+    "id": "xai-grok-imagine-api-surges-top-ranks-ai-video",
+    "title": "xAI's Grok Imagine API Shakes Up AI Video Generation with Top Rankings and Low Price",
+    "title_ko": "xAI의 Grok Imagine API, 최상위 순위와 낮은 가격으로 AI 비디오 생성 시장을 뒤흔들다",
+    "summary": "xAI has launched its Grok Imagine API for AI video generation, which immediately topped the Artificial Analysis rankings for text- and image-to-video. At $4.20 per minute, the API significantly undercuts major competitors like Sora and Veo, offering powerful editing tools.",
+    "summary_ko": "xAI가 AI 비디오 생성을 위한 Grok Imagine API를 출시했으며, 이 API는 출시 즉시 텍스트 및 이미지-비디오 부문에서 Artificial Analysis 순위 1위를 차지했습니다. 분당 4.20달러의 가격으로 Sora나 Veo 같은 주요 경쟁사보다 훨씬 저렴하며 강력한 편집 도구를 제공합니다.",
+    "why_it_matters": "Grok Imagine's combination of high-quality output and aggressive pricing could make it the new default choice for creators, disrupting the AI video market.",
+    "why_it_matters_ko": "Grok Imagine의 고품질 결과물과 공격적인 가격 정책은 크리에이터들의 기본 선택이 되어 AI 비디오 시장을 뒤흔들 수 있습니다.",
+    "source": "xAI",
+    "sourceUrl": "https://x.ai/news/grok-imagine-api",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 83,
+    "impactDetails": {
+      "industry": 30,
+      "tech": 23,
+      "reach": 15,
+      "longTerm": 10,
+      "socialEthics": 5
+    },
+    "categories": [
+      "AI",
+      "Video Generation"
+    ],
+    "productServices": [
+      "Grok Imagine API"
+    ],
+    "coreElements": [
+      "Aggressive Pricing",
+      "Competitive Landscape",
+      "Video Editing"
+    ],
+    "searchKeywords": [
+      "xAI",
+      "Grok Imagine",
+      "AI video",
+      "text-to-video",
+      "Sora competitor",
+      "Veo competitor"
+    ],
+    "searchKeywords_ko": [
+      "xAI",
+      "Grok Imagine",
+      "AI 비디오",
+      "텍스트-비디오 변환",
+      "Sora 경쟁",
+      "Veo 경쟁"
+    ]
+  },
+  {
+    "id": "moonshot-ai-unleashes-kimi-k2-5-open-source-model",
+    "title": "Moonshot AI Open-Sources Kimi K2.5, a Model Challenging Frontier AI Capabilities",
+    "title_ko": "문샷 AI, 최첨단 AI에 도전하는 오픈소스 모델 'Kimi K2.5' 공개",
+    "summary": "Chinese AI startup Moonshot AI has released Kimi K2.5, an open-source model that rivals top-tier models like GPT-5.2 and Claude Opus 4.5 in agentic and vision tasks. The release includes advanced features like Agent Swarm for managing sub-agents and Kimi Code, an agentic coding assistant.",
+    "summary_ko": "중국 AI 스타트업 문샷 AI가 에이전트 및 비전 작업에서 GPT-5.2, 클로드 Opus 4.5와 같은 최상위 모델과 경쟁하는 오픈소스 모델 Kimi K2.5를 공개했습니다. 이번 공개에는 하위 에이전트를 관리하는 '에이전트 스웜'과 코딩 에이전트 'Kimi 코드'와 같은 고급 기능이 포함됩니다.",
+    "why_it_matters": "A powerful open-source model from a Chinese lab is significantly narrowing the gap with closed, frontier AI systems, intensifying global AI competition.",
+    "why_it_matters_ko": "중국 연구소에서 공개한 강력한 오픈소스 모델이 비공개 최첨단 AI 시스템과의 격차를 크게 좁히며 글로벌 AI 경쟁을 심화시키고 있습니다.",
+    "source": "Moonshot AI",
+    "sourceUrl": "https://www.kimi.com/blog/kimi-k2-5.html",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 80,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 37,
+      "reach": 8,
+      "longTerm": 15,
+      "socialEthics": 5
+    },
+    "categories": [
+      "AI Models",
+      "Open Source",
+      "Agentic AI"
+    ],
+    "productServices": [
+      "Kimi K2.5",
+      "Kimi Code",
+      "Agent Swarm"
+    ],
+    "coreElements": [
+      "Large Language Model (LLM)",
+      "Multimodality",
+      "Agent Swarm",
+      "Coding Agent"
+    ],
+    "searchKeywords": [
+      "Moonshot AI",
+      "Kimi K2.5",
+      "Open Source AI",
+      "Agentic AI",
+      "AI Agents",
+      "AI Competition",
+      "Chinese AI"
+    ],
+    "searchKeywords_ko": [
+      "문샷 AI",
+      "키미 K2.5",
+      "오픈소스 AI",
+      "에이전트 AI",
+      "AI 에이전트",
+      "AI 경쟁",
+      "중국 AI"
+    ]
+  },
+  {
+    "id": "safeguarding-data-from-url-based-exfiltration-in-ai-agents",
+    "title": "Safeguarding Data from URL-Based Exfiltration in AI Agent Interactions",
+    "title_ko": "AI 에이전트 상호작용에서 URL 기반 데이터 유출로부터 데이터 보호",
+    "summary": "OpenAI explains how attackers can use specially crafted URLs to trick AI agents into leaking sensitive user data. Their mitigation strategy involves only allowing agents to automatically access URLs that are already verified as publicly known through an independent web index.",
+    "summary_ko": "OpenAI는 공격자가 특수하게 조작된 URL을 사용하여 AI 에이전트가 민감한 사용자 데이터를 유출하도록 유도하는 방법을 설명합니다. 이들의 완화 전략은 독립적인 웹 인덱스를 통해 공개된 것으로 확인된 URL에만 에이전트가 자동으로 접근하도록 허용하는 것입니다.",
+    "why_it_matters": "This establishes a critical security precedent for increasingly autonomous AI agents by proactively preventing a subtle but significant data exfiltration vector.",
+    "why_it_matters_ko": "이는 미묘하지만 중요한 데이터 유출 경로를 사전에 차단함으로써 점차 자율화되는 AI 에이전트에 대한 중요한 보안 선례를 만듭니다.",
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/ai-agent-link-safety/",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 46,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 20,
+      "reach": 2,
+      "longTerm": 5,
+      "socialEthics": 4
+    },
+    "categories": [
+      "Security",
+      "AI Safety",
+      "Data Privacy"
+    ],
+    "productServices": [
+      "ChatGPT",
+      "AI Agents"
+    ],
+    "coreElements": [
+      "URL-Based Data Exfiltration",
+      "Prompt Injection",
+      "Public Web Index"
+    ],
+    "searchKeywords": [
+      "AI security",
+      "URL exfiltration",
+      "data privacy",
+      "prompt injection",
+      "AI agent safety",
+      "OpenAI"
+    ],
+    "searchKeywords_ko": [
+      "AI 보안",
+      "URL 데이터 유출",
+      "데이터 프라이버시",
+      "프롬프트 인젝션",
+      "AI 에이전트 안전",
+      "오픈AI"
+    ]
+  },
+  {
+    "id": "google-debuts-ai-animated-short-dear-upstairs-neighbors-at-sundance",
+    "title": "Google Debuts AI-Generated Animated Short 'Dear Upstairs Neighbors' at Sundance",
+    "title_ko": "구글, 선댄스 영화제에서 AI 생성 애니메이션 단편 'Dear Upstairs Neighbors' 공개",
+    "summary": "Google premiered 'Dear Upstairs Neighbors,' an animated short created with its video AI, at the Sundance Film Festival. The project, a collaboration with artists, showcases the AI's ability to replicate unique, hand-painted visual styles.",
+    "summary_ko": "구글이 선댄스 영화제에서 자사의 비디오 AI 기술로 제작한 애니메이션 단편 'Dear Upstairs Neighbors'를 공개했습니다. 아티스트와의 협업으로 탄생한 이 프로젝트는 손으로 그린 듯한 독특한 시각적 스타일을 복제하는 AI의 능력을 보여줍니다.",
+    "why_it_matters": "This marks a significant step for generative AI as a collaborative tool in high-end creative industries like filmmaking, moving beyond simple generation.",
+    "why_it_matters_ko": "이는 생성형 AI가 단순한 생성을 넘어 영화 제작과 같은 고급 창작 산업에서 협업 도구로서 중요한 단계에 이르렀음을 의미합니다.",
+    "source": "Google",
+    "sourceUrl": "https://blog.google/technology/ai/sundance-premiere-dear-upstairs-neighbors/",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 50,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 20,
+      "reach": 5,
+      "longTerm": 6,
+      "socialEthics": 4
+    },
+    "categories": [
+      "AI & Machine Learning",
+      "Arts & Entertainment"
+    ],
+    "productServices": [
+      "Google AI",
+      "Video Generation AI"
+    ],
+    "coreElements": [
+      "Generative AI in Filmmaking"
+    ],
+    "searchKeywords": [
+      "Google AI",
+      "Sundance",
+      "AI film",
+      "animated short",
+      "Dear Upstairs Neighbors",
+      "generative video"
+    ],
+    "searchKeywords_ko": [
+      "구글 AI",
+      "선댄스 영화제",
+      "AI 영화",
+      "애니메이션 단편",
+      "생성형 비디오"
+    ]
+  },
+  {
+    "id": "openai-new-codex-launches-enhanced-cybersecurity-2026",
+    "title": "OpenAI to Launch New Codex Models This Week with Enhanced Cybersecurity",
+    "title_ko": "OpenAI, 강화된 사이버 보안 기능 갖춘 신규 코덱스 모델 금주 출시 예정",
+    "summary": "OpenAI CEO Sam Altman has announced that new versions of Codex will be released this week. The upcoming models are expected to feature the highest level of cybersecurity capabilities, addressing critical security concerns in AI-assisted coding.",
+    "summary_ko": "OpenAI의 CEO 샘 알트먼이 이번 주 새로운 버전의 코덱스를 출시할 것이라고 발표했습니다. 이 모델들은 최고 수준의 사이버 보안 역량을 갖추어 AI 코딩 지원의 핵심적인 보안 문제를 해결할 것으로 기대됩니다.",
+    "why_it_matters": "This signals a significant step towards making AI coding tools more secure and enterprise-ready, potentially accelerating their adoption in sensitive development environments.",
+    "why_it_matters_ko": "이는 AI 코딩 도구를 더욱 안전하고 기업 환경에 적합하게 만드는 중요한 단계이며, 민감한 개발 환경에서의 도입을 가속화할 수 있습니다.",
+    "source": "OpenAI",
+    "sourceUrl": "https://x.com/sama/status/2014733975755817267?s=20",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 46,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 18,
+      "reach": 2,
+      "longTerm": 7,
+      "socialEthics": 4
+    },
+    "categories": [
+      "AI Development",
+      "Cybersecurity"
+    ],
+    "productServices": [
+      "OpenAI Codex"
+    ],
+    "coreElements": [
+      "Sam Altman",
+      "AI Models",
+      "Secure Coding"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "Codex",
+      "Sam Altman",
+      "AI cybersecurity",
+      "secure AI",
+      "coding assistant"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "코덱스",
+      "샘 알트먼",
+      "AI 사이버보안",
+      "보안 AI",
+      "코딩 어시스턴트"
+    ]
+  },
+  {
+    "id": "swarm-robots-mimic-blooming-flowers-for-adaptive-architecture",
+    "title": "Swarm Robots Mimic Blooming Flowers for Adaptive Architecture",
+    "title_ko": "군집 로봇, 적응형 건축을 위해 피어나는 꽃을 모방하다",
+    "summary": "Princeton engineers developed a swarm of flower-like robots for building facades that collectively sense and adapt to changing light without a central controller. This project pioneers 'living' architecture, where structures can autonomously respond to their environment in real-time.",
+    "summary_ko": "프린스턴 대학 연구팀이 중앙 제어 없이 빛의 변화를 집단적으로 감지하고 적응하는 꽃 모양의 군집 로봇을 개발했습니다. 이 프로젝트는 구조물이 환경에 실시간으로 자율 반응할 수 있는 '살아있는' 건축의 새로운 장을 엽니다.",
+    "why_it_matters": "This research merges swarm robotics with architecture, paving the way for self-organizing smart materials in energy-efficient, interactive buildings.",
+    "why_it_matters_ko": "이 연구는 군집 로보틱스와 건축을 융합하여 에너지 효율적이고 상호작용이 가능한 건물에 사용될 자기조직화 스마트 재료의 기반을 마련합니다.",
+    "source": "Ars Technica",
+    "sourceUrl": "https://arstechnica.com/science/2026/01/21/swarm-robots-mimic-blooming-flowers-for-adaptive-architecture",
+    "publishedDate": "2026-01-21",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 70,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 30,
+      "reach": 5,
+      "longTerm": 18,
+      "socialEthics": 2
+    },
+    "categories": [
+      "Robotics",
+      "Architecture",
+      "Smart Materials"
+    ],
+    "productServices": [
+      "Adaptive Building Facades",
+      "Kinetic Art Installations"
+    ],
+    "coreElements": [
+      "Swarm Robotics",
+      "Decentralized Control",
+      "Living Architecture",
+      "SGbots"
+    ],
+    "searchKeywords": [
+      "swarm robotics",
+      "adaptive architecture",
+      "kinetic facade",
+      "smart materials",
+      "princeton engineering",
+      "living architecture"
+    ],
+    "searchKeywords_ko": [
+      "군집 로보틱스",
+      "적응형 건축",
+      "키네틱 파사드",
+      "스마트 재료",
+      "프린스턴 공학",
+      "살아있는 건축"
+    ]
+  },
+  {
+    "id": "darren-aronofskys-primordial-soup-launches-ai-american-revolution-series",
+    "title": "Darren Aronofsky's AI Company Launches American Revolution Series 'On This Day… 1776'",
+    "title_ko": "대런 애러노프스키의 AI 회사, 미국 독립 혁명 시리즈 'On This Day… 1776' 공개",
+    "summary": "Filmmaker Darren Aronofsky's AI company, Primordial Soup, has launched \"On This Day… 1776,\" an AI-generated series recreating the American Revolution. The series uses Google DeepMind for visuals and releases episodes on TIME's YouTube channel timed to the 250th anniversaries of the events.",
+    "summary_ko": "영화감독 대런 애러노프스키의 AI 회사 '프라이모디얼 수프'가 미국 독립 혁명을 다룬 AI 생성 시리즈 'On This Day… 1776'을 공개했습니다. 이 시리즈는 구글 딥마인드의 AI로 영상을 제작했으며, 각 사건의 250주년에 맞춰 TIME 유튜브 채널을 통해 에피소드를 공개합니다.",
+    "why_it_matters": "This project highlights the growing integration of AI video into mainstream Hollywood production, moving beyond minor effects to handle entire visual processes.",
+    "why_it_matters_ko": "이 프로젝트는 AI 영상 기술이 헐리우드 주류 제작 과정에 통합되어, 단순 효과를 넘어 전체 시각적 작업을 처리하는 수준으로 발전하고 있음을 보여줍니다.",
+    "source": "TIME",
+    "sourceUrl": "https://www.youtube.com/watch?v=sV52AUVGc6I",
+    "publishedDate": "2026-01-30",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 58,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 12,
+      "reach": 7,
+      "longTerm": 10,
+      "socialEthics": 7
+    },
+    "categories": [
+      "AI",
+      "Entertainment",
+      "Filmmaking"
+    ],
+    "productServices": [
+      "Primordial Soup",
+      "Google DeepMind",
+      "TIME"
+    ],
+    "coreElements": [
+      "AI-Generated Video",
+      "Historical Recreation",
+      "Artist-Led AI"
+    ],
+    "searchKeywords": [
+      "Darren Aronofsky",
+      "Primordial Soup",
+      "AI film",
+      "Google DeepMind",
+      "On This Day 1776",
+      "American Revolution"
+    ],
+    "searchKeywords_ko": [
+      "대런 애러노프스키",
+      "프라이모디얼 수프",
+      "AI 영화",
+      "구글 딥마인드",
+      "On This Day 1776",
+      "미국 독립 혁명"
+    ]
+  },
+  {
+    "id": "deepseek-open-sources-ocr-2-efficient-document-model",
+    "title": "DeepSeek Open-Sources OCR 2, a Highly Efficient Document Text Extraction Model",
+    "title_ko": "DeepSeek, 고효율 문서 텍스트 추출 모델 OCR 2 오픈소스 공개",
+    "summary": "DeepSeek has open-sourced OCR 2, a new model designed for reading and extracting text from documents. The model reportedly tops performance benchmarks while being significantly more efficient with tokens.",
+    "summary_ko": "딥씨크(DeepSeek)가 문서에서 텍스트를 읽고 추출하는 새로운 모델인 OCR 2를 오픈소스로 공개했습니다. 이 모델은 기존 벤치마크에서 최고의 성능을 보이면서도 토큰 효율성을 크게 향상시킨 것이 특징입니다.",
+    "why_it_matters": "This could lower the cost and improve the accuracy of automated document processing for businesses worldwide.",
+    "why_it_matters_ko": "이 모델은 전 세계 기업의 자동화된 문서 처리 비용을 절감하고 정확도를 향상시킬 수 있습니다.",
+    "source": "DeepSeek",
+    "sourceUrl": "https://github.com/deepseek-ai/DeepSeek-OCR-2",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 45,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 20,
+      "reach": 5,
+      "longTerm": 5,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI/ML",
+      "Open Source"
+    ],
+    "productServices": [
+      "OCR Model"
+    ],
+    "coreElements": [
+      "Text Extraction",
+      "Token Efficiency"
+    ],
+    "searchKeywords": [
+      "DeepSeek OCR 2",
+      "Open Source OCR",
+      "Document Text Extraction",
+      "AI Model"
+    ],
+    "searchKeywords_ko": [
+      "딥씨크 OCR 2",
+      "오픈소스 OCR",
+      "문서 텍스트 추출",
+      "AI 모델"
+    ]
+  },
+  {
+    "id": "carnegie-mellon-quadruped-robot-search-and-rescue",
+    "title": "Carnegie Mellon Develops Quadruped Robot for Enhanced Search and Rescue Efforts",
+    "title_ko": "카네기 멜론, 수색 및 구조 활동 강화를 위한 4족 보행 로봇 개발",
+    "summary": "Carnegie Mellon University is developing a quadruped robot designed for search-and-rescue missions. The robot is capable of detecting hazards, locating casualties, and assessing the condition of victims in disaster scenarios.",
+    "summary_ko": "카네기 멜론 대학이 수색 및 구조 임무를 위해 설계된 4족 보행 로봇을 개발 중입니다. 이 로봇은 재난 현장에서 위험 요소를 감지하고 사상자를 찾아내며 피해자의 상태를 평가할 수 있습니다.",
+    "why_it_matters": "This technology could significantly improve the speed and safety of locating and aiding victims in disaster zones.",
+    "why_it_matters_ko": "이 기술은 재난 지역에서 피해자를 찾고 구조하는 속도와 안전성을 획기적으로 향상시킬 수 있습니다.",
+    "source": "CBS News",
+    "sourceUrl": "https://www.cbsnews.com/news/pittsburgh-researchers-carnegie-mellon-life-saving-robot-dogs/",
+    "publishedDate": "2026-01-16",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 43,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 12,
+      "reach": 2,
+      "longTerm": 7,
+      "socialEthics": 6
+    },
+    "categories": [
+      "Robotics",
+      "Artificial Intelligence"
+    ],
+    "productServices": [
+      "Search and Rescue Robots"
+    ],
+    "coreElements": [
+      "Quadruped Robotics",
+      "AI-Powered Assessment"
+    ],
+    "searchKeywords": [
+      "quadruped robot",
+      "search and rescue",
+      "Carnegie Mellon",
+      "robot dog",
+      "disaster relief"
+    ],
+    "searchKeywords_ko": [
+      "4족 보행 로봇",
+      "수색 및 구조",
+      "카네기 멜론",
+      "로봇 개",
+      "재난 구조"
+    ]
+  },
+  {
+    "id": "2026-01-22-zoomlion-deploys-humanoid-robots-for-excavator-assembly",
+    "title": "Zoomlion Deploys Humanoid Robots to Accelerate Excavator Assembly in Smart Factories",
+    "title_ko": "줌라이언, 스마트 팩토리에서 휴머노이드 로봇 투입해 굴착기 조립 가속화",
+    "summary": "Chinese heavy equipment manufacturer Zoomlion is integrating humanoid robots into its 'Smart City' factories. These advanced robots are assisting on the assembly line, helping to produce a new excavator every six minutes.",
+    "summary_ko": "중국의 중장비 제조업체 줌라이언이 '스마트 시티' 공장에 휴머노이드 로봇을 도입합니다. 이 로봇들은 조립 라인에 투입되어 6분마다 한 대의 새로운 굴착기를 생산하는 데 기여하고 있습니다.",
+    "why_it_matters": "This marks a significant step in automating heavy industrial manufacturing, showcasing a practical, real-world application of humanoid robots.",
+    "why_it_matters_ko": "이는 중공업 제조 자동화의 중요한 진전을 의미하며, 휴머노이드 로봇의 실질적인 현장 적용 사례를 보여줍니다.",
+    "source": "Electrek",
+    "sourceUrl": "https://electrek.co/2026/01/22/zoomlion-humanoid-robots-excavator-assembly",
+    "publishedDate": "2026-01-22",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 55,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 20,
+      "reach": 5,
+      "longTerm": 8,
+      "socialEthics": 2
+    },
+    "categories": [
+      "Robotics",
+      "Manufacturing",
+      "Automation",
+      "Heavy Industry"
+    ],
+    "productServices": [
+      "Zoomlion Excavators",
+      "Humanoid Robots",
+      "Smart Factory Solutions"
+    ],
+    "coreElements": [
+      "Zoomlion",
+      "Humanoid Robots",
+      "Smart Factory",
+      "Excavator Assembly"
+    ],
+    "searchKeywords": [
+      "Zoomlion",
+      "humanoid robot",
+      "smart factory",
+      "excavator manufacturing",
+      "industrial automation",
+      "heavy equipment"
+    ],
+    "searchKeywords_ko": [
+      "줌라이언",
+      "휴머노이드 로봇",
+      "스마트 팩토리",
+      "굴착기 제조",
+      "산업 자동화",
+      "중장비"
+    ]
+  },
+  {
+    "id": "techcrunch-waymo-robotaxi-fares-closing-gap-with-uber-lyft-20260127",
+    "title": "Waymo's Robotaxi Fares Are Closing the Gap with Uber and Lyft",
+    "title_ko": "웨이모 로보택시, 우버 및 리프트와 요금 격차 좁혀",
+    "summary": "New data shows Waymo's robotaxi fares in the Bay Area, while still higher than Uber and Lyft, are becoming more competitive. The price gap is shrinking due to Waymo's price cuts and rising costs for its ride-hailing rivals.",
+    "summary_ko": "새로운 데이터에 따르면 베이 에어리어 지역의 웨이모 로보택시 요금이 우버나 리프트보다 여전히 높지만, 가격 경쟁력은 점차 강화되고 있습니다. 이는 웨이모의 요금 인하와 경쟁 라이드헤일링 서비스의 요금 인상에 기인합니다.",
+    "why_it_matters": "This trend signals autonomous vehicles are moving towards becoming a financially viable alternative, potentially disrupting the ride-hailing market.",
+    "why_it_matters_ko": "이러한 추세는 자율주행차가 경제적으로 실행 가능한 대안으로 나아가고 있음을 시사하며, 라이드헤일링 시장의 지각 변동을 초래할 수 있습니다.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/01/27/waymos-robotaxi-fares-are-closing-the-gap-with-uber-and-lyft/",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 40,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 5,
+      "reach": 10,
+      "longTerm": 8,
+      "socialEthics": 2
+    },
+    "categories": [
+      "Autonomous Vehicles",
+      "Ride-Hailing"
+    ],
+    "productServices": [
+      "Waymo",
+      "Uber",
+      "Lyft"
+    ],
+    "coreElements": [
+      "Robotaxi",
+      "Pricing Strategy",
+      "Market Competition"
+    ],
+    "searchKeywords": [
+      "Waymo",
+      "Uber",
+      "Lyft",
+      "Robotaxi",
+      "Autonomous Vehicles",
+      "Ride-hailing prices"
+    ],
+    "searchKeywords_ko": [
+      "웨이모",
+      "우버",
+      "리프트",
+      "로보택시",
+      "자율주행차",
+      "라이드헤일링 요금"
+    ]
+  },
+  {
+    "id": "tesla-launches-unsupervised-robotaxi-austin-20260122",
+    "title": "Tesla Launches 'Unsupervised' Robotaxi Service in Austin, Shadowed by Human-Driven Backup Cars",
+    "title_ko": "테슬라, 오스틴에서 '무인' 로보택시 서비스 개시... 단, 백업 차량이 뒤따라",
+    "summary": "Tesla has launched a robotaxi service in Austin without front-seat safety drivers, a key milestone for its AI goals. However, the 'unsupervised' vehicles are reportedly being shadowed by human-operated chase cars, indicating a cautious rollout.",
+    "summary_ko": "테슬라가 오스틴에서 운전석 안전 요원 없이 로보택시 서비스를 시작하며 AI 기술력을 과시했습니다. 하지만 이 '무인' 차량 뒤에는 만일의 사태를 대비한 백업 차량이 따라붙어 아직은 신중한 접근을 보이고 있습니다.",
+    "why_it_matters": "Tesla is aggressively pushing its autonomous driving narrative against rivals, though the use of chase cars suggests its 'unsupervised' tech still requires a human safety net.",
+    "why_it_matters_ko": "테슬라는 경쟁사들을 상대로 자율주행 기술 서사를 공격적으로 주도하고 있으나, 백업 차량의 존재는 아직 완전한 '무인' 기술이 아님을 시사합니다.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/01/22/tesla-launches-robotaxi-rides-in-austin-with-no-human-safety-driver/",
+    "publishedDate": "2026-01-22",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 40,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 12,
+      "reach": 4,
+      "longTerm": 6,
+      "socialEthics": 3
+    },
+    "categories": [
+      "Mobility",
+      "AI & ML"
+    ],
+    "productServices": [
+      "Robotaxi Service",
+      "Full Self-Driving (FSD)"
+    ],
+    "coreElements": [
+      "Autonomous Driving",
+      "Real-World AI"
+    ],
+    "searchKeywords": [
+      "Tesla",
+      "Robotaxi",
+      "Austin",
+      "Autonomous Driving",
+      "FSD"
+    ],
+    "searchKeywords_ko": [
+      "테슬라",
+      "로보택시",
+      "오스틴",
+      "자율주행",
+      "FSD"
+    ]
+  },
+  {
+    "id": "music-publishers-sue-anthropic-over-ai-training-data",
+    "title": "Music Publishers Sue Anthropic for Over $3 Billion, Alleging Unauthorized Use of 20,000+ Songs to Train its AI",
+    "title_ko": "음악 출판사들, 앤트로픽에 30억 달러 이상 소송…AI 훈련에 2만 곡 이상 무단 사용 주장",
+    "summary": "A group of music publishers has filed a lawsuit against AI company Anthropic, seeking over $3 billion in damages. The suit alleges the company used more than 20,000 copyrighted songs without authorization to train its Claude AI model.",
+    "summary_ko": "다수의 음악 출판사들이 AI 기업 앤트로픽을 상대로 30억 달러 이상의 손해배상 소송을 제기했습니다. 이들은 앤트로픽이 클로드 AI 모델 훈련을 위해 2만 곡 이상의 저작권 있는 노래를 무단으로 사용했다고 주장합니다.",
+    "why_it_matters": "This landmark lawsuit highlights the growing legal and ethical conflict between AI development and copyright law in creative industries.",
+    "why_it_matters_ko": "이번 소송은 AI 개발과 창작 산업의 저작권법 사이에서 심화되는 법적, 윤리적 갈등을 보여주는 중요한 사례입니다.",
+    "source": "Reuters",
+    "sourceUrl": "https://www.reuters.com/legal/litigation/anthropic-faces-new-music-publisher-lawsuit-over-alleged-piracy-2026-01-28/",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 39,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 5,
+      "reach": 4,
+      "longTerm": 7,
+      "socialEthics": 8
+    },
+    "categories": [
+      "AI",
+      "Legal"
+    ],
+    "productServices": [
+      "Claude"
+    ],
+    "coreElements": [
+      "AI Training Data",
+      "Copyright Infringement"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "Claude",
+      "AI lawsuit",
+      "music copyright",
+      "AI training data"
+    ],
+    "searchKeywords_ko": [
+      "앤트로픽",
+      "클로드",
+      "AI 소송",
+      "음악 저작권",
+      "AI 학습 데이터"
+    ]
+  },
+  {
+    "id": "openai-unveils-custom-ai-data-agent-for-internal-operations",
+    "title": "OpenAI Unveils Custom AI Data Agent for Its Internal Operations",
+    "title_ko": "OpenAI, 내부 운영을 위한 맞춤형 AI 데이터 에이전트 공개",
+    "summary": "OpenAI has developed a bespoke, internal-only AI data agent to help its employees explore and analyze over 600 petabytes of internal data. Built using their own technologies like GPT-5.2 and Codex, the agent enables teams to gain complex insights through natural language queries in minutes.",
+    "summary_ko": "OpenAI는 직원들이 600페타바이트가 넘는 내부 데이터를 탐색하고 분석할 수 있도록 돕는 맞춤형 내부 전용 AI 데이터 에이전트를 개발했습니다. GPT-5.2 및 코덱스와 같은 자체 기술을 사용하여 구축된 이 에이전트를 통해 팀은 자연어 쿼리로 몇 분 만에 복잡한 인사이트를 얻을 수 있습니다.",
+    "why_it_matters": "This showcases how advanced AI can be applied internally to solve massive data accessibility and analysis challenges within large tech organizations.",
+    "why_it_matters_ko": "이는 대규모 기술 조직 내에서 방대한 데이터 접근성 및 분석 문제를 해결하기 위해 고급 AI를 내부적으로 어떻게 적용할 수 있는지를 보여줍니다.",
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/inside-our-in-house-data-agent/",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 38,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 15,
+      "reach": 4,
+      "longTerm": 7,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI & Machine Learning",
+      "Data & Analytics",
+      "Enterprise AI"
+    ],
+    "productServices": [
+      "GPT-5",
+      "GPT-5.2",
+      "Codex",
+      "Evals API",
+      "Embeddings API"
+    ],
+    "coreElements": [
+      "AI Agent",
+      "Data Analysis",
+      "Internal Tools",
+      "Natural Language Query"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "AI data agent",
+      "internal tools",
+      "data analysis",
+      "GPT-5",
+      "Codex",
+      "business intelligence"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "AI 데이터 에이전트",
+      "내부 도구",
+      "데이터 분석",
+      "GPT-5",
+      "코덱스",
+      "비즈니스 인텔리전스"
+    ]
+  },
+  {
+    "id": "anthropic-collaborates-with-uk-government-for-gov-uk-ai-assistant",
+    "title": "Anthropic Collaborates with UK Government to Launch AI Assistant for GOV.UK Services",
+    "title_ko": "앤스로픽, 영국 정부와 협력하여 GOV.UK 서비스용 AI 어시스턴트 출시",
+    "summary": "Anthropic is partnering with the UK's Department for Science, Innovation and Technology (DSIT) to pilot a Claude-powered AI assistant for the GOV.UK website. The initial phase will focus on assisting citizens with employment services, such as finding work and accessing training resources.",
+    "summary_ko": "앤스로픽이 영국 과학혁신기술부(DSIT)와 협력하여 GOV.UK 웹사이트용 클로드 기반 AI 어시스턴트를 시범 운영합니다. 초기 단계는 시민들이 일자리를 찾고 교육 자료에 접근하는 등 고용 서비스를 지원하는 데 중점을 둘 것입니다.",
+    "why_it_matters": "This partnership marks a significant government adoption of frontier AI for public services, setting a precedent for safe and effective AI integration in citizen-facing applications.",
+    "why_it_matters_ko": "이번 파트너십은 공공 서비스를 위한 최첨단 AI의 중요한 정부 채택 사례로, 대민 애플리케이션에 안전하고 효과적인 AI를 통합하는 선례를 남겼습니다.",
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/news/gov-uk-partnership",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 48,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 8,
+      "reach": 10,
+      "longTerm": 7,
+      "socialEthics": 8
+    },
+    "categories": [
+      "AI Governance & Policy",
+      "Public Sector AI"
+    ],
+    "productServices": [
+      "Claude",
+      "GOV.UK AI Assistant"
+    ],
+    "coreElements": [
+      "Government Partnership",
+      "Agentic AI"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "UK Government",
+      "GOV.UK",
+      "Claude AI",
+      "Public Sector AI",
+      "DSIT"
+    ],
+    "searchKeywords_ko": [
+      "앤스로픽",
+      "영국 정부",
+      "GOV.UK",
+      "클로드 AI",
+      "공공부문 AI",
+      "DSIT"
+    ]
+  },
+  {
+    "id": "ubtech-walker-s2-humanoid-robots-half-productivity-of-humans",
+    "title": "UBTech's Walker S2 Humanoid Robots Are Half as Productive as Human Workers, Report Says",
+    "title_ko": "UBTech 워커 S2 휴머노이드 로봇, 인간 작업자 생산성의 절반 수준으로 보고돼",
+    "summary": "A Financial Times report on Shenzhen-based UBTech reveals its Walker S2 humanoid robots are currently operating at about half the productivity of human workers. This provides a crucial real-world benchmark for the current efficiency of humanoid robots in industrial tasks.",
+    "summary_ko": "파이낸셜 타임즈 보도에 따르면, 중국 선전의 UBTech사가 개발한 워커 S2 휴머노이드 로봇은 현재 인간 작업자 생산성의 약 절반 수준에서 작동하고 있습니다. 이는 산업 현장에서의 휴머노이드 로봇 효율성에 대한 중요한 실증적 기준을 제시합니다.",
+    "why_it_matters": "This productivity benchmark highlights the current gap between humanoid robot capabilities and human efficiency in real-world industrial settings.",
+    "why_it_matters_ko": "이 생산성 벤치마크는 실제 산업 환경에서 휴머노이드 로봇의 능력과 인간의 효율성 사이의 현재 격차를 명확히 보여줍니다.",
+    "source": "Financial Times",
+    "sourceUrl": "https://www.ft.com/content/0f831781-b450-4644-9f83-b3f76968a4af",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 35,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 12,
+      "reach": 3,
+      "longTerm": 4,
+      "socialEthics": 1
+    },
+    "categories": [
+      "Robotics",
+      "Automation",
+      "Artificial Intelligence",
+      "Manufacturing"
+    ],
+    "productServices": [
+      "UBTech Walker S2",
+      "Humanoid Robots"
+    ],
+    "coreElements": [
+      "Robot Productivity",
+      "Human-Robot Comparison"
+    ],
+    "searchKeywords": [
+      "UBTech",
+      "Walker S2",
+      "Humanoid Robot",
+      "Robot Productivity",
+      "Automation",
+      "Financial Times"
+    ],
+    "searchKeywords_ko": [
+      "유비테크",
+      "워커 S2",
+      "휴머노이드 로봇",
+      "로봇 생산성",
+      "자동화",
+      "파이낸셜 타임즈"
+    ]
+  },
+  {
+    "id": "ai2-unveils-sera-a-new-family-of-open-source-coding-agents",
+    "title": "AI2 Unveils SERA: A New Family of Open-Source Coding Agents",
+    "title_ko": "AI2, 새로운 오픈소스 코딩 에이전트 제품군 'SERA' 공개",
+    "summary": "AI2 has introduced SERA, a new family of open-source coding agents. These agents are designed to be trained cost-effectively on private codebases and offer native support for Claude Code.",
+    "summary_ko": "AI2가 새로운 오픈소스 코딩 에이전트 제품군 SERA를 공개했습니다. 이 에이전트들은 비공개 코드베이스에서 저렴하게 훈련할 수 있도록 설계되었으며, Claude Code를 네이티브로 지원합니다.",
+    "why_it_matters": "The ability to cheaply train coding agents on private codebases democratizes custom AI development for businesses.",
+    "why_it_matters_ko": "기업이 비공개 코드베이스에서 저렴하게 코딩 에이전트를 훈련할 수 있게 되어 맞춤형 AI 개발의 대중화가 기대됩니다.",
+    "source": "AI2",
+    "sourceUrl": "https://allenai.org/blog/introducing-sera-coding-agents",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 34,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 15,
+      "reach": 2,
+      "longTerm": 4,
+      "socialEthics": 1
+    },
+    "categories": [
+      "AI Development",
+      "Open Source"
+    ],
+    "productServices": [
+      "SERA"
+    ],
+    "coreElements": [
+      "Coding Agents"
+    ],
+    "searchKeywords": [
+      "AI2",
+      "SERA",
+      "coding agent",
+      "open source AI",
+      "private codebase"
+    ],
+    "searchKeywords_ko": [
+      "AI2",
+      "SERA",
+      "코딩 에이전트",
+      "오픈소스 AI",
+      "비공개 코드베이스"
+    ]
+  },
+  {
+    "id": "microsoft-foundry-azure-platform-for-scaling-ai-applications",
+    "title": "Microsoft Introduces Foundry: An Interoperable Azure Platform for Scaling AI Applications",
+    "title_ko": "MS, AI 애플리케이션 확장을 위한 상호 운용 플랫폼 'Foundry' 공개",
+    "summary": "Microsoft has launched Foundry, a new interoperable platform on Azure designed to build, optimize, and govern AI applications and agents at scale. The platform prioritizes openness, control, and security for enterprise-grade AI development.",
+    "summary_ko": "Microsoft가 Azure에 새로운 상호 운용 플랫폼인 Foundry를 출시했습니다. 이 플랫폼은 AI 애플리케이션과 에이전트를 대규모로 구축, 최적화 및 관리하도록 설계되었으며, 개방성, 제어 및 보안을 강조합니다.",
+    "why_it_matters": "Foundry offers enterprises a unified and secure environment to scale custom AI solutions, potentially standardizing AI development workflows on the Azure cloud.",
+    "why_it_matters_ko": "Foundry는 기업에 맞춤형 AI 솔루션을 확장할 수 있는 통합되고 안전한 환경을 제공하여, Azure 클라우드에서의 AI 개발 워크플로우를 표준화할 수 있습니다.",
+    "source": "Microsoft Azure",
+    "sourceUrl": "https://azure.microsoft.com/en-us/blog/introducing-microsoft-foundry-an-interoperable-platform-for-scaling-ai-applications/",
+    "publishedDate": "2026-01-30",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 33,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 10,
+      "reach": 2,
+      "longTerm": 5,
+      "socialEthics": 1
+    },
+    "categories": [
+      "AI & Machine Learning",
+      "Cloud Computing",
+      "Developer Tools"
+    ],
+    "productServices": [
+      "Microsoft Foundry",
+      "Microsoft Azure",
+      "Azure AI"
+    ],
+    "coreElements": [
+      "AI Application Development",
+      "Interoperability",
+      "AI Governance",
+      "Scalability"
+    ],
+    "searchKeywords": [
+      "Microsoft Foundry",
+      "Azure AI platform",
+      "AI application scaling",
+      "AI agents",
+      "interoperable AI",
+      "AI governance"
+    ],
+    "searchKeywords_ko": [
+      "마이크로소프트 파운드리",
+      "Azure AI 플랫폼",
+      "AI 애플리케이션 확장",
+      "AI 에이전트",
+      "상호 운용 AI",
+      "AI 거버넌스"
+    ]
+  },
+  {
+    "id": "mistral-upgrades-vibe-coding-agent-v2-with-custom-subagents",
+    "title": "Mistral Upgrades 'Vibe' Coding Agent to v2.0, Adds Custom Subagents for Pro Users",
+    "title_ko": "미스트랄, 프로 사용자를 위해 'Vibe' 코딩 에이전트 v2.0 업그레이드 및 커스텀 서브에이전트 추가",
+    "summary": "Mistral has released version 2.0 of its terminal coding agent, Vibe, for its Pro and Team plan subscribers. The update introduces custom subagents and enhanced workflow skills to provide developers with more tailored and powerful assistance.",
+    "summary_ko": "미스트랄이 프로 및 팀 요금제 구독자를 위해 터미널 코딩 에이전트 'Vibe'의 2.0 버전을 출시했습니다. 이번 업데이트는 개발자에게 더 맞춤화되고 강력한 지원을 제공하기 위해 커스텀 서브에이전트와 향상된 워크플로우 기술을 도입합니다.",
+    "why_it_matters": "This update makes AI coding assistants more customizable, allowing professional developers to tailor automated workflows for specific, complex tasks.",
+    "why_it_matters_ko": "이번 업데이트는 AI 코딩 도구를 더욱 개인화하여 전문 개발자들이 특정하고 복잡한 작업을 위해 자동화된 워크플로우를 맞춤 설정할 수 있게 합니다.",
+    "source": "Mistral AI",
+    "sourceUrl": "https://mistral.ai/news/mistral-vibe-2-0",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 33,
+    "impactDetails": {
+      "industry": 14,
+      "tech": 12,
+      "reach": 2,
+      "longTerm": 5,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI Development",
+      "Developer Tools"
+    ],
+    "productServices": [
+      "Mistral Vibe"
+    ],
+    "coreElements": [
+      "AI Agents",
+      "Custom Subagents",
+      "Workflow Automation"
+    ],
+    "searchKeywords": [
+      "Mistral",
+      "Vibe 2.0",
+      "AI coding agent",
+      "custom subagents",
+      "developer tools"
+    ],
+    "searchKeywords_ko": [
+      "미스트랄",
+      "Vibe 2.0",
+      "AI 코딩 에이전트",
+      "커스텀 서브에이전트",
+      "개발자 도구"
+    ]
+  },
+  {
+    "id": "korean-humanoid-robot-allex-achieves-safe-handshakes",
+    "title": "Korean Humanoid Robot ALLEX Achieves Safe Handshakes with Advanced Force Sensing",
+    "title_ko": "한국 휴머노이드 로봇 '알렉스', 첨단 힘 감지 기술로 안전한 악수 성공",
+    "summary": "ALLEX, a new humanoid robot from South Korea, can sense and control its grip strength using advanced force-sensing technology. This allows it to deliver a firm yet gentle handshake, ensuring safe physical interaction with humans.",
+    "summary_ko": "한국의 신형 휴머노이드 로봇 '알렉스'는 첨단 힘 감지 기술을 이용해 잡는 힘을 조절할 수 있습니다. 이를 통해 인간과 물리적으로 상호작용할 때 안전하고 부드러운 악수를 건넬 수 있습니다.",
+    "why_it_matters": "This marks a significant step toward developing robots capable of safe, nuanced physical interaction in everyday human environments.",
+    "why_it_matters_ko": "인간의 일상 환경에서 로봇이 안전하고 섬세한 물리적 상호작용을 할 수 있는 기술 개발의 중요한 진전을 의미합니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/korea-allex-humanoid-robot",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 33,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 15,
+      "reach": 2,
+      "longTerm": 3,
+      "socialEthics": 1
+    },
+    "categories": [
+      "AI & Robotics",
+      "Hardware"
+    ],
+    "productServices": [
+      "ALLEX Humanoid Robot"
+    ],
+    "coreElements": [
+      "Force Sensing",
+      "Human-Robot Interaction"
+    ],
+    "searchKeywords": [
+      "humanoid robot",
+      "ALLEX",
+      "force sensing",
+      "robot handshake",
+      "Korean robot"
+    ],
+    "searchKeywords_ko": [
+      "휴머노이드 로봇",
+      "알렉스",
+      "힘 감지",
+      "로봇 악수",
+      "한국 로봇"
+    ]
+  },
+  {
+    "id": "servicenow-selects-anthropic-claude-ai-for-enterprise-workflows",
+    "title": "ServiceNow Selects Anthropic's Claude AI for Customer Applications and Enhanced Internal Efficiency",
+    "title_ko": "ServiceNow, 고객 애플리케이션 및 내부 효율성 강화를 위해 Anthropic의 Claude AI 채택",
+    "summary": "ServiceNow has chosen Anthropic's Claude as the default AI model for its Build Agent and a preferred model for its AI Platform. The partnership aims to empower developers, accelerate product deployment, and boost ServiceNow's own internal productivity for its 29,000+ employees.",
+    "summary_ko": "ServiceNow는 자사의 Build Agent를 위한 기본 AI 모델이자 AI 플랫폼의 선호 모델로 Anthropic의 Claude를 채택했습니다. 이번 파트너십은 개발자 역량 강화, 제품 배포 가속화, 그리고 29,000명 이상의 직원을 위한 ServiceNow 자체의 내부 생산성 향상을 목표로 합니다.",
+    "why_it_matters": "This partnership exemplifies the trend of embedding advanced generative AI directly into core enterprise workflow platforms to automate complex business processes at scale.",
+    "why_it_matters_ko": "이번 파트너십은 복잡한 비즈니스 프로세스를 대규모로 자동화하기 위해 고급 생성형 AI를 핵심 엔터프라이즈 워크플로우 플랫폼에 직접 통합하는 최신 동향을 보여줍니다.",
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/news/servicenow-anthropic-claude",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 45,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 10,
+      "reach": 8,
+      "longTerm": 12,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI Platforms",
+      "Enterprise Software"
+    ],
+    "productServices": [
+      "ServiceNow AI Platform",
+      "ServiceNow Build Agent",
+      "Anthropic Claude"
+    ],
+    "coreElements": [
+      "Generative AI Integration",
+      "Workflow Automation",
+      "Agentic AI"
+    ],
+    "searchKeywords": [
+      "ServiceNow",
+      "Anthropic",
+      "Claude AI",
+      "Enterprise AI",
+      "Workflow Automation"
+    ],
+    "searchKeywords_ko": [
+      "서비스나우",
+      "앤트로픽",
+      "클로드 AI",
+      "엔터프라이즈 AI",
+      "워크플로우 자동화"
+    ]
+  },
+  {
+    "id": "nvidia-unveils-earth-2-ai-models-for-weather-forecasting",
+    "title": "NVIDIA Unveils Earth-2 Family, World's First Open and Accelerated AI Models for Weather Forecasting",
+    "title_ko": "NVIDIA, 세계 최초의 개방형 및 가속 AI 날씨 예측 모델 'Earth-2' 제품군 공개",
+    "summary": "NVIDIA has introduced the Earth-2 family, a groundbreaking set of open and accelerated AI models for weather and climate prediction. This new platform aims to deliver higher-resolution, faster, and more accurate forecasts than traditional methods.",
+    "summary_ko": "NVIDIA가 날씨 및 기후 예측을 위한 획기적인 개방형 및 가속 AI 모델인 'Earth-2' 제품군을 공개했습니다. 이 새로운 플랫폼은 기존 방법보다 더 높은 해상도의 예측을 더 빠르고 정확하게 제공하는 것을 목표로 합니다.",
+    "why_it_matters": "This technology could revolutionize climate science by making high-resolution weather modeling more accessible, improving early warnings for extreme weather events.",
+    "why_it_matters_ko": "이 기술은 고해상도 날씨 모델링에 대한 접근성을 높여 극한 기상 현상에 대한 조기 경보를 개선함으로써 기후 과학에 혁명을 일으킬 수 있습니다.",
+    "source": "NVIDIA News",
+    "sourceUrl": "https://blogs.nvidia.com/blog/nvidia-earth-2-open-models/",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 83,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 25,
+      "reach": 12,
+      "longTerm": 20,
+      "socialEthics": 8
+    },
+    "categories": [
+      "Artificial Intelligence",
+      "Climate Tech",
+      "High-Performance Computing"
+    ],
+    "productServices": [
+      "NVIDIA Earth-2"
+    ],
+    "coreElements": [
+      "AI Models",
+      "Weather Forecasting",
+      "Climate Prediction"
+    ],
+    "searchKeywords": [
+      "NVIDIA Earth-2",
+      "AI weather forecasting",
+      "climate models",
+      "accelerated computing",
+      "open source AI"
+    ],
+    "searchKeywords_ko": [
+      "NVIDIA Earth-2",
+      "AI 날씨 예측",
+      "기후 모델",
+      "가속 컴퓨팅",
+      "오픈소스 AI"
+    ]
+  },
+  {
+    "id": "elon-musk-predicts-optimus-public-sale-by-2027",
+    "title": "Elon Musk Predicts Optimus Humanoid Robots Will Be Available for Public Sale by 2027",
+    "title_ko": "일론 머스크, 2027년까지 옵티머스 휴머노이드 로봇 일반 판매 예측",
+    "summary": "At the World Economic Forum, Elon Musk stated he expects Tesla's Optimus humanoid robots to be sold to the public by the end of 2027. He also forecasted that AI could surpass collective human intelligence by 2031, envisioning a future of robot-driven abundance.",
+    "summary_ko": "일론 머스크는 세계경제포럼에서 테슬라의 옵티머스 휴머노이드 로봇이 2027년 말까지 일반에 판매될 것으로 예상한다고 밝혔습니다. 그는 또한 AI가 2031년까지 집단적 인간 지능을 넘어설 것이라 예측하며 로봇이 주도하는 풍요로운 미래를 전망했습니다.",
+    "why_it_matters": "This aggressive timeline for consumer-grade humanoid robots could drastically accelerate shifts in labor, manufacturing, and daily life.",
+    "why_it_matters_ko": "소비자용 휴머노이드 로봇에 대한 이 공격적인 일정은 노동, 제조 및 일상 생활의 변화를 급격히 가속화할 수 있습니다.",
+    "source": "CBS News",
+    "sourceUrl": "https://www.cbsnews.com/news/elon-musk-davos-world-economic-forum/",
+    "publishedDate": "2026-01-22",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 32,
+    "impactDetails": {
+      "industry": 8,
+      "tech": 10,
+      "reach": 4,
+      "longTerm": 6,
+      "socialEthics": 4
+    },
+    "categories": [
+      "Artificial Intelligence",
+      "Robotics",
+      "Technology"
+    ],
+    "productServices": [
+      "Tesla Optimus"
+    ],
+    "coreElements": [
+      "Elon Musk",
+      "Humanoid Robots",
+      "Artificial General Intelligence"
+    ],
+    "searchKeywords": [
+      "Elon Musk",
+      "Tesla Optimus",
+      "humanoid robot",
+      "AI timeline",
+      "World Economic Forum"
+    ],
+    "searchKeywords_ko": [
+      "일론 머스크",
+      "테슬라 옵티머스",
+      "휴머노이드 로봇",
+      "AI 타임라인",
+      "세계경제포럼"
+    ]
+  },
+  {
+    "id": "sk-market-value-exceeds-germany-ai-robotics-surge-2026-01-28",
+    "title": "South Korea's Market Value Exceeds Germany's Amid AI and Robotics Surge",
+    "title_ko": "AI 및 로보틱스 열풍 속 한국 증시 시가총액, 독일 추월",
+    "summary": "Fueled by a market frenzy around artificial intelligence and robotics, South Korea's stock exchange has surpassed Germany's in total value. This surge has elevated the nation's market to become the 10th largest in the world.",
+    "summary_ko": "인공지능과 로보틱스에 대한 시장의 열풍에 힘입어 한국 증권거래소의 총 가치가 독일을 넘어섰습니다. 이러한 급등으로 한국은 세계 10위 규모의 시장으로 올라섰습니다.",
+    "why_it_matters": "This shift highlights growing investor confidence in South Korea's technology sector as a dominant force in the global economy.",
+    "why_it_matters_ko": "이러한 변화는 글로벌 경제의 주도세력으로서 한국 기술 부문에 대한 투자자들의 신뢰가 커지고 있음을 보여줍니다.",
+    "source": "Bloomberg",
+    "sourceUrl": "http://bloomberg.com/news/articles/2026-01-28/south-korea-exceeds-germany-s-market-cap-on-ai-robotics-craze",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 31,
+    "impactDetails": {
+      "industry": 10,
+      "tech": 10,
+      "reach": 8,
+      "longTerm": 3,
+      "socialEthics": 0
+    },
+    "categories": [
+      "Finance",
+      "Technology",
+      "Global Economy"
+    ],
+    "productServices": [
+      "Financial Markets"
+    ],
+    "coreElements": [
+      "Artificial Intelligence",
+      "Robotics"
+    ],
+    "searchKeywords": [
+      "South Korea stock market",
+      "Germany market cap",
+      "AI stocks",
+      "Robotics stocks",
+      "global stock exchange ranking"
+    ],
+    "searchKeywords_ko": [
+      "한국 증시",
+      "독일 시가총액",
+      "AI 관련주",
+      "로봇 관련주",
+      "글로벌 증시 순위"
+    ]
+  },
+  {
+    "id": "openai-chatgpt-reportedly-setting-high-ad-rates",
+    "title": "OpenAI's ChatGPT Reportedly Setting High Ad Rates, Outpacing Meta and Rivaling Broadcast TV",
+    "title_ko": "OpenAI 챗GPT, 메타 뛰어넘고 방송 TV에 버금가는 높은 광고 단가 책정 보도",
+    "summary": "OpenAI will reportedly charge around $60 per thousand ad views in its initial ChatGPT ad implementation. This rate is approximately triple that of Meta's and is competitive with primetime broadcast television.",
+    "summary_ko": "보도에 따르면 OpenAI는 초기 챗GPT 광고 도입 시 1,000회 노출당 약 60달러를 청구할 예정입니다. 이는 메타의 약 3배에 달하며 황금 시간대 방송 TV 광고와 경쟁하는 수준입니다.",
+    "why_it_matters": "ChatGPT's premium ad pricing could establish it as a major new advertising platform, challenging both digital and traditional media giants.",
+    "why_it_matters_ko": "챗GPT의 프리미엄 광고 단가는 기존 디지털 및 전통 미디어 거인들에게 도전하는 주요 신규 광고 플랫폼으로서의 입지를 구축할 수 있음을 시사합니다.",
+    "source": "The Rundown",
+    "sourceUrl": "https://link.therundown.ai/fmjILg",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 65,
+    "impactDetails": {
+      "industry": 30,
+      "tech": 20,
+      "reach": 5,
+      "longTerm": 5,
+      "socialEthics": 5
+    },
+    "categories": [
+      "AI",
+      "Advertising",
+      "Business"
+    ],
+    "productServices": [
+      "ChatGPT",
+      "OpenAI"
+    ],
+    "coreElements": [
+      "Advertising Model",
+      "Revenue Generation",
+      "Competitive Landscape"
+    ],
+    "searchKeywords": [
+      "ChatGPT ads",
+      "OpenAI advertising",
+      "AI monetization",
+      "digital advertising rates"
+    ],
+    "searchKeywords_ko": [
+      "챗GPT 광고",
+      "OpenAI 광고",
+      "AI 수익화",
+      "디지털 광고 단가"
+    ]
+  },
+  {
+    "id": "nvidia-sets-conference-call-for-q4-2026-financial-results",
+    "title": "NVIDIA to Announce Fourth-Quarter Financial Results on January 28, 2026",
+    "title_ko": "엔비디아, 2026년 1월 28일 4분기 실적 발표 컨퍼런스 콜 개최",
+    "summary": "NVIDIA has announced it will hold a conference call on January 28, 2026, to discuss its financial results for the fourth quarter. The event will provide key insights into the company's performance and outlook.",
+    "summary_ko": "엔비디아가 4분기 재무 실적을 논의하기 위해 2026년 1월 28일에 컨퍼런스 콜을 개최할 것이라고 발표했습니다. 이 행사는 회사의 성과와 전망에 대한 주요 통찰력을 제공할 것입니다.",
+    "why_it_matters": "This announcement sets a key date for investors to assess NVIDIA's financial health and future guidance, influencing market expectations.",
+    "why_it_matters_ko": "이 발표는 투자자들이 엔비디아의 재무 건전성과 향후 가이던스를 평가할 중요한 날짜를 설정하여 시장 기대치에 영향을 미칩니다.",
+    "source": "NVIDIA News",
+    "sourceUrl": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-fourth-quarter-financial-results",
+    "publishedDate": "January 26, 2026",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 25,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 2,
+      "reach": 5,
+      "longTerm": 3,
+      "socialEthics": 0
+    },
+    "categories": [
+      "Corporate Finance",
+      "Technology",
+      "Investor Relations"
+    ],
+    "productServices": [
+      "Investor Relations"
+    ],
+    "coreElements": [
+      "Financial Results",
+      "Conference Call",
+      "Earnings Announcement"
+    ],
+    "searchKeywords": [
+      "NVIDIA",
+      "financial results",
+      "earnings call",
+      "Q4 earnings",
+      "investor relations",
+      "NVDA"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아",
+      "재무 실적",
+      "실적 발표",
+      "4분기 실적",
+      "투자자 정보",
+      "NVDA"
+    ]
+  },
+  {
+    "id": "tech-giants-discuss-60-billion-openai-investment-20260129",
+    "title": "Tech Giants Nvidia, Microsoft, and Amazon in Talks for $60 Billion Investment in OpenAI",
+    "title_ko": "엔비디아, 마이크로소프트, 아마존, OpenAI에 600억 달러 투자 논의",
+    "summary": "Nvidia, Microsoft, and Amazon are reportedly negotiating a massive investment round totaling up to $60 billion in OpenAI. This potential deal could elevate the AI company's valuation to over $700 billion.",
+    "summary_ko": "엔비디아, 마이크로소프트, 아마존이 OpenAI의 신규 펀딩 라운드에 총 600억 달러에 달하는 대규모 투자를 협상 중인 것으로 알려졌습니다. 이번 투자가 성사될 경우 OpenAI의 기업 가치는 7,000억 달러를 넘어설 수 있습니다.",
+    "why_it_matters": "This landmark investment would solidify OpenAI's dominance and dramatically accelerate the global AI arms race among tech giants.",
+    "why_it_matters_ko": "이 기념비적인 투자는 OpenAI의 압도적인 시장 지배력을 공고히 하고 빅테크 기업 간의 글로벌 AI 경쟁을 극적으로 가속화할 것입니다.",
+    "source": "The Information",
+    "sourceUrl": "http://theinformation.com/articles/nvidia-microsoft-amazon-talks-invest-60-billion-openai",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 85,
+    "impactDetails": {
+      "industry": 25,
+      "tech": 20,
+      "reach": 20,
+      "longTerm": 20,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI",
+      "Venture Capital"
+    ],
+    "productServices": [
+      "OpenAI Platform"
+    ],
+    "coreElements": [
+      "Strategic Investment"
+    ],
+    "searchKeywords": [
+      "OpenAI funding",
+      "Nvidia OpenAI",
+      "Microsoft OpenAI",
+      "Amazon OpenAI",
+      "AI Investment"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI 펀딩",
+      "엔비디아 OpenAI",
+      "마이크로소프트 OpenAI",
+      "아마존 OpenAI",
+      "AI 투자"
+    ]
+  },
+  {
+    "id": "cisco-ai-summit-2026-industry-leaders",
+    "title": "Cisco to Host AI Summit with Leaders from NVIDIA, OpenAI, AWS, and Google",
+    "title_ko": "시스코, 엔비디아, OpenAI, AWS, 구글 등 업계 리더들과 AI 서밋 개최",
+    "summary": "Cisco will host a live-streamed AI Summit on February 3rd, featuring top executives from NVIDIA, OpenAI, AWS, Figma, Google, and Andreessen Horowitz. The discussion will focus on the critical infrastructure and governance required for the growing AI economy.",
+    "summary_ko": "시스코가 2월 3일 엔비디아, OpenAI, AWS, 피그마, 구글, 앤드리슨 호로위츠의 최고 경영진이 참여하는 AI 서밋을 라이브 스트리밍으로 개최합니다. 이번 논의는 성장하는 AI 경제에 필요한 핵심 인프라와 거버넌스에 초점을 맞출 것입니다.",
+    "why_it_matters": "This summit brings together the key architects of the AI industry to publicly discuss its foundational rules, signaling a move toward establishing collaborative governance.",
+    "why_it_matters_ko": "이 서밋은 AI 산업의 핵심 설계자들이 모여 기본 규칙을 공개적으로 논의하는 자리로, 협력적 거버넌스 구축을 향한 움직임을 시사합니다.",
+    "source": "Cisco",
+    "sourceUrl": "https://link.therundown.ai/S9P8GI",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 34,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 3,
+      "reach": 5,
+      "longTerm": 4,
+      "socialEthics": 4
+    },
+    "categories": [
+      "AI",
+      "Tech Industry",
+      "Governance"
+    ],
+    "productServices": [
+      "AI Summit"
+    ],
+    "coreElements": [
+      "Cisco",
+      "NVIDIA",
+      "OpenAI",
+      "AWS",
+      "Figma",
+      "Google",
+      "Andreessen Horowitz"
+    ],
+    "searchKeywords": [
+      "Cisco AI Summit",
+      "AI Governance",
+      "AI Infrastructure",
+      "NVIDIA",
+      "OpenAI",
+      "Tech Leaders"
+    ],
+    "searchKeywords_ko": [
+      "시스코 AI 서밋",
+      "AI 거버넌스",
+      "AI 인프라",
+      "엔비디아",
+      "OpenAI",
+      "기술 리더"
+    ]
+  },
+  {
+    "id": "nvidia-invests-2b-in-coreweave-for-5gw-ai-data-center-expansion",
+    "title": "Nvidia Invests $2 Billion in CoreWeave, Targeting Over 5 GW of AI Data Center Capacity by 2030",
+    "title_ko": "엔비디아, 코어위브에 20억 달러 투자…2030년까지 5GW 이상 AI 데이터센터 용량 확보 목표",
+    "summary": "Nvidia announced a strategic $2 billion investment in specialized cloud provider CoreWeave as part of an expanded partnership. The collaboration aims to build over 5 gigawatts of AI data center capacity by 2030 to meet surging demand for AI computing.",
+    "summary_ko": "엔비디아가 전문 클라우드 제공업체인 코어위브에 20억 달러 규모의 전략적 투자를 발표했습니다. 이번 파트너십은 급증하는 AI 컴퓨팅 수요에 대응하기 위해 2030년까지 5기가와트 이상의 AI 데이터센터 용량을 구축하는 것을 목표로 합니다.",
+    "why_it_matters": "This massive investment underscores the critical need for specialized AI infrastructure and Nvidia's strategy to secure future GPU-powered compute capacity.",
+    "why_it_matters_ko": "이 대규모 투자는 특화된 AI 인프라의 중요성과 미래의 GPU 기반 컴퓨팅 용량을 확보하려는 엔비디아의 전략을 강조합니다.",
+    "source": "Nvidia News",
+    "sourceUrl": "https://nvidianews.nvidia.com/news/nvidia-and-coreweave-strengthen-collaboration-to-accelerate-buildout-of-ai-factories",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 47,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 9,
+      "reach": 8,
+      "longTerm": 9,
+      "socialEthics": 3
+    },
+    "categories": [
+      "AI Infrastructure",
+      "Cloud Computing",
+      "Investment",
+      "Semiconductors"
+    ],
+    "productServices": [
+      "Nvidia GPUs",
+      "AI Cloud Services"
+    ],
+    "coreElements": [
+      "Nvidia",
+      "CoreWeave",
+      "Investment",
+      "AI Data Center",
+      "GPU Capacity"
+    ],
+    "searchKeywords": [
+      "Nvidia CoreWeave investment",
+      "AI data center",
+      "GPU cloud",
+      "AI infrastructure",
+      "5 GW capacity"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아 코어위브 투자",
+      "AI 데이터센터",
+      "GPU 클라우드",
+      "AI 인프라",
+      "5GW 용량"
+    ]
+  },
+  {
+    "id": "gallup-poll-half-us-workers-not-using-ai-on-the-job",
+    "title": "Gallup Poll Finds Half of U.S. Workers Not Using AI on the Job",
+    "title_ko": "갤럽 조사: 미국 근로자 절반, 직장에서 AI 사용 안 해",
+    "summary": "A Q4 2025 Gallup report shows workplace AI adoption is plateauing, with nearly half of U.S. workers never using AI tools. Significant adoption gaps persist between roles, with remote-capable workers (66%) and leaders (69%) far outpacing on-site workers and individual contributors.",
+    "summary_ko": "2025년 4분기 갤럽 보고서에 따르면, 직장 내 AI 도입이 정체기에 접어들며 미국 근로자의 거의 절반이 AI를 전혀 사용하지 않는 것으로 나타났습니다. 원격 근무 가능 직무(66%)와 리더급(69%)의 도입률이 현장 근로자나 일반 직원에 비해 월등히 높아 역할 간 도입 격차가 심화되고 있습니다.",
+    "why_it_matters": "The growing divide in AI adoption signals an uneven spread of productivity gains, creating a more competitive landscape for laggard sectors and roles.",
+    "why_it_matters_ko": "AI 도입 격차의 심화는 생산성 향상이 불균등하게 분배될 것을 시사하며, 뒤처진 산업 및 직무의 경쟁 환경을 더욱 치열하게 만들 것입니다.",
+    "source": "Gallup",
+    "sourceUrl": "https://www.gallup.com/workplace/701195/frequent-workplace-continued-rise.aspx",
+    "publishedDate": "2026-01-25",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 29,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 2,
+      "reach": 5,
+      "longTerm": 4,
+      "socialEthics": 3
+    },
+    "categories": [
+      "Workplace",
+      "AI Adoption"
+    ],
+    "productServices": [
+      "Workplace AI Tools"
+    ],
+    "coreElements": [
+      "AI Adoption Gap",
+      "Labor Productivity"
+    ],
+    "searchKeywords": [
+      "Workplace AI",
+      "AI Adoption",
+      "Gallup Poll",
+      "Labor Productivity",
+      "Future of Work"
+    ],
+    "searchKeywords_ko": [
+      "직장 AI",
+      "AI 도입",
+      "갤럽",
+      "노동 생산성",
+      "일의 미래"
+    ]
+  },
+  {
+    "id": "fauna-robotics-launches-sprout-humanoid-developer-platform",
+    "title": "Fauna Robotics Launches Sprout, a Friendly Humanoid Developer Platform",
+    "title_ko": "파우나 로보틱스, 친근한 휴머노이드 개발자 플랫폼 '스프라우트' 출시",
+    "summary": "NYC startup Fauna Robotics unveiled Sprout, a 3.5-foot, safety-focused humanoid robot designed as an approachable developer platform. Priced at $50,000 and targeting researchers and tech firms, the platform aims to foster a software ecosystem for robotics, with early customers including Disney and Boston Dynamics.",
+    "summary_ko": "뉴욕 스타트업 파우나 로보틱스가 친근한 개발자 플랫폼으로 설계된 3.5피트 크기의 안전 중심 휴머노이드 로봇 '스프라우트'를 공개했습니다. 5만 달러에 책정된 이 플랫폼은 연구원과 기술 기업을 대상으로 하며, 디즈니와 보스턴 다이내믹스 등을 초기 고객으로 확보하여 로보틱스 소프트웨어 생태계 조성을 목표로 합니다.",
+    "why_it_matters": "Sprout represents a push to create an 'App Store' moment for humanoids, providing an accessible, safe platform to accelerate software development beyond industrial applications.",
+    "why_it_matters_ko": "스프라우트는 휴머노이드 로봇계의 '앱스토어'를 만들려는 시도로, 산업용 애플리케이션을 넘어 소프트웨어 개발을 가속화할 수 있는 안전하고 접근성 높은 플랫폼을 제공합니다.",
+    "source": "Fauna Robotics",
+    "sourceUrl": "https://faunarobotics.com/news/fauna-robotics-launches-sprout-the-easiest-way-to-build-with-humanoids",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 31,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 10,
+      "reach": 4,
+      "longTerm": 4,
+      "socialEthics": 1
+    },
+    "categories": [
+      "Robotics",
+      "AI",
+      "Developer Tools"
+    ],
+    "productServices": [
+      "Sprout Humanoid Robot"
+    ],
+    "coreElements": [
+      "Humanoid Robot Developer Platform"
+    ],
+    "searchKeywords": [
+      "Fauna Robotics",
+      "Sprout robot",
+      "humanoid robot",
+      "developer platform",
+      "robotics startup",
+      "safe robots"
+    ],
+    "searchKeywords_ko": [
+      "파우나 로보틱스",
+      "스프라우트 로봇",
+      "휴머노이드 로봇",
+      "개발자 플랫폼",
+      "로봇 스타트업",
+      "안전한 로봇"
+    ]
+  },
+  {
+    "id": "moltbot-autonomous-ai-agent-viral-security-concerns",
+    "title": "New Autonomous AI Agent Moltbot Goes Viral, Raising Both Excitement and Security Concerns",
+    "title_ko": "새로운 자율 AI 에이전트 '몰트봇' 바이럴, 기대와 보안 우려를 동시에 낳다",
+    "summary": "A new open-source AI agent, Moltbot, has gone viral for its ability to autonomously operate a user's digital life via chat apps like Telegram. While its capabilities are impressive, experts warn of significant security risks due to its full system access.",
+    "summary_ko": "새로운 오픈소스 AI 에이전트 '몰트봇'이 텔레그램과 같은 채팅 앱을 통해 사용자의 디지털 생활을 자율적으로 관리하는 능력으로 바이럴되고 있습니다. 인상적인 기능에도 불구하고, 전문가들은 완전한 시스템 접근 권한으로 인한 심각한 보안 위험을 경고합니다.",
+    "why_it_matters": "Moltbot represents a significant leap in autonomous AI agents that can take real-world actions, but highlights the critical security challenges of granting AI full system access.",
+    "why_it_matters_ko": "몰트봇은 실제 행동을 수행하는 자율 AI 에이전트의 큰 도약을 보여주지만, AI에 전체 시스템 접근 권한을 부여하는 것의 중대한 보안 과제를 부각시킵니다.",
+    "source": "The Rundown",
+    "sourceUrl": "https://x.com/moltbot/status/2016058924403753024?s=20",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 28,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 10,
+      "reach": 4,
+      "longTerm": 3,
+      "socialEthics": 6
+    },
+    "categories": [
+      "Artificial Intelligence",
+      "Cybersecurity"
+    ],
+    "productServices": [
+      "Moltbot",
+      "Clawdbot"
+    ],
+    "coreElements": [
+      "Autonomous Agents",
+      "AI Assistants",
+      "Prompt Injection"
+    ],
+    "searchKeywords": [
+      "Moltbot",
+      "AI agent",
+      "autonomous AI",
+      "Clawdbot",
+      "Peter Steinberger",
+      "AI security"
+    ],
+    "searchKeywords_ko": [
+      "몰트봇",
+      "AI 에이전트",
+      "자율 AI",
+      "클로드봇",
+      "피터 스타인버거",
+      "AI 보안"
+    ]
+  },
+  {
+    "id": "interstellar-pm01-humanoid-robot-space-tourist-2028",
+    "title": "InterstellOr to Send EngineAI's PM01 Humanoid Robot on 2028 Suborbital Space Flight",
+    "title_ko": "인터스텔라, 2028년 준궤도 우주 비행에 엔진AI의 PM01 휴머노이드 로봇 탑승 예정",
+    "summary": "Beijing startup InterstellOr plans its first suborbital space tourism flight for 2028, featuring an unconventional passenger. EngineAI's PM01 humanoid robot will be aboard as an experimental tourist to test its capabilities in space conditions.",
+    "summary_ko": "베이징 스타트업 인터스텔라가 2028년 첫 준궤도 우주 관광 비행을 계획하고 있으며, 특별한 승객을 탑승시킬 예정입니다. 엔진AI의 PM01 휴머노이드 로봇이 우주 환경에서의 성능을 시험하기 위한 실험적 관광객으로 동승합니다.",
+    "why_it_matters": "This mission marks a key step in testing humanoid robots for future long-duration space exploration and operational roles.",
+    "why_it_matters_ko": "이번 임무는 미래의 장기 우주 탐사 및 작전 역할을 위한 휴머노이드 로봇 테스트의 중요한 단계를 의미합니다.",
+    "source": "Mike Kalil",
+    "sourceUrl": "https://mikekalil.com/blog/interstellor-space-tourism-humanoid-robot/",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 28,
+    "impactDetails": {
+      "industry": 10,
+      "tech": 12,
+      "reach": 2,
+      "longTerm": 3,
+      "socialEthics": 1
+    },
+    "categories": [
+      "Space Exploration",
+      "Robotics",
+      "Artificial Intelligence"
+    ],
+    "productServices": [
+      "Suborbital Space Tourism",
+      "PM01 Humanoid Robot"
+    ],
+    "coreElements": [
+      "InterstellOr",
+      "EngineAI"
+    ],
+    "searchKeywords": [
+      "space tourism",
+      "humanoid robot",
+      "InterstellOr",
+      "EngineAI",
+      "PM01",
+      "suborbital flight"
+    ],
+    "searchKeywords_ko": [
+      "우주 관광",
+      "휴머노이드 로봇",
+      "인터스텔라",
+      "엔진AI",
+      "PM01",
+      "준궤도 비행"
+    ]
+  },
+  {
+    "id": "sakana-ai-google-partnership-investment-2026-01-26",
+    "title": "Japanese AI Lab Sakana AI Partners with Google, Secures Investment",
+    "title_ko": "일본 AI 연구소 사카나 AI, 구글과 파트너십 체결 및 투자 유치",
+    "summary": "Japanese AI lab Sakana AI has secured a strategic partnership and investment from Google. The collaboration will focus on deploying AI solutions in Japan’s regulated industries using Google’s foundational models.",
+    "summary_ko": "일본의 AI 연구소 사카나 AI가 구글로부터 전략적 파트너십과 투자를 유치했습니다. 이번 협력은 구글의 파운데이션 모델을 사용하여 일본의 규제 산업에 AI 솔루션을 배포하는 데 중점을 둘 것입니다.",
+    "why_it_matters": "This partnership signals a significant move to integrate advanced AI into Japan's key regulated sectors by leveraging Google's powerful models.",
+    "why_it_matters_ko": "이번 파트너십은 구글의 강력한 모델을 활용하여 일본의 핵심 규제 산업에 최첨단 AI를 통합하려는 중요한 움직임을 의미합니다.",
+    "source": "Sakana AI",
+    "sourceUrl": "https://x.com/SakanaAILabs/status/2014686043711406355?s=20",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 27,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 5,
+      "reach": 4,
+      "longTerm": 4,
+      "socialEthics": 2
+    },
+    "categories": [
+      "AI/ML",
+      "Corporate",
+      "Investment"
+    ],
+    "productServices": [
+      "AI Solutions",
+      "Foundation Models"
+    ],
+    "coreElements": [
+      "Strategic Partnership",
+      "Corporate Investment",
+      "Industry-Specific AI"
+    ],
+    "searchKeywords": [
+      "Sakana AI",
+      "Google",
+      "AI partnership",
+      "Japan AI",
+      "regulated industries AI"
+    ],
+    "searchKeywords_ko": [
+      "사카나 AI",
+      "구글",
+      "AI 파트너십",
+      "일본 AI",
+      "규제 산업 AI"
+    ]
+  },
+  {
+    "id": "krea-unveils-realtime-edit-for-image-manipulation",
+    "title": "KREA Unveils 'Realtime Edit' for Instant Image Manipulation with Text Prompts",
+    "title_ko": "KREA, 텍스트 프롬프트로 즉시 이미지 수정 가능한 '실시간 편집' 기능 공개",
+    "summary": "KREA has introduced Realtime Edit, a new feature that allows users to modify images using text prompts. The tool enables granular changes to be made and viewed instantly, streamlining the creative process.",
+    "summary_ko": "KREA가 텍스트 프롬프트를 사용하여 이미지를 수정할 수 있는 새로운 기능 '실시간 편집'을 공개했습니다. 이 도구를 통해 사용자는 세밀한 변경 사항을 즉시 적용하고 확인할 수 있어 창작 과정을 간소화합니다.",
+    "why_it_matters": "This technology significantly lowers the barrier to complex image editing, making professional-level manipulation accessible through simple, real-time text commands.",
+    "why_it_matters_ko": "이 기술은 복잡한 이미지 편집의 진입 장벽을 크게 낮추어, 간단한 실시간 텍스트 명령만으로 전문가 수준의 수정을 가능하게 합니다.",
+    "source": "KREA",
+    "sourceUrl": "https://link.therundown.ai/iECeOB",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 30,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 15,
+      "reach": 5,
+      "longTerm": 5,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI",
+      "Creative Tools",
+      "Generative Art"
+    ],
+    "productServices": [
+      "KREA Realtime Edit"
+    ],
+    "coreElements": [
+      "Real-time Generative AI",
+      "Text-to-Image Editing"
+    ],
+    "searchKeywords": [
+      "KREA",
+      "Realtime Edit",
+      "AI image editor",
+      "text-to-image",
+      "generative AI"
+    ],
+    "searchKeywords_ko": [
+      "크레아",
+      "실시간 편집",
+      "AI 이미지 편집기",
+      "텍스트 투 이미지",
+      "생성형 AI"
+    ]
+  },
+  {
+    "id": "davos-experts-outline-major-hurdles-for-humanoid-robot-deployment-2026-01-22",
+    "title": "Davos Experts Outline Major Hurdles for Humanoid Robot Deployment",
+    "title_ko": "다보스 전문가들, 휴머노이드 로봇 도입의 주요 난관 제시",
+    "summary": "At Davos, experts from Gecko Robotics, MIT, and Mech-Mind stated that humanoid robots are far from scalable deployment. They identified limited sensing capabilities and underdeveloped AI as the primary obstacles holding back real-world application.",
+    "summary_ko": "다보스에서 게코 로보틱스, MIT, 메크마인드 전문가들은 휴머노이드 로봇의 대규모 상용화는 아직 멀었다고 밝혔습니다. 이들은 제한적인 감지 능력과 미개발된 AI를 실용화를 가로막는 주요 장애물로 꼽았습니다.",
+    "why_it_matters": "This expert analysis provides a crucial reality check on the technological limitations hindering the widespread adoption of humanoid robots, tempering market hype.",
+    "why_it_matters_ko": "이 전문가 분석은 휴머노이드 로봇의 광범위한 도입을 막는 기술적 한계에 대한 중요한 현실 점검을 제공하며, 시장의 과도한 기대를 조절합니다.",
+    "source": "Business Insider",
+    "sourceUrl": "https://www.businessinsider.com/humanoid-robots-challenge-experts-davos-gecko-robotics-mech-mind-2026-1",
+    "publishedDate": "2026-01-22",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 25,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 5,
+      "reach": 3,
+      "longTerm": 2,
+      "socialEthics": 0
+    },
+    "categories": [
+      "Robotics",
+      "Artificial Intelligence"
+    ],
+    "productServices": [
+      "Humanoid Robots",
+      "Gecko Robotics",
+      "Mech-Mind"
+    ],
+    "coreElements": [
+      "Sensing Technology",
+      "AI Development",
+      "Scalability"
+    ],
+    "searchKeywords": [
+      "humanoid robots",
+      "robotics challenges",
+      "Davos",
+      "AI limitations",
+      "sensing technology"
+    ],
+    "searchKeywords_ko": [
+      "휴머노이드 로봇",
+      "로봇공학 과제",
+      "다보스 포럼",
+      "AI 한계",
+      "센서 기술"
+    ]
+  },
+  {
+    "id": "anthropic-expands-claude-for-excel-to-pro-users",
+    "title": "Anthropic Expands Claude for Excel Availability to Pro-Tier Customers",
+    "title_ko": "앤트로픽, 프로 티어 고객까지 Claude for Excel 사용 확대",
+    "summary": "Anthropic has expanded access to its Claude for Excel integration, making the AI spreadsheet assistant available to Pro-tier customers following a limited beta. The update introduces multi-spreadsheet support, longer sessions, and safeguards to prevent accidental data overwrites.",
+    "summary_ko": "앤트로픽이 Claude for Excel 통합 기능에 대한 접근성을 확대하여, 제한된 베타 이후 프로 티어 고객도 AI 스프레드시트 비서를 사용할 수 있게 되었습니다. 이번 업데이트는 다중 스프레드시트 지원, 더 길어진 세션, 데이터 덮어쓰기 방지 기능 등을 포함합니다.",
+    "why_it_matters": "This move signals the continued automation of complex knowledge work, reducing the need for specialized formula skills in widely-used tools like Excel.",
+    "why_it_matters_ko": "이러한 움직임은 엑셀과 같이 널리 사용되는 도구에서 전문적인 수식 기술의 필요성을 줄이며, 복잡한 지식 노동의 자동화가 계속되고 있음을 시사합니다.",
+    "source": "Anthropic",
+    "sourceUrl": "https://claude.com/claude-in-excel",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 26,
+    "impactDetails": {
+      "industry": 8,
+      "tech": 7,
+      "reach": 6,
+      "longTerm": 5,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI & Machine Learning",
+      "Productivity Software"
+    ],
+    "productServices": [
+      "Claude for Excel"
+    ],
+    "coreElements": [
+      "AI Assistant",
+      "Automation",
+      "Data Analysis"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "Claude",
+      "Excel",
+      "AI Assistant",
+      "Spreadsheet AI",
+      "Automation"
+    ],
+    "searchKeywords_ko": [
+      "앤트로픽",
+      "클로드",
+      "엑셀",
+      "AI 비서",
+      "스프레드시트 AI",
+      "자동화"
+    ]
+  },
+  {
+    "id": "zoox-robotaxi-faces-investigation-after-accident",
+    "title": "Zoox Robotaxi Faces Investigation After Accident Injures Driver",
+    "title_ko": "사고로 운전자 부상, Zoox 로보택시 조사 직면",
+    "summary": "A Zoox robotaxi is under investigation by San Francisco police and California regulators after it struck the open door of a parked car. The incident resulted in an injury to the other driver's hand, prompting scrutiny of the autonomous vehicle's performance.",
+    "summary_ko": "Zoox 로보택시가 주차된 차량의 열린 문을 들이받는 사고를 일으켜 샌프란시스코 경찰과 캘리포니아 규제 당국의 조사를 받고 있습니다. 이 사고로 상대방 운전자의 손이 부상당하면서 자율주행 차량의 성능에 대한 정밀 조사가 시작되었습니다.",
+    "why_it_matters": "This incident highlights ongoing safety and regulatory challenges for the autonomous vehicle industry, potentially affecting public trust and the timeline for wider deployment.",
+    "why_it_matters_ko": "이번 사건은 자율주행차 산업이 직면한 지속적인 안전 및 규제 문제를 부각시키며, 대중의 신뢰와 광범위한 상용화 일정에 영향을 미칠 수 있습니다.",
+    "source": "Zoox",
+    "sourceUrl": "https://link.therundown.ai/CR9kMI",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 24,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 5,
+      "reach": 1,
+      "longTerm": 2,
+      "socialEthics": 4
+    },
+    "categories": [
+      "Autonomous Vehicles",
+      "Tech Regulation"
+    ],
+    "productServices": [
+      "Robotaxi Services"
+    ],
+    "coreElements": [
+      "Autonomous Vehicle Accident",
+      "Regulatory Investigation"
+    ],
+    "searchKeywords": [
+      "Zoox",
+      "Robotaxi",
+      "Autonomous Vehicle",
+      "Accident",
+      "Investigation"
+    ],
+    "searchKeywords_ko": [
+      "죽스",
+      "로보택시",
+      "자율주행차",
+      "사고",
+      "조사"
+    ]
+  },
+  {
+    "id": "anthropic-jared-kaplan-ai-replacing-physicists-in-3-years",
+    "title": "Anthropic Co-Founder: 50% Chance AI Replaces Top Physicists in 3 Years",
+    "title_ko": "앤스로픽 공동창업자: \"3년 내 AI가 최고 물리학자 대체할 확률 50%\"",
+    "summary": "Jared Kaplan, co-founder of AI company Anthropic, predicts a 50% probability that the world's leading theoretical physicists will be largely replaced by AI within the next three years.",
+    "summary_ko": "AI 기업 앤스로픽의 공동창업자 재러드 캐플런은 향후 3년 안에 세계 최고의 이론 물리학자들이 대부분 AI로 대체될 확률이 50%라고 예측했습니다.",
+    "why_it_matters": "This bold prediction from a key AI industry figure highlights the accelerating potential for AI to automate even the most advanced scientific research.",
+    "why_it_matters_ko": "AI 업계 핵심 인물의 이러한 과감한 예측은 최첨단 과학 연구까지 자동화할 수 있는 AI의 가속화되는 잠재력을 강조합니다.",
+    "source": "X (formerly Twitter)",
+    "sourceUrl": "https://x.com/nattyover/status/2016239582220624177?s=20",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 40,
+    "impactDetails": {
+      "industry": 10,
+      "tech": 10,
+      "reach": 5,
+      "longTerm": 8,
+      "socialEthics": 7
+    },
+    "categories": [
+      "AI",
+      "Future of Work",
+      "Scientific Research"
+    ],
+    "productServices": [
+      "Anthropic"
+    ],
+    "coreElements": [
+      "AI Replacing Jobs",
+      "Scientific Automation",
+      "AI Capability Prediction"
+    ],
+    "searchKeywords": [
+      "Jared Kaplan",
+      "Anthropic",
+      "AI",
+      "Theoretical Physics",
+      "AI replacing scientists"
+    ],
+    "searchKeywords_ko": [
+      "재러드 캐플런",
+      "앤스로픽",
+      "인공지능",
+      "이론 물리학",
+      "AI 과학자 대체"
+    ]
+  },
+  {
+    "id": "irobot-exits-chapter-11-becomes-picea-robotics-subsidiary",
+    "title": "Roomba Maker iRobot Exits Chapter 11, Becomes Picea Robotics Subsidiary",
+    "title_ko": "룸바 제조사 아이로봇, 파산 보호 절차 종료 후 피세아 로보틱스 자회사로 편입",
+    "summary": "iRobot, the company behind the Roomba vacuum, has emerged from Chapter 11 bankruptcy as a private subsidiary of Picea Robotics. The company also announced the launch of a new U.S. unit, “iRobot Safe,” dedicated to consumer data protection.",
+    "summary_ko": "룸바 진공청소기 제조사 아이로봇이 챕터 11 파산 보호에서 벗어나 피세아 로보틱스의 비공개 자회사가 되었습니다. 또한, 소비자 데이터 보호를 전담할 미국 내 신규 부서 '아이로봇 세이프'의 출범을 발표했습니다.",
+    "why_it_matters": "This marks a new chapter for a household robotics pioneer, signaling a shift towards financial stability and a renewed focus on consumer data privacy.",
+    "why_it_matters_ko": "가정용 로봇 공학 선구자의 새로운 시작을 알리는 사건으로, 재무 안정성과 소비자 데이터 프라이버시에 대한 새로운 집중을 의미합니다.",
+    "source": "PR Newswire",
+    "sourceUrl": "https://www.prnewswire.com/news-releases/irobot-emerges-from-chapter-11-as-subsidiary-of-picea-robotics-302669011.html",
+    "publishedDate": "2026-01-23",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 21,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 1,
+      "reach": 1,
+      "longTerm": 2,
+      "socialEthics": 2
+    },
+    "categories": [
+      "Mergers & Acquisitions",
+      "Consumer Electronics",
+      "Robotics"
+    ],
+    "productServices": [
+      "Roomba",
+      "Consumer Robotics",
+      "Data Protection Services"
+    ],
+    "coreElements": [
+      "Bankruptcy Restructuring",
+      "Acquisition",
+      "Data Privacy"
+    ],
+    "searchKeywords": [
+      "iRobot",
+      "Roomba",
+      "Picea Robotics",
+      "Chapter 11",
+      "acquisition",
+      "consumer robotics",
+      "data privacy"
+    ],
+    "searchKeywords_ko": [
+      "아이로봇",
+      "룸바",
+      "피세아 로보틱스",
+      "챕터 11",
+      "인수",
+      "소비자 로봇",
+      "데이터 프라이버시"
+    ]
+  },
+  {
+    "id": "anduril-introduces-ai-grand-prix-a-global-autonomous-drone-racing-competition",
+    "title": "Anduril Introduces AI Grand Prix: A Global Autonomous Drone Racing Competition",
+    "title_ko": "안두릴, 글로벌 자율 드론 레이싱 대회 'AI 그랑프리' 개최",
+    "summary": "Anduril is launching the 'AI Grand Prix,' a global autonomous drone racing competition designed to attract top software talent. The event offers cash prizes and potential job opportunities, functioning as a high-tech recruitment funnel.",
+    "summary_ko": "안두릴이 최고의 소프트웨어 인재를 유치하기 위해 설계된 글로벌 자율 드론 레이싱 대회 'AI 그랑프리'를 개최합니다. 이번 행사는 상금과 잠재적인 채용 기회를 제공하며, 첨단 기술 인재 채용 통로로 기능합니다.",
+    "why_it_matters": "This event highlights the gamification of recruitment in the tech industry and pushes the boundaries of AI in high-speed, real-world autonomous systems.",
+    "why_it_matters_ko": "이 이벤트는 기술 산업의 게이미피케이션 채용 트렌드를 보여주며, 고속의 실제 환경에서 자율 시스템 AI 기술의 한계를 시험합니다.",
+    "source": "Anduril",
+    "sourceUrl": "https://www.anduril.com/news/anduril-launches-the-ai-grand-prix-a-global-autonomous-drone-race",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 20,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 8,
+      "reach": 2,
+      "longTerm": 4,
+      "socialEthics": 1
+    },
+    "categories": [
+      "Artificial Intelligence",
+      "Robotics"
+    ],
+    "productServices": [
+      "AI Grand Prix"
+    ],
+    "coreElements": [
+      "Autonomous Drone Racing",
+      "Talent Recruitment"
+    ],
+    "searchKeywords": [
+      "Anduril",
+      "AI Grand Prix",
+      "autonomous drone racing",
+      "AI competition",
+      "recruitment"
+    ],
+    "searchKeywords_ko": [
+      "안두릴",
+      "AI 그랑프리",
+      "자율 드론 레이싱",
+      "AI 대회",
+      "채용"
+    ]
+  },
+  {
+    "id": "epoch-ai-reports-openai-gpt-5-2-pro-achieves-new-frontiermath-record",
+    "title": "OpenAI's GPT-5.2 Pro Achieves New Record on FrontierMath Benchmark, Reports Epoch AI",
+    "title_ko": "Epoch AI, OpenAI의 GPT-5.2 Pro가 FrontierMath 벤치마크에서 신기록을 달성했다고 발표",
+    "summary": "Epoch AI reported that OpenAI's GPT-5.2 Pro has set a new record on the challenging FrontierMath benchmark with a score of 31%. This performance nearly doubles the previous highest score, marking a significant leap in AI's mathematical reasoning capabilities.",
+    "summary_ko": "Epoch AI는 OpenAI의 GPT-5.2 Pro가 고난도 FrontierMath 벤치마크에서 31%의 점수로 신기록을 달성했다고 보고했습니다. 이는 이전 최고 점수를 거의 두 배로 높인 것으로, AI의 수학적 추론 능력에서 상당한 도약을 의미합니다.",
+    "why_it_matters": "This near-doubling of the score on a difficult math benchmark signifies a major breakthrough in AI's advanced problem-solving abilities.",
+    "why_it_matters_ko": "고난도 수학 벤치마크에서 이전 기록을 거의 두 배로 경신한 것은 AI의 고등 문제 해결 능력에 있어 중대한 발전을 의미합니다.",
+    "source": "Epoch AI",
+    "sourceUrl": "https://x.com/EpochAIResearch/status/2014769359747744200?s=20",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 19,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 10,
+      "reach": 2,
+      "longTerm": 2,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI Research",
+      "Large Language Models",
+      "Benchmarks"
+    ],
+    "productServices": [
+      "GPT-5.2 Pro"
+    ],
+    "coreElements": [
+      "Mathematical Reasoning",
+      "AI Performance"
+    ],
+    "searchKeywords": [
+      "GPT-5.2 Pro",
+      "FrontierMath",
+      "Epoch AI",
+      "OpenAI",
+      "AI benchmark",
+      "mathematical reasoning"
+    ],
+    "searchKeywords_ko": [
+      "GPT-5.2 Pro",
+      "FrontierMath",
+      "Epoch AI",
+      "OpenAI",
+      "AI 벤치마크",
+      "수학적 추론"
+    ]
+  },
+  {
+    "id": "luma-ai-unveils-ray3-14-advanced-video-generation-model",
+    "title": "Luma AI Unveils Ray3.14, an Advanced Video Generation Model",
+    "title_ko": "Luma AI, 진화된 비디오 생성 모델 Ray3.14 공개",
+    "summary": "Luma AI has released Ray3.14, an upgraded video generation model that produces native 1080p videos. The new version operates significantly faster and at a lower cost than its predecessor.",
+    "summary_ko": "Luma AI가 업그레이드된 비디오 생성 모델 Ray3.14를 출시했습니다. 이 신규 모델은 1080p 해상도의 비디오를 기본으로 생성하며, 이전 버전에 비해 훨씬 빠르고 저렴하게 운영됩니다.",
+    "why_it_matters": "This makes high-resolution, cost-effective AI video generation more accessible, accelerating its adoption in creative and commercial projects.",
+    "why_it_matters_ko": "고해상도 AI 비디오를 비용 효율적으로 생성할 수 있게 되어, 창작 및 상업 프로젝트에서의 AI 영상 기술 도입을 가속화할 것입니다.",
+    "source": "Luma AI",
+    "sourceUrl": "https://lumalabs.ai/blog/news/ray3_14",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 17,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 8,
+      "reach": 2,
+      "longTerm": 2,
+      "socialEthics": 0
+    },
+    "categories": [
+      "Artificial Intelligence",
+      "Generative Video"
+    ],
+    "productServices": [
+      "Ray3.14"
+    ],
+    "coreElements": [
+      "Video Generation Model",
+      "1080p Resolution"
+    ],
+    "searchKeywords": [
+      "Luma AI",
+      "Ray3.14",
+      "AI video generation",
+      "text-to-video",
+      "1080p AI video"
+    ],
+    "searchKeywords_ko": [
+      "루마 AI",
+      "Ray3.14",
+      "AI 동영상 생성",
+      "텍스트 투 비디오",
+      "1080p AI 비디오"
+    ]
+  },
+  {
+    "id": "alibaba-tongyi-lab-releases-z-image-top-ranked-image-model",
+    "title": "Alibaba's Tongyi Lab Releases Z-Image, the Base Version of Its Top-Ranked Image Model",
+    "title_ko": "알리바바 통이 연구소, 최고 순위 이미지 모델의 기본 버전 'Z-Image' 공개",
+    "summary": "Alibaba's Tongyi Lab has open-sourced Z-Image, the full base version of its Z-Image Turbo model. Z-Image Turbo was recognized as the top-performing open-source image model in December.",
+    "summary_ko": "알리바바의 통이 연구소가 12월 최고 성능의 오픈소스 이미지 모델로 선정되었던 Z-Image Turbo의 전체 기본 버전인 Z-Image를 오픈소스로 공개했습니다.",
+    "why_it_matters": "The release grants developers foundational access to a state-of-the-art image generation model, potentially accelerating innovation in the open-source community.",
+    "why_it_matters_ko": "최첨단 이미지 생성 모델의 기초에 대한 접근 권한을 개발자들에게 부여하여 오픈소스 커뮤니티의 혁신을 가속화할 것입니다.",
+    "source": "Alibaba’s Tongyi Lab",
+    "sourceUrl": "https://github.com/Tongyi-MAI/Z-Image",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 16,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 8,
+      "reach": 2,
+      "longTerm": 1,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI/ML",
+      "Generative AI"
+    ],
+    "productServices": [
+      "Tongyi",
+      "Z-Image"
+    ],
+    "coreElements": [
+      "Alibaba Tongyi Lab",
+      "Open-Source Image Model"
+    ],
+    "searchKeywords": [
+      "Alibaba",
+      "Tongyi Lab",
+      "Z-Image",
+      "Z-Image Turbo",
+      "Open Source AI",
+      "Image Generation Model"
+    ],
+    "searchKeywords_ko": [
+      "알리바바",
+      "통이 연구소",
+      "Z-Image",
+      "Z-Image 터보",
+      "오픈소스 AI",
+      "이미지 생성 모델"
+    ]
+  },
+  {
+    "id": "mit-course-explores-philosophical-challenges-of-ai-rationality",
+    "title": "MIT Course Explores the Philosophical Challenges of AI Rationality",
+    "title_ko": "MIT, AI 합리성의 철학적 과제를 탐구하는 신규 강좌 개설",
+    "summary": "MIT's new 'AI and Rationality' course unites computer science and philosophy to challenge students on the nature of artificial rationality. The course focuses on providing conceptual tools for future scholars to understand AI decision-making, rather than providing definitive answers.",
+    "summary_ko": "MIT의 신규 강좌 'AI와 합리성'은 컴퓨터 과학과 철학을 결합하여 인공적 합리성의 본질에 대한 학생들의 탐구를 유도합니다. 이 강좌는 명확한 해답을 제공하기보다 미래 연구자들이 AI 의사결정을 이해하는 데 필요한 개념적 도구를 제공하는 데 중점을 둡니다.",
+    "why_it_matters": "This interdisciplinary approach is critical for shaping future AI development with a foundational understanding of rationality, agency, and cognitive limits.",
+    "why_it_matters_ko": "이러한 학제간 접근은 합리성, 행위자성, 인지적 한계에 대한 기초적 이해를 바탕으로 미래 AI 개발의 방향을 설정하는 데 매우 중요합니다.",
+    "source": "MIT News",
+    "sourceUrl": "https://news.mit.edu/2026/philosophical-puzzle-rational-artificial-intelligence-0130",
+    "publishedDate": "January 30, 2026",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 15,
+    "impactDetails": {
+      "industry": 3,
+      "tech": 2,
+      "reach": 1,
+      "longTerm": 5,
+      "socialEthics": 4
+    },
+    "categories": [
+      "AI Ethics",
+      "Higher Education",
+      "Philosophy"
+    ],
+    "productServices": [
+      "MIT Course 6.S044/24.S00"
+    ],
+    "coreElements": [
+      "AI Rationality",
+      "Philosophy of AI",
+      "Interdisciplinary Education",
+      "Rational Agency"
+    ],
+    "searchKeywords": [
+      "AI Rationality",
+      "MIT",
+      "Philosophy of AI",
+      "Leslie Kaelbling",
+      "Computer Science",
+      "AI Ethics"
+    ],
+    "searchKeywords_ko": [
+      "AI 합리성",
+      "MIT",
+      "AI 철학",
+      "레슬리 켈블링",
+      "컴퓨터 과학",
+      "AI 윤리"
+    ]
+  },
+  {
+    "id": "china-approves-400k-nvidia-h200-chips-for-tech-giants-20260128",
+    "title": "China Approves Over 400,000 Nvidia H200 AI Chip Purchase for Tech Giants",
+    "title_ko": "중국, 바이트댄스·알리바바·텐센트 등 테크 기업의 엔비디아 H200 AI 칩 40만개 이상 구매 승인",
+    "summary": "China has reportedly approved the purchase of over 400,000 Nvidia H200 AI chips for tech giants including ByteDance, Alibaba, and Tencent. The move aims to ease a significant AI hardware bottleneck for Chinese firms amid ongoing U.S. tech export restrictions.",
+    "summary_ko": "중국이 바이트댄스, 알리바바, 텐센트 등 주요 기술 기업들을 위해 40만 개 이상의 엔비디아 H200 AI 칩 구매를 승인한 것으로 알려졌습니다. 이번 조치는 계속되는 미국의 기술 수출 규제 속에서 중국 기업들의 주요 AI 하드웨어 병목 현상을 완화하기 위한 것입니다.",
+    "why_it_matters": "This approval allows China's top tech firms to acquire powerful AI hardware, potentially accelerating their AI development despite U.S. sanctions.",
+    "why_it_matters_ko": "이번 승인으로 중국의 최고 기술 기업들이 강력한 AI 하드웨어를 확보하여 미국의 제재에도 불구하고 AI 개발을 가속화할 수 있게 되었습니다.",
+    "source": "Reuters",
+    "sourceUrl": "https://www.reuters.com/world/china/china-gives-green-light-importing-first-batch-nvidias-h200-ai-chips-sources-say-2026-01-28/",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 14,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 3,
+      "reach": 2,
+      "longTerm": 2,
+      "socialEthics": 2
+    },
+    "categories": [
+      "AI & Machine Learning",
+      "Semiconductors",
+      "Geopolitics"
+    ],
+    "productServices": [
+      "Nvidia H200"
+    ],
+    "coreElements": [
+      "ByteDance",
+      "Alibaba",
+      "Tencent",
+      "Nvidia",
+      "Chinese Government"
+    ],
+    "searchKeywords": [
+      "Nvidia H200",
+      "China AI Chips",
+      "US Tech Sanctions",
+      "ByteDance AI",
+      "Alibaba Cloud",
+      "Tencent AI"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아 H200",
+      "중국 AI 칩",
+      "미국 기술 제재",
+      "바이트댄스 AI",
+      "알리바바 클라우드",
+      "텐센트 AI"
+    ]
+  },
+  {
+    "id": "openai-kevin-weil-clarifies-ip-sharing-deals-for-large-organizations",
+    "title": "OpenAI Executive Kevin Weil Clarifies IP Sharing Deals for Large Organizations",
+    "title_ko": "OpenAI 임원 케빈 웨일, 대규모 조직을 위한 IP 공유 계약 명확화",
+    "summary": "OpenAI's Head of Product, Kevin Weil, has clarified that the company's intellectual property sharing agreements apply exclusively to large organizations under custom contracts. This policy does not extend to the discoveries or creations of individual users.",
+    "summary_ko": "OpenAI의 제품 책임자인 케빈 웨일은 회사의 지적 재산권(IP) 공유 계약이 맞춤형 계약을 맺은 대규모 조직에만 적용된다고 명확히 밝혔습니다. 이 정책은 개인 사용자의 발견이나 창작물에는 적용되지 않습니다.",
+    "why_it_matters": "This clarification reassures individual creators and developers that their IP generated using OpenAI tools remains their own, distinct from enterprise-level data-sharing agreements.",
+    "why_it_matters_ko": "이러한 명확화는 개인 창작자와 개발자들에게 OpenAI 도구를 사용하여 생성된 IP가 기업 수준의 데이터 공유 계약과 별개로 자신의 소유로 남는다는 점을 확인시켜 줍니다.",
+    "source": "Kevin Weil (X)",
+    "sourceUrl": "https://x.com/kevinweil/status/2016285175106420867?s=20",
+    "publishedDate": "2026-01-30",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 12,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 0,
+      "reach": 2,
+      "longTerm": 2,
+      "socialEthics": 3
+    },
+    "categories": [
+      "AI Policy",
+      "Business"
+    ],
+    "productServices": [
+      "ChatGPT Enterprise",
+      "OpenAI API"
+    ],
+    "coreElements": [
+      "Intellectual Property",
+      "Enterprise Solutions"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "IP Rights",
+      "Kevin Weil",
+      "Enterprise AI",
+      "User Data Policy"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "지적재산권",
+      "케빈 웨일",
+      "기업용 AI",
+      "사용자 데이터 정책"
+    ]
+  },
+  {
+    "id": "apple-acquires-israeli-ai-audio-startup-q-ai",
+    "title": "Apple Acquires Israeli AI Audio Startup Q AI in Reported $2 Billion Deal",
+    "title_ko": "애플, 이스라엘 AI 오디오 스타트업 Q AI를 약 20억 달러에 인수 보도",
+    "summary": "Apple has reportedly acquired Q AI, an Israeli AI audio startup, for nearly $2 billion. The deal also brings the founder of Apple's Face ID technology back to the company.",
+    "summary_ko": "애플이 이스라엘의 AI 오디오 스타트업 Q AI를 약 20억 달러에 인수한 것으로 알려졌습니다. 이번 인수를 통해 애플의 Face ID 기술 창업자가 회사로 복귀하게 되었습니다.",
+    "why_it_matters": "This major acquisition significantly enhances Apple's AI audio capabilities and brings back key talent responsible for its facial recognition technology.",
+    "why_it_matters_ko": "이번 대규모 인수는 애플의 AI 오디오 역량을 크게 강화하고, 안면 인식 기술을 책임졌던 핵심 인재를 다시 영입했다는 점에서 중요합니다.",
+    "source": "The Rundown AI",
+    "sourceUrl": "https://link.therundown.ai/E4DJTj",
+    "publishedDate": "2026-01-30",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 9,
+    "impactDetails": {
+      "industry": 4,
+      "tech": 3,
+      "reach": 2,
+      "longTerm": 0,
+      "socialEthics": 0
+    },
+    "categories": [
+      "Mergers & Acquisitions",
+      "Artificial Intelligence",
+      "Consumer Electronics"
+    ],
+    "productServices": [
+      "Siri",
+      "AirPods",
+      "HomePod",
+      "Face ID"
+    ],
+    "coreElements": [
+      "AI Audio Processing",
+      "Talent Acquisition"
+    ],
+    "searchKeywords": [
+      "Apple acquisition",
+      "Q AI",
+      "AI audio",
+      "Face ID founder",
+      "Israeli startup"
+    ],
+    "searchKeywords_ko": [
+      "애플 인수",
+      "Q AI",
+      "AI 오디오",
+      "Face ID 창업자",
+      "이스라엘 스타트업"
+    ]
+  },
+  {
+    "id": "rundown-staff-share-personal-ai-tool-applications",
+    "title": "The Rundown Staff Share Their Personal AI Tool Applications",
+    "title_ko": "The Rundown 스태프가 공유하는 개인 AI 도구 활용 사례",
+    "summary": "Staff from The Rundown newsletter share their personal and professional uses of AI tools. Examples include using ElevenReader to convert text to audio, Claude Cowork for creating growth forecasts, and Manus for searching complex PDF documents.",
+    "summary_ko": "AI 뉴스레터 'The Rundown'의 직원들이 개인 및 업무에서 AI 도구를 활용하는 사례를 공유합니다. ElevenReader로 텍스트를 오디오로 변환하고, Claude Cowork로 성장 예측을 생성하며, Manus로 복잡한 PDF 문서를 검색하는 등의 예시가 포함됩니다.",
+    "why_it_matters": "This article provides practical, real-world examples of how current AI tools are being integrated into daily workflows to save time and increase productivity.",
+    "why_it_matters_ko": "이 기사는 현재의 AI 도구들이 시간 절약과 생산성 향상을 위해 일상 업무에 어떻게 통합되고 있는지에 대한 실용적인 실제 사례를 제공합니다.",
+    "source": "The Rundown",
+    "sourceUrl": "https://www.rundown.ai/",
+    "publishedDate": "2026-01-26",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 6,
+    "impactDetails": {
+      "industry": 3,
+      "tech": 1,
+      "reach": 1,
+      "longTerm": 1,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI Applications",
+      "Productivity Tools",
+      "Future of Work"
+    ],
+    "productServices": [
+      "ElevenReader",
+      "Claude Cowork",
+      "Manus"
+    ],
+    "coreElements": [
+      "AI Use Cases",
+      "Workflow Automation",
+      "Personal Productivity"
+    ],
+    "searchKeywords": [
+      "AI tools",
+      "personal AI applications",
+      "ElevenReader",
+      "Claude Cowork",
+      "Manus",
+      "productivity AI",
+      "AI workflow"
+    ],
+    "searchKeywords_ko": [
+      "AI 도구",
+      "개인 AI 활용",
+      "일레븐리더",
+      "클로드 코워크",
+      "마누스",
+      "생산성 AI",
+      "AI 워크플로우"
+    ]
+  },
+  {
+    "id": "tesla-discontinues-model-s-x-for-optimus-robot-production",
+    "title": "Tesla to Discontinue Model S and Model X, Pivoting to Optimus Robots and Autonomous Vehicles",
+    "title_ko": "테슬라, 모델 S 및 모델 X 단종 선언... 옵티머스 로봇 및 자율주행차로 생산 전환",
+    "summary": "Tesla announced it will cease production of its flagship Model S and Model X EVs next quarter to convert its Fremont factory for mass production of Optimus humanoid robots. The strategic shift prioritizes the company's future in AI and autonomy, including the upcoming Cybercab.",
+    "summary_ko": "테슬라가 다음 분기부터 플래그십 전기차인 모델 S와 모델 X의 생산을 중단하고 프리몬트 공장을 옵티머스 휴머노이드 로봇 대량 생산 시설로 전환한다고 발표했습니다. 이번 전략적 전환은 곧 출시될 사이버캡을 포함하여 AI와 자율주행 기술에 대한 회사의 미래를 우선시하는 것입니다.",
+    "why_it_matters": "This marks a historic pivot for Tesla from a high-end EV manufacturer to a mass-market robotics and AI company.",
+    "why_it_matters_ko": "이는 테슬라가 고급 전기차 제조사에서 대중 시장을 위한 로보틱스 및 AI 기업으로 전환하는 역사적인 변곡점을 의미합니다.",
+    "source": "CNN",
+    "sourceUrl": "https://edition.cnn.com/2026/01/28/business/tesla-q4-2025-earnings",
+    "publishedDate": "2026-01-28",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 8,
+    "impactDetails": {
+      "industry": 2,
+      "tech": 3,
+      "reach": 2,
+      "longTerm": 1,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI & Robotics",
+      "Automotive",
+      "Mobility"
+    ],
+    "productServices": [
+      "Tesla Model S",
+      "Tesla Model X",
+      "Tesla Optimus",
+      "Tesla Cybercab",
+      "Tesla Robotaxi"
+    ],
+    "coreElements": [
+      "Discontinuation",
+      "Factory Conversion",
+      "Strategic Pivot",
+      "Mass Production"
+    ],
+    "searchKeywords": [
+      "Tesla",
+      "Model S Discontinued",
+      "Model X Discontinued",
+      "Optimus Robot",
+      "Cybercab",
+      "Elon Musk",
+      "Robotaxi"
+    ],
+    "searchKeywords_ko": [
+      "테슬라",
+      "모델S 단종",
+      "모델X 단종",
+      "옵티머스 로봇",
+      "사이버캡",
+      "일론 머스크",
+      "로보택시"
+    ]
+  },
+  {
+    "id": "anthropic-reportedly-secures-20b-funding-at-350b-valuation",
+    "title": "Anthropic Reportedly Raising $20B at a $350B Valuation Amid Overwhelming Demand",
+    "title_ko": "앤트로픽, 3500억 달러 기업가치로 200억 달러 투자 유치 보도",
+    "summary": "AI company Anthropic is reportedly raising a massive $20 billion funding round at a staggering $350 billion valuation. The funding target was doubled after investor demand reportedly reached six times the initial expectation.",
+    "summary_ko": "AI 기업 앤트로픽이 3500억 달러의 기업 가치로 200억 달러 규모의 투자 유치를 진행 중인 것으로 알려졌습니다. 이번 투자 유치는 당초 목표액의 6배에 달하는 수요가 몰리면서 목표 금액을 두 배로 상향 조정한 것입니다.",
+    "why_it_matters": "This massive, demand-driven funding round signals unprecedented investor confidence and a dramatic escalation in the AI arms race.",
+    "why_it_matters_ko": "수요에 기반한 이 막대한 규모의 투자는 AI 경쟁의 격화와 전례 없는 투자자의 신뢰를 보여주는 신호입니다.",
+    "source": "The Rundown AI",
+    "sourceUrl": "https://link.therundown.ai/rk44zB",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 8,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 4,
+      "reach": 4,
+      "longTerm": 4,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI",
+      "Investment"
+    ],
+    "productServices": [
+      "Anthropic Claude"
+    ],
+    "coreElements": [
+      "Generative AI",
+      "Venture Capital"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "AI funding",
+      "startup valuation",
+      "venture capital"
+    ],
+    "searchKeywords_ko": [
+      "앤트로픽",
+      "AI 투자",
+      "스타트업 가치평가",
+      "벤처캐피탈"
+    ]
+  },
+  {
+    "id": "openai-to-retire-older-gpt-models-including-gpt-4o",
+    "title": "OpenAI to Retire Several Older GPT Models, Including GPT-4o, from ChatGPT",
+    "title_ko": "OpenAI, ChatGPT에서 GPT-4o를 포함한 여러 구형 GPT 모델 서비스 종료 예정",
+    "summary": "OpenAI has announced it will retire several older models, including GPT-4o, GPT-4.1, and others, from ChatGPT on February 13, 2026. The company notes that user feedback shaped newer models like GPT-5.2, which the vast majority of users have already adopted.",
+    "summary_ko": "OpenAI가 2026년 2월 13일부로 ChatGPT에서 GPT-4o, GPT-4.1 등 여러 구형 모델의 서비스를 종료한다고 발표했습니다. 회사는 사용자 피드백이 대다수 사용자가 이미 채택한 GPT-5.2와 같은 최신 모델을 만드는 데 반영되었다고 밝혔습니다.",
+    "why_it_matters": "This marks OpenAI's strategic move to streamline its model offerings, focusing development resources on its latest technology and encouraging user migration.",
+    "why_it_matters_ko": "이는 OpenAI가 최신 기술에 개발 리소스를 집중하고 사용자 이전을 장려하며 모델 라인업을 간소화하려는 전략적 움직임을 의미합니다.",
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/retiring-gpt-4o-and-older-models/",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 2,
+    "impactDetails": {
+      "industry": 1,
+      "tech": 0,
+      "reach": 1,
+      "longTerm": 0,
+      "socialEthics": 0
+    },
+    "categories": [
+      "AI Models",
+      "Product Updates"
+    ],
+    "productServices": [
+      "ChatGPT",
+      "GPT-4o"
+    ],
+    "coreElements": [
+      "Model Retirement",
+      "User Migration"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "GPT-4o retirement",
+      "ChatGPT update",
+      "AI model lifecycle"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "GPT-4o 서비스 종료",
+      "ChatGPT 업데이트",
+      "AI 모델 생명주기"
+    ]
+  }
+]
