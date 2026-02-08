@@ -127,7 +127,7 @@ const SelectionStep = ({
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-[100dvh] w-full bg-[#0f111a] flex flex-col items-center justify-center p-6 font-sans">
+    <div className="min-h-[100dvh] w-full bg-[#0f111a] flex flex-col items-center justify-center p-4 sm:p-6 font-sans">
       <div className="w-full max-w-2xl flex flex-col h-full max-h-[90vh]">
 
         {/* Header */}
@@ -152,7 +152,7 @@ const SelectionStep = ({
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto p-2 pb-4 pr-1 custom-scrollbar">
+        <div className="flex-1 min-h-0 grid grid-cols-1 sm:grid-cols-2 gap-4 overflow-y-auto p-2 pb-4 pr-1 custom-scrollbar">
           {items.map((item) => {
             const isSelected = selectedIds.includes(item.id);
             const Icon = item.icon;
