@@ -1107,6 +1107,8 @@ const App = () => {
   const [showLoginToast, setShowLoginToast] = useState(false); // Login Toast State
   const [showSignupToast, setShowSignupToast] = useState(false); // Signup Toast State
   const [showLogoutToast, setShowLogoutToast] = useState(false); // Logout Toast State
+  const [isLoggingOut, setIsLoggingOut] = useState(false); // Logout Progress State
+  const [logoutSuccess, setLogoutSuccess] = useState(false); // Logout Success State
 
   const isSigningUp = useRef(false); // Track if user is signing up
   const isLoggingIn = useRef(false); // Track if login is in progress (prevents page flash)
@@ -1365,28 +1367,38 @@ const App = () => {
   };
 
   const handleLogout = async () => {
-    // 1. IMMEDIATE UI Transition (for fast mobile UX)
-    setStep(0); // Show login screen immediately
-    setActiveTab('home'); // Reset tab
-    wasLoggedIn.current = false; // Prevent auto-redirect
+    // 1. Show logout spinner overlay
+    setIsLoggingOut(true);
 
-    // 2. Show logout toast (non-blocking)
-    setShowLogoutToast(true);
-    setTimeout(() => setShowLogoutToast(false), 2000);
-
-    // 3. Close any modals
+    // 2. Transition to login screen
+    setStep(0);
+    setActiveTab('home');
+    wasLoggedIn.current = false;
     setIsAuthModalOpen(false);
 
-    // 4. Run cleanup in background (non-blocking)
-    setTimeout(async () => {
-      try {
-        await logout();
-        console.log('✅ Logout cleanup completed');
-      } catch (error) {
-        console.error('⚠️ Logout cleanup failed (non-critical):', error);
-        // Non-critical: user already sees login screen
-      }
-    }, 0);
+    try {
+      // 3. Wait for Firebase cleanup to complete
+      await logout();
+      console.log('✅ Logout cleanup completed');
+
+      // 4. Show success message
+      setLogoutSuccess(true);
+
+      // 5. Wait 2 seconds, then hide overlay and enable login button
+      setTimeout(() => {
+        setIsLoggingOut(false);
+        setLogoutSuccess(false);
+      }, 2000);
+
+    } catch (error) {
+      console.error('⚠️ Logout cleanup failed:', error);
+      // Still show success to user (client-side cleanup)
+      setLogoutSuccess(true);
+      setTimeout(() => {
+        setIsLoggingOut(false);
+        setLogoutSuccess(false);
+      }, 2000);
+    }
   };
 
   const [filterPeriod, setFilterPeriod] = useState('important'); // Default: Important
@@ -1749,6 +1761,31 @@ const App = () => {
   /* -------------------------------------------------------------------------- */
   /* RENDER                                                                     */
   /* -------------------------------------------------------------------------- */
+
+  // LOGOUT OVERLAY (highest priority - shows over everything)
+  if (isLoggingOut) {
+    return (
+      <div className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-6">
+        <div className="bg-[#1a1d2d] border border-slate-700 rounded-2xl p-8 flex flex-col items-center gap-4 shadow-2xl">
+          {logoutSuccess ? (
+            <>
+              {/* Success Checkmark */}
+              <div className="w-16 h-16 rounded-full bg-green-500/20 border-2 border-green-500 flex items-center justify-center">
+                <Check size={32} className="text-green-500" strokeWidth={3} />
+              </div>
+              <p className="text-white text-lg font-bold">{t('logout_success') || '로그아웃 성공!'}</p>
+            </>
+          ) : (
+            <>
+              {/* Loading Spinner */}
+              <div className="w-16 h-16 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+              <p className="text-white text-lg font-bold">{t('logging_out') || '로그아웃 중...'}</p>
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   // 0. Splash Screen (Loading)
   if (authLoading) {

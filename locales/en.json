@@ -127,5 +127,7 @@
     "nav_saved": "Saved",
     "nav_profile": "MY",
     "nav_lang_ko": "Korean",
-    "nav_lang_en": "En"
+    "nav_lang_en": "En",
+    "logging_out": "Logging out...",
+    "logout_success": "Logout successful!"
 }

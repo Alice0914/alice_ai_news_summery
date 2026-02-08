@@ -127,5 +127,7 @@
     "nav_saved": "저장",
     "nav_profile": "MY",
     "nav_lang_ko": "한국",
-    "nav_lang_en": "영어"
+    "nav_lang_en": "영어",
+    "logging_out": "로그아웃 중...",
+    "logout_success": "로그아웃 성공!"
 }
