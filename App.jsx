@@ -127,8 +127,8 @@ const SelectionStep = ({
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-[100dvh] w-full bg-[#0f111a] flex flex-col items-center justify-center p-4 sm:p-6 font-sans">
-      <div className="w-full max-w-2xl flex flex-col h-full max-h-[90vh]">
+    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col items-center justify-center p-4 sm:p-6 font-sans overflow-hidden">
+      <div className="w-full max-w-2xl flex flex-col h-full max-h-full sm:max-h-[90vh]">
 
         {/* Header */}
         <div className="mb-8 md:mb-12 text-center flex-none">
@@ -200,7 +200,7 @@ const SelectionStep = ({
         </div>
 
         {/* Footer Navigation */}
-        <div className="mt-auto pt-6 flex items-center gap-3">
+        <div className="mt-auto pt-6 pb-20 sm:pb-6 flex items-center gap-3 relative z-50">
           {onPrev && (
             <button onClick={onPrev} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
               {t('prev')}
