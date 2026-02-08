@@ -1193,6 +1193,7 @@ const App = () => {
           console.log('✅ Manual Login: Retrieving user data and showing toast...');
           localStorage.setItem('hasLoggedInBefore', 'true');
           setShowLoginToast(true);
+          setActiveTab('home'); // Reset to home tab to show news feed, not profile
           setStep(5); // Immediate redirect to feed to prevent login form flash
           setTimeout(() => {
             setShowLoginToast(false);
@@ -1330,6 +1331,7 @@ const App = () => {
       // Show toast after successful logout
       setShowLogoutToast(true);
       setIsAuthModalOpen(false); // Ensure modal is closed
+      setActiveTab('home'); // Reset tab for next login
       // Navigate to login page (step 0)
       setStep(0);
       // Hide toast after delay
