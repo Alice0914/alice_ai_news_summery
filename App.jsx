@@ -1326,19 +1326,26 @@ const App = () => {
 
   const handleLogout = async () => {
     try {
-      // Immediately log out first
+      // Prevent automatic redirect in onAuthStateChanged
+      wasLoggedIn.current = false;
+
+      // Immediately log out
       await logout();
+
       // Show toast after successful logout
       setShowLogoutToast(true);
       setIsAuthModalOpen(false); // Ensure modal is closed
       setActiveTab('home'); // Reset tab for next login
-      // Show toast for 2 seconds, then navigate to login page
+
+      // Show toast for 2 seconds, THEN navigate to login page
       setTimeout(() => {
         setShowLogoutToast(false);
-        setStep(0); // Navigate to login page after toast
+        setStep(0); // Go to Login Screen explicitly
       }, 2000);
     } catch (error) {
       console.error("Logout failed", error);
+      // Restore flag if failed
+      wasLoggedIn.current = true;
     }
   };
 
