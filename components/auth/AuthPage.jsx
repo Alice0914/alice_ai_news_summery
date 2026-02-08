@@ -143,13 +143,15 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
             if (providerName === 'linkedin') user = await signInWithLinkedIn();
             // Now using signInWithPopup, we get the user back immediately
             if (user) {
+                setLoading(false); // Hide loading overlay before callback
                 handleAuthComplete();
+            } else {
+                setLoading(false); // No user returned (popup closed)
             }
         } catch (err) {
             setError(`Failed to sign in with ${providerName}. ${err.message}`);
             setLoading(false);
         }
-        // Note: setLoading(false) is not called on success because the page will navigate away
     };
 
     const isResetMode = authMode === 'reset';
