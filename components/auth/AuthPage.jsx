@@ -157,6 +157,15 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
 
     return (
         <div className={isStandalone ? "min-h-[100dvh] bg-[#0f111a] flex items-center justify-center p-4" : "fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"}>
+            {/* Full screen loading overlay during social login */}
+            {loading && (
+                <div className="absolute inset-0 z-50 bg-[#0f111a] flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-4">
+                        <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
+                        <p className="text-white/60 text-sm">{i18n.language === 'ko' ? '로그인 중...' : 'Logging in...'}</p>
+                    </div>
+                </div>
+            )}
             <div className="w-full max-w-sm bg-[#1a1f2e] rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative">
 
                 {/* Close Button (only for modal mode) */}

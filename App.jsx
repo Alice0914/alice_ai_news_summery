@@ -1099,6 +1099,7 @@ const App = () => {
   const [showLogoutToast, setShowLogoutToast] = useState(false); // Logout Toast State
 
   const isSigningUp = useRef(false); // Track if user is signing up
+  const isLoggingIn = useRef(false); // Track if login is in progress (prevents page flash)
 
   // Auth State
   const [user, setUser] = useState(null);
