@@ -214,8 +214,8 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                     )}
 
 
-                    {/* Social Buttons (Hidden in Reset Mode) */}
-                    {!isResetMode && (
+                    {/* Social Buttons (Hidden in Reset Mode or In-App Browser) */}
+                    {!isResetMode && !showInAppWarning && (
                         <>
                             <button
                                 onClick={() => handleSocialLogin('google')}
@@ -233,104 +233,108 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                         </>
                     )}
 
-                    {/* Form */}
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                        {isSignUp && (
-                            <div className="relative">
-                                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                                <input
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
-                                    placeholder={t('name_placeholder')}
-                                    required={isSignUp}
-                                />
-                            </div>
-                        )}
+                    {/* Form (Hidden in In-App Browser) */}
+                    {!showInAppWarning && (
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                            {isSignUp && (
+                                <div className="relative">
+                                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                                    <input
+                                        type="text"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
+                                        placeholder={t('name_placeholder')}
+                                        required={isSignUp}
+                                    />
+                                </div>
+                            )}
 
-                        <div className="relative">
-                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
-                                placeholder={t('email_placeholder')}
-                                required
-                            />
-                        </div>
-
-                        {!isResetMode && (
                             <div className="relative">
-                                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
                                 <input
-                                    type="password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
-                                    placeholder={t('password_placeholder')}
+                                    placeholder={t('email_placeholder')}
                                     required
                                 />
                             </div>
-                        )}
 
-                        {!isResetMode && !isSignUp && (
-                            <div className="flex justify-center">
+                            {!isResetMode && (
+                                <div className="relative">
+                                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
+                                    <input
+                                        type="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        className="w-full bg-black/20 border border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-blue-500/50 transition-all"
+                                        placeholder={t('password_placeholder')}
+                                        required
+                                    />
+                                </div>
+                            )}
+
+                            {!isResetMode && !isSignUp && (
+                                <div className="flex justify-center">
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setAuthMode('reset');
+                                            setError(null);
+                                            setSuccessMessage('');
+                                        }}
+                                        className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                                    >
+                                        {t('forgot_password')}
+                                    </button>
+                                </div>
+                            )}
+
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className="w-full py-3 mt-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30 font-bold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {loading ? t('processing') : (isResetMode ? t('send_reset_link') : (isSignUp ? t('signup_with_email') : t('signin_with_email')))}
+                            </button>
+                        </form>
+                    )}
+
+                    {/* Switch Toggle or Back Button (Hidden in In-App Browser) */}
+                    {!showInAppWarning && (
+                        <div className="mt-4 text-center">
+                            {isResetMode ? (
                                 <button
-                                    type="button"
                                     onClick={() => {
-                                        setAuthMode('reset');
+                                        setAuthMode('login');
                                         setError(null);
                                         setSuccessMessage('');
                                     }}
-                                    className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                                    className="text-white/40 hover:text-white text-xs transition-colors"
                                 >
-                                    {t('forgot_password')}
+                                    {t('back_to_login')}
                                 </button>
-                            </div>
-                        )}
-
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="w-full py-3 mt-2 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/30 font-bold text-sm transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            {loading ? t('processing') : (isResetMode ? t('send_reset_link') : (isSignUp ? t('signup_with_email') : t('signin_with_email')))}
-                        </button>
-                    </form>
-
-                    {/* Switch Toggle or Back Button */}
-                    <div className="mt-4 text-center">
-                        {isResetMode ? (
-                            <button
-                                onClick={() => {
-                                    setAuthMode('login');
-                                    setError(null);
-                                    setSuccessMessage('');
-                                }}
-                                className="text-white/40 hover:text-white text-xs transition-colors"
-                            >
-                                {t('back_to_login')}
-                            </button>
-                        ) : (
-                            <p className="text-white/40 text-xs">
-                                {isSignUp ? t('already_have_account') : t('dont_have_account')}
-                                <button
-                                    onClick={() => {
-                                        if (isStandalone && !isSignUp && onSignupClick) {
-                                            onSignupClick();
-                                        } else {
-                                            setAuthMode(isSignUp ? 'login' : 'signup');
-                                        }
-                                    }}
-                                    className="ml-2 text-blue-400 hover:text-blue-300 font-bold transition-colors"
-                                >
-                                    {isSignUp ? t('sign_in') : t('signup')}
-                                </button>
-                            </p>
-                        )}
-                    </div>
+                            ) : (
+                                <p className="text-white/40 text-xs">
+                                    {isSignUp ? t('already_have_account') : t('dont_have_account')}
+                                    <button
+                                        onClick={() => {
+                                            if (isStandalone && !isSignUp && onSignupClick) {
+                                                onSignupClick();
+                                            } else {
+                                                setAuthMode(isSignUp ? 'login' : 'signup');
+                                            }
+                                        }}
+                                        className="ml-2 text-blue-400 hover:text-blue-300 font-bold transition-colors"
+                                    >
+                                        {isSignUp ? t('sign_in') : t('signup')}
+                                    </button>
+                                </p>
+                            )}
+                        </div>
+                    )}
 
                 </div>
             </div>
