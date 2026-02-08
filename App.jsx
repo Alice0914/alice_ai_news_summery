@@ -127,13 +127,13 @@ const SelectionStep = ({
   const { t } = useTranslation();
 
   return (
-    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col items-center justify-center font-sans overflow-hidden">
-      <div className="w-full max-w-2xl flex flex-col h-full relative">
+    <div className="fixed inset-0 z-50 w-full bg-[#0f111a] flex flex-col font-sans h-[100dvh]">
+      <div className="w-full h-full relative flex flex-col">
 
-        {/* Content Container with Padding for Footer */}
-        <div className="flex-1 flex flex-col p-6 pb-32 overflow-y-auto custom-scrollbar">
+        {/* Content Container with Padding for Fixed Footer */}
+        <div className="flex-1 overflow-y-auto custom-scrollbar w-full max-w-2xl mx-auto p-6 pb-32">
           {/* Header */}
-          <div className="mb-8 md:mb-12 text-center flex-none">
+          <div className="mb-8 md:mb-12 text-center flex-none pt-4 md:pt-10">
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-3">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse">AI</span>
               <span className="text-white ml-2">{t('app_title')}</span>
@@ -202,33 +202,35 @@ const SelectionStep = ({
           </div>
         </div>
 
-        {/* Footer Navigation (Fixed Absolute) */}
-        <div className="absolute bottom-0 left-0 w-full p-6 pb-8 bg-[#0f111a]/95 backdrop-blur-xl border-t border-white/5 z-[60] flex items-center gap-3 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
-          {onPrev && (
-            <button onClick={onPrev} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
-              {t('prev')}
-            </button>
-          )}
+        {/* Footer Navigation (Fixed Viewport) */}
+        <div className="fixed bottom-0 left-0 w-full p-6 pb-8 bg-[#0f111a]/95 backdrop-blur-xl border-t border-white/5 z-[60] flex items-center justify-center shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+          <div className="w-full max-w-2xl flex items-center gap-3">
+            {onPrev && (
+              <button onClick={onPrev} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
+                {t('prev')}
+              </button>
+            )}
 
-          {onSkip && (
-            <button onClick={onSkip} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
-              {t('skip')}
-            </button>
-          )}
+            {onSkip && (
+              <button onClick={onSkip} className="px-6 py-4 rounded-2xl font-bold border border-slate-700 bg-slate-800 text-slate-500 hover:text-slate-400 transition-all">
+                {t('skip')}
+              </button>
+            )}
 
-          <button
-            onClick={onNext}
-            disabled={selectedIds.length === 0}
-            className={`
-            flex-1 py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-lg
-            ${selectedIds.length > 0
-                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:scale-[1.02] shadow-blue-900/20'
-                : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}
-          `}
-          >
-            <span>{nextLabel || 'Next'}</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
+            <button
+              onClick={onNext}
+              disabled={selectedIds.length === 0}
+              className={`
+              flex-1 py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-lg
+              ${selectedIds.length > 0
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:scale-[1.02] shadow-blue-900/20'
+                  : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700'}
+            `}
+            >
+              <span>{nextLabel || 'Next'}</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
