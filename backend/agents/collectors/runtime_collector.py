@@ -50,8 +50,18 @@ except ImportError:
 
 # Load environment variables
 _current_dir = os.path.dirname(os.path.abspath(__file__))
-_env_path = os.path.join(_current_dir, '..', '..', '..', '.env')
-load_dotenv(_env_path)
+_root_dir = os.path.abspath(os.path.join(_current_dir, '..', '..', '..'))
+_env_path = os.path.join(_root_dir, '.env')
+_env_local_path = os.path.join(_root_dir, '.env.local')
+
+if os.path.exists(_env_local_path):
+    print(f"[RuntimeCollector] Loading env from {_env_local_path}")
+    load_dotenv(_env_local_path)
+elif os.path.exists(_env_path):
+    print(f"[RuntimeCollector] Loading env from {_env_path}")
+    load_dotenv(_env_path)
+else:
+    print("[RuntimeCollector] Warning: No .env or .env.local found")
 
 
 class AINewsAgent:
@@ -419,14 +429,38 @@ class AINewsAgent:
                 }
             )
             text = response.text.strip()
+            
+            # Robust JSON extraction
+            # 1. Clean markdown code blocks
             if text.startswith('```json'):
                 text = text[7:]
             if text.startswith('```'):
                 text = text[3:]
             if text.endswith('```'):
                 text = text[:-3]
+            text = text.strip()
             
-            items = json.loads(text.strip())
+            items = []
+            try:
+                items = json.loads(text)
+            except json.JSONDecodeError as e:
+                print(f"  [Warning] JSON parse error: {e}. Attempting regex recovery...")
+                # 2. Try to find the JSON array list using regex
+                match = re.search(r'\[\s*\{.*\}\s*\]', text, re.DOTALL)
+                if match:
+                    try:
+                        items = json.loads(match.group(0))
+                        print("  [Success] Recovered JSON via regex.")
+                    except json.JSONDecodeError:
+                        print("  [Error] Regex check also failed to parse JSON.")
+                        # Debugging: Log the problematic text
+                        print(f"  [DEBUG] Failed JSON text: {text[:500]}...")
+            
+            # Final validation
+            if not isinstance(items, list):
+                print("  [Error] API returned non-list JSON.")
+                items = []
+                
             for item in items:
                 if not item.get('raw_title') or not item['raw_title'].strip():
                     content = item.get('raw_content', '')
@@ -436,6 +470,8 @@ class AINewsAgent:
             return items
         except Exception as e:
             print(f"Error in extraction: {e}")
+            import traceback
+            traceback.print_exc()
             return []
     
     def _enrich_items(self, news_items: list) -> list:
@@ -602,6 +638,7 @@ class RuntimeCollector(BaseCollector):
 
 # if __name__ == "__main__":
 #     # Test execution
-#     collector = RuntimeCollector("2024-01-01", "2026-01-31")
+#     # Use a date range that triggers the issue (e.g., Feb 3 2026)
+#     collector = RuntimeCollector("2026-02-03", "2026-02-04")
 #     results = collector.run()
 #     print(json.dumps(results, ensure_ascii=False, indent=2))

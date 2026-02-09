@@ -28,6 +28,7 @@ import OnboardingAuth from './components/auth/OnboardingAuth';
 import AuthPage from './components/auth/AuthPage';
 import PreferencesPage from './components/PreferencesPage'; // NEW: Dedicated preferences editor
 import AdminUpload from './components/AdminUpload'; // NEW: Admin Upload Page
+import AdminApp from './AdminApp'; // NEW: Full Admin Dashboard
 import { onAuthStateChanged, updateProfile } from 'firebase/auth'; // Added updateProfile
 import {
   db, auth, logUserAccess, signInWithGoogle, logout, saveBookmark,
@@ -1065,19 +1066,7 @@ const FilterPage = ({
 
 
 
-const App = () => {
-  // Simple Client-Side Routing for Admin
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
-  useEffect(() => {
-    const handlePopState = () => setCurrentPath(window.location.pathname);
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  if (currentPath === '/admin') {
-    return <AdminUpload />;
-  }
+const UserApp = () => {
 
   const { t, i18n } = useTranslation(); // Init hook
   const [step, setStep] = useState(0); // Start at 0 (loading)
@@ -1940,8 +1929,56 @@ const App = () => {
   // For daily/weekly views, show the standard amount (5)
   const topNewsCount = (dateFilter === 'this_month' || dateFilter === 'last_month') ? 10 : 5;
 
-  const topNews = displayNews.slice(0, topNewsCount);
-  const otherNews = displayNews.slice(topNewsCount);
+  // FIX: Sort by impactScore DESC for Top News section, regardless of user's list sort preference
+  // Using currentNews (ALL news, unfiltered) instead of displayNews to ensure highest impact articles always appear
+  const isKo = i18n.language === 'ko';
+  const allNewsLocalized = currentNews.map(item => ({
+    ...item,
+    title: (isKo && item.title_ko) ? item.title_ko : item.title,
+    summary: (isKo && item.summary_ko) ? item.summary_ko : item.summary,
+    why_it_matters: (isKo && item.why_it_matters_ko) ? item.why_it_matters_ko : item.why_it_matters
+  }));
+  const topNewsCandidates = [...allNewsLocalized];
+  topNewsCandidates.sort((a, b) => (b.impactScore || 0) - (a.impactScore || 0));
+  const topNews = topNewsCandidates.slice(0, topNewsCount);
+
+  // Exclude top news from the main list to avoid duplication
+  const otherNews = displayNews.filter(item => !topNews.find(t => t.id === item.id));
+
+  // NEW: Last Week's High Impact Top 5 - Shows top 5 articles from the previous week by impact score
+  // This uses ALL news data (newsData) rather than filtered displayNews
+  const lastWeekTop5 = (() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Calculate last week's Monday and Sunday
+    const day = today.getDay(); // 0 (Sun) - 6 (Sat)
+    const diffToMonday = day === 0 ? 6 : day - 1;
+    const thisMonday = new Date(today);
+    thisMonday.setDate(today.getDate() - diffToMonday);
+    const lastMonday = new Date(thisMonday);
+    lastMonday.setDate(thisMonday.getDate() - 7);
+    const lastSunday = new Date(thisMonday);
+    lastSunday.setDate(thisMonday.getDate() - 1);
+
+    // Filter news from last week
+    const isKo = i18n.language === 'ko';
+    const lastWeekNews = currentNews.filter(news => {
+      if (!news.publishedDate) return false;
+      const normalizedDateStr = news.publishedDate.replace(/\./g, '-').replace(/\s/g, '');
+      const newsDate = new Date(normalizedDateStr);
+      newsDate.setHours(0, 0, 0, 0);
+      return newsDate >= lastMonday && newsDate <= lastSunday;
+    }).map(item => ({
+      ...item,
+      title: (isKo && item.title_ko) ? item.title_ko : item.title,
+      summary: (isKo && item.summary_ko) ? item.summary_ko : item.summary
+    }));
+
+    // Sort by impact score and take top 5
+    lastWeekNews.sort((a, b) => (b.impactScore || 0) - (a.impactScore || 0));
+    return lastWeekNews.slice(0, 5);
+  })();
 
   // Helper: Convert English tag to Korean if language is 'ko'
   const getLocalizedTag = (tag) => {
@@ -2953,6 +2990,47 @@ const App = () => {
                 )}
               </section>
 
+              {/* NEW: Last Week's High Impact Top 5 */}
+              {lastWeekTop5.length > 0 && dateFilter === 'today' && (
+                <section className="mt-10 mb-8 px-1">
+                  <div className="flex items-center gap-2 mb-5">
+                    <span className="w-1.5 h-6 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.6)] flex-shrink-0"></span>
+                    <h2 className="text-[18px] font-bold text-white tracking-tight flex items-center gap-2">
+                      {i18n.language === 'ko' ? '지난주 주요 뉴스 Top 5' : "Last Week's High Impact Top 5"}
+                    </h2>
+                  </div>
+
+                  <div className="rounded-2xl bg-white/[0.02] border border-white/10 overflow-hidden">
+                    {lastWeekTop5.map((news, index) => (
+                      <div
+                        key={news.id}
+                        className="flex items-start gap-4 p-4 border-b border-white/5 last:border-0 hover:bg-white/[0.03] transition-colors cursor-pointer"
+                        onClick={() => news.sourceUrl && window.open(news.sourceUrl, '_blank')}
+                      >
+                        <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm border border-purple-500/20">
+                          {index + 1}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-xs text-purple-400 font-semibold px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
+                              Score: {news.impactScore || 0}
+                            </span>
+                            <span className="text-xs text-white/40">{news.publishedDate}</span>
+                          </div>
+                          <h3 className="text-sm font-bold text-white leading-snug line-clamp-2 group-hover:text-purple-400 transition-colors">
+                            {news.title}
+                          </h3>
+                          <p className="text-xs text-white/50 mt-1 line-clamp-1">
+                            {news.summary}
+                          </p>
+                        </div>
+                        <ArrowRight className="w-4 h-4 text-white/30 flex-shrink-0 mt-1" />
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
               {/* NEW: Top News Text Summary List (Vertical - Unified) */}
               {topNews.length > 0 && (
                 <section className="mt-12 mb-16 px-1">
@@ -3282,5 +3360,22 @@ const App = () => {
     </div >
   );
 }
+
+const App = () => {
+  // Simple Client-Side Routing for Admin
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handlePopState = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  if (currentPath === '/admin') {
+    return <AdminApp />;
+  }
+
+  return <UserApp />;
+};
 
 export default App;

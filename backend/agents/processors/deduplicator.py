@@ -14,7 +14,9 @@ import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
 from dotenv import load_dotenv
 
-from ..config import SOURCE_PRIORITY, SIMILARITY_THRESHOLD, MODEL_EMBEDDING
+from ..config import SOURCE_PRIORITY, SIMILARITY_THRESHOLD, MODEL_EMBEDDING, MODEL_FLASH
+
+# ... (rest of imports)
 
 # Load environment
 from pathlib import Path
@@ -94,15 +96,67 @@ class Deduplicator:
             print(f"[Deduplicator] Cross-Encoder check failed: {e}")
             return True, 1.0
 
-    def run(self, articles: list) -> list:
+    def _extract_event_details(self, text: str) -> dict:
         """
-        Deduplicate articles.
+        Stage 2: Extract structured event details using LLM.
+        """
+        prompt = f"""
+        Extract the following details from the news text below:
+        1. entities: List of main companies, labs, or key figures (e.g., "OpenAI", "Google DeepMind")
+        2. event_type: One of [Launch, Research, Funding, Partnership, Regulation, Other]
+        3. product_name: Specific product or model name (e.g., "GPT-5", "Sora")
+        4. date: Event date if mentioned (YYYY-MM-DD)
+
+        Output JSON only:
+        {{
+            "entities": ["..."],
+            "event_type": "...",
+            "product_name": "...",
+            "date": "..."
+        }}
+
+        Text: {text[:2000]}
+        """
+        try:
+            model = genai.GenerativeModel(MODEL_FLASH)
+            response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+            return json.loads(response.text)
+        except Exception as e:
+            print(f"[Deduplicator] Extraction failed: {e}")
+            return {}
+
+    def _check_logical_match(self, d1: dict, d2: dict) -> bool:
+        """
+        Stage 3: Logical verification.
+        Returns True if at least 2 conditions match.
+        """
+        matches = 0
         
-        Args:
-            articles: List of article dicts with 'raw_title', 'source_name', etc.
+        # 1. Entity Match (Overlap)
+        ents1 = set(e.lower() for e in d1.get('entities', []))
+        ents2 = set(e.lower() for e in d2.get('entities', []))
+        if ents1 & ents2:
+            matches += 1
             
-        Returns:
-            Deduplicated list with 'exposure_score' added to each article.
+        # 2. Event Type Match
+        if d1.get('event_type') == d2.get('event_type') and d1.get('event_type') != "Other":
+            matches += 1
+            
+        # 3. Product Name Match
+        p1 = (d1.get('product_name') or '').lower()
+        p2 = (d2.get('product_name') or '').lower()
+        if p1 and p2 and (p1 in p2 or p2 in p1):
+            matches += 1
+            
+        # 4. Date Match (Exact)
+        if d1.get('date') and d2.get('date') and d1['date'] == d2['date']:
+            matches += 1
+            
+        return matches >= 2
+
+    def run(self, articles: list, target_date: str = None) -> list:
+        """
+        Deduplicate articles using 4-stage pipeline.
         """
         if not articles:
             return []
@@ -131,7 +185,6 @@ class Deduplicator:
         
         if not embeddings:
             print("[Deduplicator] [x] No embeddings generated (API Error?). Bypassing deduplication.")
-            # Fallback: return original articles
             for article in articles:
                 article['exposure_score'] = 1
             return articles
@@ -146,10 +199,13 @@ class Deduplicator:
         df['exposure_score'] = 0
         
         # Deduplication
-        print("[Deduplicator] Finding duplicates (Two-Stage: Bi-Encoder + Cross-Encoder)...")
+        print("[Deduplicator] Finding duplicates (4-Stage: Bi-Encoder -> Extract -> Logic -> Cross-Encoder)...")
         keep_mask = [True] * len(df)
         duplicate_logs = []
         
+        # Cache for extracted details to avoid re-running LLM
+        details_cache = {}
+
         for i in range(len(df)):
             if not keep_mask[i]:
                 continue
@@ -163,18 +219,39 @@ class Deduplicator:
                 vec_j = np.array(df.iloc[j]['embedding']).reshape(1, -1)
                 sim = cosine_similarity(vec_i, vec_j)[0][0]
                 
-                # STAGE 1: Fast Filter (Bi-Encoder)
-                # Check candidates with similarity > 0.85
-                if sim > 0.85:
+                # STAGE 1: Recall (Bi-Encoder)
+                # Check candidates with similarity > 0.92
+                if sim > 0.92:
                     title1 = df.iloc[i]['raw_title']
                     title2 = df.iloc[j]['raw_title']
+                    content1 = df.iloc[i].get('content') or df.iloc[i].get('raw_content') or title1
+                    content2 = df.iloc[j].get('content') or df.iloc[j].get('raw_content') or title2
                     
-                    print(f"  Bi-Encoder Sim: {sim:.4f} ('{title2[:30]}...' vs '{title1[:30]}...')")
+                    print(f"  [Stage 1] High Sim: {sim:.4f} ('{title2[:30]}...' vs '{title1[:30]}...')")
                     
-                    # STAGE 2: Verification (Cross-Encoder)
+                    # STAGE 2: Extraction (LLM)
+                    if i not in details_cache:
+                        details_cache[i] = self._extract_event_details(content1)
+                    if j not in details_cache:
+                        details_cache[j] = self._extract_event_details(content2)
+                        
+                    d1 = details_cache[i]
+                    d2 = details_cache[j]
+                    
+                    # STAGE 3: Logical Verification
+                    is_logical_match = self._check_logical_match(d1, d2)
+                    
+                    if not is_logical_match:
+                        print(f"    [-] Logical Mismatch. Keeping.")
+                        continue
+                        
+                    print(f"    [+] Logical Match! Proceeding to Verification.")
+
+                    # STAGE 4: Final Confirmation (Cross-Encoder)
                     is_duplicate, ce_score = self._is_duplicate_cross_encoder(title1, title2)
                     
-                    if is_duplicate:
+                    # Higher threshold for Cross-Encoder
+                    if ce_score > 0.95:
                         # Mark j as duplicate
                         keep_mask[j] = False
                         # Increment exposure score for i
@@ -185,14 +262,15 @@ class Deduplicator:
                             "kept_article": title1,
                             "similarity_score": float(sim),
                             "cross_encoder_score": ce_score,
+                            "logic_details": {"d1": d1, "d2": d2},
                             "dropped_source": df.iloc[j]['source_name'],
                             "kept_source": df.iloc[i]['source_name'],
-                            "verification": "Cross-Encoder"
+                            "verification": "4-Stage Logic + CE"
                         }
                         duplicate_logs.append(duplicate_info)
-                        print(f"    [+] Duplicate Confirmed. Dropping.")
+                        print(f"    [+] Duplicate Confirmed (Score: {ce_score:.4f}). Dropping.")
                     else:
-                        print(f"    [-] Different Content. Keeping.")
+                        print(f"    [-] CE Score Low ({ce_score:.4f}). Keeping.")
         
         # Filter and clean
         result_df = df[keep_mask].drop(columns=['embedding', 'priority'])
@@ -200,6 +278,7 @@ class Deduplicator:
         
         # Save Deduplication Log
         log_data = {
+            "target_date": target_date,
             "total_articles_processed": len(df),
             "unique_articles_count": len(result),
             "duplicates_removed_count": len(duplicate_logs),
@@ -208,7 +287,10 @@ class Deduplicator:
         
         try:
             # Save to backend/data if possible, else current dir
-            log_path = os.path.join(os.getcwd(), 'backend', 'data', f"deduplication_log_{int(time.time())}.json")
+            date_suffix = f"_{target_date}" if target_date else ""
+            log_filename = f"deduplication_log_{int(time.time())}{date_suffix}.json"
+            log_path = os.path.join(os.getcwd(), 'backend', 'data', log_filename)
+            
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, 'w', encoding='utf-8') as f:
                 json.dump(log_data, f, ensure_ascii=False, indent=2)

@@ -7,7 +7,7 @@
     "start": "webpack serve --mode development --open",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development --open --port 3002",
-    "admintools": "webpack serve --mode development --env admin=true"
+    "admintools": "webpack serve --mode development --open --port 3005"
   },
   "keywords": [
     "react",

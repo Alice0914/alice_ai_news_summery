@@ -77,7 +77,7 @@ class TechCrunchAIAgent:
         return d
     
     def _get_rss_articles(self) -> list:
-        """Fetch and parse articles from TechCrunch AI RSS feed."""
+        """Fetch and parse articles from TechCrunch AI RSS feed with pagination."""
         try:
             start_dt = self._normalize_date(self.start_date)
             end_dt = self._normalize_date(self.end_date)
@@ -89,55 +89,95 @@ class TechCrunchAIAgent:
             
             print(f"Fetching TechCrunch RSS Feed... Range: {start_dt} ~ {end_dt}")
             
-            response = requests.get(self.rss_url, headers=self.headers, timeout=30)
-            if response.status_code != 200:
-                print(f"Failed to access RSS feed: {response.status_code}")
-                return []
+            all_articles = []
+            seen_urls = set()
+            page = 1
+            max_pages = 5
             
-            # Parse XML
-            root = ET.fromstring(response.content)
-            articles = []
-            
-            # Navigate to items in RSS feed
-            for item in root.findall('.//item'):
-                try:
-                    title_elem = item.find('title')
-                    link_elem = item.find('link')
-                    pubdate_elem = item.find('pubDate')
-                    
-                    if title_elem is None or link_elem is None or pubdate_elem is None:
-                        continue
-                    
-                    title = title_elem.text or ""
-                    url = link_elem.text or ""
-                    date_str = pubdate_elem.text or ""
-                    
-                    # Parse date
-                    article_date = self._parse_rss_date(date_str)
-                    if not article_date:
-                        continue
-                    
-                    # Remove timezone info for comparison
-                    article_date_naive = article_date.replace(tzinfo=None)
-                    
-                    # Check if within date range
-                    if start_dt and end_dt:
-                        if start_dt <= article_date_naive <= end_dt:
-                            if not any(a['url'] == url for a in articles):
-                                articles.append({
-                                    'url': url,
-                                    'date': date_str,
-                                    'dt': article_date_naive,
-                                    'title': title
-                                })
-                                print(f"  [+] Found: {title[:50]}... ({article_date_naive.strftime('%Y-%m-%d')})")
+            while page <= max_pages:
+                request_url = self.rss_url
+                if page > 1:
+                    request_url = f"{self.rss_url}?paged={page}"
                 
+                print(f"  Fetching page {page}...")
+                
+                try:
+                    response = requests.get(request_url, headers=self.headers, timeout=30)
+                    if response.status_code != 200:
+                        print(f"    Failed to access RSS feed page {page}: {response.status_code}")
+                        break
+                        
+                    # Parse XML
+                    root = ET.fromstring(response.content)
+                    items = root.findall('.//item')
+                    
+                    if not items:
+                        print("    No items found on this page.")
+                        break
+                        
+                    found_on_page = 0
+                    oldest_date_on_page = None
+                    
+                    # Navigate to items in RSS feed
+                    for item in items:
+                        try:
+                            title_elem = item.find('title')
+                            link_elem = item.find('link')
+                            pubdate_elem = item.find('pubDate')
+                            
+                            if title_elem is None or link_elem is None or pubdate_elem is None:
+                                continue
+                            
+                            title = title_elem.text or ""
+                            url = link_elem.text or ""
+                            date_str = pubdate_elem.text or ""
+                            
+                            # Parse date
+                            article_date = self._parse_rss_date(date_str)
+                            if not article_date:
+                                continue
+                            
+                            # Remove timezone info for comparison
+                            article_date_naive = article_date.replace(tzinfo=None)
+                            
+                            # Track oldest date to know when to stop
+                            if oldest_date_on_page is None or article_date_naive < oldest_date_on_page:
+                                oldest_date_on_page = article_date_naive
+                            
+                            # Check if within date range
+                            if start_dt and end_dt:
+                                if start_dt <= article_date_naive <= end_dt:
+                                    if url not in seen_urls:
+                                        all_articles.append({
+                                            'url': url,
+                                            'date': date_str,
+                                            'dt': article_date_naive,
+                                            'title': title
+                                        })
+                                        seen_urls.add(url)
+                                        found_on_page += 1
+                                        print(f"    [+] Found: {title[:50]}... ({article_date_naive.strftime('%Y-%m-%d')})")
+                        
+                        except Exception as e:
+                            print(f"    Error parsing RSS item: {e}")
+                            continue
+
+                    print(f"    Page {page}: Found {found_on_page} relevant articles. Oldest: {oldest_date_on_page}")
+                    
+                    # Stop if we've gone past the start date
+                    if start_dt and oldest_date_on_page and oldest_date_on_page < start_dt:
+                        print("    Reached articles older than start date. Stopping pagination.")
+                        break
+                        
+                    page += 1
+                    time.sleep(1) # Be polite
+                    
                 except Exception as e:
-                    print(f"Error parsing RSS item: {e}")
-                    continue
+                    print(f"Error fetching page {page}: {e}")
+                    break
             
-            print(f"Found {len(articles)} matching articles in RSS feed.")
-            return articles
+            print(f"Found {len(all_articles)} matching articles in RSS feed.")
+            return all_articles
             
         except Exception as e:
             print(f"Error in _get_rss_articles: {e}")

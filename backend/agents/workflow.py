@@ -79,134 +79,173 @@ class PipelineState(TypedDict):
     valid_articles: List[dict]     # Passed review
     invalid_articles: List[dict]   # Failed review
     output_dir: str
+    exact_mode: bool               # If True, collect only for current_date
+    end_date: str                  # Optional end date for range collection
 
 # --- Node Functions ---
 
 def load_history(state: PipelineState) -> PipelineState:
-    print("Step 1: Loading History...")
+    print("Step 2: Loading History (Dynamic)...")
     output_dir = state['output_dir']
     existing = []
     
     target_date = datetime.strptime(state['current_date'], "%Y-%m-%d")
+    
+    # 1. Standard Window (Target + past 3 days)
+    dates_to_load = set()
+    dates_to_load.add(state['current_date'])
     for i in range(1, 4):
         past_date = (target_date - timedelta(days=i)).strftime("%Y-%m-%d")
-        fpath = os.path.join(output_dir, f"final_news_output_{past_date}.json")
+        dates_to_load.add(past_date)
+        
+    # 2. Dynamic Window (Dates from collected articles)
+    new_articles = state.get('new_articles', [])
+    for art in new_articles:
+        d = art.get('publishedDate') or art.get('date')
+        if d:
+            # Simple validation: looks like YYYY-MM-DD
+            if len(d) == 10 and d.count('-') == 2:
+                dates_to_load.add(d)
+    
+    print(f"  Loading history for dates: {sorted(list(dates_to_load))}")
+    
+    for d_str in dates_to_load:
+        fpath = os.path.join(output_dir, f"final_news_output_{d_str}.json")
         if os.path.exists(fpath):
             try:
                 with open(fpath, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     existing.extend(data)
-                print(f"  Loaded {len(data)} articles from {past_date}")
+                print(f"    Loaded {len(data)} articles from {d_str}")
             except Exception as e:
-                print(f"  Failed to load {fpath}: {e}")
+                print(f"    Failed to load {fpath}: {e}")
     
+    print(f"  Total existing articles loaded: {len(existing)}")
     return {"existing_articles": existing}
 
 
 def collect_news(state: PipelineState) -> PipelineState:
-    print("Step 2: Collecting News...")
+    print("Step 1: Collecting News...")
     
     collected = []
-    target_date = state['current_date']
-    
+    target_date_str = state['current_date']
+    target_date_obj = datetime.strptime(target_date_str, "%Y-%m-%d")
+    weekday = target_date_obj.weekday()
+
+    # Determine Collection Range
+    # Determine Collection Range
+    if state.get('exact_mode'):
+        print(f"  [Exact Mode] Collection Start: {target_date_str}")
+        start_date_obj = target_date_obj
+        
+        if state.get('end_date'):
+            end_date_obj = datetime.strptime(state['end_date'], "%Y-%m-%d")
+            print(f"  [Exact Mode] Collection End: {state['end_date']}")
+        else:
+            end_date_obj = target_date_obj
+            
+    elif weekday == 0:  # Monday
+        # Collect Friday, Saturday, Sunday
+        start_date_obj = target_date_obj - timedelta(days=3)
+        end_date_obj = target_date_obj - timedelta(days=1)
+        print(f"  [Monday Logic] Collecting news from {start_date_obj.strftime('%Y-%m-%d')} (Fri) to {end_date_obj.strftime('%Y-%m-%d')} (Sun)")
+    else:  # Tuesday - Sunday
+        # Collect Yesterday
+        start_date_obj = target_date_obj - timedelta(days=1)
+        end_date_obj = target_date_obj - timedelta(days=1)
+        print(f"  [Standard Logic] Collecting news from {start_date_obj.strftime('%Y-%m-%d')} (Yesterday)")
+
+    start_date = start_date_obj.strftime("%Y-%m-%d")
+    end_date = end_date_obj.strftime("%Y-%m-%d")
+
     # TechCrunch
     try:
         print("  Running TechCrunchCollector...")
-        tc_collector = TechCrunchCollector(start_date=target_date, end_date=target_date)
+        tc_collector = TechCrunchCollector(start_date=start_date, end_date=end_date)
         if hasattr(tc_collector, 'collect'):
-             articles = tc_collector.collect(target_date, target_date)
+             articles = tc_collector.collect(start_date, end_date)
         else:
              articles = tc_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  TechCrunchCollector failed: {e}")
-        traceback.print_exc()
 
     # MIT
     try:
         print("  Running MITCollector...")
-        mit_collector = MITCollector(start_date=target_date, end_date=target_date) 
+        mit_collector = MITCollector(start_date=start_date, end_date=end_date) 
         if hasattr(mit_collector, 'collect'):
-            articles = mit_collector.collect(target_date, target_date)
+            articles = mit_collector.collect(start_date, end_date)
         else:
             articles = mit_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  MITCollector failed: {e}")
-        traceback.print_exc()
 
     # Anthropic
     try:
         print("  Running AnthropicCollector...")
-        anth_collector = AnthropicCollector(start_date=target_date, end_date=target_date)
+        anth_collector = AnthropicCollector(start_date=start_date, end_date=end_date)
         if hasattr(anth_collector, 'collect'):
-            articles = anth_collector.collect(target_date, target_date)
+            articles = anth_collector.collect(start_date, end_date)
         else:
             articles = anth_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  AnthropicCollector failed: {e}")
-        traceback.print_exc()
 
     # Runtime (The Rundown)
     try:
         print("  Running RuntimeCollector...")
-        runtime_collector = RuntimeCollector(start_date=target_date, end_date=target_date)
+        runtime_collector = RuntimeCollector(start_date=start_date, end_date=end_date)
         articles = runtime_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  RuntimeCollector failed: {e}")
-        traceback.print_exc()
 
     # OpenAI
     try:
         print("  Running OpenAICollector...")
-        openai_collector = OpenAICollector(start_date=target_date, end_date=target_date)
+        openai_collector = OpenAICollector(start_date=start_date, end_date=end_date)
         articles = openai_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  OpenAICollector failed: {e}")
-        traceback.print_exc()
 
     # NVIDIA
     try:
         print("  Running NVIDIACollector...")
-        nvidia_collector = NVIDIACollector(start_date=target_date, end_date=target_date)
+        nvidia_collector = NVIDIACollector(start_date=start_date, end_date=end_date)
         articles = nvidia_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  NVIDIACollector failed: {e}")
-        traceback.print_exc()
 
     # Robot Runtime
     try:
         print("  Running RobotCollector...")
-        robot_collector = RobotCollector(start_date=target_date, end_date=target_date)
+        robot_collector = RobotCollector(start_date=start_date, end_date=end_date)
         articles = robot_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  RobotCollector failed: {e}")
-        traceback.print_exc()
 
     # xAI
     try:
         print("  Running XAICollector...")
-        xai_collector = XAICollector(start_date=target_date, end_date=target_date)
+        xai_collector = XAICollector(start_date=start_date, end_date=end_date)
         articles = xai_collector.run()
         collected.extend(articles)
     except Exception as e:
-        import traceback
         print(f"  XAICollector failed: {e}")
-        traceback.print_exc()
         
     print(f"  Total collected: {len(collected)}")
+    
+    # Normalize 'date' key to 'publishedDate' for consistency
+    for art in collected:
+        if 'publishedDate' not in art and 'date' in art:
+            art['publishedDate'] = art['date']
+            
     return {"new_articles": collected}
 
 
@@ -216,14 +255,19 @@ def deduplicate(state: PipelineState) -> PipelineState:
     all_articles = state['existing_articles'] + state['new_articles']
     
     deduplicator = Deduplicator()
-    unique_articles = deduplicator.run(all_articles)
+    # Pass current_date for log filename
+    unique_articles = deduplicator.run(all_articles, target_date=state['current_date'])
     
-    existing_ids = set(a.get('link') or a.get('url') for a in state['existing_articles']) 
+    existing_ids = set(a.get('link') or a.get('url') or a.get('source_url') for a in state['existing_articles']) 
     
     final_new = []
     for art in unique_articles:
-        url = art.get('link') or art.get('url')
+        url = art.get('link') or art.get('url') or art.get('source_url')
         if url and url not in existing_ids:
+            final_new.append(art)
+        elif not url:
+            # Fallback if no URL at all, but print warning
+            print(f"  [Warning] Article '{art.get('raw_title', '')[:30]}...' has no URL. Keeping conditionally.")
             final_new.append(art)
         else:
             print(f"  [Info] Article '{art.get('raw_title', '')[:30]}...' found in history. Skipping.")
@@ -263,41 +307,79 @@ def review_news(state: PipelineState) -> PipelineState:
 
 
 def save_news(state: PipelineState) -> PipelineState:
-    print("Step 6: Saving...")
+    print("Step 6: Saving (Dynamic Date)...")
     valid = state['valid_articles']
     if not valid:
         print("  No valid new articles to save.")
         return {}
         
     output_dir = state['output_dir']
-    date_str = state['current_date']
     
-    daily_file = os.path.join(output_dir, f"final_news_output_{date_str}.json")
-    with open(daily_file, 'w', encoding='utf-8') as f:
-        json.dump(valid, f, ensure_ascii=False, indent=2)
-    print(f"  Saved daily: {daily_file}")
+    # Group by Published Date
+    articles_by_date = {}
+    for art in valid:
+        d = art.get('publishedDate') or art.get('date') or state['current_date']
+        # Normalize date format just in case
+        if not (len(d) == 10 and d.count('-') == 2):
+            d = state['current_date'] # Fallback
+            
+        if d not in articles_by_date:
+            articles_by_date[d] = []
+        articles_by_date[d].append(art)
         
+    # 1. Save to specific date files
+    for d_str, articles in articles_by_date.items():
+        daily_file = os.path.join(output_dir, f"final_news_output_{d_str}.json")
+        daily_data = []
+        
+        # Load existing if present
+        if os.path.exists(daily_file):
+            try:
+                with open(daily_file, 'r', encoding='utf-8') as f:
+                    daily_data = json.load(f)
+            except Exception as e:
+                print(f"    Failed to load {daily_file}: {e}")
+                
+        # Append new unique
+        existing_ids = set(a.get('id') for a in daily_data if a.get('id'))
+        to_add = [a for a in articles if a.get('id') not in existing_ids]
+        
+        if to_add:
+            daily_data.extend(to_add)
+            with open(daily_file, 'w', encoding='utf-8') as f:
+                json.dump(daily_data, f, ensure_ascii=False, indent=2)
+            print(f"  [Daily] Saved {len(to_add)} articles to {daily_file}")
+        else:
+            print(f"  [Daily] No new articles for {daily_file}")
+            
+    # 2. Update Main File (Cumulative)
     main_file = os.path.join(output_dir, "final_news_output.json")
     main_data = []
     
     if os.path.exists(main_file):
-        with open(main_file, 'r', encoding='utf-8') as f:
-            try:
+        try:
+            with open(main_file, 'r', encoding='utf-8') as f:
                 main_data = json.load(f)
-            except:
-                main_data = []
+        except Exception as e:
+            print(f"  [Warning] Failed to load main file: {e}")
+            main_data = []
     
+    # Merge only new articles by checking IDs
     existing_ids = set(a.get('id') for a in main_data)
+    # We want to add ALL valid articles from this run, regardless of their date bucket,
+    # as long as they aren't in the main file yet.
     to_append = [a for a in valid if a.get('id') not in existing_ids]
     
-    main_data.extend(to_append)
-    
-    main_data.sort(key=lambda x: x.get('publishedDate', ''), reverse=True)
-    
-    with open(main_file, 'w', encoding='utf-8') as f:
-        json.dump(main_data, f, ensure_ascii=False, indent=2)
+    if to_append:
+        main_data.extend(to_append)
+        # Sort by date (newest first)
+        main_data.sort(key=lambda x: x.get('publishedDate', ''), reverse=True)
         
-    print(f"  Updated main DB: {len(to_append)} new articles added.")
+        with open(main_file, 'w', encoding='utf-8') as f:
+            json.dump(main_data, f, ensure_ascii=False, indent=2)
+        print(f"  [Main] Updated: {len(to_append)} new articles added. Total: {len(main_data)}")
+    else:
+        print("  [Main] No new unique articles to add to main database.")
     
     return {}
 
@@ -316,11 +398,11 @@ def create_news_workflow():
     workflow.add_node("save_news", save_news)
     
     # Set Entry Point
-    workflow.set_entry_point("load_history")
+    workflow.set_entry_point("collect_news")
     
     # Add Edges
-    workflow.add_edge("load_history", "collect_news")
-    workflow.add_edge("collect_news", "deduplicate")
+    workflow.add_edge("collect_news", "load_history")
+    workflow.add_edge("load_history", "deduplicate")
     workflow.add_edge("deduplicate", "process_news")
     workflow.add_edge("process_news", "review_news")
     workflow.add_edge("review_news", "save_news")
@@ -334,13 +416,17 @@ if __name__ == "__main__":
     import argparse
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", type=str, default=datetime.now().strftime("%Y-%m-%d"))
+    parser.add_argument("--date", type=str, default=datetime.now().strftime("%Y-%m-%d"), help="Start date (YYYY-MM-DD)")
+    parser.add_argument("--end_date", type=str, help="End date (YYYY-MM-DD) for range collection")
+    parser.add_argument("--exact", action="store_true", help="Collect news only for the specified date(s)")
     args = parser.parse_args()
     
     app = create_news_workflow()
     
     initial_state = {
         "current_date": args.date,
+        "end_date": args.end_date,
+        "exact_mode": args.exact,
         "output_dir": os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data")),
         "existing_articles": [],
         "new_articles": [],
