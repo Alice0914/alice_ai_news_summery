@@ -1,0 +1,64 @@
+[
+  {
+    "id": "empa-upgrades-firedrone-with-new-heat-resistant-in-20260127",
+    "title": "EMPA Upgrades FireDrone with New Heat-Resistant Insulation",
+    "title_ko": "EMPA, 파이어드론에 신형 내열 단열재 적용하여 성능 향상",
+    "summary": "The Swiss research institute EMPA has enhanced its FireDrone by integrating a new polyimide aerogel insulation layer. This advanced insulation allows the drone to withstand temperatures of 200°C (392°F) for up to 10 minutes, significantly improving its heat resistance for demanding applications.",
+    "summary_ko": "스위스 연구기관 엠파(EMPA)가 파이어드론에 새로운 폴리이미드 에어로젤 단열층을 적용하여 성능을 강화했습니다. 이 첨단 단열재 덕분에 드론은 200°C(392°F)의 고온에서 최대 10분간 견딜 수 있게 되어, 까다로운 고온 환경에서의 활용을 위한 내열성이 크게 향상되었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "New Atlas",
+    "sourceUrl": "https://newatlas.com/drones/firedrone-extreme-heat-resistance-firefighting-empa/",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 76,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 20,
+      "reach": 10,
+      "longTerm": 17,
+      "socialEthics": 14,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Research/Innovation",
+      "Robotics/Physical AI",
+      "Hardware",
+      "Technology"
+    ],
+    "categories_ko": [
+      "연구/혁신",
+      "로보틱스/물리 AI",
+      "하드웨어",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "FireDrone",
+      "EMPA",
+      "Drone insulation",
+      "Heat resistance",
+      "Robotics"
+    ],
+    "searchKeywords_ko": [
+      "파이어드론",
+      "엠파",
+      "드론 단열재",
+      "내열성",
+      "로봇 기술"
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "gartner-forecasts-limited-production-deployment-fo-20260121",
+    "title": "Gartner Forecasts Limited Production Deployment for Humanoid Robots",
+    "title_ko": "가트너, 휴머노이드 로봇의 생산 현장 배포는 제한적일 것으로 전망",
+    "summary": "Gartner predicts that fewer than 20 companies will successfully deploy humanoid robots in production by 2028, despite substantial investment in the sector. The research firm cites key barriers including technological limitations in dexterity and adaptability, integration complexity, high costs, and limited battery life, suggesting that polyfunctional robots offer better throughput-per-dollar than humanoids.",
+    "summary_ko": "가트너는 해당 분야에 상당한 투자가 이루어지고 있음에도 불구하고, 2028년까지 20개 미만의 기업만이 생산 현장에 휴머노이드 로봇을 성공적으로 배포할 것이라고 예측했다. 이 리서치 기업은 민첩성과 적응성의 기술적 한계, 통합의 복잡성, 높은 비용, 그리고 제한적인 배터리 수명을 주요 장벽으로 꼽았다. 또한, 다기능 로봇이 휴머노이드 로봇보다 비용 대비 처리량 효율성이 더 높다고 제시했다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Gartner",
+    "sourceUrl": "https://www.gartner.com/en/newsroom/press-releases/2026-01-21-gartner-predicts-fewer-than-20-companies-will-scale-humanoid-robots-for-manufacturing-and-supply-chain-to-production-stage-by-2028",
+    "publishedDate": "2026-01-21",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 77,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 12,
+      "reach": 20,
+      "longTerm": 19,
+      "socialEthics": 8,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Business",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "비즈니스",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Humanoid Robots",
+      "Gartner Report",
+      "Robotics Industry",
+      "AI Deployment",
+      "Automation"
+    ],
+    "searchKeywords_ko": [
+      "휴머노이드 로봇",
+      "가트너 보고서",
+      "로봇 산업",
+      "AI 배포",
+      "자동화"
+    ]
+  }
+]

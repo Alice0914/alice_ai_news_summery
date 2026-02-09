@@ -1,0 +1,152 @@
+[
+  {
+    "id": "nvidia-mercedes-benz-and-uber-partner-on-premium-s-20260129",
+    "title": "Nvidia, Mercedes-Benz, and Uber Partner on Premium S-Class Robotaxi",
+    "title_ko": "엔비디아, 메르세데스-벤츠, 우버, 프리미엄 S클래스 로보택시 공동 개발",
+    "summary": "Nvidia, Mercedes-Benz, and Uber are collaborating to develop a premium S-Class robotaxi. This autonomous vehicle will be powered by Nvidia's advanced Level 4 autonomous stack. While the project is progressing, a definitive launch date has not yet been announced.",
+    "summary_ko": "엔비디아, 메르세데스-벤츠, 우버가 프리미엄 S클래스 로보택시 개발에 협력하고 있습니다. 이 자율주행 차량은 엔비디아의 첨단 레벨 4 자율주행 스택을 기반으로 구동됩니다. 프로젝트는 순조롭게 진행 중이나, 최종 출시일은 아직 발표되지 않았습니다.",
+    "why_it_matters": "This partnership signifies a major step in the commercialization of high-level autonomous driving, underscoring Nvidia's pivotal role in providing the foundational AI and computing platforms for the automotive industry. It demonstrates the continued convergence of leading tech and automotive giants to bring advanced physical AI solutions to market.",
+    "why_it_matters_ko": "이번 파트너십은 고수준 자율주행 상용화에 있어 중대한 진전을 의미하며, 자동차 산업에 필수적인 AI 및 컴퓨팅 플랫폼을 제공하는 엔비디아의 중추적인 역할을 강조합니다. 이는 또한 선도적인 기술 기업과 자동차 대기업이 첨단 물리 AI 솔루션을 시장에 선보이기 위해 지속적으로 협력하고 있음을 보여줍니다.",
+    "source": "Nvidia",
+    "sourceUrl": "https://blogs.nvidia.com/blog/mercedes-benz-l4-s-class-drive-av-platform/",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 90,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 17,
+      "reach": 16,
+      "longTerm": 21,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI",
+      "Automotive",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI",
+      "자동차",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Edge/On-Device AI",
+      "Autonomous Driving AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "엣지/온디바이스 AI",
+      "자율주행 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Nvidia robotaxi",
+      "Mercedes-Benz autonomous",
+      "Uber self-driving",
+      "Level 4 AI",
+      "autonomous driving platform"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아 로보택시",
+      "메르세데스-벤츠 자율주행",
+      "우버 자율주행",
+      "레벨 4 AI",
+      "자율주행 플랫폼"
+    ]
+  },
+  {
+    "id": "munich-based-robco-secures-100m-series-c-funding-f-20260129",
+    "title": "Munich-based RobCo Secures $100M Series C Funding for 'Physical AI' Factory Robots",
+    "title_ko": "뮌헨 기반 RobCo, '물리적 AI' 공장 로봇 개발을 위한 1억 달러 규모 Series C 투자 유치",
+    "summary": "Munich-based RobCo has successfully closed a $100 million Series C funding round, led by Lightspeed, valuing the company at $500 million. This capital infusion is earmarked to advance its 'physical AI' factory robots, aiming to establish them as a significant presence in the manufacturing industry.",
+    "summary_ko": "뮌헨에 본사를 둔 RobCo는 Lightspeed가 주도하는 1억 달러 규모의 Series C 투자 유치를 성공적으로 마무리했으며, 이로써 기업 가치는 5억 달러로 평가되었습니다. 이번 자본 투입은 '물리적 AI' 기반 공장 로봇의 발전을 가속화하여 제조업 분야에서 RobCo 로봇의 중요한 입지를 구축하는 데 사용될 예정입니다.",
+    "why_it_matters": "This substantial investment in RobCo highlights the increasing venture capital interest in specialized AI applications, particularly 'physical AI' for industrial automation. For AI industry professionals, it signals a growing market for intelligent robotics solutions and advanced manufacturing, emphasizing the practical deployment and commercial viability of AI beyond software.",
+    "why_it_matters_ko": "RobCo에 대한 이번 대규모 투자는 벤처 캐피탈이 특수 AI 애플리케이션, 특히 산업 자동화를 위한 '물리적 AI'에 대한 관심이 증가하고 있음을 보여줍니다. AI 산업 전문가들에게는 지능형 로봇 솔루션과 첨단 제조 분야의 성장하는 시장을 의미하며, 소프트웨어 영역을 넘어선 AI의 실제 배포 및 상업적 실행 가능성을 강조합니다.",
+    "source": "Bloomberg",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-01-29/fiat-toyota-tycoons-back-startup-robco-in-100-million-round?leadSource=reddit_wall",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 83,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 16,
+      "reach": 14,
+      "longTerm": 20,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Hardware"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "하드웨어"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "RobCo",
+      "Physical AI",
+      "Factory Robots",
+      "Series C Funding",
+      "Industrial Automation"
+    ],
+    "searchKeywords_ko": [
+      "RobCo",
+      "물리적 AI",
+      "공장 로봇",
+      "시리즈 C 투자",
+      "산업 자동화"
+    ]
+  }
+]

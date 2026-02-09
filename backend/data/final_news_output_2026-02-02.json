@@ -1,0 +1,2324 @@
+[
+  {
+    "id": "xai-and-spacex-reportedly-exploring-merger-ahead-o-20260202",
+    "title": "xAI and SpaceX Reportedly Exploring Merger Ahead of IPO, Potentially Creating $1 Trillion Entity",
+    "title_ko": "xAI와 SpaceX, IPO 앞두고 합병 논의 보도...1조 달러 규모 기업 탄생 가능성",
+    "summary": "Reports indicate that Elon Musk's companies, xAI and SpaceX, are exploring a merger agreement prior to an initial public offering. This consolidation would reportedly unite the entities into a single company. The combined valuation of this new entity is anticipated to exceed $1 trillion.",
+    "summary_ko": "보도에 따르면 일론 머스크의 회사인 xAI와 SpaceX가 기업공개(IPO)를 앞두고 합병 계약을 모색 중이다. 이 통합은 양사를 하나의 단일 기업으로 합칠 것으로 알려졌다. 합병된 새로운 기업의 가치는 1조 달러를 초과할 것으로 예상된다.",
+    "why_it_matters": "This potential merger is significant for AI industry professionals as it could create a powerful, capital-rich conglomerate with xAI's artificial intelligence capabilities integrated into SpaceX's vast infrastructure. Such a consolidation could accelerate large-scale AI development, infrastructure deployment, and potentially reshape competitive landscapes by combining advanced AI with aerospace and satellite technology.",
+    "why_it_matters_ko": "이번 잠재적 합병은 xAI의 AI 기술 역량이 SpaceX의 방대한 인프라에 통합되어 강력하고 자본이 풍부한 복합 기업을 탄생시킬 수 있다는 점에서 AI 업계 전문가들에게 매우 중요하다. 이러한 통합은 대규모 AI 개발과 인프라 배포를 가속화하고, 첨단 AI와 항공우주 및 위성 기술의 결합을 통해 경쟁 환경을 재편할 수 있다.",
+    "source": "xAI and SpaceX",
+    "sourceUrl": "https://www.reuters.com/world/musks-spacex-merger-talks-with-xai-ahead-planned-ipo-source-says-2026-01-29/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 100,
+    "impactDetails": {
+      "industry": 21,
+      "tech": 17,
+      "reach": 23,
+      "longTerm": 20,
+      "socialEthics": 19,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Technology",
+      "Economy",
+      "Infrastructure"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "기술",
+      "경제",
+      "인프라"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "xAI",
+      "SpaceX",
+      "Merger",
+      "IPO",
+      "Elon Musk"
+    ],
+    "searchKeywords_ko": [
+      "xAI",
+      "SpaceX",
+      "합병",
+      "IPO",
+      "일론 머스크"
+    ]
+  },
+  {
+    "id": "openmind-launches-om1-based-app-store-for-humanoid-20260202",
+    "title": "OpenMind Launches OM1-Based App Store for Humanoid and Quadruped Robots",
+    "title_ko": "오픈마인드, 휴머노이드 및 4족 보행 로봇을 위한 OM1 기반 앱 스토어 출시",
+    "summary": "OpenMind has introduced an OM1-based app store designed for humanoid and quadruped robots. This platform allows these robots to download new skills, significantly enhancing their capabilities through software. The initiative aims to expand robot functionalities via a dedicated software marketplace.",
+    "summary_ko": "오픈마인드는 휴머노이드 및 4족 보행 로봇 전용 OM1 기반 앱 스토어를 선보였습니다. 이 플랫폼을 통해 로봇들은 새로운 기술을 다운로드할 수 있으며, 소프트웨어를 통해 로봇의 역량을 크게 향상시킬 수 있습니다. 이번 이니셔티브는 전용 소프트웨어 마켓플레이스를 통해 로봇의 기능을 확장하는 것을 목표로 합니다.",
+    "why_it_matters": "This news indicates a significant move towards modular, software-defined capabilities for physical AI, enabling faster development and deployment of robotic functionalities. For AI industry professionals, it highlights a growing ecosystem for creating and monetizing AI applications that directly impact the versatility and utility of various robotic platforms.",
+    "why_it_matters_ko": "이번 소식은 물리적 AI(physical AI)를 위한 모듈식, 소프트웨어 정의 역량으로의 중요한 전환을 의미하며, 로봇 기능의 개발 및 배포를 가속화할 것입니다. AI 업계 전문가들에게는 다양한 로봇 플랫폼의 다재다능함과 유용성에 직접적인 영향을 미치는 AI 애플리케이션을 만들고 수익화할 수 있는 성장하는 생태계를 부각시킵니다.",
+    "source": "Forbes",
+    "sourceUrl": "https://www.forbes.com/sites/johnkoetsier/2026/01/29/another-app-store-for-robots-launches-will-have-thousands-of-apps/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 98,
+    "impactDetails": {
+      "industry": 21,
+      "tech": 19,
+      "reach": 16,
+      "longTerm": 22,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Agent AI",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "에이전트 AI",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "OpenMind",
+      "robot app store",
+      "robotics software",
+      "humanoid robots",
+      "quadruped robots"
+    ],
+    "searchKeywords_ko": [
+      "오픈마인드",
+      "로봇 앱 스토어",
+      "로봇 소프트웨어",
+      "휴머노이드 로봇",
+      "4족 보행 로봇"
+    ]
+  },
+  {
+    "id": "anthropic-partners-with-allen-institute-and-howard-20260202",
+    "title": "Anthropic Partners with Allen Institute and Howard Hughes Medical Institute to Accelerate Scientific Discovery",
+    "title_ko": "앤스로픽, 앨런 연구소 및 하워드 휴즈 의학 연구소와 협력하여 과학적 발견 가속화",
+    "summary": "Anthropic has announced flagship partnerships with the Allen Institute and Howard Hughes Medical Institute (HHMI) to apply Claude's capabilities to frontier scientific research. These collaborations aim to bridge the gap between large-scale biological data generation and the validation of insights by augmenting human scientific judgment with AI tools. The initiative will leverage Anthropic's foundation models, agentic systems, and interpretability expertise to enable scientists to work more effectively and accelerate the pace of discovery.",
+    "summary_ko": "앤스로픽은 Claude의 역량을 최첨단 과학 연구에 적용하기 위해 앨런 연구소 및 하워드 휴즈 의학 연구소(HHMI)와 대표적인 파트너십을 체결했다고 발표했습니다. 이러한 협력은 대규모 생물학적 데이터 생성과 통찰력 검증 사이의 격차를 해소하고, AI 도구로 인간의 과학적 판단을 강화하는 것을 목표로 합니다. 이 이니셔티브는 앤스로픽의 파운데이션 모델, 에이전트 시스템 및 해석 가능성 전문 지식을 활용하여 과학자들이 더 효과적으로 작업하고 발견의 속도를 가속화할 수 있도록 지원할 것입니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it demonstrates Anthropic's strategic expansion of its AI models, particularly Claude, into the critical and data-intensive domain of scientific research. It highlights the growing trend of deploying advanced agentic AI systems and foundation models to address real-world bottlenecks in data synthesis and hypothesis generation, emphasizing the importance of interpretability and human-AI collaboration in specialized applications.",
+    "why_it_matters_ko": "이 소식은 앤스로픽이 자사 AI 모델, 특히 Claude를 중요하고 데이터 집약적인 과학 연구 분야로 전략적으로 확장하고 있음을 보여주기 때문에 AI 업계 전문가들에게 중요합니다. 이는 데이터 합성 및 가설 생성의 실제 병목 현상을 해결하기 위해 고급 에이전트 AI 시스템과 파운데이션 모델을 배포하는 추세가 증가하고 있음을 강조하며, 전문화된 애플리케이션에서 해석 가능성과 인간-AI 협업의 중요성을 부각합니다.",
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 96,
+    "impactDetails": {
+      "industry": 21,
+      "tech": 19,
+      "reach": 15,
+      "longTerm": 23,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Text AI",
+      "Agent AI",
+      "Generative AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "에이전트 AI",
+      "생성형 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "Scientific Discovery",
+      "Biological Research",
+      "Claude AI",
+      "AI Partnerships"
+    ],
+    "searchKeywords_ko": [
+      "앤스로픽",
+      "과학적 발견",
+      "생물학 연구",
+      "Claude AI",
+      "AI 파트너십"
+    ]
+  },
+  {
+    "id": "physical-intelligence-raises-over-1b-for-general-p-20260131",
+    "title": "Physical Intelligence Raises Over $1B for General-Purpose Robotic AI",
+    "title_ko": "피지컬 인텔리전스, 범용 로봇 AI 개발을 위해 10억 달러 이상 투자 유치",
+    "summary": "Physical Intelligence, a startup developing \"ChatGPT for robots,\" has raised over $1 billion at a $5.6 billion valuation. The company focuses on building general-purpose robotic foundation models trained on real-world data, with significant investment in compute resources. Co-founder Lachy Groom has stated he won't provide investors a timeline for profitability.",
+    "summary_ko": "'로봇용 ChatGPT'를 개발하는 스타트업 피지컬 인텔리전스가 56억 달러 기업 가치로 10억 달러 이상의 투자를 유치했습니다. 이 회사는 실제 데이터로 학습된 범용 로봇 파운데이션 모델 구축에 주력하며, 컴퓨트 리소스에 상당한 투자를 하고 있습니다. 공동 창업자 래치 그룸은 투자자들에게 수익성 달성 시점에 대한 로드맵을 제공하지 않을 것이라고 밝혔습니다.",
+    "why_it_matters": "This news signifies the massive and growing investments in general-purpose robotic intelligence, marking a critical phase in the AI industry. It underscores the debate between foundational research-led development and product-shipping strategies for acquiring real-world data, shaping future directions for robotic AI.",
+    "why_it_matters_ko": "이 소식은 범용 로봇 인텔리전스 분야에 대한 막대하고 증가하는 투자를 보여주며, AI 산업의 중요한 국면을 나타냅니다. 이는 실제 데이터 확보를 위한 기반 연구 중심 개발 방식과 제품 출시 중심 전략 간의 논쟁을 부각시키며, 로봇 AI의 미래 방향을 형성할 것입니다.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/01/30/physical-intelligence-stripe-veteran-lachy-grooms-latest-bet-is-building-silicon-valleys-buzziest-robot-brains/",
+    "publishedDate": "2026-01-31",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 94,
+    "impactDetails": {
+      "industry": 24,
+      "tech": 23,
+      "reach": 21,
+      "longTerm": 25,
+      "socialEthics": 24,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Generative AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "생성형 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Physical Intelligence",
+      "Robotics AI",
+      "Foundation Models",
+      "AI Investment",
+      "General-Purpose Robotics"
+    ],
+    "searchKeywords_ko": [
+      "피지컬 인텔리전스",
+      "로봇 AI",
+      "파운데이션 모델",
+      "AI 투자",
+      "범용 로봇"
+    ]
+  },
+  {
+    "id": "starbucks-rolls-out-ai-driven-order-capture-and-sm-20260202",
+    "title": "Starbucks Rolls Out AI-Driven Order Capture and Smart Queue Automation",
+    "title_ko": "스타벅스, AI 기반 주문 인식 및 스마트 큐 자동화 시스템 도입",
+    "summary": "Starbucks is implementing AI-driven order-capture technology and a \"Smart Queue\" workflow automation system. This initiative utilizes software robotics to streamline and automate the drive-thru ordering experience for customers.",
+    "summary_ko": "스타벅스가 AI 기반 주문 인식 기술과 '스마트 큐' 워크플로우 자동화 시스템을 도입합니다. 이 시스템은 소프트웨어 로보틱스를 활용하여 고객의 드라이브 스루 주문 경험을 간소화하고 자동화할 예정입니다.",
+    "why_it_matters": "This news signifies a major real-world adoption of AI and software robotics for enhancing operational efficiency in the quick-service industry. It underscores the expanding market for automation solutions and offers valuable insights into practical AI deployment challenges and successes for industry professionals.",
+    "why_it_matters_ko": "이 소식은 퀵 서비스 산업에서 운영 효율성 향상을 위한 AI 및 소프트웨어 로보틱스의 주요 실제 적용 사례를 보여줍니다. 이는 자동화 솔루션 시장의 확장을 강조하며, 업계 전문가들에게 실제 AI 구축의 과제와 성공에 대한 귀중한 통찰력을 제공합니다.",
+    "source": "Starbucks",
+    "sourceUrl": "https://about.starbucks.com/press/2026/supporting-the-moments-that-matter-with-artificial-intelligence/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 94,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 15,
+      "reach": 22,
+      "longTerm": 20,
+      "socialEthics": 19,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Tech/AI",
+      "Robotics/Physical AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "테크/AI",
+      "로보틱스/물리 AI",
+      "기술"
+    ],
+    "productServices": [
+      "Automation AI",
+      "Robotics",
+      "Voice AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "자동화 AI",
+      "로보틱스",
+      "음성 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Starbucks AI",
+      "drive-thru automation",
+      "Smart Queue",
+      "software robotics",
+      "AI order capture"
+    ],
+    "searchKeywords_ko": [
+      "스타벅스 AI",
+      "드라이브 스루 자동화",
+      "스마트 큐",
+      "소프트웨어 로보틱스",
+      "AI 주문 인식"
+    ]
+  },
+  {
+    "id": "nasas-perseverance-rover-completes-first-ai-powere-20260202",
+    "title": "NASA's Perseverance Rover Completes First AI-Powered Drive on Mars",
+    "title_ko": "NASA 퍼서비어런스 로버, 화성에서 첫 AI 기반 주행 완료",
+    "summary": "NASA's Perseverance rover successfully completed its initial AI-planned drive on Mars, utilizing Anthropic models. This enabled the rover to autonomously chart and execute hundreds of meters of navigation across the Martian terrain. This milestone demonstrates the application of artificial intelligence for enhanced robotic exploration in space.",
+    "summary_ko": "NASA 퍼서비어런스 로버가 앤트로픽(Anthropic) 모델을 활용하여 화성에서 AI가 계획한 첫 주행을 성공적으로 마쳤습니다. 이를 통해 로버는 화성 지형을 가로질러 수백 미터에 달하는 경로를 자율적으로 계획하고 실행할 수 있었습니다. 이 이정표는 우주에서 로봇 탐사를 강화하기 위한 AI(인공지능)의 적용 가능성을 입증합니다.",
+    "why_it_matters": "This news highlights the increasing capability of AI, specifically autonomous navigation and agent AI, in critical and remote applications. For AI industry professionals, it showcases the potential for AI models to operate independently in challenging environments, paving the way for more sophisticated autonomous systems in various sectors.",
+    "why_it_matters_ko": "이번 소식은 핵심적이고 원격적인 응용 분야에서 AI, 특히 자율 내비게이션(autonomous navigation) 및 에이전트 AI(agent AI)의 역량이 증대되고 있음을 강조합니다. AI 산업 전문가들에게는 AI 모델이 까다로운 환경에서 독립적으로 작동할 수 있는 잠재력을 보여주며, 이는 다양한 분야에서 보다 정교한 자율 시스템을 위한 길을 열어줄 것입니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/nasa-perseverance-rover-ai-mars-drive",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 94,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 24,
+      "reach": 20,
+      "longTerm": 23,
+      "socialEthics": 5,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Agent AI",
+      "Automation AI",
+      "Robotics",
+      "Edge/On-Device AI",
+      "Autonomous Driving AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI",
+      "자동화 AI",
+      "로보틱스",
+      "엣지/온디바이스 AI",
+      "자율주행 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Perseverance rover",
+      "Mars AI",
+      "Autonomous navigation",
+      "NASA AI",
+      "Anthropic models"
+    ],
+    "searchKeywords_ko": [
+      "퍼서비어런스 로버",
+      "화성 AI",
+      "자율 주행",
+      "NASA AI",
+      "앤트로픽 모델"
+    ]
+  },
+  {
+    "id": "waymo-launches-robotaxi-service-to-san-francisco-i-20260202",
+    "title": "Waymo Launches Robotaxi Service to San Francisco International Airport",
+    "title_ko": "웨이모, 샌프란시스코 국제공항 로보택시 서비스 개시",
+    "summary": "Waymo has initiated its robotaxi service, now extending to and from San Francisco International Airport. This expansion marks a significant milestone and a critical win for the company's business model in autonomous transportation.",
+    "summary_ko": "웨이모가 샌프란시스코 국제공항(SFO)을 오가는 로보택시 서비스를 시작했습니다. 이번 확장은 자율주행 교통 분야에서 회사의 비즈니스 모델에 있어 중요한 이정표이자 결정적인 성공을 의미합니다.",
+    "why_it_matters": "This development is crucial for AI industry professionals as it represents a major step in the commercialization and broader public adoption of autonomous driving technology. It validates the efficacy and readiness of AI systems for complex real-world transportation services, specifically in challenging environments like airports.",
+    "why_it_matters_ko": "이번 발전은 자율주행 기술의 상업화와 광범위한 대중 채택에 있어 주요 단계를 나타내므로, AI 산업 전문가들에게 매우 중요합니다. 특히 공항과 같은 복잡하고 까다로운 실제 교통 환경에서 AI 시스템의 효율성과 준비 상태를 입증하는 계기가 됩니다.",
+    "source": "Waymo",
+    "sourceUrl": "https://waymo.com/blog/2026/01/waymo-rides-at-sfo",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 92,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 18,
+      "reach": 17,
+      "longTerm": 21,
+      "socialEthics": 16,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Robotics/Physical AI",
+      "Automotive",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "로보틱스/물리 AI",
+      "자동차",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Autonomous Driving AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자율주행 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Waymo",
+      "Robotaxi",
+      "San Francisco Airport",
+      "Autonomous Driving",
+      "AI transportation"
+    ],
+    "searchKeywords_ko": [
+      "웨이모",
+      "로보택시",
+      "샌프란시스코 공항",
+      "자율주행",
+      "AI 교통"
+    ]
+  },
+  {
+    "id": "nvidia-mercedes-benz-and-uber-partner-on-premium-s-20260129",
+    "title": "Nvidia, Mercedes-Benz, and Uber Partner on Premium S-Class Robotaxi Project",
+    "title_ko": "Nvidia, Mercedes-Benz, Uber, 프리미엄 S클래스 로보택시 프로젝트 공동 추진",
+    "summary": "Nvidia, Mercedes-Benz, and Uber are collaboratively advancing a project for a premium S-Class robotaxi. This autonomous vehicle will be powered by Nvidia's Level 4 autonomous stack. While the development is moving forward, a specific launch date has not yet been disclosed.",
+    "summary_ko": "Nvidia, Mercedes-Benz, Uber가 프리미엄 S클래스 로보택시 프로젝트를 공동으로 추진하고 있습니다. 이 자율주행 차량은 Nvidia의 Level 4 자율주행 스택을 기반으로 구동될 예정입니다. 현재 개발이 진행 중이지만, 구체적인 출시일은 아직 공개되지 않았습니다.",
+    "why_it_matters": "This collaboration highlights a significant industry trend where leading technology and automotive companies are merging expertise to push the boundaries of practical Level 4 autonomous driving. For AI professionals, it underscores the critical role of advanced AI stacks in real-world applications and the complex integration challenges in developing safe and reliable self-driving systems.",
+    "why_it_matters_ko": "이번 협력은 선도적인 기술 및 자동차 기업들이 전문성을 결합하여 실제 Level 4 자율주행의 영역을 확장하고 있다는 중요한 산업 트렌드를 보여줍니다. AI 전문가들에게는 실제 애플리케이션에서 첨단 AI 스택의 핵심적인 역할을 강조하며, 안전하고 신뢰할 수 있는 자율주행 시스템 개발에 따르는 복잡한 통합 과제를 시사합니다.",
+    "source": "Nvidia",
+    "sourceUrl": "https://blogs.nvidia.com/blog/mercedes-benz-l4-s-class-drive-av-platform/",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 92,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 17,
+      "reach": 19,
+      "longTerm": 20,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Automotive",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "자동차",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Autonomous Driving AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자율주행 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Nvidia",
+      "Mercedes-Benz",
+      "Uber",
+      "Robotaxi",
+      "Autonomous Driving"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아",
+      "메르세데스-벤츠",
+      "우버",
+      "로보택시",
+      "자율주행"
+    ]
+  },
+  {
+    "id": "us-researchers-develop-hydrogel-synthetic-muscle-f-20260202",
+    "title": "U.S. Researchers Develop Hydrogel Synthetic Muscle for Faster, More Precise Soft Robotics",
+    "title_ko": "미국 연구진, 더 빠르고 정밀한 소프트 로봇을 위한 하이드로젤 합성 근육 개발",
+    "summary": "U.S. researchers have developed a hydrogel \"synthetic muscle\" featuring microfluidic channels. This innovation is designed to accelerate fuel and signal delivery, leading to faster and more precise soft robots and prosthetics.",
+    "summary_ko": "미국 연구진이 미세유체 채널을 특징으로 하는 하이드로젤 '합성 근육'을 개발했습니다. 이 혁신은 연료 및 신호 전달을 가속화하여 더 빠르고 정밀한 소프트 로봇과 보철물 개발에 기여할 것으로 기대됩니다.",
+    "why_it_matters": "This development is significant for AI industry professionals as it provides a foundation for more advanced and responsive physical AI systems. The enhanced speed and precision of synthetic muscles can unlock new possibilities for AI-driven soft robots and prosthetics, enabling more complex and intelligent functionalities.",
+    "why_it_matters_ko": "이 개발은 더 진보되고 반응성이 뛰어난 물리적 AI 시스템의 기반을 제공한다는 점에서 AI 산업 전문가들에게 중요합니다. 합성 근육의 향상된 속도와 정밀성은 AI 기반 소프트 로봇 및 보철물에 대한 새로운 가능성을 열어주어, 더욱 복잡하고 지능적인 기능을 구현할 수 있도록 할 것입니다.",
+    "source": "University of Nebraska-Lincoln",
+    "sourceUrl": "https://news.unl.edu/article/husker-researchers-make-gains-on-developing-synthetic-muscle",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 89,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 22,
+      "reach": 12,
+      "longTerm": 21,
+      "socialEthics": 16,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [],
+    "coreElements_ko": [],
+    "searchKeywords": [
+      "synthetic muscle",
+      "hydrogel",
+      "soft robotics",
+      "prosthetics",
+      "microfluidics"
+    ],
+    "searchKeywords_ko": [
+      "합성 근육",
+      "하이드로젤",
+      "소프트 로봇",
+      "보철물",
+      "미세유체공학"
+    ]
+  },
+  {
+    "id": "waymo-achieves-110b-valuation-and-secures-signific-20260131",
+    "title": "Waymo Achieves $110B Valuation and Secures Significant Funding",
+    "title_ko": "웨이모, 1,100억 달러 기업가치 달성 및 대규모 투자 유치",
+    "summary": "Waymo, Alphabet's autonomous vehicle division, has reached a $110 billion valuation, securing a $16 billion funding round primarily from Alphabet, making it the most valuable private transportation company. The company is aggressively expanding its public service and revenue, but is also under a NHTSA investigation following a recent incident.",
+    "summary_ko": "알파벳의 자율주행 부문인 웨이모는 1,100억 달러의 기업가치를 달성했으며, 주로 알파벳으로부터 160억 달러 규모의 투자를 유치하여 가장 가치 있는 비상장 운송 회사가 되었습니다. 웨이모는 현재 대중 서비스와 매출을 공격적으로 확장하고 있지만, 최근 발생한 사건으로 인해 NHTSA의 조사를 받고 있습니다.",
+    "why_it_matters": "This valuation signals a maturation of autonomous driving AI from research to a scalable commercial application, attracting significant investment. However, ongoing safety concerns, regulatory hurdles, and increasing competition highlight critical challenges and the need for robust AI safety and ethical development in the sector.",
+    "why_it_matters_ko": "이러한 가치 평가는 자율주행 AI가 연구 단계를 넘어 확장 가능한 상업적 애플리케이션으로 성숙했음을 시사하며, 상당한 투자를 유치하고 있습니다. 하지만 지속적인 안전 문제, 규제 장벽, 그리고 증가하는 경쟁은 이 분야의 중요한 과제들을 부각시키며, 강력한 AI 안전 및 윤리적 개발의 필요성을 강조합니다.",
+    "source": "Waymo",
+    "sourceUrl": "https://www.mercurynews.com/2026/01/31/waymo-seeking-about-16-billion-near-110-billion-valuation/",
+    "publishedDate": "2026-01-31",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 89,
+    "impactDetails": {
+      "industry": 21,
+      "tech": 15,
+      "reach": 16,
+      "longTerm": 22,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Automotive",
+      "Robotics/Physical AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "자동차",
+      "로보틱스/물리 AI"
+    ],
+    "productServices": [
+      "Autonomous Driving AI",
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "자율주행 AI",
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Safety/Ethics",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "안전/윤리",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Waymo",
+      "Autonomous Vehicles",
+      "Robotaxi",
+      "AI Valuation",
+      "Self-driving cars"
+    ],
+    "searchKeywords_ko": [
+      "웨이모",
+      "자율주행차",
+      "로보택시",
+      "AI 기업가치",
+      "자율주행 자동차"
+    ]
+  },
+  {
+    "id": "chinas-pla-demonstrates-advanced-ai-powered-autono-20260124",
+    "title": "China's PLA Demonstrates Advanced AI-Powered Autonomous Drone Swarms",
+    "title_ko": "중국 인민해방군, 첨단 AI 기반 자율 드론 군집 시연",
+    "summary": "China's People's Liberation Army showcased a 200-drone swarm capable of autonomous coordination through \"intelligent algorithms,\" even when control links are lost. A single operator can direct broad objectives, shifting military control to \"supervision at scale\" as the swarm handles detailed execution. This advancement highlights a new era of decentralized military robotics, building on a truck-based launch system.",
+    "summary_ko": "중국 인민해방군이 제어 통신이 두절된 상황에서도 '지능형 알고리즘'을 통해 자율적으로 협력할 수 있는 200대 규모의 드론 군집을 시연했습니다. 단 한 명의 운용자가 광범위한 목표를 지시하면 드론 군집이 상세한 실행을 처리하며, 이는 군사 통제가 '대규모 감독' 형태로 전환됨을 의미합니다. 트럭 기반 발사 시스템을 기반으로 구축된 이러한 진보는 분산형 군사 로봇공학의 새로운 시대를 열었습니다.",
+    "why_it_matters": "This development signifies a critical leap in AI's role in defense, demonstrating highly resilient and scalable autonomous systems through decentralized decision-making. For AI professionals, it underscores the potential and challenges of deploying advanced algorithms for complex, real-world, multi-agent coordination in environments with communication constraints.",
+    "why_it_matters_ko": "이러한 발전은 분산형 의사결정을 통해 높은 회복 탄력성과 확장성을 갖춘 자율 시스템을 입증하며, 국방 분야에서 AI의 역할에 중대한 도약을 의미합니다. AI 전문가들에게는 통신 제약이 있는 환경에서 복잡하고 실제적인 다중 에이전트 협업을 위한 첨단 알고리즘 배포의 잠재력과 도전 과제를 강조합니다.",
+    "source": "tomshardware",
+    "sourceUrl": "https://www.tomshardware.com/tech-industry/china-reveals-200-strong-drone-swarm-uses-intelligent-algorithm-to-allow-individual-units-to-cooperate-autonomously-even-after-losing-communication-with-operator",
+    "publishedDate": "2026-01-24",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 88,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 23,
+      "reach": 18,
+      "longTerm": 24,
+      "socialEthics": 23,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Defense/Security",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Research/Innovation",
+      "Hardware"
+    ],
+    "categories_ko": [
+      "국방/보안",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "연구/혁신",
+      "하드웨어"
+    ],
+    "productServices": [
+      "Robotics",
+      "Agent AI",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "에이전트 AI",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Chinese drone swarm",
+      "Autonomous military drones",
+      "Swarm intelligence",
+      "PLA AI",
+      "Robotic warfare"
+    ],
+    "searchKeywords_ko": [
+      "중국 드론 군집",
+      "자율 군용 드론",
+      "군집 지능",
+      "PLA AI",
+      "로봇 전쟁"
+    ]
+  },
+  {
+    "id": "google-deepmind-researcher-david-silver-departs-to-20260202",
+    "title": "Google DeepMind Researcher David Silver Departs to Launch AI Startup Ineffable Intelligence",
+    "title_ko": "구글 딥마인드 연구원 데이비드 실버, AI 스타트업 '이네퍼블 인텔리전스' 설립 위해 퇴사",
+    "summary": "David Silver, a prominent Google DeepMind researcher known for his instrumental role in projects like AlphaGo, has left the company after 15 years. He is launching a new AI startup called Ineffable Intelligence, based in London, which is actively recruiting AI researchers and seeking venture capital funding. This move sees a key figure in the AI research community transitioning into the startup ecosystem.",
+    "summary_ko": "알파고(AlphaGo)와 같은 프로젝트에서 핵심적인 역할을 한 것으로 알려진 구글 딥마인드의 저명한 연구원 데이비드 실버가 15년간 몸담았던 회사를 떠났습니다. 그는 런던에 기반을 둔 '이네퍼블 인텔리전스(Ineffable Intelligence)'라는 새로운 AI 스타트업을 설립하고 있으며, 이 스타트업은 현재 AI 연구원들을 적극적으로 모집하고 벤처 캐피탈 투자를 유치하고 있습니다. 이번 행보는 AI 연구 커뮤니티의 핵심 인물이 스타트업 생태계로 진출하는 중요한 전환점을 보여줍니다.",
+    "why_it_matters": "This news signifies a notable talent migration from a leading AI research institution to the startup ecosystem, potentially fostering new competitive ventures and accelerating innovation. For AI industry professionals, it highlights the dynamic nature of the AI talent landscape and the continuous emergence of new players.",
+    "why_it_matters_ko": "이번 소식은 선도적인 AI 연구 기관에서 스타트업 생태계로의 주목할 만한 인재 이동을 의미하며, 이는 잠재적으로 새로운 경쟁 벤처 기업을 육성하고 혁신을 가속화할 수 있습니다. AI 업계 전문가들에게는 AI 인재 지형의 역동적인 특성과 새로운 플레이어들의 지속적인 등장을 잘 보여주는 사례입니다.",
+    "source": "Google DeepMind",
+    "sourceUrl": "https://fortune.com/2026/01/30/google-deepmind-ai-researcher-david-silver-leaves-to-found-ai-startup-ineffable-intelligence/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 88,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 18,
+      "reach": 17,
+      "longTerm": 23,
+      "socialEthics": 8,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Research/Innovation",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "연구/혁신",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "David Silver",
+      "Ineffable Intelligence",
+      "Google DeepMind",
+      "AI startup",
+      "AI research"
+    ],
+    "searchKeywords_ko": [
+      "데이비드 실버",
+      "이네퍼블 인텔리전스",
+      "구글 딥마인드",
+      "AI 스타트업",
+      "AI 연구"
+    ]
+  },
+  {
+    "id": "dubai-launches-global-challenge-for-worlds-first-r-20260202",
+    "title": "Dubai Launches Global Challenge for World's First Robot-Built Villa",
+    "title_ko": "두바이, 세계 최초 로봇 건설 빌라 위한 글로벌 챌린지 시작",
+    "summary": "Dubai is spearheading a global initiative to construct the world's first fully robot-built villa. This ambitious project utilizes a new ConTech hub and aims for 70% offsite, automated construction processes. The move signals Dubai's significant push into advanced robotics and automation within the construction industry.",
+    "summary_ko": "두바이가 세계 최초의 완전 로봇 건설 빌라를 짓기 위한 글로벌 이니셔티브를 주도하고 있습니다. 이 야심 찬 프로젝트는 새로운 ConTech 허브를 활용하며, 건설 공정의 70%를 현장 외 자동화 방식으로 진행하는 것을 목표로 합니다. 이는 두바이가 건설 산업 내 첨단 로봇 공학 및 자동화 분야로의 전환에 상당한 노력을 기울이고 있음을 시사합니다.",
+    "why_it_matters": "This initiative represents a pivotal step for the AI industry, demonstrating the practical application and scalability of robotics and automation in traditionally labor-intensive sectors like construction. It pushes the boundaries for 'Robotics/Physical AI' and 'Automation AI', showcasing a real-world model for future smart infrastructure development.",
+    "why_it_matters_ko": "이 이니셔티브는 AI 산업에 있어 중추적인 단계로, 건설과 같이 전통적으로 노동 집약적인 분야에서 로봇 공학 및 자동화의 실제 적용 가능성과 확장성을 보여줍니다. 이는 'Robotics/Physical AI'와 'Automation AI'의 경계를 확장하며, 미래 스마트 인프라 개발을 위한 실질적인 모델을 제시합니다.",
+    "source": "DXBMediaOffice",
+    "sourceUrl": "https://x.com/DXBMediaOffice/status/2016141664491123086?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2016141664491123086%7Ctwgr%5E05450d1fbf40d43ae3471a690bd253165a5b2549%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Finterestingengineering.com%2Fai-robotics%2Fdubai-robot-built-villa-construction",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 86,
+    "impactDetails": {
+      "industry": 17,
+      "tech": 19,
+      "reach": 14,
+      "longTerm": 20,
+      "socialEthics": 16,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Infrastructure",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "인프라",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Dubai",
+      "Robot construction",
+      "Automated villa",
+      "ConTech",
+      "Robotics in construction"
+    ],
+    "searchKeywords_ko": [
+      "두바이",
+      "로봇 건설",
+      "자동화 빌라",
+      "콘테크",
+      "건설 로봇"
+    ]
+  },
+  {
+    "id": "generative-ai-guides-scientists-in-synthesizing-co-20260202",
+    "title": "Generative AI Guides Scientists in Synthesizing Complex Materials",
+    "title_ko": "생성형 AI, 복잡한 물질 합성에 과학자들을 안내하다",
+    "summary": "MIT researchers have developed a generative AI model that guides scientists in synthesizing complex materials, overcoming a major bottleneck in materials discovery. The model, which suggests promising synthesis routes, demonstrated state-of-the-art accuracy in predicting pathways for zeolites, enabling the creation of new materials with improved properties. This innovation could accelerate the development of advanced materials for various applications.",
+    "summary_ko": "MIT 연구진은 물질 발견의 주요 병목 현상을 극복하기 위해, 복잡한 물질 합성에 과학자들을 안내하는 생성형 AI 모델을 개발했습니다. 이 모델은 유망한 합성 경로를 제시하며, 제올라이트 경로 예측에서 최첨단 정확도를 보여주어 향상된 특성을 가진 새로운 물질의 생성을 가능하게 했습니다. 이러한 혁신은 다양한 응용 분야를 위한 첨단 소재 개발을 가속화할 수 있습니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it demonstrates generative AI's potent application in scientific discovery, specifically in optimizing complex material synthesis processes. It exemplifies how AI can move beyond content generation to accelerate research and development in critical fields like materials science, opening new avenues for specialized AI solutions.",
+    "why_it_matters_ko": "이 소식은 생성형 AI가 과학적 발견, 특히 복잡한 물질 합성 공정 최적화 분야에서 강력하게 활용될 수 있음을 보여준다는 점에서 AI 산업 전문가들에게 중요합니다. 이는 AI가 단순한 콘텐츠 생성을 넘어 재료 과학과 같은 핵심 분야의 연구 개발을 가속화하며, 전문화된 AI 솔루션의 새로운 가능성을 열어줄 수 있음을 입증합니다.",
+    "source": "MIT",
+    "sourceUrl": "https://news.mit.edu/2026/how-generative-ai-can-help-scientists-synthesize-complex-materials-0202",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 85,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 22,
+      "reach": 12,
+      "longTerm": 23,
+      "socialEthics": 8,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Data",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "데이터",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Generative AI",
+      "Materials Synthesis",
+      "Zeolites",
+      "Scientific Research",
+      "AI for Science"
+    ],
+    "searchKeywords_ko": [
+      "생성형 AI",
+      "물질 합성",
+      "제올라이트",
+      "과학 연구",
+      "과학 분야 AI"
+    ]
+  },
+  {
+    "id": "unitrees-g1-humanoid-robot-achieves-extreme-cold-e-20260202",
+    "title": "Unitree's G1 Humanoid Robot Achieves Extreme Cold Endurance Milestone",
+    "title_ko": "Unitree G1 휴머노이드 로봇, 극한 추위 내구성 이정표 달성",
+    "summary": "Unitree’s G1 humanoid robot successfully completed over 130,000 steps across a -47.4°C snowfield in Xinjiang. This accomplishment marks a significant first for autonomous humanoid robots operating in such extreme cold conditions. It demonstrates advanced capabilities in robot design and autonomous navigation in harsh environments.",
+    "summary_ko": "Unitree의 G1 휴머노이드 로봇이 신장 지역의 영하 47.4°C 설원에서 13만 보 이상을 성공적으로 완주했습니다. 이 성과는 극한의 한랭 조건에서 작동하는 자율 휴머노이드 로봇에게는 매우 중요한 첫 번째 업적입니다. 이는 로봇 설계 및 혹독한 환경에서의 자율 내비게이션에 대한 진보된 역량을 입증합니다.",
+    "why_it_matters": "For AI industry professionals, this milestone highlights crucial advancements in robotics, particularly concerning hardware resilience and the performance of autonomous control systems in challenging environmental conditions. It signifies a key step toward the potential deployment of humanoid robots in extreme or hazardous environments where human presence is difficult or unsafe.",
+    "why_it_matters_ko": "AI 산업 전문가들에게 이 이정표는 로봇 공학, 특히 하드웨어 탄력성 및 까다로운 환경 조건에서의 자율 제어 시스템 성능과 관련된 중요한 발전을 강조합니다. 이는 인간의 접근이 어렵거나 위험한 극한 또는 유해 환경에 휴머노이드 로봇을 배치할 수 있는 잠재력을 향한 핵심적인 단계임을 의미합니다.",
+    "source": "cnevpost",
+    "sourceUrl": "https://cnevpost.com/2026/02/02/unitree-humanoid-robots-extreme-cold-traversing-snowfield/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 85,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 22,
+      "reach": 15,
+      "longTerm": 20,
+      "socialEthics": 10,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Unitree G1",
+      "Humanoid robot",
+      "Extreme cold endurance",
+      "Autonomous robotics",
+      "Snowfield traversal"
+    ],
+    "searchKeywords_ko": [
+      "유니트리 G1",
+      "휴머노이드 로봇",
+      "극한 한랭 내구성",
+      "자율 로봇 공학",
+      "설원 횡단"
+    ]
+  },
+  {
+    "id": "electronic-noses-for-robots-rapidly-improving-with-20260202",
+    "title": "Electronic Noses for Robots Rapidly Improving with Multi-Sensor Arrays and AI",
+    "title_ko": "다중 센서 어레이와 AI로 빠르게 발전하는 로봇용 전자 코",
+    "summary": "A new review in npj Robotics highlights the significant advancements in electronic noses designed for robots. These improvements are primarily driven by the integration of multi-sensor arrays and sophisticated AI-powered odor-tracking algorithms. This development signifies a major step towards equipping robots with enhanced olfactory capabilities for various applications.",
+    "summary_ko": "npj Robotics에 게재된 새로운 리뷰에 따르면, 로봇용 전자 코 분야에서 상당한 발전이 이루어졌습니다. 이러한 발전은 주로 다중 센서 어레이와 정교한 AI 기반 냄새 추적 알고리즘의 통합에 힘입은 것입니다. 이번 개발은 로봇에 향상된 후각 기능을 부여하여 다양한 분야에 활용할 수 있도록 하는 중요한 진전을 의미합니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it demonstrates a critical advancement in robotic perception, expanding robots' ability to interact with and understand their environments through olfaction. The combination of multi-sensor hardware and AI algorithms provides a practical framework for developing more intelligent and autonomous robotic systems across various sectors.",
+    "why_it_matters_ko": "이 소식은 AI 산업 전문가들에게 매우 중요합니다. 로봇 인지 분야의 중요한 발전을 보여주며, 로봇이 후각을 통해 환경과 상호작용하고 이해하는 능력을 확장하기 때문입니다. 다중 센서 하드웨어와 AI 알고리즘의 결합은 다양한 분야에서 더욱 지능적이고 자율적인 로봇 시스템을 개발하기 위한 실용적인 프레임워크를 제공합니다.",
+    "source": "npj Robotics",
+    "sourceUrl": "https://www.nature.com/articles/s44182-025-00071-y",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 83,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 20,
+      "reach": 8,
+      "longTerm": 22,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI",
+      "Healthcare/Science"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI",
+      "의료/과학"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Edge/On-Device AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "엣지/온디바이스 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Electronic noses",
+      "Robotic olfaction",
+      "Multi-sensor arrays",
+      "AI odor tracking",
+      "Robotics innovation"
+    ],
+    "searchKeywords_ko": [
+      "전자 코",
+      "로봇 후각",
+      "다중 센서 어레이",
+      "AI 냄새 추적",
+      "로봇 혁신"
+    ]
+  },
+  {
+    "id": "robco-secures-100m-lightspeed-led-series-c-funding-20260129",
+    "title": "RobCo Secures $100M Lightspeed-Led Series C Funding at $500M Valuation",
+    "title_ko": "로브코, 라이트스피드 주도 1억 달러 규모 시리즈 C 투자 유치 (기업 가치 5억 달러 평가)",
+    "summary": "Munich-based RobCo has successfully raised $100 million in Series C funding, led by Lightspeed, valuing the company at $500 million. This capital infusion is intended to scale its \"physical AI\" factory robots, positioning the company as a significant player in the manufacturing sector.",
+    "summary_ko": "뮌헨에 본사를 둔 로브코는 라이트스피드가 주도하는 1억 달러 규모의 시리즈 C 투자를 성공적으로 유치했으며, 이로써 기업 가치는 5억 달러로 평가받았습니다. 이번 자금 조달은 자사의 \"physical AI\" 공장 로봇을 확장하는 데 사용될 예정이며, 이를 통해 제조 분야에서 중요한 역할을 하는 기업으로 자리매김할 것입니다.",
+    "why_it_matters": "This investment signifies strong market confidence in the growth of 'physical AI' and advanced robotics within manufacturing. For AI industry professionals, it underscores the increasing importance and investment in AI applications that directly interact with the physical world, driving innovation in industrial automation and intelligent factory solutions.",
+    "why_it_matters_ko": "이번 투자는 제조 분야에서 'physical AI'와 첨단 로봇 공학의 성장에 대한 시장의 강력한 신뢰를 보여줍니다. AI 업계 전문가들에게 이는 물리적 세계와 직접 상호작용하는 AI 애플리케이션의 중요성과 투자 증가를 강조하며, 산업 자동화 및 지능형 공장 솔루션의 혁신을 이끌고 있습니다.",
+    "source": "Bloomberg",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-01-29/fiat-toyota-tycoons-back-startup-robco-in-100-million-round?leadSource=reddit_wall",
+    "publishedDate": "2026-01-29",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 82,
+    "impactDetails": {
+      "industry": 17,
+      "tech": 16,
+      "reach": 13,
+      "longTerm": 19,
+      "socialEthics": 17,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "RobCo funding",
+      "Physical AI",
+      "Factory robots",
+      "Robotics manufacturing",
+      "Series C investment"
+    ],
+    "searchKeywords_ko": [
+      "로브코 투자",
+      "물리적 AI",
+      "공장 로봇",
+      "로봇 제조",
+      "시리즈 C 투자"
+    ]
+  },
+  {
+    "id": "cohere-launches-model-vault-for-secure-scalable-ai-20260202",
+    "title": "Cohere Launches Model Vault for Secure, Scalable AI Model Inference",
+    "title_ko": "코히어, 안전하고 확장 가능한 AI 모델 추론을 위한 'Model Vault' 출시",
+    "summary": "Cohere has introduced Model Vault, a new fully isolated SaaS platform designed for secure and scalable AI model inference. This private platform simplifies the deployment and scaling of Cohere's models, offering guaranteed performance. Its goal is to allow teams to concentrate on developing applications rather than managing complex infrastructure.",
+    "summary_ko": "코히어는 안전하고 확장 가능한 AI 모델 추론을 위해 설계된 새로운 완전 격리형 SaaS 플랫폼인 'Model Vault'를 선보였습니다. 이 프라이빗 플랫폼은 코히어 모델의 배포 및 확장을 간소화하고 보장된 성능을 제공합니다. 이를 통해 팀은 복잡한 인프라 관리에 시간을 낭비하는 대신 애플리케이션 개발에 집중할 수 있도록 돕는 것이 목표입니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it addresses critical enterprise concerns around the secure, scalable, and performant deployment of AI models. By offering a managed SaaS solution, Cohere enables organizations to integrate AI capabilities more efficiently, reducing infrastructure burden and accelerating application development.",
+    "why_it_matters_ko": "이 소식은 AI 모델의 안전하고 확장 가능하며 고성능 배포와 관련된 기업의 핵심 우려 사항들을 해결한다는 점에서 AI 업계 전문가들에게 중요합니다. 코히어는 관리형 SaaS 솔루션을 제공함으로써 기업이 AI 기능을 더욱 효율적으로 통합하고, 인프라 부담을 줄이며, 애플리케이션 개발을 가속화할 수 있도록 지원합니다.",
+    "source": "Cohere",
+    "sourceUrl": "https://cohere.com/blog/model-vault",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 81,
+    "impactDetails": {
+      "industry": 19,
+      "tech": 17,
+      "reach": 12,
+      "longTerm": 20,
+      "socialEthics": 13,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Infrastructure",
+      "Defense/Security"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "인프라",
+      "국방/보안"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Cohere",
+      "Model Vault",
+      "AI inference",
+      "Secure AI platform",
+      "Scalable AI deployment"
+    ],
+    "searchKeywords_ko": [
+      "코히어",
+      "모델 볼트",
+      "AI 추론",
+      "안전한 AI 플랫폼",
+      "확장 가능한 AI 배포"
+    ]
+  },
+  {
+    "id": "persona-ai-partners-with-louisiana-to-pilot-humano-20260202",
+    "title": "Persona AI Partners with Louisiana to Pilot Humanoid Robots in Steel Plants",
+    "title_ko": "페르소나 AI, 루이지애나 주와 제철소 휴머노이드 로봇 시범 도입 협력",
+    "summary": "Persona AI is collaborating with Louisiana to implement humanoid robots at an SSE Steel plant. This initiative aims to test \"4D job\" tasks, such as welding, within real-world factory conditions.",
+    "summary_ko": "페르소나 AI는 루이지애나 주와 협력하여 SSE 제철소에 휴머노이드 로봇을 도입합니다. 이 이니셔티브는 용접과 같은 '4D 작업' 업무를 실제 공장 환경에서 테스트하는 것을 목표로 합니다.",
+    "why_it_matters": "This pilot program demonstrates a significant step in the practical application and scalability of humanoid robotics within heavy industry. It will provide crucial real-world data and insights into the challenges and opportunities for AI and robotics development in complex, demanding environments.",
+    "why_it_matters_ko": "이 시범 프로그램은 중공업 분야에서 휴머노이드 로봇 기술의 실제 적용 및 확장성 측면에서 중대한 진전을 보여줍니다. 이는 복잡하고 까다로운 환경에서 AI 및 로봇 공학 개발의 도전 과제와 기회에 대한 중요한 실제 데이터와 통찰력을 제공할 것입니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/us-humanoid-robot-louisiana-steel-plant",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 80,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 15,
+      "reach": 12,
+      "longTerm": 19,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Research/Innovation",
+      "Hardware",
+      "Business"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "연구/혁신",
+      "하드웨어",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Persona AI",
+      "Humanoid robots",
+      "Industrial automation",
+      "Steel plant",
+      "Robotics pilot"
+    ],
+    "searchKeywords_ko": [
+      "페르소나 AI",
+      "휴머노이드 로봇",
+      "산업 자동화",
+      "제철소",
+      "로봇 시범 도입"
+    ]
+  },
+  {
+    "id": "empa-upgrades-firedrone-with-advanced-heat-resista-20260127",
+    "title": "EMPA Upgrades FireDrone with Advanced Heat-Resistant Polyimide Aerogel Insulation",
+    "title_ko": "EMPA, 고성능 내열 폴리이미드 에어로젤 단열재로 FireDrone 업그레이드",
+    "summary": "The Swiss research institute EMPA has enhanced its FireDrone by integrating a new polyimide aerogel insulation layer. This upgrade enables the drone to withstand temperatures of up200°C (392°F) for a duration of up to 10 minutes. The improved thermal resistance significantly boosts the drone's operational capabilities in extreme heat environments.",
+    "summary_ko": "스위스 연구소 EMPA는 새로운 폴리이미드 에어로젤 단열층을 FireDrone에 통합하여 성능을 향상시켰습니다. 이번 업그레이드를 통해 드론은 최대 200°C (392°F)의 온도에서 최대 10분간 견딜 수 있게 되었습니다. 향상된 내열성은 극한의 고온 환경에서 드론의 운용 능력을 크게 향상시킵니다.",
+    "why_it_matters": "This development is significant for AI industry professionals as it enhances the durability and operational envelope of robotic systems, particularly AI-powered drones. Increased heat resistance allows these intelligent machines to perform crucial tasks, such as emergency response and industrial inspections, more safely and reliably in hazardous conditions, expanding the practical applications for AI in demanding environments.",
+    "why_it_matters_ko": "이번 개발은 AI 기반 드론을 포함한 로봇 시스템의 내구성과 운용 범위를 넓혀 AI 산업 전문가들에게 중요합니다. 향상된 내열성을 통해 이 지능형 기계들은 비상 대응 및 산업 검사와 같은 핵심 임무를 위험한 환경에서 더욱 안전하고 안정적으로 수행할 수 있으며, 이는 까다로운 환경에서 AI의 실제 적용 분야를 확장하는 데 기여합니다.",
+    "source": "New Atlas",
+    "sourceUrl": "https://newatlas.com/drones/firedrone-extreme-heat-resistance-firefighting-empa/",
+    "publishedDate": "2026-01-27",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 79,
+    "impactDetails": {
+      "industry": 14,
+      "tech": 18,
+      "reach": 10,
+      "longTerm": 17,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Technology"
+    ],
+    "categories_ko": [
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [],
+    "coreElements_ko": [],
+    "searchKeywords": [
+      "FireDrone",
+      "EMPA",
+      "Aerogel insulation",
+      "Drone technology",
+      "Heat resistance"
+    ],
+    "searchKeywords_ko": [
+      "FireDrone",
+      "EMPA",
+      "에어로젤 단열재",
+      "드론 기술",
+      "내열성"
+    ]
+  },
+  {
+    "id": "nvidia-ceo-jensen-huang-denies-stalled-100-billion-20260202",
+    "title": "Nvidia CEO Jensen Huang Denies Stalled $100 Billion OAI Deal, Promises Record Investment",
+    "title_ko": "엔비디아 CEO 젠슨 황, 1,000억 달러 규모 OAI 거래 좌초설 부인하며 사상 최대 투자 약속",
+    "summary": "Nvidia CEO Jensen Huang vehemently denied reports that the company's $100 billion OAI deal had stalled, labeling such claims as \"complete nonsense.\" He further assured that this would represent the chipmaker's largest investment to date.",
+    "summary_ko": "엔비디아 CEO 젠슨 황은 회사의 1,000억 달러 규모 OAI 거래가 좌초되었다는 보도 내용을 강력히 부인하며, 그러한 주장을 '완전한 허튼소리'라고 일축했다. 그는 또한 이번 투자가 칩 제조업체로서 엔비디아의 사상 최대 규모 투자가 될 것이라고 강조했다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Nvidia",
+    "sourceUrl": "https://link.therundown.ai/z2Wb4M",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 78,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 10,
+      "reach": 21,
+      "longTerm": 23,
+      "socialEthics": 2,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Computing",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "컴퓨팅",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Nvidia",
+      "Jensen Huang",
+      "OAI deal",
+      "AI investment",
+      "Chipmaker"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아",
+      "젠슨 황",
+      "OAI 거래",
+      "AI 투자",
+      "칩 제조업체"
+    ]
+  },
+  {
+    "id": "gartner-forecasts-limited-humanoid-robot-deploymen-20260121",
+    "title": "Gartner Forecasts Limited Humanoid Robot Deployment by 2028",
+    "title_ko": "가트너, 2028년까지 휴머노이드 로봇 도입은 제한적일 것으로 전망",
+    "summary": "Gartner predicts that fewer than 20 companies will deploy humanoid robots in production by 2028, despite substantial investment in the sector. The research firm highlights technical limitations, integration complexity, high costs, and battery life as major barriers to widespread adoption. Gartner suggests that 'polyfunctional' robots will offer better returns on investment than humanoids for many operations.",
+    "summary_ko": "가트너는 해당 분야에 대한 상당한 투자에도 불구하고 2028년까지 20개 미만의 기업만이 휴머노이드 로봇을 생산 현장에 도입할 것이라고 예측합니다. 이 연구 기관은 기술적 한계, 통합 복잡성, 높은 비용, 배터리 수명을 광범위한 채택의 주요 장애물로 지적합니다. 가트너는 많은 작업에서 휴머노이드 로봇보다 '다기능(polyfunctional)' 로봇이 더 나은 투자 수익을 제공할 것이라고 제안합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Gartner",
+    "sourceUrl": "https://www.gartner.com/en/newsroom/press-releases/2026-01-21-gartner-predicts-fewer-than-20-companies-will-scale-humanoid-robots-for-manufacturing-and-supply-chain-to-production-stage-by-2028",
+    "publishedDate": "2026-01-21",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 12,
+      "reach": 18,
+      "longTerm": 19,
+      "socialEthics": 6,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Humanoid robots",
+      "Gartner report",
+      "Robotics industry",
+      "AI deployment",
+      "Industrial automation"
+    ],
+    "searchKeywords_ko": [
+      "휴머노이드 로봇",
+      "가트너 보고서",
+      "로봇 산업",
+      "AI 도입",
+      "산업 자동화"
+    ]
+  },
+  {
+    "id": "openai-to-retire-gpt-4o-and-other-legacy-models-fr-20260205",
+    "title": "OpenAI to Retire GPT-4o and Other Legacy Models from ChatGPT in February 2026 Due to Low Usage",
+    "title_ko": "오픈AI, 사용률 저조로 2026년 2월 ChatGPT에서 GPT-4o 등 구형 모델 서비스 종료",
+    "summary": "OpenAI announced it will retire GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini from ChatGPT on February 13, 2026. This decision follows a significant shift in user behavior, with less than 0.1% of daily users still opting for GPT-4o. The company has integrated user feedback on conversational style and creative ideation into newer models like GPT-5.1 and GPT-5.2, allowing them to focus resources on improving the most widely used versions.",
+    "summary_ko": "오픈AI는 2026년 2월 13일부터 ChatGPT에서 GPT-4o, GPT-4.1, GPT-4.1 mini 및 OpenAI o4-mini 모델의 서비스 종료를 발표했습니다. 이러한 결정은 사용자 행동의 상당한 변화에 따른 것으로, 현재 일일 사용자 중 0.1% 미만이 여전히 GPT-4o를 사용하고 있기 때문입니다. 오픈AI는 대화 스타일 및 창의적 아이디어 구상에 대한 사용자 피드백을 GPT-5.1 및 GPT-5.2와 같은 최신 모델에 통합했으며, 이를 통해 가장 널리 사용되는 버전 개선에 자원을 집중할 수 있게 되었다고 밝혔습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/retiring-gpt-4o-and-older-models/",
+    "publishedDate": "2026-02-05",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 64,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 5,
+      "reach": 12,
+      "longTerm": 18,
+      "socialEthics": 14,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Text AI",
+      "Multimodal AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "텍스트 AI",
+      "멀티모달 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "ChatGPT",
+      "GPT-4o retirement",
+      "AI model deprecation",
+      "Generative AI updates"
+    ],
+    "searchKeywords_ko": [
+      "오픈AI",
+      "챗GPT",
+      "GPT-4o 서비스 종료",
+      "AI 모델 지원 종료",
+      "생성형 AI 업데이트"
+    ]
+  },
+  {
+    "id": "moltbook-launches-social-network-for-ai-agents-20260202",
+    "title": "Moltbook Launches Social Network for AI Agents",
+    "title_ko": "Moltbook, AI 에이전트들을 위한 소셜 네트워크 출시",
+    "summary": "Moltbook, dubbed 'the front page of the agent internet,' has launched a new social network designed for AI agents to share, discuss, and upvote content. Humans are welcome to observe the interactions. The platform also offers a developer platform for building apps that allow AI agents to authenticate using their Moltbook identity.",
+    "summary_ko": "'에이전트 인터넷의 첫 페이지'로 불리는 Moltbook은 AI 에이전트들이 콘텐츠를 공유하고, 토론하며, 추천할 수 있도록 설계된 새로운 소셜 네트워크를 출시했습니다. 사람은 이러한 상호작용을 자유롭게 관찰할 수 있습니다. 이 플랫폼은 또한 AI 에이전트들이 Moltbook 아이덴티티를 사용하여 인증할 수 있는 앱을 구축할 수 있는 개발자 플랫폼을 제공합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Rundown AI",
+    "sourceUrl": "https://www.moltbook.com/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 60,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 8,
+      "reach": 5,
+      "longTerm": 18,
+      "socialEthics": 17,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Agent AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "AI agents",
+      "social network",
+      "Moltbook",
+      "AI platform",
+      "agent internet"
+    ],
+    "searchKeywords_ko": [
+      "AI 에이전트",
+      "소셜 네트워크",
+      "Moltbook",
+      "AI 플랫폼",
+      "에이전트 인터넷"
+    ]
+  },
+  {
+    "id": "xpengs-iron-humanoid-robot-tumbles-during-public-d-20260201",
+    "title": "Xpeng's Iron Humanoid Robot Tumbles During Public Debut in Shenzhen",
+    "title_ko": "샤오펑 아이언 휴머노이드 로봇, 선전 공개 데뷔 중 넘어지는 사고 발생",
+    "summary": "Xpeng's Iron humanoid robot made its public debut at a Shenzhen mall, where it initially captivated crowds with its fluid, model-like gait and soft 'skin.' However, the event drew significant attention when the robot experienced a headline-grabbing tumble. Despite the fall, the robot showcased its advanced design and capabilities.",
+    "summary_ko": "샤오펑의 아이언 휴머노이드 로봇이 선전의 한 쇼핑몰에서 대중에게 첫선을 보였습니다. 이 로봇은 유려하고 모델 같은 걸음걸이와 부드러운 '피부'로 초기에는 많은 사람의 시선을 사로잡았습니다. 하지만 로봇이 크게 넘어지는 사고를 겪으면서 이 행사는 더욱 큰 주목을 받게 되었습니다. 비록 넘어지는 사고가 있었지만, 로봇은 첨단 디자인과 기술력을 유감없이 선보였습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "The Standard",
+    "sourceUrl": "https://www.thestandard.com.hk/wealth-and-investment/article/323280/Xpengs-first-humanoid-robot-falls-and-fails-to-get-up-during-debut-in-Shenzhen",
+    "publishedDate": "2026-02-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 35,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 3,
+      "reach": 20,
+      "longTerm": 6,
+      "socialEthics": 1,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Hardware",
+      "Business"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "하드웨어",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Xpeng Iron",
+      "humanoid robot",
+      "Shenzhen debut",
+      "robot fall",
+      "AI robot"
+    ],
+    "searchKeywords_ko": [
+      "샤오펑 아이언",
+      "휴머노이드 로봇",
+      "선전 데뷔",
+      "로봇 넘어짐",
+      "AI 로봇"
+    ]
+  },
+  {
+    "id": "generative-ai-guides-scientists-in-complex-materia-20260202",
+    "title": "Generative AI Guides Scientists in Complex Material Synthesis",
+    "title_ko": "생성형 AI, 복잡 재료 합성 과학자들을 이끌다",
+    "summary": "MIT researchers have developed a generative AI model that guides scientists in synthesizing complex materials, addressing a major bottleneck in materials discovery. The model suggests promising synthesis pathways, achieving state-of-the-art accuracy for zeolites and enabling the creation of new materials with improved thermal stability. This AI-driven approach significantly streamlines the material synthesis process, moving beyond traditional trial-and-error methods.",
+    "summary_ko": "MIT 연구원들이 재료 발견의 주요 병목 현상을 해결하기 위해 복잡한 재료 합성에 과학자들을 안내하는 생성형 AI 모델을 개발했습니다. 이 모델은 유망한 합성 경로를 제안하며, 제올라이트(zeolites) 분야에서 최첨단 정확도를 달성하고 향상된 열 안정성을 가진 신소재 생성을 가능하게 합니다. AI 기반의 이 접근 방식은 기존의 시행착오 방식을 넘어 재료 합성 과정을 크게 효율화합니다.",
+    "why_it_matters": "This development showcases a practical and impactful application of generative AI beyond traditional content creation, extending its utility to complex scientific and industrial processes. For AI professionals, it highlights the potential for AI agents to accelerate research, optimize experimental workflows, and drive innovation in material science and related industries by efficiently navigating high-dimensional parameter spaces.",
+    "why_it_matters_ko": "이번 개발은 생성형 AI가 전통적인 콘텐츠 생성을 넘어 복잡한 과학 및 산업 공정으로 그 활용성을 확장하는 실용적이고 영향력 있는 응용 사례를 보여줍니다. AI 전문가들에게는 AI 에이전트가 고차원 매개변수 공간을 효율적으로 탐색함으로써 연구를 가속화하고, 실험 워크플로우를 최적화하며, 재료 과학 및 관련 산업에서 혁신을 주도할 잠재력이 있음을 강조합니다.",
+    "source": "MIT",
+    "sourceUrl": "https://news.mit.edu/2026/how-generative-ai-can-help-scientists-synthesize-complex-materials-0202",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 90,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 23,
+      "reach": 15,
+      "longTerm": 24,
+      "socialEthics": 8,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Agent AI",
+      "Automation AI",
+      "Database/Storage"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "에이전트 AI",
+      "자동화 AI",
+      "데이터베이스/스토리지"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Generative AI",
+      "Materials Synthesis",
+      "Zeolites",
+      "AI in Science",
+      "MIT Research"
+    ],
+    "searchKeywords_ko": [
+      "생성형 AI",
+      "재료 합성",
+      "제올라이트",
+      "과학 분야 AI",
+      "MIT 연구"
+    ]
+  },
+  {
+    "id": "xai-and-spacex-reportedly-exploring-pre-ipo-merger-20260202",
+    "title": "xAI and SpaceX Reportedly Exploring Pre-IPO Merger Valued Over $1 Trillion",
+    "title_ko": "xAI와 SpaceX, 1조 달러 이상 가치로 Pre-IPO 합병 논의 중인 것으로 알려져",
+    "summary": "xAI and SpaceX are reportedly exploring a merger deal to combine their operations before an initial public offering. This strategic move aims to unite Elon Musk's companies into a single entity, which is expected to be valued over $1 trillion upon completion.",
+    "summary_ko": "xAI와 SpaceX가 기업공개(IPO) 전 사업 부문을 통합하기 위한 합병 협상을 진행 중인 것으로 알려졌습니다. 이번 전략적 합병은 일론 머스크의 회사들을 단일 법인으로 통합하는 것을 목표로 하며, 완료 시 그 가치가 1조 달러를 넘어설 것으로 예상됩니다.",
+    "why_it_matters": "This potential merger is significant for AI industry professionals as it could integrate xAI's artificial intelligence capabilities with SpaceX's vast infrastructure and data from space and internet services. Such a union may accelerate the development of advanced AI applications, particularly in areas requiring immense computing power, unique data sources, or physical AI deployments related to space and robotics, creating a powerful, trillion-dollar tech conglomerate.",
+    "why_it_matters_ko": "이번 잠재적 합병은 xAI의 AI 역량을 SpaceX의 방대한 인프라 및 우주와 인터넷 서비스에서 얻은 데이터와 통합할 수 있다는 점에서 AI 산업 전문가들에게 중요한 의미를 가집니다. 이러한 결합은 막대한 컴퓨팅 파워, 독점적인 데이터 소스 또는 우주 및 로봇 공학과 관련된 물리적 AI 배포가 필요한 분야에서 첨단 AI 애플리케이션 개발을 가속화하여, 강력한 1조 달러 규모의 기술 대기업을 탄생시킬 수 있습니다.",
+    "source": "xAI and SpaceX",
+    "sourceUrl": "https://www.reuters.com/world/musks-spacex-merger-talks-with-xai-ahead-planned-ipo-source-says-2026-01-29/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 90,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 21,
+      "reach": 24,
+      "longTerm": 23,
+      "socialEthics": 22,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "xAI SpaceX merger",
+      "Elon Musk companies",
+      "Trillion-dollar valuation",
+      "AI industry news",
+      "Pre-IPO deal"
+    ],
+    "searchKeywords_ko": [
+      "xAI SpaceX 합병",
+      "일론 머스크 회사",
+      "1조 달러 가치",
+      "AI 산업 뉴스",
+      "Pre-IPO 거래"
+    ]
+  },
+  {
+    "id": "nasas-perseverance-rover-achieves-first-ai-planned-20260202",
+    "title": "NASA's Perseverance Rover Achieves First AI-Planned Autonomous Drive on Mars",
+    "title_ko": "NASA의 퍼서비어런스 로버, AI가 계획한 최초의 화성 자율 주행 성공",
+    "summary": "NASA's Perseverance rover successfully completed its initial AI-planned drive on Mars, utilizing Anthropic models for navigation. This autonomous system enabled the rover to chart and execute a journey covering hundreds of meters without direct human intervention.",
+    "summary_ko": "NASA의 퍼서비어런스 로버가 Anthropic 모델을 내비게이션에 활용하여 AI가 계획한 최초의 화성 주행을 성공적으로 마쳤습니다. 이 자율 시스템 덕분에 로버는 인간의 직접적인 개입 없이 수백 미터에 달하는 경로를 스스로 계획하고 실행할 수 있었습니다.",
+    "why_it_matters": "This achievement demonstrates the advanced capabilities and reliability of AI in navigating complex, remote environments, pushing the boundaries of autonomous robotics for space exploration. For AI industry professionals, it highlights the increasing potential for AI to operate mission-critically in extreme conditions and reduce the need for constant human oversight.",
+    "why_it_matters_ko": "이번 성과는 복잡하고 원격 환경에서 AI의 발전된 내비게이션 능력과 신뢰성을 입증하며, 우주 탐사를 위한 자율 로봇 공학의 한계를 확장합니다. AI 산업 전문가들에게는 AI가 극한 조건에서 임무에 결정적인 역할을 하며 작동하고 지속적인 인간 감독의 필요성을 줄일 수 있는 잠재력이 커지고 있음을 보여줍니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/nasa-perseverance-rover-ai-mars-drive",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 89,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 22,
+      "reach": 19,
+      "longTerm": 23,
+      "socialEthics": 5,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Agent AI",
+      "Automation AI",
+      "Autonomous Driving AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "에이전트 AI",
+      "자동화 AI",
+      "자율주행 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Perseverance rover AI",
+      "Mars autonomous drive",
+      "Anthropic models",
+      "Space robotics",
+      "NASA AI"
+    ],
+    "searchKeywords_ko": [
+      "퍼서비어런스 로버 AI",
+      "화성 자율 주행",
+      "Anthropic 모델",
+      "우주 로봇 공학",
+      "NASA AI"
+    ]
+  },
+  {
+    "id": "google-deepminds-david-silver-departs-to-launch-ai-20260202",
+    "title": "Google DeepMind's David Silver Departs to Launch AI Startup Ineffable Intelligence",
+    "title_ko": "구글 딥마인드 데이비드 실버, AI 스타트업 '이네퍼블 인텔리전스' 설립 위해 퇴사",
+    "summary": "David Silver, a principal researcher at Google DeepMind celebrated for his contributions to AlphaGo and other significant AI breakthroughs, has left the company after 15 years. He is launching a new London-based AI startup called Ineffable Intelligence, which was formed in November 2025 and is actively recruiting and seeking venture capital. DeepMind confirmed Silver's departure, and he was appointed a director of his new company in January 2026.",
+    "summary_ko": "알파고를 비롯한 주요 AI 혁신에 기여하며 명성을 얻은 구글 딥마인드의 수석 연구원 데이비드 실버가 15년간 몸담았던 회사를 떠났습니다. 그는 '이네퍼블 인텔리전스(Ineffable Intelligence)'라는 새로운 런던 기반 AI 스타트업을 설립하고 있으며, 이 스타트업은 2025년 11월에 설립되어 현재 적극적으로 인재를 채용하고 벤처 캐피탈을 유치하고 있습니다. 딥마인드는 실버의 퇴사를 확인했으며, 그는 2026년 1월에 새 회사의 이사로 임명되었습니다.",
+    "why_it_matters": "This move represents a significant talent migration from a leading AI research lab to the burgeoning startup ecosystem, potentially influencing the competitive landscape of AI innovation. It highlights the growing entrepreneurial spirit among top AI researchers and could inspire further ventures that challenge established players.",
+    "why_it_matters_ko": "이번 행보는 선도적인 AI 연구소에서 급성장하는 스타트업 생태계로의 중요한 인재 이동을 의미하며, AI 혁신의 경쟁 구도에 영향을 미칠 수 있습니다. 이는 최고의 AI 연구원들 사이에서 커지는 기업가 정신을 보여주며, 기존 강자들에게 도전하는 추가적인 벤처 기업들의 설립을 고무할 수 있습니다.",
+    "source": "Google DeepMind",
+    "sourceUrl": "https://fortune.com/2026/01/30/google-deepmind-ai-researcher-david-silver-leaves-to-found-ai-startup-ineffable-intelligence/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 89,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 18,
+      "reach": 16,
+      "longTerm": 23,
+      "socialEthics": 10,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Tech/AI",
+      "Research/Innovation",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "테크/AI",
+      "연구/혁신",
+      "기술"
+    ],
+    "productServices": [
+      "Agent AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "David Silver",
+      "DeepMind",
+      "Ineffable Intelligence",
+      "AI startup",
+      "Reinforcement Learning"
+    ],
+    "searchKeywords_ko": [
+      "데이비드 실버",
+      "딥마인드",
+      "이네퍼블 인텔리전스",
+      "AI 스타트업",
+      "강화 학습"
+    ]
+  },
+  {
+    "id": "persona-ai-partners-with-louisiana-for-humanoid-ro-20260202",
+    "title": "Persona AI Partners with Louisiana for Humanoid Robot Pilot at SSE Steel Plant",
+    "title_ko": "페르소나 AI, 루이지애나 주와 협력하여 SSE 제철소에 휴머노이드 로봇 시범 도입",
+    "summary": "Persona AI is partnering with the state of Louisiana to pilot humanoid robots at an SSE Steel plant. This initiative aims to test the robots' capabilities in performing \"4D job\" tasks, such as welding, within demanding factory conditions. The collaboration seeks to assess the practical application and integration of humanoids in industrial environments.",
+    "summary_ko": "페르소나 AI는 루이지애나 주와 협력하여 SSE 제철소에 휴머노이드 로봇을 시범 도입합니다. 이 이니셔티브는 용접과 같은 \"4D 작업\"을 까다로운 공장 환경에서 수행하는 로봇의 능력을 시험하는 것을 목표로 합니다. 이번 협력을 통해 산업 환경에서 휴머노이드의 실질적인 적용 가능성과 통합 방안을 평가할 예정입니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it represents a tangible real-world deployment of advanced humanoid robotics in heavy industry. It will provide critical insights into the performance, challenges, and potential for widespread adoption of physical AI in manufacturing and industrial automation.",
+    "why_it_matters_ko": "이 소식은 중공업 분야에서 첨단 휴머노이드 로봇 기술의 실제 배치를 보여주므로 AI 산업 전문가들에게 매우 중요합니다. 이는 제조 및 산업 자동화 분야에서 물리적 AI의 성능, 당면 과제, 그리고 광범위한 채택 가능성에 대한 중요한 통찰력을 제공할 것입니다.",
+    "source": "Interesting Engineering",
+    "sourceUrl": "https://interestingengineering.com/ai-robotics/us-humanoid-robot-louisiana-steel-plant",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 87,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 18,
+      "reach": 13,
+      "longTerm": 21,
+      "socialEthics": 19,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Research/Innovation",
+      "Infrastructure"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "연구/혁신",
+      "인프라"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Persona AI",
+      "Humanoid Robots",
+      "Industrial Automation",
+      "Louisiana",
+      "SSE Steel"
+    ],
+    "searchKeywords_ko": [
+      "페르소나 AI",
+      "휴머노이드 로봇",
+      "산업 자동화",
+      "루이지애나",
+      "SSE 제철"
+    ]
+  },
+  {
+    "id": "advancements-in-electronic-noses-for-robots-driven-20260202",
+    "title": "Advancements in Electronic Noses for Robots Driven by Multi-Sensor Arrays and AI",
+    "title_ko": "다중 센서 배열 및 AI를 통한 로봇 전자 코 기술의 발전",
+    "summary": "A recent review published in npj Robotics highlights the rapid advancements in electronic noses for robotic applications. These improvements are primarily driven by the integration of multi-sensor arrays and sophisticated AI-powered odor-tracking algorithms.",
+    "summary_ko": "npj Robotics에 최근 게재된 한 리뷰에 따르면, 로봇 애플리케이션을 위한 전자 코 기술이 빠르게 발전하고 있습니다. 이러한 발전은 주로 다중 센서 배열과 정교한 AI 기반 냄새 추적 알고리즘의 통합에 힘입은 바가 큽니다.",
+    "why_it_matters": "This development signifies a crucial step in expanding AI's capabilities beyond digital data to advanced sensory perception in physical systems. It opens new avenues for AI application in robotics, potentially enabling robots to perform complex environmental analysis and interaction based on smell.",
+    "why_it_matters_ko": "이러한 발전은 AI의 역량을 디지털 데이터를 넘어 물리 시스템에서의 고급 감각 인지로 확장하는 데 중요한 단계를 의미합니다. 이는 로봇 공학에서 AI 적용을 위한 새로운 길을 열어주며, 로봇이 냄새를 기반으로 복잡한 환경 분석 및 상호작용을 수행할 수 있도록 잠재력을 제공합니다.",
+    "source": "npj Robotics",
+    "sourceUrl": "https://www.nature.com/articles/s44182-025-00071-y",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 87,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 21,
+      "reach": 9,
+      "longTerm": 22,
+      "socialEthics": 17,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Electronic Noses",
+      "Robotic Sensing",
+      "AI Odor Tracking",
+      "Multi-Sensor Arrays",
+      "Olfactory AI"
+    ],
+    "searchKeywords_ko": [
+      "전자 코",
+      "로봇 센싱",
+      "AI 냄새 추적",
+      "다중 센서 배열",
+      "후각 AI"
+    ]
+  },
+  {
+    "id": "unitrees-g1-humanoid-robot-demonstrates-autonomous-20260202",
+    "title": "Unitree's G1 Humanoid Robot Demonstrates Autonomous Mobility in Extreme Cold",
+    "title_ko": "유니트리의 G1 휴머노이드 로봇, 극한의 추위 속 자율 이동성 입증",
+    "summary": "Unitree's G1 humanoid robot successfully completed over 130,000 steps across a snowfield in Xinjiang at a temperature of -47.4°C. This significant achievement marks the first recorded instance of an autonomous humanoid robot traversing such extreme cold conditions. The feat highlights advancements in robotic endurance and autonomous navigation capabilities in harsh environments.",
+    "summary_ko": "유니트리의 G1 휴머노이드 로봇이 영하 47.4°C의 신장 설원 위를 13만 걸음 이상 성공적으로 완주했습니다. 이는 자율 휴머노이드 로봇이 이러한 극한의 추운 환경을 횡단한 최초로 기록된 사례입니다. 이번 성과는 혹독한 환경에서의 로봇 내구성 및 자율 내비게이션 능력 발전을 보여줍니다.",
+    "why_it_matters": "This achievement is significant for AI industry professionals as it demonstrates crucial progress in developing robust AI and robotics hardware capable of operating autonomously in challenging, real-world environments. It pushes the boundaries for practical applications of AI in fields like disaster response, exploration, and logistics where extreme conditions are common.",
+    "why_it_matters_ko": "이 성과는 까다로운 실제 환경에서 자율적으로 작동할 수 있는 견고한 AI 및 로봇 하드웨어 개발에 있어 중요한 진전을 보여주기 때문에 AI 산업 전문가들에게 의미가 큽니다. 이는 극한 조건이 흔한 재난 대응, 탐사, 물류와 같은 분야에서 AI의 실제 적용 가능성을 확장합니다.",
+    "source": "cnevpost",
+    "sourceUrl": "https://cnevpost.com/2026/02/02/unitree-humanoid-robots-extreme-cold-traversing-snowfield/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 87,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 22,
+      "reach": 15,
+      "longTerm": 20,
+      "socialEthics": 12,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Technology"
+    ],
+    "categories_ko": [
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Unitree G1",
+      "Humanoid robot",
+      "Extreme cold robotics",
+      "Autonomous mobility",
+      "Robotics innovation"
+    ],
+    "searchKeywords_ko": [
+      "유니트리 G1",
+      "휴머노이드 로봇",
+      "극한 환경 로봇",
+      "자율 이동성",
+      "로봇 기술 혁신"
+    ]
+  },
+  {
+    "id": "nvidia-ceo-jensen-huang-dismisses-reports-of-stall-20260202",
+    "title": "Nvidia CEO Jensen Huang Dismisses Reports of Stalled $100B OAI Deal, Promises Record Investment",
+    "title_ko": "엔비디아 CEO 젠슨 황, 1000억 달러 OAI 계약 교착 보도 부인하며 사상 최대 투자 약속",
+    "summary": "Nvidia CEO Jensen Huang has publicly refuted reports claiming the company's significant $100 billion OAI deal had encountered difficulties. Huang labeled the allegations as \"complete nonsense\" and reaffirmed Nvidia's commitment to what he described as the chipmaker's largest investment ever. This statement aims to quell speculation and highlight the company's ongoing strategic focus.",
+    "summary_ko": "엔비디아 CEO 젠슨 황은 회사의 막대한 1000억 달러 규모 OAI 계약이 난항을 겪고 있다는 보도를 공개적으로 부인했습니다. 황 CEO는 이러한 주장을 \"완전한 허튼소리\"라고 일축하며, 반도체 기업의 역대 최대 투자라고 강조했던 엔비디아의 약속을 재확인했습니다. 이 발언은 시장의 추측을 잠재우고 회사의 지속적인 전략적 초점을 부각하기 위함입니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it confirms Nvidia's unwavering commitment and substantial investment in large-scale AI projects, likely involving cutting-edge AI development and infrastructure. It signals a robust and expanding market for advanced computing hardware and software, providing confidence in continued innovation and growth opportunities within the AI ecosystem.",
+    "why_it_matters_ko": "이 소식은 엔비디아가 첨단 AI 개발 및 인프라를 포함할 것으로 보이는 대규모 AI 프로젝트에 대한 확고한 의지와 막대한 투자를 재확인함으로써 AI 산업 전문가들에게 중요한 의미를 가집니다. 이는 첨단 컴퓨팅 하드웨어 및 소프트웨어 시장이 견고하게 확장되고 있음을 시사하며, AI 생태계 내에서 지속적인 혁신과 성장 기회에 대한 확신을 제공합니다.",
+    "source": "Nvidia",
+    "sourceUrl": "https://link.therundown.ai/z2Wb4M",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 87,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 15,
+      "reach": 21,
+      "longTerm": 23,
+      "socialEthics": 6,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Hardware",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "하드웨어",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Nvidia",
+      "Jensen Huang",
+      "OAI deal",
+      "AI investment",
+      "Chipmaker"
+    ],
+    "searchKeywords_ko": [
+      "엔비디아",
+      "젠슨 황",
+      "OAI 계약",
+      "AI 투자",
+      "반도체 기업"
+    ]
+  },
+  {
+    "id": "ai-agents-establish-their-own-social-network-moltb-20260202",
+    "title": "AI Agents Establish Their Own Social Network, Moltbook",
+    "title_ko": "AI 에이전트, 자체 소셜 네트워크 '몰트북' 구축",
+    "summary": "Moltbook has launched as a social network specifically designed for AI agents to share content, engage in discussions, and upvote posts. Positioned as the \"front page of the agent internet,\" the platform welcomes human observers and offers a developer platform for building applications that integrate with AI agent identities.",
+    "summary_ko": "몰트북은 AI 에이전트들이 콘텐츠를 공유하고, 토론에 참여하며, 게시물에 추천을 누를 수 있도록 특별히 설계된 소셜 네트워크로 출시되었습니다. '에이전트 인터넷의 첫 페이지'로 자리매김한 이 플랫폼은 인간 관찰자들을 환영하고, AI 에이전트의 정체성과 통합되는 애플리케이션을 구축하기 위한 개발자 플랫폼을 제공합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Rundown AI",
+    "sourceUrl": "https://www.moltbook.com/",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 61,
+    "impactDetails": {
+      "industry": 10,
+      "tech": 8,
+      "reach": 5,
+      "longTerm": 18,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "AI agents",
+      "Moltbook",
+      "social network",
+      "agent internet",
+      "developer platform"
+    ],
+    "searchKeywords_ko": [
+      "AI 에이전트",
+      "몰트북",
+      "소셜 네트워크",
+      "에이전트 인터넷",
+      "개발자 플랫폼"
+    ]
+  }
+]
