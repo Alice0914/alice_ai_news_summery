@@ -130,7 +130,7 @@ class TechCrunchAIAgent:
                                     'dt': article_date_naive,
                                     'title': title
                                 })
-                                print(f"  ✓ Found: {title[:50]}... ({article_date_naive.strftime('%Y-%m-%d')})")
+                                print(f"  [+] Found: {title[:50]}... ({article_date_naive.strftime('%Y-%m-%d')})")
                 
                 except Exception as e:
                     print(f"Error parsing RSS item: {e}")
@@ -207,9 +207,9 @@ class TechCrunchAIAgent:
             details = self._scrape_article_detail(article['url'], article)
             if details:
                 results.append(details)
-                print(f"    ✓ Success")
+                print(f"    [+] Success")
             else:
-                print(f"    ✗ Failed")
+                print(f"    [-] Failed")
             
             # Be polite to the server
             time.sleep(1)

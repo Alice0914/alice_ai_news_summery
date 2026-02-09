@@ -32,7 +32,7 @@ class Deduplicator:
         self.threshold = SIMILARITY_THRESHOLD
         
         if not os.getenv("GOOGLE_API_KEY"):
-            print("[Deduplicator] ⚠️ WARNING: GOOGLE_API_KEY not found in environment!")
+            print("[Deduplicator] [WARN] GOOGLE_API_KEY not found in environment!")
             
         # Initialize CrossEncoder for Stage 2
         try:
@@ -76,23 +76,23 @@ class Deduplicator:
             return p
         return self.priority_map.get("Unknown", 1)
     
-    def _is_duplicate_cross_encoder(self, text1: str, text2: str) -> bool:
+    def _is_duplicate_cross_encoder(self, text1: str, text2: str) -> tuple:
         """
         Stage 2: Cross-Encoder verification.
-        Returns True if similarity score >= 0.75.
+        Returns (is_duplicate: bool, score: float).
         """
         if not self.cross_encoder:
             # Fallback if model failed to load
-            return True 
+            return True, 1.0
             
         try:
             # Predict returns a score between 0 and 1
             score = self.cross_encoder.predict([(text1, text2)])[0]
-            print(f"    🔍 Cross-Encoder Score: {score:.4f}")
-            return score >= 0.75
+            print(f"    [?] Cross-Encoder Score: {score:.4f}")
+            return score >= 0.75, float(score)
         except Exception as e:
             print(f"[Deduplicator] Cross-Encoder check failed: {e}")
-            return True
+            return True, 1.0
 
     def run(self, articles: list) -> list:
         """
@@ -130,7 +130,7 @@ class Deduplicator:
         embeddings = [embeddings[i] for i in valid_indices]
         
         if not embeddings:
-            print("[Deduplicator] ❌ No embeddings generated (API Error?). Bypassing deduplication.")
+            print("[Deduplicator] [x] No embeddings generated (API Error?). Bypassing deduplication.")
             # Fallback: return original articles
             for article in articles:
                 article['exposure_score'] = 1
@@ -164,15 +164,15 @@ class Deduplicator:
                 sim = cosine_similarity(vec_i, vec_j)[0][0]
                 
                 # STAGE 1: Fast Filter (Bi-Encoder)
-                # Check candidates with similarity > 0.8
-                if sim > 0.80:
+                # Check candidates with similarity > 0.85
+                if sim > 0.85:
                     title1 = df.iloc[i]['raw_title']
                     title2 = df.iloc[j]['raw_title']
                     
                     print(f"  Bi-Encoder Sim: {sim:.4f} ('{title2[:30]}...' vs '{title1[:30]}...')")
                     
                     # STAGE 2: Verification (Cross-Encoder)
-                    is_duplicate = self._is_duplicate_cross_encoder(title1, title2)
+                    is_duplicate, ce_score = self._is_duplicate_cross_encoder(title1, title2)
                     
                     if is_duplicate:
                         # Mark j as duplicate
@@ -184,14 +184,15 @@ class Deduplicator:
                             "dropped_article": title2,
                             "kept_article": title1,
                             "similarity_score": float(sim),
+                            "cross_encoder_score": ce_score,
                             "dropped_source": df.iloc[j]['source_name'],
                             "kept_source": df.iloc[i]['source_name'],
                             "verification": "Cross-Encoder"
                         }
                         duplicate_logs.append(duplicate_info)
-                        print(f"    ✅ Duplicate Confirmed. Dropping.")
+                        print(f"    [+] Duplicate Confirmed. Dropping.")
                     else:
-                        print(f"    ❌ Different Content. Keeping.")
+                        print(f"    [-] Different Content. Keeping.")
         
         # Filter and clean
         result_df = df[keep_mask].drop(columns=['embedding', 'priority'])
