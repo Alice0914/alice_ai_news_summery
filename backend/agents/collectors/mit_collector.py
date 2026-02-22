@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/mit_collector.py
 """
 MIT News Collector
 Wraps the MITNewsAgent to scrape AI news.
@@ -15,7 +14,6 @@ from bs4 import BeautifulSoup
 # Ensure backend modules can be imported
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -45,8 +43,8 @@ class MITAINewsAgent:
             return None
         date_str = date_str.strip()
         formats = [
-            '%B %d, %Y',       # January 30, 2026
-            '%b %d, %Y',       # Jan 30, 2026
+            '%B %d, %Y',
+            '%b %d, %Y',
             '%Y-%m-%d',
         ]
         for fmt in formats:

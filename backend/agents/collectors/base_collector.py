@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/base_collector.py
 """
 Base Collector Class
 Provides shared functionality for all news collectors.

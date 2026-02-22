@@ -1,4 +1,3 @@
-# backend/agents/pipeline.py
 """
 News Processing Pipeline
 Main entry point that orchestrates:

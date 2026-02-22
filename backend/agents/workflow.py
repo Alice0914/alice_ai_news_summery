@@ -1,6 +1,3 @@
-
-# backend/agents/workflow.py
-
 import os
 import sys
 
@@ -73,14 +70,14 @@ class PipelineState(TypedDict):
     Represents the state of the news pipeline.
     """
     current_date: str
-    existing_articles: List[dict]  # From past 3 days
-    new_articles: List[dict]       # Collected today
-    processed_articles: List[dict] # After deduplication & processing
-    valid_articles: List[dict]     # Passed review
-    invalid_articles: List[dict]   # Failed review
+    existing_articles: List[dict]
+    new_articles: List[dict]
+    processed_articles: List[dict]
+    valid_articles: List[dict]
+    invalid_articles: List[dict]
     output_dir: str
-    exact_mode: bool               # If True, collect only for current_date
-    end_date: str                  # Optional end date for range collection
+    exact_mode: bool
+    end_date: str
 
 # --- Node Functions ---
 
@@ -133,7 +130,6 @@ def collect_news(state: PipelineState) -> PipelineState:
     weekday = target_date_obj.weekday()
 
     # Determine Collection Range
-    # Determine Collection Range
     if state.get('exact_mode'):
         print(f"  [Exact Mode] Collection Start: {target_date_str}")
         start_date_obj = target_date_obj
@@ -144,12 +140,12 @@ def collect_news(state: PipelineState) -> PipelineState:
         else:
             end_date_obj = target_date_obj
             
-    elif weekday == 0:  # Monday
+    elif weekday == 0:
         # Collect Friday, Saturday, Sunday
         start_date_obj = target_date_obj - timedelta(days=3)
         end_date_obj = target_date_obj - timedelta(days=1)
         print(f"  [Monday Logic] Collecting news from {start_date_obj.strftime('%Y-%m-%d')} (Fri) to {end_date_obj.strftime('%Y-%m-%d')} (Sun)")
-    else:  # Tuesday - Sunday
+    else:
         # Collect Yesterday
         start_date_obj = target_date_obj - timedelta(days=1)
         end_date_obj = target_date_obj - timedelta(days=1)
@@ -321,7 +317,7 @@ def save_news(state: PipelineState) -> PipelineState:
         d = art.get('publishedDate') or art.get('date') or state['current_date']
         # Normalize date format just in case
         if not (len(d) == 10 and d.count('-') == 2):
-            d = state['current_date'] # Fallback
+            d = state['current_date']
             
         if d not in articles_by_date:
             articles_by_date[d] = []
@@ -366,7 +362,6 @@ def save_news(state: PipelineState) -> PipelineState:
     
     # Merge only new articles by checking IDs
     existing_ids = set(a.get('id') for a in main_data)
-    # We want to add ALL valid articles from this run, regardless of their date bucket,
     # as long as they aren't in the main file yet.
     to_append = [a for a in valid if a.get('id') not in existing_ids]
     
@@ -385,7 +380,6 @@ def save_news(state: PipelineState) -> PipelineState:
 
 
 # --- Graph Construction ---
-
 def create_news_workflow():
     workflow = StateGraph(PipelineState)
     
@@ -430,9 +424,9 @@ if __name__ == "__main__":
         "output_dir": os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data")),
         "existing_articles": [],
         "new_articles": [],
-        "processed_articles": [], # Initialize
-        "valid_articles": [], # Initialize
-        "invalid_articles": [] # Initialize
+        "processed_articles": [],
+        "valid_articles": [],
+        "invalid_articles": []
     }
     
     print(f"Starting News Pipeline for {args.date}...")

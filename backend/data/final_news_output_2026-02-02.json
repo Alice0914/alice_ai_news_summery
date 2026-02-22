@@ -2320,5 +2320,73 @@
       "에이전트 인터넷",
       "개발자 플랫폼"
     ]
+  },
+  {
+    "id": "iter-fusion-project-deploys-13-foot-industrial-rob-20260202",
+    "title": "ITER Fusion Project Deploys 13-Foot Industrial Robot 'Godzilla'",
+    "title_ko": "ITER 핵융합 프로젝트, 13피트 산업용 로봇 '고질라' 투입",
+    "summary": "France's ITER fusion project has brought in a towering 13-foot-tall industrial robot, nicknamed \"Godzilla.\" This powerful bot is considered the most advanced of its kind and will play a crucial role in the ambitious energy research initiative.",
+    "summary_ko": "프랑스의 ITER 핵융합 프로젝트에 13피트(약 4미터) 높이의 거대한 산업용 로봇 '고질라'가 투입되었습니다. 이 강력한 로봇은 동종 로봇 중 가장 진보된 것으로 평가되며, 야심 찬 에너지 연구 사업에서 중요한 역할을 수행할 예정입니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "ITER",
+    "sourceUrl": "https://www.iter.org/node/20687/robots-tools-and-teams-playing-unison",
+    "publishedDate": "2026-02-02",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 76,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 17,
+      "reach": 10,
+      "longTerm": 22,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Energy/Environment",
+      "Technology"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "에너지/환경",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Computing",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "컴퓨팅",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "ITER fusion project",
+      "Industrial robot",
+      "Godzilla robot",
+      "Nuclear fusion",
+      "Robotics"
+    ],
+    "searchKeywords_ko": [
+      "ITER 핵융합 프로젝트",
+      "산업용 로봇",
+      "고질라 로봇",
+      "핵융합",
+      "로봇 공학"
+    ]
   }
 ]

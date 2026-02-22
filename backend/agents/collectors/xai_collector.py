@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/xai_collector.py
 """
 xAI News Collector
 Wraps the XAINewsAgent to scrape AI news.
@@ -23,7 +22,6 @@ try:
 except ImportError:
     HAS_CURL_CFFI = False
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -60,8 +58,8 @@ class XAINewsAgent:
             return None
         date_str = date_str.strip()
         formats = [
-            '%B %d, %Y',       # December 30, 2025
-            '%b %d, %Y',       # Dec 30, 2025
+            '%B %d, %Y',
+            '%b %d, %Y',
             '%Y-%m-%d',
         ]
         for fmt in formats:

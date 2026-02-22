@@ -1,0 +1,1396 @@
+[
+  {
+    "id": "mustafa-suleyman-predicts-rapid-ai-automation-of-w-20260213",
+    "title": "Mustafa Suleyman Predicts Rapid AI Automation of White-Collar Work and Microsoft's Pursuit of Self-Sufficient Models",
+    "title_ko": "무스타파 술레이만, 화이트칼라 업무의 빠른 AI 자동화와 마이크로소프트의 자립형 모델 추구 예측",
+    "summary": "Mustafa Suleyman informed the Financial Times that he anticipates most white-collar jobs will be fully automated by artificial intelligence within 12 to 18 months. He further noted Microsoft's strategic efforts to achieve 'true self-sufficiency' with its AI models, highlighting a significant shift in enterprise AI development.",
+    "summary_ko": "무스타파 술레이만은 파이낸셜 타임즈에 대부분의 화이트칼라 직업이 12~18개월 이내에 인공지능(AI)에 의해 완전히 자동화될 것으로 예상한다고 밝혔습니다. 그는 또한 마이크로소프트가 AI 모델을 통해 ‘진정한 자립’(true self-sufficiency)을 달성하기 위한 전략적 노력을 기울이고 있으며, 이는 기업 AI 개발에 있어 중대한 변화를 시사한다고 강조했습니다.",
+    "why_it_matters": "This prediction from a prominent AI leader signals an accelerated timeline for AI's impact on professional roles, directly influencing workforce planning, AI deployment strategies, and ethical considerations for AI industry professionals. Microsoft's pursuit of 'true self-sufficiency' indicates a future where AI models operate with minimal human oversight, pushing the boundaries of autonomous systems.",
+    "why_it_matters_ko": "저명한 AI 리더의 이러한 예측은 AI가 전문 직업에 미치는 영향의 가속화된 일정을 시사하며, 인력 계획, AI 배포 전략, 그리고 AI 산업 전문가들을 위한 윤리적 고려 사항에 직접적인 영향을 미칩니다. 마이크로소프트가 추구하는 ‘진정한 자립’(true self-sufficiency)은 AI 모델이 최소한의 인간 감독으로 작동하는 미래를 의미하며, 이는 자율 시스템의 한계를 확장하는 것입니다.",
+    "source": "FT",
+    "sourceUrl": "https://www.ft.com/content/f1ec830c-2f08-4b1a-b70f-7330f260753c",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 98.66666666666667,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 15,
+      "reach": 22,
+      "longTerm": 21,
+      "socialEthics": 22,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Tech/AI",
+      "Economy",
+      "Technology",
+      "Society/Policy"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "테크/AI",
+      "경제",
+      "기술",
+      "사회/정책"
+    ],
+    "productServices": [
+      "Automation AI",
+      "Agent AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "자동화 AI",
+      "에이전트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Mustafa Suleyman",
+      "AI automation",
+      "white-collar jobs",
+      "Microsoft AI",
+      "self-sufficient AI"
+    ],
+    "searchKeywords_ko": [
+      "무스타파 술레이만",
+      "AI 자동화",
+      "화이트칼라 직업",
+      "마이크로소프트 AI",
+      "자립형 AI"
+    ]
+  },
+  {
+    "id": "meta-reportedly-plans-facial-recognition-for-smart-20260213",
+    "title": "Meta Reportedly Plans Facial Recognition for Smart Glasses",
+    "title_ko": "메타, 스마트 글래스에 안면 인식 기술 도입 추진 보도",
+    "summary": "Meta is reportedly planning to integrate facial recognition, internally dubbed \"Name Tag,\" into its smart glasses as early as this year, enabling users to identify people and access information via Meta's AI assistant. The company has been deliberating on the associated \"safety and privacy risks\" and previously considered a politically \"dynamic environment\" opportune for its release. This initiative marks a revival of earlier plans, which were previously shelved due to technical and ethical concerns.",
+    "summary_ko": "메타는 빠르면 올해 안에 '네임 태그(Name Tag)'라는 내부 명칭의 안면 인식 기술을 스마트 글래스에 통합할 계획인 것으로 알려졌다. 이 기술을 통해 사용자는 메타의 AI 비서를 통해 사람을 식별하고 정보에 접근할 수 있게 된다. 메타는 이와 관련된 \"안전 및 개인 정보 보호 위험\"에 대해 논의해 왔으며, 과거에는 정치적으로 \"역동적인 환경\"이 기술 출시의 적기라고 판단했다. 이번 이니셔티브는 기술 및 윤리적 문제로 보류되었던 이전 계획의 부활을 의미한다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it highlights the continued push for advanced AI integration into consumer wearables, particularly in the sensitive domain of facial recognition, thereby underscoring the escalating ethical and privacy challenges in AI product development and deployment. It demonstrates the technical feasibility and market ambitions for on-device AI, while simultaneously posing critical questions about responsible innovation, regulatory frameworks, and public trust in pervasive AI technologies.",
+    "why_it_matters_ko": "이 소식은 AI 업계 전문가들에게 중요하게 다가옵니다. 이는 소비자 웨어러블 기기에 첨단 AI, 특히 민감한 안면 인식 분야의 AI 통합이 계속해서 추진되고 있음을 보여주며, AI 제품 개발 및 배포 과정에서 윤리적, 개인 정보 보호 문제가 심화되고 있음을 강조합니다. 또한, 온디바이스 AI의 기술적 실현 가능성과 시장 야망을 입증하는 동시에, 책임감 있는 혁신, 규제 프레임워크, 그리고 광범위한 AI 기술에 대한 대중의 신뢰에 대한 중요한 질문을 제기합니다.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/13/meta-plans-to-add-facial-recognition-to-its-smart-glasses-report-claims/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 97.0,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 20,
+      "reach": 23,
+      "longTerm": 24,
+      "socialEthics": 25,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Hardware",
+      "Tech/AI",
+      "Society/Policy",
+      "Technology"
+    ],
+    "categories_ko": [
+      "하드웨어",
+      "테크/AI",
+      "사회/정책",
+      "기술"
+    ],
+    "productServices": [
+      "Wearable AI",
+      "Edge/On-Device AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "웨어러블 AI",
+      "엣지/온디바이스 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Meta smart glasses",
+      "facial recognition AI",
+      "wearable technology privacy",
+      "Name Tag feature",
+      "on-device AI"
+    ],
+    "searchKeywords_ko": [
+      "메타 스마트 글래스",
+      "안면 인식 AI",
+      "웨어러블 기술 개인 정보 보호",
+      "네임 태그 기능",
+      "온디바이스 AI"
+    ]
+  },
+  {
+    "id": "googles-gemini-3-deep-think-sets-new-ai-reasoning--20260213",
+    "title": "Google's Gemini 3 Deep Think Sets New AI Reasoning Benchmarks",
+    "title_ko": "구글 제미나이 3 딥 씽크, AI 추론 벤치마크의 새 기준 제시",
+    "summary": "Google has released a significant update to its Gemini 3 Deep Think reasoning model, achieving dominant scores in math, coding, and science benchmarks such as ARC-AGI-2 and Humanity's Last Exam. This upgrade also introduces Aletheia, an Olympiad-level math research agent capable of autonomous problem-solving and proof verification. The Deep Think upgrade is now accessible to Google AI Ultra subscribers and researchers via an early access program.",
+    "summary_ko": "구글은 제미나이 3 딥 씽크 추론 모델의 주요 업데이트를 공개했으며, 이 모델은 ARC-AGI-2 및 Humanity's Last Exam과 같은 수학, 코딩, 과학 벤치마크에서 압도적인 점수를 기록했습니다. 이번 업그레이드에는 자율적인 문제 해결과 증명 검증이 가능한 올림피아드 수준의 수학 연구 에이전트 '알레테이아(Aletheia)'도 도입되었습니다. 딥 씽크 업그레이드는 현재 구글 AI 울트라 구독자 및 연구원들이 얼리 액세스 프로그램을 통해 이용할 수 있습니다.",
+    "why_it_matters": "This news signifies Google's strong re-assertion as a leading force in the AI race, challenging competitors with groundbreaking performance in complex reasoning. For AI industry professionals, Deep Think's record scores, particularly in advanced math and science, highlight a rapid acceleration of frontier AI capabilities and the potential for new applications in scientific discovery and problem-solving.",
+    "why_it_matters_ko": "이번 소식은 구글이 AI 경쟁에서 선두 주자로서의 입지를 강력히 재확인하고, 복잡한 추론 분야에서 획기적인 성능으로 경쟁자들에게 도전장을 내밀었음을 시사합니다. AI 업계 전문가들에게 딥 씽크가 특히 고급 수학 및 과학 분야에서 기록한 점수는 최첨단 AI 역량의 급격한 발전과 과학적 발견 및 문제 해결 분야에서 새로운 응용 가능성이 있음을 보여줍니다.",
+    "source": "Google",
+    "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 96.33333333333333,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 23,
+      "reach": 15,
+      "longTerm": 21,
+      "socialEthics": 13,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Research/Innovation",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "연구/혁신",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Text AI",
+      "Agent AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "에이전트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Google Deep Think",
+      "Gemini AI",
+      "AI Benchmarks",
+      "Reasoning AI",
+      "AI Research"
+    ],
+    "searchKeywords_ko": [
+      "구글 딥 씽크",
+      "제미나이 AI",
+      "AI 벤치마크",
+      "추론 AI",
+      "AI 연구"
+    ]
+  },
+  {
+    "id": "bytedance-launches-seedance-20-its-state-of-the-ar-20260213",
+    "title": "ByteDance Launches Seedance 2.0, Its State-of-the-Art Video Model",
+    "title_ko": "바이트댄스, 최첨단 비디오 모델 '시댄스 2.0' 출시",
+    "summary": "ByteDance has officially launched Seedance 2.0, its state-of-the-art viral video model. The company has published benchmark results and a technical blog detailing the model, though access to Seedance 2.0 currently remains restricted.",
+    "summary_ko": "바이트댄스가 최첨단 바이럴 비디오 모델 '시댄스 2.0'을 공식 출시했습니다. 회사는 해당 모델에 대한 벤치마크 결과와 기술 블로그를 공개했지만, 현재 시댄스 2.0에 대한 접근은 아직 제한적입니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "ByteDance",
+    "sourceUrl": "https://link.therundown.ai/jQ6mfo",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 94.0,
+    "impactDetails": {
+      "industry": 17,
+      "tech": 21,
+      "reach": 14,
+      "longTerm": 20,
+      "socialEthics": 21,
+      "exposure_score": 1
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Video AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "동영상 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Seedance 2.0",
+      "ByteDance AI",
+      "Video AI model",
+      "SOTA video",
+      "AI benchmarks"
+    ],
+    "searchKeywords_ko": [
+      "시댄스 2.0",
+      "바이트댄스 AI",
+      "비디오 AI 모델",
+      "SOTA 비디오",
+      "AI 벤치마크"
+    ]
+  },
+  {
+    "id": "anthropic-secures-30-billion-series-g-funding-at-3-20260213",
+    "title": "Anthropic Secures $30 Billion Series G Funding at $380 Billion Valuation",
+    "title_ko": "앤트로픽, 3,800억 달러 기업 가치로 300억 달러 시리즈 G 투자 유치",
+    "summary": "Anthropic has announced a $30 billion Series G funding round, valuing the company at $380 billion post-money, led by GIC and Coatue. The company reported a current revenue run rate of $14 billion, with $2.5 billion attributed specifically to its Claude Code product. This new capital will be utilized for frontier research, product development, and infrastructure expansion to maintain its market leadership in enterprise AI.",
+    "summary_ko": "앤트로픽은 GIC와 Coatue가 주도하는 300억 달러 규모의 시리즈 G 투자 유치를 발표했으며, 이로써 기업 가치는 투자 후 기준 3,800억 달러로 평가받았다. 회사는 현재 연간 140억 달러의 매출을 기록 중이며, 그 중 25억 달러는 특히 자사의 Claude Code 제품에서 발생했다고 밝혔다. 이번 신규 자금은 엔터프라이즈 AI 분야에서 시장 리더십을 유지하기 위한 최첨단 연구, 제품 개발 및 인프라 확장에 활용될 예정이다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 93.66666666666667,
+    "impactDetails": {
+      "industry": 25,
+      "tech": 21,
+      "reach": 23,
+      "longTerm": 25,
+      "socialEthics": 24,
+      "exposure_score": 3
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Agent AI",
+      "Generative AI",
+      "Text AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI",
+      "생성형 AI",
+      "텍스트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "AI Funding",
+      "Claude Code",
+      "AI Valuation",
+      "Enterprise AI"
+    ],
+    "searchKeywords_ko": [
+      "앤트로픽",
+      "AI 투자",
+      "클로드 코드",
+      "AI 기업가치",
+      "엔터프라이즈 AI"
+    ]
+  },
+  {
+    "id": "minimaxs-m25-open-source-model-achieves-frontier-c-20260213",
+    "title": "MiniMax's M2.5 Open-Source Model Achieves Frontier Coding Performance at Lower Cost",
+    "title_ko": "MiniMax의 M2.5 오픈소스 모델, 더 낮은 비용으로 최첨단 코딩 성능 달성",
+    "summary": "Chinese AI lab MiniMax has launched M2.5, an open-source model demonstrating frontier-level coding performance comparable to leading models like Opus 4.6 and GPT-5.2. Offered at a significantly lower cost via two APIs, M2.5 is designed to power always-on AI agents efficiently. The model already handles a substantial portion of MiniMax's internal tasks and new code commits, highlighting its practical application and cost-effectiveness.",
+    "summary_ko": "중국 AI 연구소 MiniMax가 오픈소스 모델 M2.5를 출시했습니다. 이 모델은 Opus 4.6 및 GPT-5.2와 같은 선두 모델과 견줄 만한 최첨단 코딩 성능을 선보입니다. 두 가지 API를 통해 훨씬 더 낮은 비용으로 제공되는 M2.5는 상시 가동되는 AI 에이전트를 효율적으로 구동하도록 설계되었습니다. 이 모델은 이미 MiniMax의 내부 업무와 새로운 코드 커밋의 상당 부분을 처리하며, 그 실질적인 적용 가능성과 비용 효율성을 입증하고 있습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "MiniMax",
+    "sourceUrl": "https://www.minimax.io/news/minimax-m25",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 93.66666666666667,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 19,
+      "reach": 15,
+      "longTerm": 21,
+      "socialEthics": 14,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Research/Innovation",
+      "Business"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "연구/혁신",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Text AI",
+      "Agent AI",
+      "Automation AI",
+      "Generative AI",
+      "Vibe Coding AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "에이전트 AI",
+      "자동화 AI",
+      "생성형 AI",
+      "바이브 코딩 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "MiniMax M2.5",
+      "Open-source AI",
+      "Coding AI",
+      "AI agents",
+      "Generative AI"
+    ],
+    "searchKeywords_ko": [
+      "MiniMax M2.5",
+      "오픈소스 AI",
+      "코딩 AI",
+      "AI 에이전트",
+      "생성형 AI"
+    ]
+  },
+  {
+    "id": "anthropic-and-codepath-partner-to-integrate-claude-20260213",
+    "title": "Anthropic and CodePath Partner to Integrate Claude AI into Collegiate Computer Science Curriculum",
+    "title_ko": "Anthropic과 CodePath, 대학 컴퓨터 과학 교육과정에 Claude AI 통합 파트너십 체결",
+    "summary": "Anthropic is collaborating with CodePath, the largest provider of collegiate computer science education in the US, to integrate Claude AI tools into its curriculum. This partnership aims to provide over 20,000 students at various institutions, including HBCUs and community colleges, with access to frontier AI for redesigning coding education and preparing them for entry-level engineering roles. The initiative also seeks to address educational inequality by offering industry-vetted courses and career networks to underserved students, while exploring AI's impact on economic opportunity.",
+    "summary_ko": "Anthropic은 미국 최대 대학 컴퓨터 과학 교육 제공기관인 CodePath와 협력하여 Claude AI 도구를 자사 교육과정에 통합한다. 이 파트너십은 HBCU(Historically Black Colleges and Universities) 및 커뮤니티 칼리지를 포함한 다양한 기관의 20,000명 이상의 학생들에게 최첨단 AI에 대한 접근성을 제공하여 코딩 교육을 재설계하고 초급 엔지니어링 직무를 준비하도록 지원하는 것을 목표로 한다. 나아가, 이 이니셔티브는 소외 계층 학생들에게 업계 검증 과정을 제공하고 커리어 네트워크를 연결하여 교육 불평등을 해소하며, AI가 경제적 기회에 미치는 영향을 탐색하고자 한다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/news/anthropic-codepath-partnership",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 91.0,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 12,
+      "reach": 17,
+      "longTerm": 20,
+      "socialEthics": 21,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Education",
+      "Tech/AI",
+      "Research/Innovation",
+      "Society/Policy"
+    ],
+    "categories_ko": [
+      "교육",
+      "테크/AI",
+      "연구/혁신",
+      "사회/정책"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "CodePath",
+      "Claude AI",
+      "Computer Science Education",
+      "AI Curriculum"
+    ],
+    "searchKeywords_ko": [
+      "앤스로픽",
+      "코드패스",
+      "클로드 AI",
+      "컴퓨터 과학 교육",
+      "AI 커리큘럼"
+    ]
+  },
+  {
+    "id": "openai-launches-speed-optimized-coding-model-gpt-5-20260213",
+    "title": "OpenAI Launches Speed-Optimized Coding Model, GPT-5.3-Codex-Spark, on Cerebras Hardware",
+    "title_ko": "OpenAI, Cerebras 하드웨어에서 속도 최적화 코딩 모델 GPT-5.3-Codex-Spark 출시",
+    "summary": "OpenAI has released GPT-5.3-Codex-Spark, a new speed-optimized coding model designed to run on Cerebras hardware, achieving over 1,000 tokens per second. This marks OpenAI's first AI product powered by chips outside its Nvidia stack, signifying a key step in its hardware diversification strategy. The model is intended for quick interactive coding edits and is available as a research preview for ChatGPT Pro subscribers.",
+    "summary_ko": "OpenAI는 Cerebras 하드웨어에서 구동되도록 설계되어 초당 1,000개 이상의 토큰을 처리하는 새로운 속도 최적화 코딩 모델인 GPT-5.3-Codex-Spark를 출시했습니다. 이는 OpenAI가 Nvidia 스택 외부 칩으로 구동되는 최초의 AI 제품을 선보인 것으로, 하드웨어 다각화 전략의 핵심 단계를 의미합니다. 이 모델은 빠른 대화형 코딩 편집을 위해 고안되었으며, ChatGPT Pro 구독자를 위한 연구 미리보기 형태로 제공됩니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/introducing-gpt-5-3-codex-spark/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 89.66666666666667,
+    "impactDetails": {
+      "industry": 22,
+      "tech": 20,
+      "reach": 15,
+      "longTerm": 21,
+      "socialEthics": 10,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Hardware",
+      "Business",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "하드웨어",
+      "비즈니스",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "Cerebras",
+      "AI coding model",
+      "GPT-5.3-Codex-Spark",
+      "Hardware diversification"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "Cerebras",
+      "AI 코딩 모델",
+      "GPT-5.3-Codex-Spark",
+      "하드웨어 다각화"
+    ]
+  },
+  {
+    "id": "why-top-talent-is-departing-from-openai-and-xai-20260213",
+    "title": "Why Top Talent is Departing from OpenAI and xAI",
+    "title_ko": "OpenAI와 xAI에서 핵심 인력이 떠나는 이유",
+    "summary": "The article content was not provided, preventing the generation of a factual summary. However, based on the title, the piece discusses the reasons behind key employees leaving leading artificial intelligence companies OpenAI and xAI.",
+    "summary_ko": "기사 내용이 제공되지 않아 사실에 기반한 요약을 작성할 수 없습니다. 하지만 제목으로 미루어 짐작컨대, 이 글은 선도적인 AI 기업인 OpenAI와 xAI에서 핵심 직원들이 떠나는 이유에 대해 다루고 있습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/video/why-top-talent-is-walking-away-from-openai-and-xai/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 88.66666666666667,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 14,
+      "reach": 19,
+      "longTerm": 21,
+      "socialEthics": 22,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Business",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "비즈니스",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Text AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "텍스트 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "xAI",
+      "AI talent exodus",
+      "AI industry",
+      "employee retention"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "xAI",
+      "AI 인재 유출",
+      "AI 산업",
+      "인재 유지"
+    ]
+  },
+  {
+    "id": "oai-researcher-zo-hitzig-resigns-citing-manipulati-20260213",
+    "title": "OAI Researcher Zoë Hitzig Resigns, Citing Manipulation Risks from ChatGPT Ads",
+    "title_ko": "OAI 연구원 조이 히치그, ChatGPT 광고 관련 조작 위험성 제기하며 사임",
+    "summary": "OAI researcher Zoë Hitzig resigned after the launch of ChatGPT ads. She warned that OAI’s extensive archive of human thought creates an \"unprecedented potential for manipulation.\"",
+    "summary_ko": "OAI 연구원 조이 히치그가 ChatGPT 광고 출시 이후 사임했습니다. 그녀는 OAI가 보유한 방대한 인간 사상의 아카이브가 '전례 없는 조작 가능성'을 생성한다고 경고했습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "New York Times",
+    "sourceUrl": "https://www.nytimes.com/2026/02/11/opinion/openai-ads-chatgpt.html",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 81.66666666666667,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 5,
+      "reach": 22,
+      "longTerm": 23,
+      "socialEthics": 25,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Society/Policy",
+      "Business",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "사회/정책",
+      "비즈니스",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "안전/윤리",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "OAI",
+      "Zoë Hitzig",
+      "ChatGPT",
+      "AI Manipulation",
+      "AI Ethics"
+    ],
+    "searchKeywords_ko": [
+      "OAI",
+      "조이 히치그",
+      "ChatGPT",
+      "AI 조작",
+      "AI 윤리"
+    ]
+  },
+  {
+    "id": "cohere-achieves-240m-arr-paving-way-for-potential--20260213",
+    "title": "Cohere Achieves $240M ARR, Paving Way for Potential IPO",
+    "title_ko": "코히어, 연간 반복 매출(ARR) 2억 4천만 달러 달성…잠재적 IPO(기업 공개) 발판 마련",
+    "summary": "Canadian AI startup Cohere surpassed its 2025 annual recurring revenue target, reaching $240 million with over 50% quarter-over-quarter growth. Specializing in generative AI models for enterprise, Cohere's CEO indicated a potential IPO soon, positioning it among other major AI firms considering public debuts. The company is backed by prominent tech investors and offers efficient generative AI solutions like its Command models and North enterprise platform.",
+    "summary_ko": "캐나다 AI 스타트업 코히어는 2025년 연간 반복 매출(ARR) 목표를 조기 달성하며 분기별 50% 이상의 성장을 기록, 2억 4천만 달러에 도달했습니다. 기업용 생성형 AI 모델에 특화된 코히어의 CEO는 곧 있을 IPO(기업 공개) 가능성을 시사했으며, 이는 상장을 고려 중인 다른 주요 AI 기업들 사이에서 코히어를 주목받게 합니다. 이 회사는 저명한 기술 투자자들의 지원을 받으며, Command 모델과 North 엔터프라이즈 플랫폼과 같은 효율적인 생성형 AI 솔루션을 제공하고 있습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/13/coheres-240m-year-sets-stage-for-ipo/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 77,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 16,
+      "reach": 18,
+      "longTerm": 21,
+      "socialEthics": 2,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Agent AI",
+      "Text AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "에이전트 AI",
+      "텍스트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Cohere IPO",
+      "AI startup funding",
+      "Generative AI enterprise",
+      "Annual Recurring Revenue",
+      "AI market"
+    ],
+    "searchKeywords_ko": [
+      "코히어 IPO",
+      "AI 스타트업 투자",
+      "기업용 생성형 AI",
+      "연간 반복 매출",
+      "AI 시장"
+    ]
+  },
+  {
+    "id": "anthropics-super-bowl-ads-boost-claudes-app-to-top-20260213",
+    "title": "Anthropic’s Super Bowl Ads Boost Claude’s App to Top 10",
+    "title_ko": "Anthropic의 슈퍼볼 광고, Claude 앱을 상위 10위권으로 끌어올려",
+    "summary": "Anthropic's recent Super Bowl ads, humorously depicting AI chatbot shortcomings, have significantly propelled its Claude app into the U.S. App Store's top 10, reaching an all-time high of No. 7. This surge is attributed to a 32% increase in U.S. downloads, totaling 148,000 in three days, and its \"no ads\" pitch resonated strongly with users as competitors like ChatGPT introduced advertisements. The campaign, combined with the Opus 4.6 model release, successfully differentiated Claude in the competitive AI market.",
+    "summary_ko": "Anthropic의 최근 슈퍼볼 광고는 AI 챗봇의 단점을 유머러스하게 묘사하며, 자사 Claude 앱을 미국 앱스토어 상위 10위권으로 크게 끌어올렸으며, 역대 최고 순위인 7위를 기록했다. 이러한 급증세는 미국 내 다운로드 수가 3일 만에 32% 증가하여 총 148,000건에 달한 덕분이며, 경쟁사인 ChatGPT 등이 광고를 도입한 반면, Claude의 '광고 없음'이라는 메시지가 사용자들에게 강력히 반향을 일으켰기 때문이다. 이번 캠페인은 Opus 4.6 모델 출시와 더불어, 경쟁이 치열한 AI 시장에서 Claude를 성공적으로 차별화했다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/13/anthropics-super-bowl-ads-mocking-ai-with-ads-helped-push-claudes-app-into-the-top-10/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 74,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 5,
+      "reach": 22,
+      "longTerm": 17,
+      "socialEthics": 14,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Anthropic",
+      "Claude app",
+      "Super Bowl ads",
+      "AI chatbot",
+      "App Store ranking"
+    ],
+    "searchKeywords_ko": [
+      "앤스로픽",
+      "클로드 앱",
+      "슈퍼볼 광고",
+      "AI 챗봇",
+      "앱스토어 순위"
+    ]
+  },
+  {
+    "id": "ai-burnout-billion-dollar-tech-investments-and-sil-20260213",
+    "title": "AI Burnout, Billion-Dollar Tech Investments, and Silicon Valley's Ethical Dilemmas",
+    "title_ko": "AI 번아웃, 수십억 달러 규모의 기술 투자, 그리고 실리콘밸리의 윤리적 딜레마",
+    "summary": "The TechCrunch Equity podcast explores significant talent shakeups at AI companies like xAI and OpenAI, including the disbanding of key teams. It also covers major investments in humanoid robotics and fusion power, alongside an examination of Silicon Valley's dealmaking ethics as revealed by the Epstein files and the reception of AI Super Bowl ads.",
+    "summary_ko": "테크크런치 에퀴티 팟캐스트는 xAI와 OpenAI 같은 AI 기업들의 핵심 팀 해체를 포함한 주요 인재 개편 소식을 다룹니다. 또한 휴머노이드 로봇공학 및 핵융합 발전 분야의 대규모 투자 소식과 엡스타인 파일로 드러난 실리콘밸리의 거래 윤리 문제, 그리고 AI 슈퍼볼 광고의 대중적 반응에 대한 고찰을 제공합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/podcast/ai-burnout-billion-dollar-bets-and-silicon-valleys-epstein-problem/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 71,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 5,
+      "reach": 15,
+      "longTerm": 17,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Society/Policy",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Energy/Environment",
+      "Tech/AI",
+      "Economy",
+      "Automotive"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "사회/정책",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "에너지/환경",
+      "테크/AI",
+      "경제",
+      "자동차"
+    ],
+    "productServices": [
+      "Robotics",
+      "Generative AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "생성형 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics",
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "안전/윤리",
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "AI Industry Talent",
+      "Silicon Valley Investments",
+      "AI Ethics",
+      "Robotics Funding",
+      "OpenAI Shakeups"
+    ],
+    "searchKeywords_ko": [
+      "AI 산업 인재",
+      "실리콘밸리 투자",
+      "AI 윤리",
+      "로봇공학 투자",
+      "OpenAI 개편"
+    ]
+  },
+  {
+    "id": "elon-musk-addresses-xai-departures-citing-forced-r-20260213",
+    "title": "Elon Musk Addresses xAI Departures, Citing Forced Reorganization for 'Speed of Execution'",
+    "title_ko": "일론 머스크, xAI 인력 이탈에 대해 '실행 속도를 위한 강제 조직 개편' 언급",
+    "summary": "Elon Musk addressed a significant wave of departures from xAI, including six co-founders and at least 11 engineers, stating the exits were a forced reorganization. He clarified these departures were not voluntary, but rather a necessary restructuring to improve the company's \"speed of execution\" as it grows rapidly. Despite the exits, Musk announced aggressive hiring, inviting new talent to join xAI's mission.",
+    "summary_ko": "일론 머스크는 6명의 공동 창업자와 최소 11명의 엔지니어를 포함한 xAI의 상당한 규모의 인력 이탈에 대해 언급하며, 이들이 강제적인 조직 개편 때문이라고 밝혔다. 그는 이러한 퇴사들이 자발적인 것이 아니라, 급격히 성장하는 회사의 '실행 속도'를 개선하기 위한 필수적인 구조조정이었다고 해명했다. 이러한 인력 이탈에도 불구하고, 머스크는 공격적인 인재 채용을 발표하며 xAI의 비전에 동참할 새로운 인재들을 모집하고 있다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/11/senior-engineers-including-co-founders-exit-xai-amid-controversy/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 65,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 5,
+      "reach": 21,
+      "longTerm": 17,
+      "socialEthics": 4,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Tech/AI",
+      "Technology",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "테크/AI",
+      "기술",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI"
+    ],
+    "coreElements": [],
+    "coreElements_ko": [],
+    "searchKeywords": [
+      "Elon Musk",
+      "xAI",
+      "Company reorganization",
+      "AI industry",
+      "Tech departures"
+    ],
+    "searchKeywords_ko": [
+      "일론 머스크",
+      "xAI",
+      "조직 개편",
+      "AI 산업",
+      "기술 기업 인력 이탈"
+    ]
+  },
+  {
+    "id": "anthropic-appoints-chris-liddell-to-board-of-direc-20260213",
+    "title": "Anthropic Appoints Chris Liddell to Board of Directors",
+    "title_ko": "안트로픽, 크리스 리델 이사회 이사 선임",
+    "summary": "Chris Liddell has been appointed to Anthropic’s Board of Directors, bringing over 30 years of senior leadership experience from companies like Microsoft, General Motors, and public service roles including Deputy White House Chief of Staff. His appointment is aimed at leveraging his expertise in technology, public service, and governance to help ensure the responsible development of AI. Liddell joins other notable board members, emphasizing the critical importance of governance for transformative technologies.",
+    "summary_ko": "크리스 리델이 마이크로소프트, 제너럴 모터스 등에서 30년 이상의 고위 리더십 경험을 쌓았고 백악관 부비서실장 등 공직을 역임한 인물로, 안트로픽 이사회 이사로 선임되었습니다. 그의 선임은 기술, 공공 서비스, 거버넌스 분야 전문성을 활용하여 AI의 책임감 있는 개발을 보장하는 데 기여하는 것을 목표로 합니다. 리델은 다른 저명한 이사들과 함께 변혁적 기술에 대한 거버넌스의 중요성을 강조하고 있습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Anthropic",
+    "sourceUrl": "https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 63,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 2,
+      "reach": 10,
+      "longTerm": 19,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Tech/AI",
+      "Technology",
+      "Society/Policy"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "테크/AI",
+      "기술",
+      "사회/정책"
+    ],
+    "productServices": [
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Chris Liddell",
+      "Anthropic",
+      "Board Appointment",
+      "AI Governance",
+      "Corporate Leadership"
+    ],
+    "searchKeywords_ko": [
+      "크리스 리델",
+      "안트로픽",
+      "이사 선임",
+      "AI 거버넌스",
+      "기업 리더십"
+    ]
+  },
+  {
+    "id": "elon-musk-explains-high-profile-departures-at-xai--20260213",
+    "title": "Elon Musk Explains High-Profile Departures at xAI as Organizational Push",
+    "title_ko": "일론 머스크, xAI 고위 인력 대규모 이탈은 '조직 개편' 때문이라고 설명",
+    "summary": "Elon Musk addressed a wave of departures from xAI, including six co-founders and multiple engineers, explaining they were a result of a company reorganization to improve speed and effectiveness. Musk stated these exits were non-voluntary, as some individuals were deemed better suited for earlier company stages. Despite the shake-up, xAI is actively hiring, while some departing staff are planning new ventures focusing on frontier AI.",
+    "summary_ko": "일론 머스크는 공동 창업자 6명과 다수의 엔지니어를 포함한 xAI의 대규모 인력 이탈에 대해, 이는 속도와 효율성 향상을 위한 조직 개편의 결과라고 설명했습니다. 머스크는 일부 인력들이 회사의 초기 단계에 더 적합하다고 판단되어 이들의 퇴사가 비자발적이었다고 밝혔습니다. 이러한 대규모 인력 변동에도 불구하고 xAI는 적극적으로 인력을 채용하고 있으며, 한편 퇴사한 일부 직원들은 frontier AI에 초점을 맞춘 새로운 벤처를 계획 중입니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/13/elon-musk-suggests-spate-of-xai-exits-have-been-push-not-pull/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 63,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 5,
+      "reach": 22,
+      "longTerm": 17,
+      "socialEthics": 3,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Technology",
+      "Tech/AI",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "기술",
+      "테크/AI",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Elon Musk",
+      "xAI",
+      "Company reorganization",
+      "AI industry",
+      "Employee departures"
+    ],
+    "searchKeywords_ko": [
+      "일론 머스크",
+      "xAI",
+      "조직 개편",
+      "AI 산업",
+      "직원 이탈"
+    ]
+  },
+  {
+    "id": "openai-to-retire-gpt-4o-gpt-41-and-o4-mini-from-ch-20260213",
+    "title": "OpenAI to Retire GPT-4o, GPT-4.1, and o4-mini from ChatGPT in February 2026",
+    "title_ko": "OpenAI, 2026년 2월 ChatGPT에서 GPT-4o, GPT-4.1, o4-mini 모델 서비스 종료 예정",
+    "summary": "OpenAI will retire GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini from ChatGPT on February 13, 2026, alongside GPT-5. This decision follows significant improvements in GPT-5.1 and GPT-5.2, which incorporate user feedback regarding conversational style and creative ideation, leading to a shift in the vast majority of user adoption. The company noted that this allows them to focus on enhancing the models most people currently use, while API access for these models remains unchanged for now.",
+    "summary_ko": "OpenAI는 2026년 2월 13일, GPT-5 출시 시점에 맞춰 ChatGPT에서 GPT-4o, GPT-4.1, GPT-4.1 mini 및 o4-mini 모델의 서비스 종료를 발표했다. 이러한 결정은 사용자 피드백을 반영하여 대화 스타일 및 창의적 아이디어 생성 능력에서 크게 개선된 GPT-5.1 및 GPT-5.2 모델이 출시되면서, 대다수 사용자들이 해당 모델로 전환했기 때문이다. 회사는 이러한 조치를 통해 현재 대부분의 사용자가 이용하는 모델들을 개선하는 데 집중할 수 있게 된다고 밝혔다. 다만, 이들 모델에 대한 API 접근은 당분간 변경 없이 유지될 것이라고 덧붙였다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/retiring-gpt-4o-and-older-models/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 52,
+    "impactDetails": {
+      "industry": 10,
+      "tech": 3,
+      "reach": 14,
+      "longTerm": 15,
+      "socialEthics": 8,
+      "exposure_score": 1
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "ChatGPT",
+      "GPT-4o retirement",
+      "AI models",
+      "Generative AI"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "ChatGPT",
+      "GPT-4o 서비스 종료",
+      "AI 모델",
+      "생성형 AI"
+    ]
+  },
+  {
+    "id": "gpt-52-achieves-new-theoretical-physics-result-20260213",
+    "title": "GPT-5.2 Achieves New Theoretical Physics Result",
+    "title_ko": "GPT-5.2, 새로운 이론 물리학 결과 도출",
+    "summary": "The article's title claims that GPT-5.2 has derived a new result in theoretical physics. However, the provided content is an error message, stating 'Verification successful. Waiting for openai.com to respond' and prompting for JavaScript and cookies. This indicates the actual details of the AI's supposed discovery are not accessible in the current article.",
+    "summary_ko": "이 기사의 제목은 GPT-5.2가 이론 물리학 분야에서 새로운 결과를 도출했다고 주장합니다. 그러나 제공된 내용은 'Verification successful. Waiting for openai.com to respond'라는 오류 메시지이며, JavaScript와 쿠키를 활성화하라는 안내를 표시합니다. 이는 AI가 발견했다고 하는 내용의 실제 세부 정보가 현재 기사에서 접근 불가능함을 시사합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/new-result-theoretical-physics/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 0,
+    "impactDetails": {
+      "industry": 0,
+      "tech": 0,
+      "reach": 0,
+      "longTerm": 0,
+      "socialEthics": 0,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Research/Innovation",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "연구/혁신",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Text AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "텍스트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "GPT-5.2",
+      "Theoretical Physics",
+      "AI Research",
+      "OpenAI",
+      "Generative AI"
+    ],
+    "searchKeywords_ko": [
+      "GPT-5.2",
+      "이론 물리학",
+      "AI 연구",
+      "OpenAI",
+      "생성형 AI"
+    ]
+  },
+  {
+    "id": "introducing-lockdown-mode-and-elevated-risk-labels-20260213",
+    "title": "Introducing Lockdown Mode and Elevated Risk Labels in ChatGPT",
+    "title_ko": "ChatGPT에 록다운 모드 및 고위험 레이블 도입",
+    "summary": "The article announces the launch of 'Lockdown Mode' and 'Elevated Risk labels' in ChatGPT. These new features are designed to enhance the security and risk management capabilities of the AI platform.",
+    "summary_ko": "이 글은 ChatGPT에 '록다운 모드'와 '고위험 레이블'이 출시되었음을 알립니다. 이 새로운 기능들은 AI 플랫폼의 보안 및 위험 관리 역량을 강화하도록 설계되었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 0,
+    "impactDetails": {
+      "industry": 0,
+      "tech": 0,
+      "reach": 0,
+      "longTerm": 0,
+      "socialEthics": 0,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Defense/Security"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "국방/보안"
+    ],
+    "productServices": [
+      "Text AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "ChatGPT",
+      "Lockdown Mode",
+      "Elevated Risk labels",
+      "AI security",
+      "OpenAI"
+    ],
+    "searchKeywords_ko": [
+      "ChatGPT",
+      "록다운 모드",
+      "고위험 레이블",
+      "AI 보안",
+      "OpenAI"
+    ]
+  },
+  {
+    "id": "scaling-social-science-research-20260213",
+    "title": "Scaling Social Science Research",
+    "title_ko": "사회 과학 연구의 규모 확대",
+    "summary": "The article titled 'Scaling social science research' displayed a technical loading message, indicating a verification process and a wait for openai.com. Due to this technical issue, the actual content detailing the specifics of social science research was not accessible.",
+    "summary_ko": "'사회 과학 연구의 규모 확대'라는 제목의 해당 기사는 기술적인 로딩 메시지를 보여주었으며, 이는 openai.com에 대한 확인 절차 및 대기 상태임을 나타냈습니다. 이러한 기술적 문제로 인해 사회 과학 연구의 구체적인 내용을 담은 실제 콘텐츠는 접근할 수 없었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/scaling-social-science-research/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 0,
+    "impactDetails": {
+      "industry": 0,
+      "tech": 0,
+      "reach": 0,
+      "longTerm": 0,
+      "socialEthics": 0,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Research/Innovation",
+      "Healthcare/Science",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "연구/혁신",
+      "의료/과학",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Text AI",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Social science research",
+      "OpenAI",
+      "Research innovation",
+      "AI applications",
+      "Scaling research"
+    ],
+    "searchKeywords_ko": [
+      "사회 과학 연구",
+      "OpenAI",
+      "연구 혁신",
+      "AI 응용",
+      "연구 규모 확대"
+    ]
+  },
+  {
+    "id": "scaling-access-to-openais-codex-and-sora-models-20260213",
+    "title": "Scaling Access to OpenAI's Codex and Sora Models",
+    "title_ko": "OpenAI Codex 및 Sora 모델 접근성 확장",
+    "summary": "This article discusses various strategies for effectively scaling access to OpenAI's advanced AI models, Codex and Sora. It aims to explore methods for moving beyond current rate limits, thereby enabling wider and more efficient utilization of these powerful generative AI tools.",
+    "summary_ko": "이 글은 OpenAI의 고급 AI 모델인 Codex와 Sora에 대한 접근성을 효과적으로 확장하기 위한 다양한 전략을 다룹니다. 현재의 rate limits(사용량 제한)를 넘어설 방법들을 탐색하여, 이 강력한 생성형 AI 도구들을 더 광범위하고 효율적으로 활용할 수 있도록 하는 것을 목표로 합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "OpenAI",
+    "sourceUrl": "https://openai.com/index/beyond-rate-limits/",
+    "publishedDate": "2026-02-13",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 0,
+    "impactDetails": {
+      "industry": 0,
+      "tech": 0,
+      "reach": 0,
+      "longTerm": 0,
+      "socialEthics": 0,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Technology",
+      "Business"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "기술",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Text AI",
+      "Video AI",
+      "Generative AI"
+    ],
+    "productServices_ko": [
+      "텍스트 AI",
+      "동영상 AI",
+      "생성형 AI"
+    ],
+    "coreElements": [
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "OpenAI",
+      "Codex",
+      "Sora",
+      "AI scaling",
+      "Rate limits"
+    ],
+    "searchKeywords_ko": [
+      "OpenAI",
+      "Codex",
+      "Sora",
+      "AI 확장",
+      "속도 제한"
+    ]
+  }
+]

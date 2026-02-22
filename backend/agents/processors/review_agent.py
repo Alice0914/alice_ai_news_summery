@@ -1,6 +1,3 @@
-
-# backend/agents/processors/review_agent.py
-
 import re
 import json
 # Removed potentially conflicting imports if they existed in prior versions

@@ -1,4 +1,3 @@
-# backend/agents/processors/translator.py
 """
 Translator
 Translates English content to Korean and generates final output format.
@@ -50,7 +49,7 @@ class Translator:
         # Clean title
         clean = re.sub(r'[^a-zA-Z0-9\s-]', '', title.lower())
         clean = re.sub(r'\s+', '-', clean.strip())
-        clean = clean[:50]  # Limit length
+        clean = clean[:50]
         
         # Add date suffix if available
         if date:
@@ -196,7 +195,7 @@ Output JSON:
                 }
                 
                 results.append(final_article)
-                time.sleep(1)  # Rate limit
+                time.sleep(1)
                 
             except Exception as e:
                 print(f"    ❌ Error translating: {e}")

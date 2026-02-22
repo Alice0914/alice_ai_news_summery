@@ -2396,5 +2396,127 @@
       "AI 시스템 카드",
       "생성형 AI"
     ]
+  },
+  {
+    "id": "cartwheel-robotics-shuts-down-after-failing-to-sec-20260205",
+    "title": "Cartwheel Robotics shuts down after failing to secure funding",
+    "title_ko": "카트휠 로보틱스, 투자 유치 실패로 사업 중단",
+    "summary": "Nevada-based Cartwheel Robotics, the developer of the compact Yogi humanoid, has ceased operations. The startup failed to secure sufficient funding to advance its prototypes beyond the initial development phase.",
+    "summary_ko": "네바다 기반의 소형 휴머노이드 로봇 '요기' 개발사 카트휠 로보틱스가 운영을 중단했다. 이 스타트업은 시제품을 초기 개발 단계 이상으로 발전시킬 충분한 자금을 확보하는 데 실패했다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "LinkedIn",
+    "sourceUrl": "https://www.linkedin.com/posts/slavalley_after-four-intense-unforgettable-years-activity-7425247231106093056-d7Pi/",
+    "publishedDate": "2026-02-05",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 16,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 3,
+      "reach": 4,
+      "longTerm": 3,
+      "socialEthics": 1,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [],
+    "coreElements_ko": [],
+    "searchKeywords": [
+      "Cartwheel Robotics",
+      "Yogi humanoid",
+      "Robotics startup",
+      "Funding failure",
+      "Startup shutdown"
+    ],
+    "searchKeywords_ko": [
+      "카트휠 로보틱스",
+      "요기 휴머노이드",
+      "로봇 스타트업",
+      "투자 유치 실패",
+      "스타트업 사업 중단"
+    ]
+  },
+  {
+    "id": "robotics-startup-cartwheel-robotics-ceases-operati-20260205",
+    "title": "Robotics Startup Cartwheel Robotics Ceases Operations Due to Funding Shortfall",
+    "title_ko": "로봇 스타트업 카트휠 로보틱스, 자금난으로 사업 운영 중단",
+    "summary": "Nevada-based Cartwheel Robotics, known for developing the compact Yogi humanoid, has announced its cessation of operations. The startup failed to secure sufficient funding to advance its products beyond the prototype stage, leading to its shutdown.",
+    "summary_ko": "네바다에 본사를 둔 카트휠 로보틱스(Cartwheel Robotics)는 소형 휴머노이드 로봇 '요기(Yogi)' 개발로 알려졌으나, 최근 사업 운영 중단을 발표했습니다. 이 스타트업은 제품을 프로토타입 단계를 넘어 발전시킬 충분한 자금을 확보하지 못해 결국 문을 닫게 되었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "LinkedIn",
+    "sourceUrl": "https://www.linkedin.com/posts/slavalley_after-four-intense-unforgettable-years-activity-7425247231106093056-d7Pi/",
+    "publishedDate": "2026-02-05",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 14,
+    "impactDetails": {
+      "industry": 5,
+      "tech": 3,
+      "reach": 2,
+      "longTerm": 4,
+      "socialEthics": 0,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [],
+    "coreElements_ko": [],
+    "searchKeywords": [
+      "Cartwheel Robotics",
+      "Yogi humanoid",
+      "robotics startup",
+      "funding failure",
+      "startup shutdown"
+    ],
+    "searchKeywords_ko": [
+      "카트휠 로보틱스",
+      "요기 휴머노이드 로봇",
+      "로봇 스타트업",
+      "자금난",
+      "스타트업 폐업"
+    ]
   }
 ]

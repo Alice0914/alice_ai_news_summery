@@ -1976,5 +1976,147 @@
       "자율주행차",
       "우버 승진"
     ]
+  },
+  {
+    "id": "uber-plans-global-robotaxi-expansion-in-15-cities--20260204",
+    "title": "Uber Plans Global Robotaxi Expansion in 15 Cities This Year",
+    "title_ko": "우버, 올해 15개 도시에서 로보택시 글로벌 확장 계획",
+    "summary": "Uber is reportedly investing hundreds of millions to launch Level 4 robotaxi services in approximately 15 cities globally this year, marking its first push into Asia with Hong Kong, and expanding in Europe and the Middle East. The strategy focuses on partnerships with AV suppliers like Baidu, WeRide, and Momenta rather than building its own self-driving technology. This approach enables Uber to scale its autonomous ride offerings rapidly.",
+    "summary_ko": "우버는 올해 전 세계 약 15개 도시에서 Level 4 로보택시 서비스를 출시하기 위해 수억 달러를 투자하는 것으로 알려졌습니다. 이는 홍콩을 시작으로 아시아 시장에 첫 진출하며, 유럽과 중동 지역에서도 확장을 꾀하는 것입니다. 이 전략은 자체 자율주행 기술 개발보다는 Baidu, WeRide, Momenta와 같은 AV(자율주행차) 공급업체와의 파트너십에 중점을 둡니다. 이러한 접근 방식은 우버가 자율주행 차량 서비스를 빠르게 확장할 수 있도록 합니다.",
+    "why_it_matters": "This strategy allows Uber to rapidly scale autonomous ride services globally without internal R&D, simultaneously providing a crucial market entry for Chinese AV companies into Western and Middle Eastern markets. This move significantly increases competitive pressure on established autonomous vehicle developers like Waymo and Tesla, as well as ride-hailing rivals Bolt and Didi.",
+    "why_it_matters_ko": "이 전략은 우버가 자체 R&D 없이 전 세계적으로 자율주행 차량 서비스를 빠르게 확장할 수 있게 하며, 동시에 중국 AV 기업들이 서구 및 중동 시장에 진출할 수 있는 중요한 기회를 제공합니다. 이러한 움직임은 Waymo, Tesla와 같은 기존 자율주행차 개발업체뿐만 아니라 Bolt, Didi와 같은 차량 호출(ride-hailing) 경쟁업체에게도 상당한 경쟁 압력을 가중시킬 것입니다.",
+    "source": "Bloomberg",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-02-04/uber-to-launch-robotaxi-services-in-hong-kong-madrid-houston-zurich?leadSource=reddit_wall",
+    "publishedDate": "2026-02-04",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 92,
+    "impactDetails": {
+      "industry": 23,
+      "tech": 15,
+      "reach": 20,
+      "longTerm": 24,
+      "socialEthics": 10,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Automotive",
+      "Tech/AI",
+      "Robotics/Physical AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "자동차",
+      "테크/AI",
+      "로보틱스/물리 AI",
+      "기술"
+    ],
+    "productServices": [
+      "Autonomous Driving AI",
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "자율주행 AI",
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Uber robotaxi",
+      "Autonomous driving",
+      "Global expansion",
+      "AI mobility",
+      "Self-driving partnerships"
+    ],
+    "searchKeywords_ko": [
+      "우버 로보택시",
+      "자율주행",
+      "글로벌 확장",
+      "AI 모빌리티",
+      "자율주행 파트너십"
+    ]
+  },
+  {
+    "id": "uber-plans-robotaxi-blitz-in-15-cities-this-year-20260204",
+    "title": "Uber Plans Robotaxi Blitz in 15 Cities This Year",
+    "title_ko": "우버, 올해 15개 도시에서 로보택시 급확장 계획",
+    "summary": "Uber is investing hundreds of millions of dollars to launch Level 4 robotaxi services in approximately 15 cities globally this year, marking its first expansion into Asia. The company will deploy these autonomous vehicles through strategic partnerships with AV companies like Baidu, WeRide, and Momenta, rather than developing its own self-driving technology. This significant expansion includes major cities such as Madrid, Houston, Zurich, and Hong Kong, alongside planned rollouts in the Middle East.",
+    "summary_ko": "우버는 올해 전 세계 약 15개 도시에서 레벨 4 로보택시 서비스를 출시하기 위해 수억 달러를 투자할 예정이며, 이는 아시아 시장으로의 첫 진출을 의미합니다. 회사는 자체 자율주행 기술을 개발하는 대신 바이두, 웨이라이드, 모멘타와 같은 AV(자율주행) 기업들과의 전략적 제휴를 통해 이들 자율주행 차량을 배치할 것입니다. 이러한 대규모 확장은 마드리드, 휴스턴, 취리히, 홍콩 등 주요 도시를 포함하며, 중동 지역에도 출시가 예정되어 있습니다.",
+    "why_it_matters": "This strategy highlights a significant trend of platform companies leveraging existing AI autonomous driving technologies from specialized partners to rapidly scale services globally, rather than investing heavily in proprietary AI development. It also demonstrates how such partnerships can accelerate market entry for AI developers, intensifying competition and fostering a more integrated ecosystem for autonomous vehicle deployment worldwide.",
+    "why_it_matters_ko": "이러한 전략은 플랫폼 기업들이 자체 AI 개발에 막대한 투자를 하는 대신, 전문 파트너의 기존 AI 자율주행 기술을 활용하여 서비스를 전 세계적으로 빠르게 확장하려는 중요한 추세를 보여줍니다. 또한, 이러한 파트너십이 AI 개발자들의 시장 진입을 가속화하고, 경쟁을 심화하며, 전 세계 자율주행차 배치를 위한 더욱 통합된 생태계를 조성하는 데 기여할 수 있음을 입증합니다.",
+    "source": "Bloomberg",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-02-04/uber-to-launch-robotaxi-services-in-hong-kong-madrid-houston-zurich?leadSource=reddit_wall",
+    "publishedDate": "2026-02-04",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 98.66666666666667,
+    "impactDetails": {
+      "industry": 21,
+      "tech": 14,
+      "reach": 22,
+      "longTerm": 23,
+      "socialEthics": 19,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Automotive",
+      "Tech/AI",
+      "Robotics/Physical AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "자동차",
+      "테크/AI",
+      "로보틱스/물리 AI"
+    ],
+    "productServices": [
+      "Autonomous Driving AI",
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "자율주행 AI",
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Uber robotaxi",
+      "Autonomous driving",
+      "Robotaxi expansion",
+      "Self-driving partnerships",
+      "Global AV deployment"
+    ],
+    "searchKeywords_ko": [
+      "우버 로보택시",
+      "자율주행",
+      "로보택시 사업 확장",
+      "자율주행 협력",
+      "전 세계 자율주행차 배치"
+    ]
   }
 ]

@@ -1,6 +1,3 @@
-
-# backend/agents/taxonomy.py
-
 # ID Mappings (English -> Legacy Korean)
 CATEGORY_ID_MAP = {
     "Business": "비즈니스",

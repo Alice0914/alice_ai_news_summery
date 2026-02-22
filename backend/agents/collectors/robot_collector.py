@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/robot_collector.py
 """
 Robot Runtime News Collector
 Wraps the RobotRuntimeNewsAgent to scrape and extract robot news.
@@ -17,14 +16,12 @@ from dotenv import load_dotenv
 # Ensure backend modules can be imported
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-# Import Google Generative AI
 try:
     import google.generativeai as genai
     HAS_GENAI = True
 except ImportError:
     HAS_GENAI = False
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -37,7 +34,7 @@ except ImportError:
 
 # Load environment variables
 _current_dir = os.path.dirname(os.path.abspath(__file__))
-_env_path = os.path.join(_current_dir, '..', '..', '..', '.env') # Adjusted path to root backend
+_env_path = os.path.join(_current_dir, '..', '..', '..', '.env')
 load_dotenv(_env_path)
 
 
@@ -65,7 +62,7 @@ class RobotRuntimeNewsAgent:
             print("[Warning] GOOGLE_API_KEY not found in environment variables. Extraction may fail.")
         elif HAS_GENAI:
             genai.configure(api_key=api_key)
-            self.model = genai.GenerativeModel("gemini-2.0-flash") # Updated to latest stable flash or use 1.5-flash
+            self.model = genai.GenerativeModel("gemini-2.0-flash")
         
         # Try to use cloudscraper, fallback to requests
         try:
@@ -168,7 +165,6 @@ class RobotRuntimeNewsAgent:
         for line in lines:
             stripped = line.strip()
             
-            # Check for re-inclusion (e.g., "Everything else..." section appearing after an excluded section)
             if any(m in stripped for m in include_markers):
                 skip_section = False
                 result_lines.append(line)
@@ -355,7 +351,7 @@ class RobotRuntimeNewsAgent:
         
         all_results = []
         page_num = 1
-        max_pages = 10  # Safety limit
+        max_pages = 10
         stop_collection = False
 
         while not stop_collection and page_num <= max_pages:

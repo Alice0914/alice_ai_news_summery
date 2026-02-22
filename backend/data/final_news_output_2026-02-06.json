@@ -1058,5 +1058,481 @@
       "AI 활용",
       "고등 교육 문제"
     ]
+  },
+  {
+    "id": "waymos-robotaxi-launch-in-washington-dc-faces-regu-20260206",
+    "title": "Waymo's Robotaxi Launch in Washington D.C. Faces Regulatory Hurdles",
+    "title_ko": "웨이모, 워싱턴 D.C. 로보택시 출시 규제 장벽 직면",
+    "summary": "Waymo's plans to launch robotaxi services in Washington, D.C., this year have been delayed due to the city's complex regulatory process. The autonomous vehicle company is actively lobbying but currently lacks a clear path forward for its operations.",
+    "summary_ko": "웨이모가 올해 워싱턴 D.C.에서 로보택시 서비스를 출시하려던 계획이 도시의 복잡한 규제 절차로 인해 지연되고 있습니다. 해당 자율주행 기업은 적극적인 로비 활동을 펼치고 있지만, 현재로서는 서비스 운영을 위한 명확한 돌파구를 찾지 못하고 있는 상황입니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Wired",
+    "sourceUrl": "https://www.wired.com/story/waymo-hits-a-rough-patch-in-washington-dc/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 78,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 5,
+      "reach": 16,
+      "longTerm": 20,
+      "socialEthics": 19,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Automotive",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Society/Policy",
+      "Business"
+    ],
+    "categories_ko": [
+      "자동차",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "사회/정책",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Robotics",
+      "Autonomous Driving AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자율주행 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Waymo",
+      "Robotaxi",
+      "Washington D.C.",
+      "Autonomous Vehicles",
+      "Regulatory Hurdles"
+    ],
+    "searchKeywords_ko": [
+      "웨이모",
+      "로보택시",
+      "워싱턴 D.C.",
+      "자율주행차",
+      "규제 장벽"
+    ]
+  },
+  {
+    "id": "addverb-unveils-elixis-humanoid-robots-for-warehou-20260206",
+    "title": "Addverb Unveils Elixis Humanoid Robots for Warehouse and Factory Automation",
+    "title_ko": "애드버브, 창고 및 공장 자동화를 위한 휴머노이드 로봇 '엘릭시스' 공개",
+    "summary": "Indian robotics startup Addverb has unveiled Elixis, a new line of bipedal and wheeled humanoids. These robots are specifically designed for applications in warehouse and factory environments.",
+    "summary_ko": "인도의 로봇 스타트업 애드버브가 이족 보행과 바퀴형을 결합한 신형 휴머노이드 로봇 '엘릭시스'를 선보였습니다. 이 로봇들은 창고 및 공장 환경 적용에 특화되어 설계되었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Addverb",
+    "sourceUrl": "https://addverb.com/press-release/addverb-thrusts-india-into-humanoid-race/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 17,
+      "tech": 12,
+      "reach": 8,
+      "longTerm": 18,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Addverb",
+      "Elixis",
+      "Humanoid robots",
+      "Warehouse automation",
+      "Robotics startup"
+    ],
+    "searchKeywords_ko": [
+      "애드버브",
+      "엘릭시스",
+      "휴머노이드 로봇",
+      "창고 자동화",
+      "로봇 스타트업"
+    ]
+  },
+  {
+    "id": "hong-kong-researchers-find-empathetic-robots-provi-20260206",
+    "title": "Hong Kong Researchers Find Empathetic Robots Provide Emotional Support",
+    "title_ko": "홍콩 연구진, 공감 로봇의 정서적 지원 효과 확인",
+    "summary": "Researchers from The Hong Kong Polytechnic University discovered that robots combining empathetic speech with music can significantly enhance emotional support during interactions. This study highlights a new approach to AI-powered companionship, making human-robot interactions feel more emotionally connective. The findings suggest potential applications for robots in providing supportive roles.",
+    "summary_ko": "홍콩 폴리테크닉 대학교 연구진은 공감 능력을 갖춘 대화와 음악을 결합한 로봇이 상호작용 중 정서적 지원을 크게 강화할 수 있다는 사실을 밝혀냈습니다. 이번 연구는 AI 기반 동반자 관계에 대한 새로운 접근 방식을 제시하며, 인간-로봇 상호작용을 더욱 감성적으로 연결되도록 합니다. 연구 결과는 로봇이 지원 역할을 수행할 수 있는 다양한 잠재적 응용 가능성을 시사합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "The Hong Kong Polytechnic University",
+    "sourceUrl": "https://www.polyu.edu.hk/media/media-releases/2026/0206_ai-powered-companionship/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 70,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 10,
+      "reach": 13,
+      "longTerm": 17,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Healthcare/Science",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "의료/과학",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Voice AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "음성 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Data",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "데이터",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Empathetic Robots",
+      "AI Companionship",
+      "Emotional Support AI",
+      "Human-Robot Interaction",
+      "Robotics Research"
+    ],
+    "searchKeywords_ko": [
+      "공감 로봇",
+      "AI 동반자 관계",
+      "AI 정서 지원",
+      "인간-로봇 상호작용",
+      "로봇 공학 연구"
+    ]
+  },
+  {
+    "id": "empathetic-robots-with-speech-and-music-enhance-em-20260206",
+    "title": "Empathetic Robots with Speech and Music Enhance Emotional Support",
+    "title_ko": "음성 및 음악으로 정서적 지원을 강화하는 공감 로봇",
+    "summary": "Hong Kong researchers have discovered that robots can provide enhanced emotional support by integrating empathetic speech with carefully selected music. This combination leads to interactions that feel more emotionally supportive. The findings suggest a new avenue for developing AI companions capable of offering significant emotional assistance.",
+    "summary_ko": "홍콩 연구진은 공감적인 음성 대화와 신중하게 선곡된 음악을 결합함으로써 로봇이 향상된 정서적 지원을 제공할 수 있음을 밝혀냈습니다. 이러한 조합은 사용자에게 더 큰 정서적 지지감을 주는 상호작용을 유도합니다. 이번 연구 결과는 상당한 정서적 도움을 줄 수 있는 AI 동반자 개발의 새로운 가능성을 시사합니다.",
+    "why_it_matters": "This research demonstrates a critical advancement in human-robot interaction, moving beyond functional tasks to sophisticated emotional support. For AI industry professionals, it underscores the value of multimodal AI integration, particularly involving voice AI and generative audio, to create more human-like and empathetic robotic companions.",
+    "why_it_matters_ko": "이 연구는 기능적 작업을 넘어 정교한 정서적 지원 영역으로 나아가는 인간-로봇 상호작용(HRI)의 중요한 진전을 보여줍니다. AI 산업 전문가들에게는 음성 AI와 생성형 오디오를 포함한 멀티모달 AI 통합이 더욱 인간적이고 공감하는 로봇 동반자를 만드는 데 얼마나 중요한 가치를 지니는지 강조합니다.",
+    "source": "Hong Kong Polytechnic University",
+    "sourceUrl": "https://www.polyu.edu.hk/media/media-releases/2026/0206_ai-powered-companionship/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 81.66666666666667,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 15,
+      "reach": 16,
+      "longTerm": 20,
+      "socialEthics": 22,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Healthcare/Science",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "의료/과학",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Voice AI",
+      "Multimodal AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "음성 AI",
+      "멀티모달 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Data",
+      "Computing",
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "데이터",
+      "컴퓨팅",
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "empathetic robots",
+      "emotional support AI",
+      "human-robot interaction",
+      "AI companionship",
+      "multimodal AI"
+    ],
+    "searchKeywords_ko": [
+      "공감 로봇",
+      "정서적 지원 AI",
+      "인간-로봇 상호작용",
+      "AI 동반자",
+      "멀티모달 AI"
+    ]
+  },
+  {
+    "id": "addverb-introduces-elixis-humanoids-for-warehouse--20260206",
+    "title": "Addverb Introduces Elixis Humanoids for Warehouse and Factory Automation",
+    "title_ko": "애드버브, 창고 및 공장 자동화를 위한 엘릭시스 휴머노이드 선보여",
+    "summary": "Indian robotics startup Addverb has unveiled Elixis, a new series of bipedal and wheeled humanoids designed for deployment in warehouses and factories. These robots aim to enhance automation and efficiency in industrial settings. The announcement positions Addverb as a key player in the expanding global humanoid robotics market.",
+    "summary_ko": "인도의 로봇 스타트업 애드버브(Addverb)는 창고 및 공장 배치를 위해 설계된 이족 보행 및 바퀴형 휴머노이드인 새로운 '엘릭시스(Elixis)' 시리즈를 공개했다. 이 로봇들은 산업 현장의 자동화 및 효율성을 높이는 것을 목표로 한다. 이번 발표는 애드버브를 성장하는 글로벌 휴머노이드 로봇 시장의 핵심 주체로 자리매김하게 한다.",
+    "why_it_matters": "This development signifies the practical application and expansion of physical AI into critical industrial sectors, offering new solutions for labor challenges and operational efficiency. For AI industry professionals, it highlights the growing demand for sophisticated robotic systems integrating advanced AI algorithms, sensor fusion, and real-time decision-making capabilities.",
+    "why_it_matters_ko": "이번 발전은 물리적 AI(Physical AI)가 핵심 산업 분야로 실질적으로 적용되고 확장되고 있음을 보여주며, 노동력 문제와 운영 효율성에 대한 새로운 해결책을 제시한다. AI 산업 전문가들에게는 고급 AI 알고리즘, 센서 퓨전(sensor fusion), 실시간 의사결정 능력을 통합하는 정교한 로봇 시스템에 대한 수요 증가를 분명히 보여준다.",
+    "source": "Addverb",
+    "sourceUrl": "https://addverb.com/press-release/addverb-thrusts-india-into-humanoid-race/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 81,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 14,
+      "reach": 10,
+      "longTerm": 22,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Hardware",
+      "Tech/AI",
+      "Business"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "하드웨어",
+      "테크/AI",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Addverb",
+      "Elixis",
+      "Humanoid robots",
+      "Warehouse automation",
+      "Factory AI"
+    ],
+    "searchKeywords_ko": [
+      "애드버브",
+      "엘릭시스",
+      "휴머노이드 로봇",
+      "창고 자동화",
+      "공장 AI"
+    ]
+  },
+  {
+    "id": "waymos-robotaxi-launch-in-washington-dc-stalled-by-20260206",
+    "title": "Waymo's Robotaxi Launch in Washington, DC, Stalled by Regulatory Hurdles",
+    "title_ko": "웨이모의 워싱턴 D.C. 로보택시 출시, 규제 문제로 발목 잡혀",
+    "summary": "Waymo's plan to launch robotaxis in Washington, DC, this year has encountered a significant delay due to the city's complex regulatory process. The company is currently engaged in lobbying efforts to overcome these obstacles but has not yet secured a clear path forward for its services.",
+    "summary_ko": "웨이모는 올해 워싱턴 D.C.에 로보택시 서비스를 출시할 계획이었으나, 복잡한 시 규제 절차로 인해 상당한 지연에 직면했습니다. 현재 회사는 이러한 장애물을 극복하기 위해 로비 활동을 펼치고 있지만, 서비스의 명확한 추진 경로를 아직 확보하지 못했습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Waymo",
+    "sourceUrl": "https://www.wired.com/story/waymo-hits-a-rough-patch-in-washington-dc/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 75,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 5,
+      "reach": 15,
+      "longTerm": 20,
+      "socialEthics": 19,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Society/Policy",
+      "Robotics/Physical AI",
+      "Automotive",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "사회/정책",
+      "로보틱스/물리 AI",
+      "자동차",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Autonomous Driving AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자율주행 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics"
+    ],
+    "coreElements_ko": [
+      "안전/윤리"
+    ],
+    "searchKeywords": [
+      "Waymo",
+      "Robotaxi",
+      "Washington DC",
+      "Regulatory hurdles",
+      "Autonomous vehicles"
+    ],
+    "searchKeywords_ko": [
+      "웨이모",
+      "로보택시",
+      "워싱턴 D.C.",
+      "규제 장벽",
+      "자율주행차"
+    ]
+  },
+  {
+    "id": "aerospace-engineer-sets-new-quadcopter-speed-recor-20260206",
+    "title": "Aerospace Engineer Sets New Quadcopter Speed Record at 411 mph",
+    "title_ko": "항공우주 엔지니어, 411mph 쿼드콥터 최고 속도 신기록 수립",
+    "summary": "Australian aerospace engineer Benjamin Biggs has achieved a new speed record with his custom “BlackBird” quadcopter. The drone reached an unprecedented top speed of 411 mph (661 km/h), pushing the boundaries of quadcopter performance.",
+    "summary_ko": "호주 항공우주 엔지니어 벤자민 빅스(Benjamin Biggs)가 직접 제작한 맞춤형 “블랙버드(BlackBird)” 쿼드콥터로 새로운 속도 기록을 달성했습니다. 이 드론은 전례 없는 최고 속도 411mph(시속 661km)에 도달하며 쿼드콥터 성능의 한계를 뛰어넘었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "New Atlas",
+    "sourceUrl": "https://newatlas.com/drones/biggs-blackbird-411mph/",
+    "publishedDate": "2026-02-06",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 79,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 22,
+      "reach": 15,
+      "longTerm": 16,
+      "socialEthics": 14,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Hardware",
+      "Robotics/Physical AI",
+      "Research/Innovation",
+      "Tech/AI",
+      "Healthcare/Science"
+    ],
+    "categories_ko": [
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "연구/혁신",
+      "테크/AI",
+      "의료/과학"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "quadcopter speed record",
+      "drone",
+      "aerospace engineering",
+      "Benjamin Biggs",
+      "BlackBird quadcopter"
+    ],
+    "searchKeywords_ko": [
+      "쿼드콥터 속도 기록",
+      "드론",
+      "항공우주 공학",
+      "벤자민 빅스",
+      "블랙버드 쿼드콥터"
+    ]
   }
 ]

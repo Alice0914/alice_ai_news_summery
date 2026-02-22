@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { useTranslation } from 'react-i18next';
 import {
   Search, ArrowRight, X, Filter, ChevronLeft, ChevronRight, Check,
   Linkedin, Facebook, Instagram, User, Home, Compass, Bookmark,
@@ -7,12 +7,11 @@ import {
   Cpu, Coffee, Shield, Bot, Lightbulb, Zap,
   FileText, Image as ImageIcon, Film, Mic, Sparkles, Workflow, Layers, Code,
   Smartphone, Watch, Database, Share2, Server, ShieldCheck, MessageSquare, Heart, PartyPopper, LogOut,
-  Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List, Mail // Added icons
+  Lock, AlertCircle, Eye, EyeOff, Globe, ChevronDown, LogIn, Copy, ExternalLink, List, Mail
 } from 'lucide-react';
 import logo from './assets/logo.png';
 import discordIconImg from './assets/discord_icon.png';
 
-// import MOCK_NEWS_DATA from './data/final_data_ko.json';
 
 /* CONSTANTS                                                                  */
 import {
@@ -26,20 +25,20 @@ import {
 
 import OnboardingAuth from './components/auth/OnboardingAuth';
 import AuthPage from './components/auth/AuthPage';
-import PreferencesPage from './components/PreferencesPage'; // NEW: Dedicated preferences editor
-import AdminUpload from './components/AdminUpload'; // NEW: Admin Upload Page
-import AdminApp from './AdminApp'; // NEW: Full Admin Dashboard
-import { onAuthStateChanged, updateProfile } from 'firebase/auth'; // Added updateProfile
+import PreferencesPage from './components/PreferencesPage';
+import AdminUpload from './components/AdminUpload';
+import AdminApp from './AdminApp';
+import { onAuthStateChanged, updateProfile } from 'firebase/auth';
 import {
   db, auth, logUserAccess, signInWithGoogle, logout, saveBookmark,
   removeBookmark,
   toggleLike,
   subscribeToUserData,
   saveUserPreferences,
-  reauthenticateAndUpdatePassword, // RESTORED
-  getDiceBearAvatar, // Added
-  saveUserToFirestore, // Added: to sync changes
-  handleGoogleRedirectResult // Added: For mobile redirect
+  reauthenticateAndUpdatePassword,
+  getDiceBearAvatar,
+  saveUserToFirestore,
+  handleGoogleRedirectResult
 } from './firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -419,21 +418,18 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
     }
   }, [news.imageUrl, image]);
 
-  // Helper: Convert English tag to Korean if language is 'ko'
+
   const getLocalizedTag = (tag) => {
-    if (i18n.language !== 'ko') return tag; // English: use as-is from Firebase
+    if (i18n.language !== 'ko') return tag;
     return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
   };
 
-  // Logic to determine which category/service/core to show on the badge (top left)
-  // Priority: 1. Matching Category 2. Matching Service 3. Matching Core Element 4. Default Category
   const displayCategory =
     (news.categories || []).find(cat => selectedInterests?.includes(cat)) ||
     (news.productServices || []).find(svc => selectedServices?.includes(svc)) ||
     (news.coreElements || []).find(core => selectedCore?.includes(core)) ||
     news.categories?.[0] || t('ai_news_fallback');
 
-  // Logic for tags: Show all categories/services/core EXCEPT the one displayed on the badge
   const otherCategories = (news.categories || []).filter(cat => cat !== displayCategory);
   const otherServices = (news.productServices || []).filter(svc => svc !== displayCategory);
   const otherCore = (news.coreElements || []).filter(core => core !== displayCategory);
@@ -584,13 +580,12 @@ const TopNewsCard = ({ news, index, image, onShare, onSave, isSaved, onToggleLik
 const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, onToggleLike, isLiked, selectedInterests, selectedServices, selectedCore }) => {
   const { t, i18n } = useTranslation();
 
-  // Helper: Convert English tag to Korean if language is 'ko'
+
   const getLocalizedTag = (tag) => {
-    if (i18n.language !== 'ko') return tag; // English: use as-is from Firebase
+    if (i18n.language !== 'ko') return tag;
     return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
   };
 
-  // Logic to determine which category/service/core to show on the badge (top left)
   const displayCategory =
     (news.categories || []).find(cat => selectedInterests?.includes(cat)) ||
     (news.productServices || []).find(svc => selectedServices?.includes(svc)) ||
@@ -705,7 +700,7 @@ const SimpleNewsItem = ({ news, isExpanded, onToggle, onShare, onSave, isSaved, 
 
 // Helper function for localizing labels in onboarding
 const getLocalizedLabel = (id, language) => {
-  if (language !== 'ko') return id; // English: use as-is
+  if (language !== 'ko') return id;
   return CATEGORY_ID_MAP[id] || SERVICE_ID_MAP[id] || CORE_ID_MAP[id] || id;
 };
 
@@ -719,7 +714,7 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
 
   const hashtags = news.searchKeywords ? news.searchKeywords.map(k => `#${k.replace(/\s+/g, '')}`).join(' ') : '';
 
-  // Helper to render bold text for preview
+
   const renderPreview = (text) => {
     return text.split(/(\*[^*\n]+\*)/g).map((part, index) => {
       if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
@@ -730,14 +725,14 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
   };
   const shareUrl = news.sourceUrl || window.location.href;
 
-  // Construct the full text for preview and sharing
+
   let fullShareText = '';
   if (message.trim()) fullShareText += `${message}\n\n`;
 
   if (news.isSummaryList) {
     fullShareText += `${news.summary}\n\n✨ [${news.title}]: ${shareUrl}\n\n${hashtags}`;
   } else {
-    // Single Article Format: 📌 Title -> Summary -> 👉 Source URL -> Hashtags
+
     fullShareText += `📌 [${news.title}]\n\n${news.summary}\n\n👉 Source: ${shareUrl}\n\n${hashtags}`;
   }
 
@@ -749,18 +744,16 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
 
   const handleCopy = async () => {
     try {
-      // Create HTML version of the text
-      // 1. Escape HTML formatting characters in the original text (except our bold markers)
-      //    (Simplification: Assuming normal text usage, but replacing newlines and bold markers)
-      // 2. Replace newlines with <br>
-      // 3. Replace *bold* with <b>bold</b>
+
+
+
 
       const htmlContent = fullShareText
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/\n/g, "<br>")
-        .replace(/\*([^*\n]+)\*/g, "<b>$1</b>"); // Bold conversion
+        .replace(/\*([^*\n]+)\*/g, "<b>$1</b>");
 
       const clipboardItem = new ClipboardItem({
         'text/plain': new Blob([fullShareText], { type: 'text/plain' }),
@@ -772,7 +765,6 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error('Failed to copy', err);
-      // Fallback for browsers that might not support ClipboardItem or restrictive contexts
       try {
         await navigator.clipboard.writeText(fullShareText);
         setCopied(true);
@@ -783,34 +775,33 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
     }
   };
 
-  // AddToAny share handler (Updated to include full text + message)
+
   const handleSNSShare = (platform) => {
-    // We already have fullShareText constructed above with Message + Title + Summary + Hashtags + URL
     const encodedFullText = encodeURIComponent(fullShareText);
     const encodedUrl = encodeURIComponent(shareUrl);
     const encodedTitle = encodeURIComponent(news.title);
 
     const shareUrls = {
       threads: `https://www.threads.net/intent/post?text=${encodedFullText}`,
-      x: `https://twitter.com/intent/tweet?text=${encodedFullText}`, // X takes text parameter
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedFullText}`, // Facebook might ignore quote, but we try
+      x: `https://twitter.com/intent/tweet?text=${encodedFullText}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedFullText}`,
       whatsapp: `https://api.whatsapp.com/send?text=${encodedFullText}`,
       sms: `sms:?body=${encodedFullText}`,
       reddit: `https://www.reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}&text=${encodedFullText}`,
-      linkedin: `https://www.linkedin.com/feed/?shareActive=true&text=${encodedFullText}`, // Direct post creation
+      linkedin: `https://www.linkedin.com/feed/?shareActive=true&text=${encodedFullText}`,
       email: `mailto:?subject=${encodedTitle}&body=${encodedFullText}`
     };
 
     window.open(shareUrls[platform], '_blank', 'width=600,height=400');
   };
 
-  // Futuristic Minimal Styles
-  // Brands: Threads, X, Facebook, LinkedIn, Reddit, WhatsApp, SMS, Email
+
+
   const snsButtons = [
     { id: 'threads', label: 'Threads', icon: <img src="https://cdn.simpleicons.org/threads/white" alt="Threads" className="w-4 h-4" /> },
     { id: 'x', label: 'X', icon: <img src="https://cdn.simpleicons.org/x/white" alt="X" className="w-4 h-4" /> },
     { id: 'facebook', label: 'Facebook', icon: <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook" className="w-4 h-4" /> },
-    { id: 'linkedin', label: 'LinkedIn', icon: <Linkedin className="w-4 h-4 text-white" /> }, // Use Lucide icon for reliability
+    { id: 'linkedin', label: 'LinkedIn', icon: <Linkedin className="w-4 h-4 text-white" /> },
     { id: 'reddit', label: 'Reddit', icon: <img src="https://cdn.simpleicons.org/reddit/white" alt="Reddit" className="w-4 h-4" /> },
     { id: 'whatsapp', label: 'WhatsApp', icon: <img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp" className="w-4 h-4" /> },
     { id: 'sms', label: 'SMS', icon: <MessageSquare className="w-4 h-4 text-white" /> },
@@ -913,13 +904,13 @@ const FilterPage = ({
   const { t, i18n } = useTranslation();
   if (!isOpen) return null;
 
-  // Helper: Convert English tag to Korean if language is 'ko'
+
   const getLocalizedTag = (tag) => {
-    if (i18n.language !== 'ko') return tag; // English: use as-is
+    if (i18n.language !== 'ko') return tag;
     return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
   };
 
-  // Helpers for toggling
+
   const toggleSelection = (current, setter, id) => {
     if (current.includes(id)) setter(current.filter(i => i !== id));
     else setter([...current, id]);
@@ -1068,17 +1059,17 @@ const FilterPage = ({
 
 const UserApp = () => {
 
-  const { t, i18n } = useTranslation(); // Init hook
-  const [step, setStep] = useState(0); // Start at 0 (loading)
-  const [authLoading, setAuthLoading] = useState(true); // Splash screen state
+  const { t, i18n } = useTranslation();
+  const [step, setStep] = useState(0);
+  const [authLoading, setAuthLoading] = useState(true);
 
-  // Fallback: Force release authLoading after 3 seconds in case Firebase is slow
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (authLoading) {
         console.warn('⚠️ Auth loading timeout - forcing release');
         setAuthLoading(false);
-        // Default to news feed if returning user, else landing
+
         const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
         setStep(hasLoggedInBefore ? 5 : 1);
       }
@@ -1092,46 +1083,44 @@ const UserApp = () => {
   const [expandedNewsId, setExpandedNewsId] = useState(null);
   const [currentTopIndex, setCurrentTopIndex] = useState(0);
   const [filterModalOpen, setFilterModalOpen] = useState(false);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false); // New Auth Modal State
-  const [showLoginToast, setShowLoginToast] = useState(false); // Login Toast State
-  const [showSignupToast, setShowSignupToast] = useState(false); // Signup Toast State
-  const [showLogoutToast, setShowLogoutToast] = useState(false); // Logout Toast State
-  const [isLoggingOut, setIsLoggingOut] = useState(false); // Logout Progress State
-  const [logoutSuccess, setLogoutSuccess] = useState(false); // Logout Success State
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [showLoginToast, setShowLoginToast] = useState(false);
+  const [showSignupToast, setShowSignupToast] = useState(false);
+  const [showLogoutToast, setShowLogoutToast] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [logoutSuccess, setLogoutSuccess] = useState(false);
 
-  const isSigningUp = useRef(false); // Track if user is signing up
-  const isLoggingIn = useRef(false); // Track if login is in progress (prevents page flash)
+  const isSigningUp = useRef(false);
+  const isLoggingIn = useRef(false);
 
-  // Auth State
+
   const [user, setUser] = useState(null);
 
-  const [savedNewsIds, setSavedNewsIds] = useState(new Set()); // For quick lookup
-  const [savedNewsItems, setSavedNewsItems] = useState([]); // For display
-  const [likedNewsIds, setLikedNewsIds] = useState(new Set()); // NEW: Like State
-  const [activeTab, setActiveTab] = useState('home'); // 'home', 'saved', 'profile', 'youtube', 'discord'
+  const [savedNewsIds, setSavedNewsIds] = useState(new Set());
+  const [savedNewsItems, setSavedNewsItems] = useState([]);
+  const [likedNewsIds, setLikedNewsIds] = useState(new Set());
+  const [activeTab, setActiveTab] = useState('home');
 
   // Password Features State
   const [showPasswordChange, setShowPasswordChange] = useState(false);
   const [passwordData, setPasswordData] = useState({ current: '', new: '', confirm: '' });
   const [passwordError, setPasswordError] = useState('');
   const [passwordSuccess, setPasswordSuccess] = useState('');
-  const [showCurrentPassword, setShowCurrentPassword] = useState(false); // Toggle visibility for current password
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
 
-  // Sidebar State
-  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false); // NEW: Language Dropdown State
 
-  // NEW: Separate state for saved preferences (from DB) vs temporary filters
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+
   const [savedPreferences, setSavedPreferences] = useState({ categories: [], productServices: [], coreElements: [], language: 'en' });
-  const hasInitializedFilters = useRef(false); // To prevent re-initializing on every subscription update
+  const hasInitializedFilters = useRef(false);
 
-  // Track initialization to distinguish between app load and manual login
+
   const isFirstCheck = useRef(true);
 
   // Track if user has successfully logged in during this session
   const wasLoggedIn = useRef(false);
 
-  // Helper for converting Onboarding items - MUST be at top before any conditional returns
-  // Memoized to prevent re-calculation on every render which might cause delays
+
   const localizedCategories = React.useMemo(() =>
     DATA_CATEGORIES.map(item => ({ ...item, label: getLocalizedLabel(item.id, i18n.language) })),
     [i18n.language]
@@ -1147,7 +1136,7 @@ const UserApp = () => {
     [i18n.language]
   );
 
-  // Handle mobile Google redirect result on app load
+
   useEffect(() => {
     handleGoogleRedirectResult()
       .then((user) => {
@@ -1169,23 +1158,23 @@ const UserApp = () => {
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
 
-      // 1. Initial App Load (Auto-login check)
+
       if (isFirstCheck.current) {
         if (currentUser && !currentUser.isAnonymous) {
           console.log('✅ Auto-login: Redirecting to news feed');
-          // Mark that this user has logged in before
+
           localStorage.setItem('hasLoggedInBefore', 'true');
           wasLoggedIn.current = true;
           setStep(5);
         } else {
-          // Check if user has logged in before
+
           const hasLoggedInBefore = localStorage.getItem('hasLoggedInBefore');
           if (hasLoggedInBefore) {
             console.log('🔒 Returning user: Showing news feed (Guest Mode)');
-            setStep(5); // Show News Feed for returning users (Guest Mode)
+            setStep(5);
           } else {
             console.log('👋 First-time visitor: Showing landing page');
-            setStep(1); // Show landing page for new users
+            setStep(1);
           }
         }
         isFirstCheck.current = false;
@@ -1193,11 +1182,11 @@ const UserApp = () => {
         return;
       }
 
-      // 2. Subsequent Auth Changes (Manual Login/Logout/Signup)
+
       if (currentUser && !currentUser.isAnonymous) {
         wasLoggedIn.current = true; // Mark session as active
-        // User just authenticated
-        setIsAuthModalOpen(false); // Ensure modal is closed
+
+        setIsAuthModalOpen(false);
         if (isSigningUp.current) {
           console.log('🎉 Signup Success: Showing welcome toast then redirecting...');
           localStorage.setItem('hasLoggedInBefore', 'true');
@@ -1205,20 +1194,20 @@ const UserApp = () => {
           setTimeout(() => {
             setShowSignupToast(false);
             setStep(5);
-            isSigningUp.current = false; // Reset
+            isSigningUp.current = false;
           }, 2000);
         } else {
           console.log('✅ Manual Login: Retrieving user data and showing toast...');
           localStorage.setItem('hasLoggedInBefore', 'true');
           setShowLoginToast(true);
-          setActiveTab('home'); // Reset to home tab to show news feed, not profile
-          setStep(5); // Immediate redirect to feed to prevent login form flash
+          setActiveTab('home');
+          setStep(5);
           setTimeout(() => {
             setShowLoginToast(false);
           }, 2000);
         }
       } else {
-        // User logged out
+
         // Only redirect to Login (0) if we were previously logged in during this session
         if (wasLoggedIn.current) {
           console.log('👋 User logged out: Redirecting to login page');
@@ -1230,31 +1219,25 @@ const UserApp = () => {
 
     let unsubscribeUserData = () => { };
 
-    // Set up data subscription if user is logged in
-    // Note: We access the current 'user' state variable effectively via the listener's 'currentUser' 
-    // but for the subscription we need to react to state changes if we keep this here.
-    // However, mixing the auth listener (run once) and data listener (depends on user) in one effect is tricky.
-    // Ideally, we split them. But for minimal disruption, we'll keep the auth listener here and move data sub to a separate effect.
+
 
     return () => {
       unsubscribeAuth();
     };
-  }, []); // Run ONCE on mount
+  }, []);
 
-  // Separate effect for User Data Subscription & Safety Redirect
+
   useEffect(() => {
     let dataLoadTimeout;
     let unsubscribeUserData = () => { };
 
     if (user && !user.isAnonymous) {
-      // Safety Redirect: If user is logged in but stuck on Login Page (0) or Auth Gate (4.5), go to Feed (5)
       if (step === 0 || step === 4.5) {
         console.log("⚠️ State Mismatch detected: User logged in but on Step 0/4.5. Forcing redirect to Feed.");
         setStep(5);
       }
 
-      // OPTIMIZATION: Defer data loading to prevent blocking UI transition on mobile
-      // Show feed immediately (50ms delay for UI to render), then load data in background
+
       dataLoadTimeout = setTimeout(() => {
         console.log('📊 Loading user data in background...');
 
@@ -1293,13 +1276,12 @@ const UserApp = () => {
       if (dataLoadTimeout) clearTimeout(dataLoadTimeout);
       unsubscribeUserData();
     };
-  }, [user, step]); // Added step to dependencies
+  }, [user, step]);
 
   const handleLogin = async () => {
     try {
       await signInWithGoogle();
-      // Added explicit navigation for debugging if needed, but the effect usually handles it.
-      // setStep(5); 
+
     } catch (error) {
       console.error("Login failed", error);
     }
@@ -1312,10 +1294,10 @@ const UserApp = () => {
 
     try {
       await updateProfile(user, { photoURL: newAvatarUrl });
-      // Sync to Firestore
+
       await saveUserToFirestore(user);
-      // Force refresh/reload might be needed or handled by AuthState?
-      // AuthState usually updates automatically.
+
+
       alert("Avatar updated! ✨");
     } catch (error) {
       console.error("Error updating avatar:", error);
@@ -1356,24 +1338,24 @@ const UserApp = () => {
   };
 
   const handleLogout = async () => {
-    // 1. Show logout spinner overlay
+
     setIsLoggingOut(true);
 
-    // 2. Transition to login screen
+
     setStep(0);
     setActiveTab('home');
     wasLoggedIn.current = false;
     setIsAuthModalOpen(false);
 
     try {
-      // 3. Wait for Firebase cleanup to complete
+
       await logout();
       console.log('✅ Logout cleanup completed');
 
-      // 4. Show success message
+
       setLogoutSuccess(true);
 
-      // 5. Wait 2 seconds, then hide overlay and enable login button
+
       setTimeout(() => {
         setIsLoggingOut(false);
         setLogoutSuccess(false);
@@ -1381,7 +1363,7 @@ const UserApp = () => {
 
     } catch (error) {
       console.error('⚠️ Logout cleanup failed:', error);
-      // Still show success to user (client-side cleanup)
+
       setLogoutSuccess(true);
       setTimeout(() => {
         setIsLoggingOut(false);
@@ -1390,22 +1372,22 @@ const UserApp = () => {
     }
   };
 
-  const [filterPeriod, setFilterPeriod] = useState('important'); // Default: Important
-  const [dateFilter, setDateFilter] = useState('last_week'); // NEW: Date Filter (Default: Last Week)
+  const [filterPeriod, setFilterPeriod] = useState('important');
+  const [dateFilter, setDateFilter] = useState('last_week');
   const [currentNews, setCurrentNews] = useState([]);
-  const [newsLoading, setNewsLoading] = useState(true); // NEW: Track news loading state
-  const [preferencesModalOpen, setPreferencesModalOpen] = useState(false); // NEW: For PreferencesPage modal
+  const [newsLoading, setNewsLoading] = useState(true);
+  const [preferencesModalOpen, setPreferencesModalOpen] = useState(false);
 
   const handleToggleSave = async (newsItem) => {
     if (!user || user.isAnonymous) {
-      // Trigger Auth Modal if not logged in
+
       setIsAuthModalOpen(true);
       return;
     }
 
     const isSaved = savedNewsIds.has(newsItem.id);
 
-    // Optimistic Update
+
     const newSavedIds = new Set(savedNewsIds);
     let newSavedItems = [...savedNewsItems];
 
@@ -1428,7 +1410,7 @@ const UserApp = () => {
       }
     } catch (error) {
       console.error("Failed to toggle bookmark", error);
-      // Revert on error could be implemented here
+
     }
   };
 
@@ -1439,14 +1421,12 @@ const UserApp = () => {
     }
     const isLiked = likedNewsIds.has(newsItem.id);
 
-    // 1. Optimistic UI Update (Immediate)
-    // Update 'likedNewsIds' Set
+
     const newLikedIds = new Set(likedNewsIds);
     if (isLiked) newLikedIds.delete(newsItem.id);
     else newLikedIds.add(newsItem.id);
     setLikedNewsIds(newLikedIds);
 
-    // Update 'currentNews' (Global Count)
     setCurrentNews(prev => prev.map(item => {
       if (item.id === newsItem.id) {
         return { ...item, likes: isLiked ? Math.max(0, item.likes - 1) : item.likes + 1 };
@@ -1454,35 +1434,35 @@ const UserApp = () => {
       return item;
     }));
 
-    // 2. Server Update (Background)
+
     try {
       await toggleLike(user.uid, newsItem, isLiked);
     } catch (error) {
       console.error("Failed to toggle like", error);
-      // Revert on error (optional, but good practice)
-      // For MVP, we'll assume success or just log error.
-      // Ideally, we would revert state here.
+
+
+
     }
   };
 
-  // Search States
+
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Check for initialization
+
   const isInitialized = useRef(false);
 
   useEffect(() => {
-    // Fetch News Data from Firestore (Current + Previous Month)
+
     const fetchNews = async () => {
       const now = new Date();
 
-      // Calculate Current Month
+
       const currentYear = now.getFullYear();
       const currentMonth = String(now.getMonth() + 1).padStart(2, '0');
       const currentDocId = `${currentYear}-${currentMonth}`;
 
-      // Calculate Previous Month
+
       const prevDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
       const prevYear = prevDate.getFullYear();
       const prevMonth = String(prevDate.getMonth() + 1).padStart(2, '0');
@@ -1511,41 +1491,37 @@ const UserApp = () => {
           }
         });
 
-        // Remove duplicates just in case (though unlikely with distinct docs)
+
         let uniqueNews = Array.from(new Map(allNews.map(item => [item.id, item])).values());
 
-        // Data is stored in English - no migration needed
-        // Localization to Korean happens at display time via getLocalizedTag()
 
-        // Sort by date descending (optional here, as getFilteredNews handles it, but good for initial state)
+
+
         uniqueNews.sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
 
         setCurrentNews(uniqueNews);
-        setNewsLoading(false); // Data loaded
+        setNewsLoading(false);
         console.log(`Total loaded news items: ${uniqueNews.length}`);
 
       } catch (error) {
         console.error("Error fetching news from Firestore:", error);
-        setNewsLoading(false); // Still mark as loaded even on error
+        setNewsLoading(false);
       }
     };
 
     fetchNews();
 
-    // Prevent double invocation in Strict Mode
+
     if (!isInitialized.current) {
       logUserAccess();
       isInitialized.current = true;
     }
   }, []);
 
-  // NEW: Save Preferences Trigger (on onboarding completion ONLY)
-  // Uses a ref to ensure we only save once when transitioning from onboarding to feed
   const hasOnboardingSaved = useRef(false);
   useEffect(() => {
-    // Only save once when: just logged in + completing onboarding (step becomes 5) + not already saved
     if (user && !user.isAnonymous && step === 5 && selectedInterests.length > 0 && !hasOnboardingSaved.current) {
-      hasOnboardingSaved.current = true; // Mark as saved to prevent re-saving on filter changes
+      hasOnboardingSaved.current = true;
       saveUserPreferences(user.uid, {
         categories: selectedInterests,
         productServices: selectedServices,
@@ -1553,11 +1529,11 @@ const UserApp = () => {
       });
       console.log('✅ Onboarding preferences saved (one-time)');
     }
-    // Reset flag if user logs out or goes back to onboarding
+
     if (!user || step < 5) {
       hasOnboardingSaved.current = false;
     }
-  }, [user, step]); // IMPORTANT: Only depend on user and step, NOT on preferences
+  }, [user, step]);
 
   const handleToggleInterest = (current, isSelected, id) => {
     if (isSelected) setSelectedInterests(current.filter(i => i !== id));
@@ -1573,7 +1549,7 @@ const UserApp = () => {
   };
 
   const getFilteredNews = () => {
-    // 0. Localize Data based on current language
+
     const isKo = i18n.language === 'ko';
     let filtered = currentNews.map(item => ({
       ...item,
@@ -1583,7 +1559,7 @@ const UserApp = () => {
       searchKeywords: (isKo && item.searchKeywords_ko) ? item.searchKeywords_ko : item.searchKeywords
     }));
 
-    // 1. Search Filter
+
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(news =>
@@ -1593,16 +1569,16 @@ const UserApp = () => {
       );
     }
 
-    // 2. Date Filter Logic
+
     if (dateFilter && dateFilter !== 'all') {
       const today = new Date();
-      // Reset time to start of day for accurate comparison
+
       today.setHours(0, 0, 0, 0);
 
       filtered = filtered.filter(news => {
         if (!news.publishedDate) return false;
-        // Assuming publishedDate is "YYYY-MM-DD" or "YYYY.MM.DD"
-        // Normalize date string: replace dots with dashes and remove spaces
+
+
         const normalizedDateStr = news.publishedDate.replace(/\./g, '-').replace(/\s/g, '');
         const newsDate = new Date(normalizedDateStr);
         newsDate.setHours(0, 0, 0, 0);
@@ -1610,7 +1586,7 @@ const UserApp = () => {
         const diffTime = today - newsDate;
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-        // Check each case
+
         let isMatch = false;
         switch (dateFilter) {
           case 'today':
@@ -1620,7 +1596,7 @@ const UserApp = () => {
             isMatch = diffDays === 1;
             break;
           case 'this_week': {
-            const day = today.getDay(); // 0 (Sun) - 6 (Sat)
+            const day = today.getDay();
             const diffToMonday = day === 0 ? 6 : day - 1;
             const thisMonday = new Date(today);
             thisMonday.setDate(today.getDate() - diffToMonday);
@@ -1644,7 +1620,7 @@ const UserApp = () => {
             const lastMonth = new Date(today);
             lastMonth.setMonth(today.getMonth() - 1);
             isMatch = newsDate.getMonth() === lastMonth.getMonth() && newsDate.getFullYear() === lastMonth.getFullYear();
-            // DEBUG LOG
+
             if (!isMatch && newsDate.getFullYear() === 2025 && newsDate.getMonth() === 11) {
               console.log(`[Filter Debug] Rejected Last Month Item: ${news.title}`, {
                 newsDate: newsDate.toISOString(),
@@ -1662,19 +1638,17 @@ const UserApp = () => {
       });
     }
 
-    // 3. Sort logic 
-    if (filterPeriod === 'latest') {
-      filtered.sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
-    } else if (filterPeriod === 'popular') {
+
+    if (filterPeriod === 'popular') {
       filtered.sort((a, b) => (b.likes || 0) - (a.likes || 0));
     } else if (filterPeriod === 'important') {
       filtered.sort((a, b) => (b.impactScore || 0) - (a.impactScore || 0));
     }
 
-    // 4. Filter by selected categories, services, and core elements
-    // Only filter if user has made selections (if no selections, show all)
-    // 4. Filter by selected categories, services, and core elements (OR logic)
-    // Only filter if at least one filter group is active
+
+
+
+
     const hasInterests = selectedInterests.length > 0;
     const hasServices = selectedServices.length > 0;
     const hasCore = selectedCore.length > 0;
@@ -1697,15 +1671,15 @@ const UserApp = () => {
     setSelectedServices([]);
     setSelectedCore([]);
     setSearchQuery('');
-    // Optionally reset date filter but maybe keep it to 'last_week' as baseline
+
     setDateFilter('last_week');
   };
 
-  // Onboarding Completion Handler
+
   const completeOnboarding = () => {
-    // If user is logged in, save preferences (handled by useEffect) and go to feed
-    // If not logged in, go to feed (step 5) or maybe a specific "Guest Feed"?
-    // For now, let's assume step 5 is the main feed.
+
+
+
     localStorage.setItem('hasLoggedInBefore', 'true');
     setStep(5);
   };
@@ -1724,7 +1698,7 @@ const UserApp = () => {
     const hashtags = shareNewsItem.searchKeywords ? shareNewsItem.searchKeywords.map(k => `#${k.replace(/\s+/g, '')}`).join(' ') : '';
     const shareUrl = shareNewsItem.sourceUrl || window.location.href;
 
-    // Fully constructed text again just to be sure for the navigator share
+
     let shareFullText = '';
     if (customMessage && customMessage.trim()) {
       shareFullText += `${customMessage}\n\n`;
@@ -1742,7 +1716,7 @@ const UserApp = () => {
         console.log('Error sharing:', err);
       }
     } else {
-      // Fallback if share not supported (though copy button covers this)
+
       alert('Share window closed.');
     }
   };
@@ -1751,7 +1725,7 @@ const UserApp = () => {
   /* RENDER                                                                     */
   /* -------------------------------------------------------------------------- */
 
-  // LOGOUT OVERLAY (highest priority - shows over everything)
+
   if (isLoggingOut) {
     return (
       <div className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-6">
@@ -1776,7 +1750,7 @@ const UserApp = () => {
     );
   }
 
-  // 0. Splash Screen (Loading)
+
   if (authLoading) {
     return (
       <div className="min-h-[100dvh] bg-[#0f111a] flex flex-col items-center justify-center p-6">
@@ -1785,27 +1759,27 @@ const UserApp = () => {
     );
   }
 
-  // 0. Login Page (for logged-out users)
+
   if (step === 0) {
     return (
       <>
         <AuthPage
           onAuthSuccess={() => {
-            // Immediately navigate to news feed after successful login
+
             localStorage.setItem('hasLoggedInBefore', 'true');
             wasLoggedIn.current = true;
             setShowLoginToast(true);
             setStep(5);
             setTimeout(() => setShowLoginToast(false), 2000);
           }}
-          onSignupClick={() => setStep(1)} // Go to onboarding for new users
+          onSignupClick={() => setStep(1)}
           onSignupStart={() => isSigningUp.current = true}
         />
       </>
     );
   }
 
-  // 1. Onboarding Steps
+
   if (step === 1) {
     return (
       <div className="min-h-[100dvh] bg-[#0f111a] flex flex-col items-center justify-center p-6 relative overflow-hidden">
@@ -1846,7 +1820,7 @@ const UserApp = () => {
   }
 
 
-  // 1.5 Language Selection
+
   if (step === 1.5) {
     return (
       <LanguageSelectionStep
@@ -1906,7 +1880,7 @@ const UserApp = () => {
     );
   }
 
-  // 4.5 Onboarding Auth Gate
+
   if (step === 4.5) {
     return (
       <>
@@ -1919,18 +1893,16 @@ const UserApp = () => {
   }
 
 
-  // 5. News Feed (Redesigned)
-  // 5. News Feed
+
+
   const filteredNews = getFilteredNews();
   const displayNews = activeTab === 'saved' ? savedNewsItems : filteredNews;
 
-  // Determine top news count based on date filter
-  // For longer periods (monthly), show more top stories (10)
-  // For daily/weekly views, show the standard amount (5)
+
+
+
   const topNewsCount = (dateFilter === 'this_month' || dateFilter === 'last_month') ? 10 : 5;
 
-  // FIX: Sort by impactScore DESC for Top News section, regardless of user's list sort preference
-  // Using currentNews (ALL news, unfiltered) instead of displayNews to ensure highest impact articles always appear
   const isKo = i18n.language === 'ko';
   const allNewsLocalized = currentNews.map(item => ({
     ...item,
@@ -1942,17 +1914,16 @@ const UserApp = () => {
   topNewsCandidates.sort((a, b) => (b.impactScore || 0) - (a.impactScore || 0));
   const topNews = topNewsCandidates.slice(0, topNewsCount);
 
-  // Exclude top news from the main list to avoid duplication
+
   const otherNews = displayNews.filter(item => !topNews.find(t => t.id === item.id));
 
-  // NEW: Last Week's High Impact Top 5 - Shows top 5 articles from the previous week by impact score
-  // This uses ALL news data (newsData) rather than filtered displayNews
+
   const lastWeekTop5 = (() => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    // Calculate last week's Monday and Sunday
-    const day = today.getDay(); // 0 (Sun) - 6 (Sat)
+
+    const day = today.getDay();
     const diffToMonday = day === 0 ? 6 : day - 1;
     const thisMonday = new Date(today);
     thisMonday.setDate(today.getDate() - diffToMonday);
@@ -1961,7 +1932,7 @@ const UserApp = () => {
     const lastSunday = new Date(thisMonday);
     lastSunday.setDate(thisMonday.getDate() - 1);
 
-    // Filter news from last week
+
     const isKo = i18n.language === 'ko';
     const lastWeekNews = currentNews.filter(news => {
       if (!news.publishedDate) return false;
@@ -1975,14 +1946,14 @@ const UserApp = () => {
       summary: (isKo && item.summary_ko) ? item.summary_ko : item.summary
     }));
 
-    // Sort by impact score and take top 5
+
     lastWeekNews.sort((a, b) => (b.impactScore || 0) - (a.impactScore || 0));
     return lastWeekNews.slice(0, 5);
   })();
 
-  // Helper: Convert English tag to Korean if language is 'ko'
+
   const getLocalizedTag = (tag) => {
-    if (i18n.language !== 'ko') return tag; // English: use as-is from Firebase
+    if (i18n.language !== 'ko') return tag;
     return CATEGORY_ID_MAP[tag] || SERVICE_ID_MAP[tag] || CORE_ID_MAP[tag] || tag;
   };
 
@@ -2001,18 +1972,18 @@ const UserApp = () => {
       : `*💡 Top ${topNews.length} important AI news stories of the ${periodText}*`;
 
     const itemsText = topNews.map((news, index) => {
-      // Create number emoji up to 10, fallback to number
+
       const numEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
       const numEmoji = numEmojis[index] || `${index + 1}️⃣`;
 
-      // Labels based on current language
+
       const whyLabel = i18n.language === 'ko' ? '왜 중요한가' : 'Why it matters';
       const sourceLabel = i18n.language === 'ko' ? '출처' : 'Source';
 
-      // Note: news.why_it_matters is already localized by getFilteredNews
+
       const whyText = news.why_it_matters || '';
 
-      // Format: Number + Bold Title \n Summary \n Why It Matters \n Source
+
       return `${numEmoji} *${news.title}*\n${news.summary}\n➡️ ${whyLabel}: ${whyText}\n👉${sourceLabel}: ${news.sourceUrl}`;
     }).join('\n\n');
 
@@ -2322,20 +2293,14 @@ const UserApp = () => {
               {/* Sort Buttons - Joined Style (Excel-like) */}
               <div className="flex items-center isolate">
                 <button
-                  onClick={() => setFilterPeriod('latest')}
-                  className={`relative px-4 py-1.5 rounded-l-md rounded-r-none text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'latest' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
-                >
-                  {t('latest')}
-                </button>
-                <button
                   onClick={() => setFilterPeriod('popular')}
-                  className={`relative px-4 py-1.5 rounded-none -ml-px text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'popular' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
+                  className={`relative min-w-[100px] text-center px-4 py-1.5 rounded-l-md rounded-r-none text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'popular' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
                 >
                   {t('popular')}
                 </button>
                 <button
                   onClick={() => setFilterPeriod('important')}
-                  className={`relative px-4 py-1.5 rounded-r-md rounded-l-none -ml-px text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'important' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
+                  className={`relative min-w-[100px] text-center px-4 py-1.5 rounded-r-md rounded-l-none -ml-px text-sm font-medium whitespace-nowrap transition-all border ${filterPeriod === 'important' ? 'z-10 bg-slate-700 text-white border-slate-600' : 'bg-transparent text-white/50 border-white/20 hover:text-white/80 hover:border-white/40 hover:z-10'}`}
                 >
                   {t('important')}
                 </button>
@@ -2356,20 +2321,14 @@ const UserApp = () => {
           < div className="lg:hidden px-4 pb-3 pt-0 w-full max-w-7xl mx-auto flex items-center justify-between gap-3" >
             <div className="flex items-center isolate overflow-x-auto scrollbar-hide">
               <button
-                onClick={() => setFilterPeriod('latest')}
-                className={`relative px-4 py-1.5 rounded-l-xl rounded-r-none text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'latest' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
-              >
-                {t('latest')}
-              </button>
-              <button
                 onClick={() => setFilterPeriod('popular')}
-                className={`relative px-4 py-1.5 rounded-none -ml-px text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'popular' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
+                className={`relative min-w-[100px] text-center px-4 py-1.5 rounded-l-xl rounded-r-none text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'popular' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
               >
                 {t('popular')}
               </button>
               <button
                 onClick={() => setFilterPeriod('important')}
-                className={`relative px-4 py-1.5 rounded-r-xl rounded-l-none -ml-px text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'important' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
+                className={`relative min-w-[100px] text-center px-4 py-1.5 rounded-r-xl rounded-l-none -ml-px text-xs font-semibold whitespace-nowrap backdrop-blur-md transition-all border ${filterPeriod === 'important' ? 'z-10 bg-blue-600/90 text-white border-blue-500/50 shadow-[0_0_15px_rgba(37,99,235,0.3)]' : 'bg-white/5 text-white/60 border-white/10 hover:bg-white/10 hover:text-white hover:z-10'}`}
               >
                 {t('important')}
               </button>
@@ -2700,12 +2659,12 @@ const UserApp = () => {
                     <span className="w-1.5 h-6 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.6)] flex-shrink-0"></span>
                     <span className="break-words">
                       {(() => {
-                        // Use specific key for the default important view
+
                         if (dateFilter === 'today' && filterPeriod === 'important') {
                           return t('today_high_impact');
                         }
 
-                        // Fallback construction for other combos
+
                         const prefix = {
                           today: t('today') + t('possessive_suffix'),
                           yesterday: t('yesterday') + t('possessive_suffix'),
@@ -2716,9 +2675,8 @@ const UserApp = () => {
                           all: t('all_time_news_prefix')
                         }[dateFilter] || t('today') + t('possessive_suffix');
 
-                        const type = filterPeriod === 'latest' ? t('latest') :
-                          filterPeriod === 'popular' ? t('popular') :
-                            t('important');
+                        const type = filterPeriod === 'popular' ? t('popular') :
+                          t('important');
 
                         return `${prefix} ${type} Top ${topNewsCount}`;
                       })()}
@@ -3283,7 +3241,7 @@ const UserApp = () => {
         onComplete={() => {
           setIsAuthModalOpen(false);
           setShowLoginToast(true);
-          setTimeout(() => setShowLoginToast(false), 3000); // Hide after 3s
+          setTimeout(() => setShowLoginToast(false), 3000);
         }}
       />
 
@@ -3306,13 +3264,12 @@ const UserApp = () => {
         isOpen={preferencesModalOpen}
         onClose={() => setPreferencesModalOpen(false)}
         onSave={(prefs) => {
-          // Update saved preferences state (for PreferencesPage to reflect changes)
           setSavedPreferences(prefs);
-          // Also update filter state so changes are immediately visible in news feed
+
           setSelectedInterests(prefs.categories);
           setSelectedServices(prefs.productServices);
           setSelectedCore(prefs.coreElements);
-          // Save to Firebase
+
           if (user && !user.isAnonymous) {
             saveUserPreferences(user.uid, prefs);
           }
@@ -3362,7 +3319,7 @@ const UserApp = () => {
 }
 
 const App = () => {
-  // Simple Client-Side Routing for Admin
+
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {

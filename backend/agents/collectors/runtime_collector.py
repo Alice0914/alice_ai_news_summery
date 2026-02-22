@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/runtime_collector.py
 """
 Runtime News Collector (The Rundown / The Neuron)
 Wraps the AINewsAgent to scrape therundown.ai archive.
@@ -14,7 +13,6 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
-# Import Selenium for JavaScript-rendered pages
 try:
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
@@ -30,14 +28,12 @@ except ImportError:
 # Ensure backend modules can be imported
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-# Import Google Generative AI
 try:
     import google.generativeai as genai
     HAS_GENAI = True
 except ImportError:
     HAS_GENAI = False
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -221,7 +217,6 @@ class AINewsAgent:
         """
         article_date = self._extract_date(text)
         
-        # Markers that indicate sections to EXCLUDE entirely (skip until next major section)
         exclude_section_markers = [
             "Trending AI Tools",
             "Community AI workflows",
@@ -231,7 +226,6 @@ class AINewsAgent:
             "QUICK HITS"
         ]
         
-        # Markers that indicate individual items to skip (temporary, reset on next major header)
         exclude_item_markers = [
             "PRESENTED BY",
             "TOGETHER WITH",
@@ -284,7 +278,6 @@ class AINewsAgent:
                 result_lines.append(line)
                 continue
             
-            # Check if this line starts an exclude section (permanent until next major section)
             if any(m in stripped for m in exclude_section_markers):
                 skip_section = True
                 continue
@@ -303,7 +296,6 @@ class AINewsAgent:
                     if ' ' not in stripped or stripped in main_article_headers:
                         skip_item = False
             
-            # Also reset skip_item on empty lines (paragraph breaks) when not in excluded section
             if not stripped and not skip_section:
                 skip_item = False
             
@@ -354,7 +346,6 @@ class AINewsAgent:
             
         print("  [1] Extraction Agent running...")
         
-        # Debug: Show first 500 chars of content to verify Anthropic articles are present
         print(f"  [DEBUG] Content preview (first 500 chars): {full_text[:500]}...")
         
         # Check if Anthropic content is in the text
@@ -512,7 +503,7 @@ class AINewsAgent:
                             continue
                             
                         if len(text) > len(original_content):
-                            item['raw_content'] = text[:5000] # Limit to 5k chars
+                            item['raw_content'] = text[:5000]
                             print(f"      ✅ Enriched! New length: {len(item['raw_content'])}")
                         
                         # Date extraction (moved inside success block)
@@ -558,7 +549,7 @@ class AINewsAgent:
         
         all_results = []
         page_num = 1
-        max_pages = 10 # Safety limit
+        max_pages = 10
         
         while page_num <= max_pages:
             links = self._get_links_from_archive(page_num=page_num)
@@ -622,7 +613,6 @@ class RuntimeCollector(BaseCollector):
     def __init__(self, start_date: str, end_date: str):
         super().__init__(start_date, end_date)
         self.source_name = "The Rundown"
-        # Fix: Instantiate AINewsAgent, not the undefined RuntimeAgent
         self._agent = AINewsAgent(start_date, end_date)
     
     def run(self) -> list:

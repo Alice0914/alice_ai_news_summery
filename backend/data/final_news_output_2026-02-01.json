@@ -68,5 +68,127 @@
       "선전 기술",
       "로봇 혁신"
     ]
+  },
+  {
+    "id": "teslas-optimus-relies-on-chinese-suppliers-for-cor-20260201",
+    "title": "Tesla's Optimus Relies on Chinese Suppliers for Core Hardware",
+    "title_ko": "테슬라 옵티머스, 핵심 하드웨어 중국 공급망에 의존",
+    "summary": "Tesla's Optimus humanoid robot program heavily depends on a vast network of Chinese suppliers for its core hardware components. This reliance underscores the significant role of Chinese manufacturing in the production of the Optimus robot.",
+    "summary_ko": "테슬라의 휴머노이드 로봇 '옵티머스' 프로그램은 핵심 하드웨어 부품 조달을 위해 광범위한 중국 공급업체 네트워크에 크게 의존하고 있습니다. 이는 옵티머스 로봇 생산에서 중국 제조업의 중요한 역할을 강조합니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "South China Morning Post",
+    "sourceUrl": "https://www.scmp.com/tech/tech-trends/article/3341953/optimus-chain-chinese-suppliers-form-backbone-teslas-humanoid-robot-initiative",
+    "publishedDate": "2026-02-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 80,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 5,
+      "reach": 20,
+      "longTerm": 22,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [],
+    "coreElements_ko": [],
+    "searchKeywords": [
+      "Tesla Optimus",
+      "Chinese manufacturing",
+      "Robot supply chain",
+      "Hardware suppliers",
+      "Humanoid robot"
+    ],
+    "searchKeywords_ko": [
+      "테슬라 옵티머스",
+      "중국 제조업",
+      "로봇 공급망",
+      "하드웨어 공급업체",
+      "휴머노이드 로봇"
+    ]
+  },
+  {
+    "id": "tesla-optimus-robots-core-hardware-relies-on-chine-20260201",
+    "title": "Tesla Optimus Robot's Core Hardware Relies on Chinese Suppliers",
+    "title_ko": "테슬라 옵티머스 로봇의 핵심 하드웨어, 중국 공급업체에 의존",
+    "summary": "Tesla's Optimus humanoid robot program significantly depends on Chinese manufacturing for its core hardware components. This reliance highlights the extensive role of Chinese suppliers in critical technological supply chains, particularly for advanced robotics.",
+    "summary_ko": "테슬라의 휴머노이드 로봇 프로그램인 옵티머스는 핵심 하드웨어 부품 생산에 있어 중국 제조업에 크게 의존하고 있습니다. 이러한 의존성은 첨단 로봇 공학을 포함한 핵심 기술 공급망에서 중국 공급업체의 광범위한 역할을 보여줍니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it underscores the critical role of global supply chains in the development and manufacturing of advanced AI hardware like humanoid robots. It highlights the complex interdependencies and potential geopolitical considerations that can impact the production and scalability of AI-driven physical products.",
+    "why_it_matters_ko": "이 소식은 AI 산업 전문가들에게 중요합니다. 이는 휴머노이드 로봇과 같은 첨단 AI 하드웨어의 개발 및 제조에 있어 글로벌 공급망의 핵심적인 역할을 강조하기 때문입니다. 또한 AI 기반 물리적 제품의 생산 및 확장성에 영향을 미칠 수 있는 복잡한 상호 의존성과 잠재적인 지정학적 고려 사항을 부각합니다.",
+    "source": "Tesla",
+    "sourceUrl": "https://www.scmp.com/tech/tech-trends/article/3341953/optimus-chain-chinese-suppliers-form-backbone-teslas-humanoid-robot-initiative",
+    "publishedDate": "2026-02-01",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 82,
+    "impactDetails": {
+      "industry": 17,
+      "tech": 8,
+      "reach": 20,
+      "longTerm": 22,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Tesla Optimus",
+      "humanoid robot",
+      "Chinese suppliers",
+      "robot hardware",
+      "robotics supply chain"
+    ],
+    "searchKeywords_ko": [
+      "테슬라 옵티머스",
+      "휴머노이드 로봇",
+      "중국 공급업체",
+      "로봇 하드웨어",
+      "로봇 공급망"
+    ]
   }
 ]

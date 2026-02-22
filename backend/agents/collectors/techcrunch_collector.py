@@ -1,4 +1,3 @@
-# backend/agents/collectors/techcrunch_collector.py
 """
 TechCrunch AI News Collector
 Fetches AI news articles from TechCrunch RSS feed within a specified date range.
@@ -16,7 +15,6 @@ from bs4 import BeautifulSoup
 # Ensure backend modules can be imported
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -51,10 +49,10 @@ class TechCrunchAIAgent:
         
         # Common RSS date formats
         formats = [
-            '%a, %d %b %Y %H:%M:%S %z',  # Wed, 05 Feb 2026 14:30:00 +0000
-            '%a, %d %b %Y %H:%M:%S %Z',  # Wed, 05 Feb 2026 14:30:00 GMT
-            '%Y-%m-%dT%H:%M:%S%z',       # 2026-02-05T14:30:00+00:00
-            '%Y-%m-%d %H:%M:%S',         # 2026-02-05 14:30:00
+            '%a, %d %b %Y %H:%M:%S %z',
+            '%a, %d %b %Y %H:%M:%S %Z',
+            '%Y-%m-%dT%H:%M:%S%z',
+            '%Y-%m-%d %H:%M:%S',
         ]
         
         for fmt in formats:
@@ -170,7 +168,7 @@ class TechCrunchAIAgent:
                         break
                         
                     page += 1
-                    time.sleep(1) # Be polite
+                    time.sleep(1)
                     
                 except Exception as e:
                     print(f"Error fetching page {page}: {e}")

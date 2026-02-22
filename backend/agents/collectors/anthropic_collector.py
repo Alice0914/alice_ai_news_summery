@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/anthropic_collector.py
 """
 Anthropic News Collector
 Wraps the AnthropicBlogsAgent to scrape AI news.
@@ -15,7 +14,6 @@ from bs4 import BeautifulSoup
 # Ensure backend modules can be imported
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -150,7 +148,6 @@ class AnthropicBlogsAgent:
             soup = BeautifulSoup(response.content, 'html.parser')
             
             # Find content div
-            # Heuristic: Anthropic uses CSS modules, look for 'Body-module' or fallback to semantic tags
             content_div = soup.find('div', class_=lambda c: c and 'Body-module' in str(c))
             
             if not content_div:

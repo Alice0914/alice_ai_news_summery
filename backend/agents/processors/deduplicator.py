@@ -1,4 +1,3 @@
-# backend/agents/processors/deduplicator.py
 """
 Deduplicator
 Uses embeddings to find and remove duplicate news articles,
@@ -15,8 +14,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from dotenv import load_dotenv
 
 from ..config import SOURCE_PRIORITY, SIMILARITY_THRESHOLD, MODEL_EMBEDDING, MODEL_FLASH
-
-# ... (rest of imports)
 
 # Load environment
 from pathlib import Path
@@ -62,7 +59,7 @@ class Deduplicator:
                     task_type="clustering"
                 )
                 embeddings.extend(result['embedding'])
-                time.sleep(0.5)  # Rate limit protection
+                time.sleep(0.5)
             except Exception as e:
                 import traceback
                 traceback.print_exc()
@@ -143,8 +140,18 @@ class Deduplicator:
             matches += 1
             
         # 3. Product Name Match
-        p1 = (d1.get('product_name') or '').lower()
-        p2 = (d2.get('product_name') or '').lower()
+        p1_raw = d1.get('product_name')
+        if isinstance(p1_raw, list):
+            p1 = " ".join(str(x) for x in p1_raw).lower()
+        else:
+            p1 = (p1_raw or '').lower()
+
+        p2_raw = d2.get('product_name')
+        if isinstance(p2_raw, list):
+            p2 = " ".join(str(x) for x in p2_raw).lower()
+        else:
+            p2 = (p2_raw or '').lower()
+
         if p1 and p2 and (p1 in p2 or p2 in p1):
             matches += 1
             

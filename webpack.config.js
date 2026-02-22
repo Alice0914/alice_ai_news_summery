@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
-// Check if we're in production (Vercel sets this) or if env vars are already present
 const isProduction = process.env.NODE_ENV === 'production';
 const hasEnvVars = process.env.FIREBASE_API_KEY;
 
@@ -23,7 +22,6 @@ if (!hasEnvVars) {
   console.log('✅ Using environment variables from platform (Vercel/CI)');
 }
 
-// Debug: Log which Firebase env vars are present (without showing values for security)
 const firebaseVars = [
   'FIREBASE_API_KEY',
   'FIREBASE_AUTH_DOMAIN',
@@ -46,7 +44,7 @@ if (!isProduction) {
 }
 
 module.exports = (env) => {
-  // Handle both boolean true and string "true" from CLI
+
   const isAdmin = env && (env.admin === true || env.admin === 'true');
   console.log('🔧 Build Mode:', isAdmin ? 'Admin Tool' : 'User App');
 
@@ -100,19 +98,19 @@ module.exports = (env) => {
         filename: 'index.html',
         inject: 'body',
       }),
-      // Copy static assets from public folder to dist
+
       new CopyWebpackPlugin({
         patterns: [
           {
             from: 'public',
             to: '',
             globOptions: {
-              ignore: ['**/index.html'], // index.html is handled by HtmlWebpackPlugin
+              ignore: ['**/index.html'],
             },
           },
         ],
       }),
-      // Expose selected environment variables to the client bundle
+
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
         'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),

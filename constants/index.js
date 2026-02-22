@@ -5,7 +5,6 @@ import {
 } from 'lucide-react';
 
 export const PERIODS = [
-    { id: 'latest', label: 'Latest' },
     { id: 'popular', label: 'Popular' },
     { id: 'important', label: 'Important' }
 ];

@@ -4,15 +4,15 @@ import {
     collection,
     doc,
     setDoc,
-    deleteDoc, // Added
+    deleteDoc,
     serverTimestamp,
-    onSnapshot, // Added
+    onSnapshot,
     query,
     orderBy,
     runTransaction,
-    updateDoc, // Added
-    arrayUnion, // Added
-    arrayRemove, // Added
+    updateDoc,
+    arrayUnion,
+    arrayRemove,
 } from 'firebase/firestore';
 import {
     getAuth,
@@ -20,18 +20,18 @@ import {
     onAuthStateChanged,
     GoogleAuthProvider,
     OAuthProvider,
-    TwitterAuthProvider, // Added
+    TwitterAuthProvider,
     signInWithPopup,
-    signInWithRedirect, // Added: For mobile
-    getRedirectResult, // Added: For mobile
-    createUserWithEmailAndPassword, // Added
-    signInWithEmailAndPassword, // Added
-    updateProfile, // Added
+    signInWithRedirect,
+    getRedirectResult,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    updateProfile,
     signOut,
-    updatePassword, // Added: Password Change
-    reauthenticateWithCredential, // Added: Password Change
-    EmailAuthProvider, // Added: Password Change
-    sendPasswordResetEmail, // Added: Password Reset
+    updatePassword,
+    reauthenticateWithCredential,
+    EmailAuthProvider,
+    sendPasswordResetEmail,
 } from 'firebase/auth';
 
 // Firebase configuration pulled from environment variables
@@ -44,7 +44,7 @@ const firebaseConfig = {
     appId: process.env.FIREBASE_APP_ID,
 };
 
-// Debug: Log which config values are present (development only)
+// Log which config values are present (development only)
 if (process.env.NODE_ENV !== 'production') {
     console.log('🔍 Firebase Config Check:');
     Object.keys(firebaseConfig).forEach((key) => {
@@ -103,22 +103,14 @@ const auth = getAuth(app);
 let authInitialized = false;
 let authPromise = null;
 
-/**
- * Initialize Firebase Authentication (anonymous sign-in).
- * This happens automatically when the module loads, so authentication
- * is ready before the app needs it.
- * 
- * Call this function to ensure authentication is set up.
- * Returns a promise that resolves when authentication is complete.
- */
 export const initializeAuth = () => {
-    // If already initialized or in progress, return the existing promise
+
     if (authPromise) {
         return authPromise;
     }
 
     authPromise = new Promise((resolve, reject) => {
-        // Check if user is already authenticated
+
         const currentUser = auth.currentUser;
         if (currentUser) {
             authInitialized = true;
@@ -129,7 +121,7 @@ export const initializeAuth = () => {
             return;
         }
 
-        // Listen for auth state changes
+
         const unsubscribe = onAuthStateChanged(
             auth,
             async (user) => {
@@ -143,18 +135,18 @@ export const initializeAuth = () => {
                     return;
                 }
 
-                // No user, try to sign in anonymously
+
                 try {
                     if (process.env.NODE_ENV !== 'production') {
                         console.log('🔐 Firebase Authentication: Signing in anonymously...');
                     }
                     const credential = await signInAnonymously(auth);
                     console.log('🔐 Firebase Authentication: Signed in anonymously');
-                    // The onAuthStateChanged callback will fire again with the new user
+
                 } catch (error) {
                     unsubscribe();
                     authInitialized = false;
-                    // Provide helpful error message for common issues
+
                     if (error.code === 'auth/configuration-not-found' || error.code === 'auth/operation-not-allowed') {
                         console.error('❌ Firebase Authentication Error:', error.code);
                         console.error('💡 Solution: Enable Anonymous Authentication in Firebase Console:');
@@ -176,18 +168,13 @@ export const initializeAuth = () => {
     return authPromise;
 };
 
-/**
- * Ensure the current user is logged in (anonymous auth).
- * This is a convenience wrapper around initializeAuth().
- * Resolves with a Firebase User object.
- */
 const ensureLoggedIn = async () => {
     return initializeAuth();
 };
 
 // Automatically initialize authentication when the module loads
 if (typeof window !== 'undefined') {
-    // Only auto-initialize in browser environment
+
     initializeAuth().catch((error) => {
         if (process.env.NODE_ENV !== 'production') {
             console.warn('⚠️  Firebase Authentication auto-initialization failed:', error.code);
@@ -196,35 +183,24 @@ if (typeof window !== 'undefined') {
     });
 }
 
-/**
- * Log that a user accessed the app.
- * Writes a document into the "user_log" collection with a "datetime" field.
- * 
- * Authentication happens automatically when the module loads (via initializeAuth),
- * so by the time this function is called, the user should already be authenticated.
- * If authentication failed, this will still try to write to Firestore (assuming
- * your Firestore security rules allow unauthenticated writes).
- */
 export const logUserAccess = async () => {
     try {
-        // Ensure authentication is complete (should already be done, but just in case)
+
         try {
             await ensureLoggedIn();
         } catch (authError) {
-            // Authentication failed, but we'll still try to write to Firestore
+
             if (process.env.NODE_ENV !== 'production') {
                 console.warn('⚠️  Authentication not available, proceeding without auth:', authError.code);
                 console.warn('   (This is OK if your Firestore rules allow unauthenticated writes)');
             }
         }
 
-        // Generate a custom ID based on current time (e.g., "2023-10-27_10-30-55-123")
         const now = new Date();
         const docId = now.toISOString().replace(/T/, '_').replace(/\..+/, '') + '-' + now.getMilliseconds();
 
-        // Write to Firestore with custom ID
         await setDoc(doc(db, 'user_log', docId), {
-            // Use Firestore server timestamp for reliable current time
+
             datetime: serverTimestamp(),
         });
 
@@ -232,7 +208,7 @@ export const logUserAccess = async () => {
             console.log('✅ User access logged to Firestore');
         }
     } catch (error) {
-        // If Firestore write fails, provide helpful error message
+
         if (error.code === 'permission-denied') {
             console.error('❌ Firestore permission denied. Check your Firestore security rules.');
             console.error('   You need to allow writes to the "user_log" collection.');
@@ -240,7 +216,7 @@ export const logUserAccess = async () => {
         } else {
             console.error("Error logging user access:", error);
         }
-        // Do not re-throw to prevent app crash
+
     }
 };
 
@@ -280,7 +256,7 @@ const isMobileDevice = () => {
 export const signInWithGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
-        // Always use popup - redirect has cross-origin storage issues on mobile
+
         const result = await signInWithPopup(auth, provider);
         await saveUserToFirestore(result.user);
         return result.user;
@@ -328,11 +304,10 @@ export const logout = async () => {
 export const signUpWithEmail = async (email, password, name) => {
     try {
         const result = await createUserWithEmailAndPassword(auth, email, password);
-        // Update profile name
         if (name) {
             await updateProfile(result.user, { displayName: name });
         }
-        // Refresh user to get updated profile
+
         await result.user.reload();
         await saveUserToFirestore(auth.currentUser);
         return result.user;
@@ -433,16 +408,16 @@ export const sendResetEmail = async (email) => {
 export const saveBookmark = async (userId, newsItem) => {
     try {
         const userRef = doc(db, 'users', userId);
-        // Add to bookmarks array
+
         await updateDoc(userRef, {
             bookmarks: arrayUnion({
                 ...newsItem,
-                savedAt: Date.now(), // Use generic timestamp for array
+                savedAt: Date.now(),
             })
         });
     } catch (error) {
         console.error('Error saving bookmark:', error);
-        // throw error; // Prevent crash
+
     }
 };
 
@@ -454,8 +429,8 @@ export const saveBookmark = async (userId, newsItem) => {
 export const removeBookmark = async (userId, newsId) => {
     try {
         const userRef = doc(db, 'users', userId);
-        // We need to find the item to remove it from array.
-        // Since arrayRemove needs the exact object, we read -> filter -> update.
+
+
         await runTransaction(db, async (transaction) => {
             const userDoc = await transaction.get(userRef);
             if (!userDoc.exists()) return;
@@ -468,7 +443,7 @@ export const removeBookmark = async (userId, newsId) => {
         });
     } catch (error) {
         console.error('Error removing bookmark:', error);
-        // throw error; // Prevent crash
+
     }
 };
 
@@ -484,16 +459,16 @@ export const subscribeToUserData = (userId, callback) => {
         if (docSnap.exists()) {
             const data = docSnap.data();
             callback({
-                likes: data.likedNews || [], // Array of IDs
-                bookmarks: data.bookmarks || [], // Array of Objects
-                preferences: data.preferences || null // User Preferences (NEW)
+                likes: data.likedNews || [],
+                bookmarks: data.bookmarks || [],
+                preferences: data.preferences || null
             });
         } else {
             callback({ likes: [], bookmarks: [], preferences: null });
         }
     }, (error) => {
         console.error("Error subscribing to user data:", error);
-        // Optionally callback with empty data or handle error state
+
         callback({ likes: [], bookmarks: [], preferences: null });
     });
 };
@@ -512,7 +487,7 @@ export const saveUserPreferences = async (userId, preferences) => {
         console.log('✅ User preferences saved:', preferences);
     } catch (error) {
         console.error('Error saving preferences:', error);
-        // throw error; // Prevent crash
+
     }
 };
 
@@ -529,8 +504,8 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
         return;
     }
 
-    // Derive docId from publishedDate (YYYY-MM-DD...) -> YYYY-MM
-    // Assuming ISO format or YYYY-MM-DD
+
+
     let docId;
     try {
         const dateStr = newsItem.publishedDate;
@@ -541,8 +516,8 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
         docId = `${year}-${month}`;
     } catch (e) {
         console.warn("Could not parse date for docId, fallback to current month?", e);
-        // Fallback logic could be risky. Let's try to grab from ID if it contains date?
-        // Or just use the date string prefix if it is simple YYYY-MM
+
+
         docId = newsItem.publishedDate.substring(0, 7);
     }
 
@@ -551,7 +526,7 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
 
     try {
         await runTransaction(db, async (transaction) => {
-            // 1. Read news doc & user doc
+
             const newsDoc = await transaction.get(newsDocRef);
             const userDoc = await transaction.get(userRef);
 
@@ -565,33 +540,32 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
             if (newsIndex === -1) throw new Error("News item not found.");
 
             const userData = userDoc.data();
-            const userLikes = userData.likedNews || []; // Array of IDs
+            const userLikes = userData.likedNews || [];
             const hasLiked = userLikes.includes(newsItem.id);
 
-            // Mutate Global Counter
+
             const updatedNewsArray = [...newsArray];
             const currentLikes = updatedNewsArray[newsIndex].likes || 0;
 
             if (hasLiked) {
-                // Unlike: decrement count, remove ID from user
+
                 updatedNewsArray[newsIndex].likes = Math.max(0, currentLikes - 1);
                 const updatedUserLikes = userLikes.filter(id => id !== newsItem.id);
                 transaction.update(userRef, { likedNews: updatedUserLikes });
             } else {
-                // Like: increment count, add ID to user
+
                 updatedNewsArray[newsIndex].likes = currentLikes + 1;
-                // Use set logic for array to avoid dupes (though check above handles it)
+
                 const updatedUserLikes = [...userLikes, newsItem.id];
                 transaction.update(userRef, { likedNews: updatedUserLikes });
             }
 
-            // Update Global News
             transaction.update(newsDocRef, { news: updatedNewsArray });
         });
         console.log(`Like toggled successfully.`);
     } catch (error) {
         console.error("Transaction failed: ", error);
-        // throw error; // Prevent crash
+
     }
 };
 /**
@@ -600,8 +574,8 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
  * @returns {string} Avatar URL
  */
 export const getDiceBearAvatar = (seed) => {
-    // Using 'notionists' style which is professional and clean
-    // Fallback to 'initials' if no seed provided
+
+
     const safeSeed = seed ? encodeURIComponent(seed) : 'User';
     return `https://api.dicebear.com/9.x/notionists/svg?seed=${safeSeed}&backgroundColor=b6e3f4,c0aede,d1d4f9`;
 };

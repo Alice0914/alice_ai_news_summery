@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/nvidia_collector.py
 """
 NVIDIA News Collector
 Wraps the NVIDIAAINewsAgent to scrape AI news.
@@ -23,8 +22,6 @@ try:
 except ImportError:
     HAS_CURL_CFFI = False
 
-# Import BaseCollector
-# Assuming base_collector.py is in the same directory (backend2/agents2/collectors/)
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -61,8 +58,8 @@ class NVIDIAAINewsAgent:
             return None
         date_str = date_str.strip()
         formats = [
-            '%B %d, %Y',       # December 22, 2025
-            '%b %d, %Y',       # Dec 22, 2025
+            '%B %d, %Y',
+            '%b %d, %Y',
             '%Y-%m-%d',
         ]
         for fmt in formats:

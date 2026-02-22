@@ -5,10 +5,10 @@ import {
     signInWithLinkedIn,
     signUpWithEmail,
     signInWithEmail,
-    sendResetEmail // Added
+    sendResetEmail
 } from '../../firebaseConfig';
 import { ChevronLeft, Mail, Lock, User, Check, AlertCircle, X, ExternalLink } from 'lucide-react';
-import { YoutubeIcon, DiscordIcon } from '../ui/Icons'; // Re-using existing icons if available, else we'll use Lucide or text
+import { YoutubeIcon, DiscordIcon } from '../ui/Icons';
 
 // Simple Social Icons (using text or placeholders if SVG not available)
 const GoogleIcon = () => (
@@ -32,36 +32,34 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-import { useTranslation } from 'react-i18next'; // Added
+import { useTranslation } from 'react-i18next';
 
 // Helper function to detect in-app browsers
 const isInAppBrowser = () => {
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
-    // Check for common in-app browser patterns
+
     const inAppPatterns = [
-        'FBAN',           // Facebook App
-        'FBAV',           // Facebook App
-        'Instagram',      // Instagram
-        'LinkedIn',       // LinkedIn
-        'KAKAOTALK',      // KakaoTalk
-        'Line/',          // LINE
-        'Twitter',        // Twitter/X App
-        'Snapchat',       // Snapchat
-        'WeChat',         // WeChat
-        'MicroMessenger', // WeChat
-        'Slack',          // Slack
-        'Discord',        // Discord
+        'FBAN',
+        'FBAV',
+        'Instagram',
+        'LinkedIn',
+        'KAKAOTALK',
+        'Line/',
+        'Twitter',
+        'Snapchat',
+        'WeChat',
+        'MicroMessenger',
+        'Slack',
+        'Discord',
     ];
 
     return inAppPatterns.some(pattern => ua.includes(pattern));
 };
 
-// ... (icons remain same)
-
 const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupClick, onSignupStart }) => {
     const { t, i18n } = useTranslation();
-    // 'login' | 'signup' | 'reset'
+
     const [authMode, setAuthMode] = useState('login');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -71,21 +69,18 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
     const [successMessage, setSuccessMessage] = useState('');
     const [showInAppWarning, setShowInAppWarning] = useState(false);
 
-    // Check for in-app browser on mount
+
     useEffect(() => {
         if (isInAppBrowser()) {
             setShowInAppWarning(true);
         }
     }, []);
 
-
-    // Determine if this is standalone page mode or modal mode
     const isStandalone = !onClose;
 
-    // Reset state when modal closes or opens
     React.useEffect(() => {
         if (!isOpen) {
-            // Reset when closed
+
             setAuthMode('login');
             setEmail('');
             setPassword('');
@@ -95,7 +90,6 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
         }
     }, [isOpen]);
 
-    // If modal mode and not open, return null
     if (!isStandalone && !isOpen) return null;
 
     const handleAuthComplete = () => {
@@ -122,7 +116,7 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
                 await signUpWithEmail(email, password, name);
                 handleAuthComplete();
             } else {
-                // login
+
                 await signInWithEmail(email, password);
                 handleAuthComplete();
             }
@@ -141,12 +135,12 @@ const AuthPage = ({ isOpen = true, onClose, onComplete, onAuthSuccess, onSignupC
             if (providerName === 'google') user = await signInWithGoogle();
             if (providerName === 'twitter') user = await signInWithTwitter();
             if (providerName === 'linkedin') user = await signInWithLinkedIn();
-            // Now using signInWithPopup, we get the user back immediately
+
             if (user) {
-                setLoading(false); // Hide loading overlay before callback
+                setLoading(false);
                 handleAuthComplete();
             } else {
-                setLoading(false); // No user returned (popup closed)
+                setLoading(false);
             }
         } catch (err) {
             setError(`Failed to sign in with ${providerName}. ${err.message}`);

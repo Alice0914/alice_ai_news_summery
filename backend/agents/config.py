@@ -1,12 +1,11 @@
-# backend/agents/config.py
 """
 Configuration for the News Pipeline.
 Contains category maps, model names, and priority settings.
 """
 
 # Model Configuration
-MODEL_PRO = "gemini-2.5-pro"      # For impact scoring (complex reasoning)
-MODEL_FLASH = "gemini-2.5-flash"  # For collection, tagging, translation (fast)
+MODEL_PRO = "gemini-2.5-pro"
+MODEL_FLASH = "gemini-2.5-flash"
 MODEL_EMBEDDING = "models/gemini-embedding-001"
 
 # Source Priority (Higher = More Authoritative)
@@ -17,31 +16,31 @@ SOURCE_PRIORITY = {
     "Anthropic": 10,
     "NVIDIA": 10,
     "xAI": 10,
-    "DeepMind": 10,  # Often synonymous with Google, but good to keep
+    "DeepMind": 10,
     "MIT": 10,
-    "Microsoft": 10, # Major AI player (Copilot, Phi)
-    "Meta": 10,      # FAIR, Llama models
-    "Apple": 10,     # Apple Intelligence research
-    "Amazon": 10,    # AWS Bedrock, Olympus
-    "Databricks": 10,# MosaicML, DBRX
-    "IBM": 10,       # WatsonX
-    "Alibaba": 10,   # Qwen models
-    "Tencent": 10,   # Hunyuan
+    "Microsoft": 10,
+    "Meta": 10,
+    "Apple": 10,
+    "Amazon": 10,
+    "Databricks": 10,
+    "IBM": 10,
+    "Alibaba": 10,
+    "Tencent": 10,
 
     # --- Tier 1.5: Key AI Startups & Platforms (Priority 10) ---
-    "Hugging Face": 10, # The "GitHub of AI" - crucial source
-    "Mistral": 10,      # Leading European AI lab
-    "Cohere": 10,       # Major Enterprise AI
-    "Stability AI": 10, # Stable Diffusion
-    "Midjourney": 10,   # Image Gen leader
-    "Perplexity": 10,   # AI Search
-    "Scale AI": 10,     # Data infrastructure
-    "EleutherAI": 10,   # Open source research group
+    "Hugging Face": 10,
+    "Mistral": 10,
+    "Cohere": 10,
+    "Stability AI": 10,
+    "Midjourney": 10,
+    "Perplexity": 10,
+    "Scale AI": 10,
+    "EleutherAI": 10,
 
     # --- Tier 1.5: Top Academic Research (Priority 10) ---
-    "Stanford": 10,  # Stanford HAI / CRFM
-    "Berkeley": 10,  # BAIR (Berkeley AI Research)
-    "CMU": 10,       # Carnegie Mellon University
+    "Stanford": 10,
+    "Berkeley": 10,
+    "CMU": 10,
 
     # --- Tier 2: Reputable Tech Journalism (Priority 5) ---
     # These generate original reporting, unlike aggregators.

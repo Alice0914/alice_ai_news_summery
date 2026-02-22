@@ -9,16 +9,11 @@ import {
 } from 'firebase/auth';
 import { auth, saveUserToFirestore, logUserAccess } from '../../firebaseConfig';
 
-/**
- * OnboardingAuth Component
- * Re-implemented directly to resolve missing file error.
- * Used in Step 4.5 as a dedicated auth gate for signup flow.
- */
 const OnboardingAuth = ({ setStep, onSignupStart }) => {
-    const [isLogin, setIsLogin] = useState(false); // Default to Sign Up
+    const [isLogin, setIsLogin] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState(''); // Only for signup
+    const [name, setName] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
@@ -30,7 +25,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
             const result = await signInWithPopup(auth, provider);
             await saveUserToFirestore(result.user);
             await logUserAccess(result.user.uid, 'login_google');
-            // Success handled by main App.jsx listener
+
         } catch (err) {
             console.error(err);
             setError('Google Sign-In failed. Please try again.');
@@ -46,18 +41,18 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
 
         try {
             if (isLogin) {
-                // Login
+
                 const result = await signInWithEmailAndPassword(auth, email, password);
                 await logUserAccess(result.user.uid, 'login_email');
             } else {
-                // Signup
+
                 if (onSignupStart) onSignupStart();
                 const result = await createUserWithEmailAndPassword(auth, email, password);
                 await updateProfile(result.user, { displayName: name });
                 await saveUserToFirestore(result.user);
                 await logUserAccess(result.user.uid, 'signup_email');
             }
-            // Success handled by main listener
+
         } catch (err) {
             console.error(err);
             if (err.code === 'auth/email-already-in-use') {
@@ -205,7 +200,7 @@ const OnboardingAuth = ({ setStep, onSignupStart }) => {
                 {/* Back Button */}
                 <div className="mt-6 text-center">
                     <button
-                        onClick={() => setStep(3)} // Use prop or history back
+                        onClick={() => setStep(3)}
                         className="w-full py-3 text-slate-500 hover:text-slate-300 transition-colors flex items-center justify-center gap-2 text-sm"
                     >
                         <ArrowLeft className="w-4 h-4" />

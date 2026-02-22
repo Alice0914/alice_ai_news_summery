@@ -1,4 +1,3 @@
-# backend2/agents2/collectors/openai_collector.py
 """
 OpenAI News Collector
 Wraps the OpenAINewsAgent to scrape AI news.
@@ -29,7 +28,6 @@ except ImportError:
     HAS_SELENIUM = False
     print("Warning: Selenium not installed. Install with: pip install selenium webdriver-manager")
 
-# Import BaseCollector
 try:
     from .base_collector import BaseCollector
 except ImportError:
@@ -91,8 +89,8 @@ class OpenAINewsAgent:
             return None
         date_str = date_str.strip()
         formats = [
-            '%b %d, %Y',       # Dec 19, 2025
-            '%B %d, %Y',       # October 31, 2024
+            '%b %d, %Y',
+            '%B %d, %Y',
             '%Y-%m-%d',
         ]
         for fmt in formats:
@@ -156,7 +154,7 @@ class OpenAINewsAgent:
                 # Filter strictly for news or index pages
                 if not (href.startswith('/news/') or href.startswith('/index/')):
                     continue
-                if len(href) < 8: # Filter out short/root links
+                if len(href) < 8:
                     continue
                 
                 full_url = f"https://openai.com{href}" if href.startswith('/') else href

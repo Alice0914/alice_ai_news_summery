@@ -1,0 +1,624 @@
+[
+  {
+    "id": "from-svedka-to-anthropic-brands-make-bold-plays-wi-20260208",
+    "title": "From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+    "title_ko": "스베드카부터 앤트로픽까지, 슈퍼볼 광고에서 AI로 과감한 시도를 한 브랜드들",
+    "summary": "The 2026 Super Bowl advertisements prominently featured AI, both in their creation and as advertised products. Svedka debuted a primarily AI-generated commercial, sparking discussions about AI's impact on creative jobs. Meanwhile, Anthropic used its ad for the Claude chatbot to criticize competitors introducing ads into their AI services.",
+    "summary_ko": "2026년 슈퍼볼 광고는 광고 제작 과정에서뿐만 아니라 광고 제품 자체로서도 AI가 두드러지게 등장했습니다. 스베드카는 주로 AI로 생성된 광고를 선보이며 AI가 창의적인 일자리에 미칠 영향에 대한 논의를 촉발했습니다. 한편, 앤트로픽은 클로드(Claude) 챗봇 광고를 통해 AI 서비스에 광고를 도입하는 경쟁사들을 비판했습니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it demonstrates the expanding application of AI in high-stakes marketing and content creation, signaling new opportunities and challenges for AI tools and ethical considerations. It also highlights the evolving competitive landscape and business models within the AI chatbot market.",
+    "why_it_matters_ko": "이 소식은 AI 산업 전문가들에게 중요합니다. 고액 마케팅 및 콘텐츠 제작 분야에서 AI의 적용 범위가 확대되고 있음을 보여주기 때문입니다. 이는 AI 도구 및 윤리적 고려 사항에 대한 새로운 기회와 과제를 제시하며, 또한 AI 챗봇 시장 내의 진화하는 경쟁 환경과 비즈니스 모델을 부각합니다.",
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/08/super-bowl-60-ai-ads-svedka-anthropic-brands-commercials/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 92,
+    "impactDetails": {
+      "industry": 18,
+      "tech": 13,
+      "reach": 22,
+      "longTerm": 19,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Entertainment/Creative",
+      "Business"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "엔터테인먼트",
+      "비즈니스"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Text AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "텍스트 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "안전/윤리",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Super Bowl AI ads",
+      "Generative AI marketing",
+      "Anthropic Claude",
+      "AI in creative industry",
+      "Svedka AI commercial"
+    ],
+    "searchKeywords_ko": [
+      "슈퍼볼 AI 광고",
+      "생성형 AI 마케팅",
+      "앤트로픽 클로드",
+      "창의 산업의 AI",
+      "스베드카 AI 광고"
+    ]
+  },
+  {
+    "id": "machina-labs-raises-124m-to-scale-ai-driven-metal--20260208",
+    "title": "Machina Labs Raises $124M to Scale AI-Driven Metal-Forming Factories",
+    "title_ko": "마키나 랩스, AI 기반 금속 성형 공장 확장을 위해 1억 2,400만 달러 유치",
+    "summary": "Machina Labs has secured $124 million in Series C funding to expand its AI-driven robotic metal-forming factories. These advanced manufacturing facilities are designed to serve customers in the defense, aerospace, and advanced mobility sectors. This investment will enable the company to scale its operations and technological capabilities.",
+    "summary_ko": "마키나 랩스는 AI 기반 로봇 금속 성형 공장을 확장하기 위해 시리즈 C 펀딩으로 1억 2,400만 달러를 확보했습니다. 이 첨단 제조 시설들은 국방, 항공우주 및 첨단 모빌리티 분야 고객들에게 서비스를 제공하도록 설계되었습니다. 이번 투자는 회사가 운영 및 기술 역량을 확장하는 데 기여할 것입니다.",
+    "why_it_matters": "This significant investment underscores the increasing confidence and financial commitment in physical AI and advanced manufacturing technologies. For AI industry professionals, it highlights the expansion of AI applications into heavy industries and critical sectors, demonstrating a robust market for integrated AI and robotics solutions.",
+    "why_it_matters_ko": "이번 대규모 투자는 물리적 AI 및 첨단 제조 기술에 대한 높아지는 신뢰와 재정적 기여를 명확히 보여줍니다. AI 업계 전문가들에게는 AI 애플리케이션이 중공업 및 핵심 분야로 확장되고 있음을 강조하며, 통합 AI 및 로봇 공학 솔루션에 대한 견고한 시장을 입증합니다.",
+    "source": "Robotics and Automation News",
+    "sourceUrl": "https://roboticsandautomationnews.com/2026/02/08/machina-labs-raises-124-million-to-scale-manufacturing-infrastructure/98760/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 92,
+    "impactDetails": {
+      "industry": 21,
+      "tech": 22,
+      "reach": 10,
+      "longTerm": 23,
+      "socialEthics": 16,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Defense/Security",
+      "Tech/AI",
+      "Technology",
+      "Automotive",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "국방/보안",
+      "테크/AI",
+      "기술",
+      "자동차",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Machina Labs funding",
+      "AI robotics",
+      "metal forming",
+      "defense manufacturing",
+      "Series C"
+    ],
+    "searchKeywords_ko": [
+      "마키나 랩스 펀딩",
+      "AI 로봇",
+      "금속 성형",
+      "국방 제조",
+      "시리즈 C"
+    ]
+  },
+  {
+    "id": "generative-ai-project-for-orson-welles-magnificent-20260208",
+    "title": "Generative AI Project for Orson Welles' 'Magnificent Ambersons' Lost Footage Gains Understanding",
+    "title_ko": "오슨 웰스의 '위대한 앰버슨가' 유실 푸티지 복원 생성형 AI 프로젝트, 이제야 이해하다",
+    "summary": "Initially skeptical, the author now understands the generative AI project aimed at recreating lost footage from Orson Welles' \"The Magnificent Ambersons.\" The startup Fable, founded by Edward Saatchi, is driven by a deep love for Welles' work and a desire to restore this \"holy grail of lost cinema.\" This endeavor is a highly advanced, fan-driven attempt to realize Welles' original vision using modern AI technology.",
+    "summary_ko": "처음에는 회의적이었던 필자는 이제 오슨 웰스의 '위대한 앰버슨가'에서 유실된 푸티지를 재현하려는 생성형 AI 프로젝트를 이해하게 되었다. 에드워드 사치가 설립한 스타트업 Fable은 웰스 작품에 대한 깊은 애정과 '유실된 영화의 성배'로 불리는 이 작품을 복원하고자 하는 열망을 동력으로 삼고 있다. 이러한 노력은 현대 AI 기술을 활용하여 웰스의 원래 비전을 실현하기 위한 매우 진보적이며 팬 주도적인 시도이다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/08/okay-im-slightly-less-mad-about-that-magnificent-ambersons-ai-project/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 76,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 16,
+      "reach": 10,
+      "longTerm": 18,
+      "socialEthics": 20,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Tech/AI",
+      "Entertainment/Creative",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "테크/AI",
+      "엔터테인먼트",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Generative AI",
+      "Video AI",
+      "Voice AI"
+    ],
+    "productServices_ko": [
+      "생성형 AI",
+      "동영상 AI",
+      "음성 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Orson Welles",
+      "Magnificent Ambersons",
+      "Generative AI",
+      "Film restoration",
+      "Fable startup"
+    ],
+    "searchKeywords_ko": [
+      "오슨 웰스",
+      "위대한 앰버슨가",
+      "생성형 AI",
+      "영화 복원",
+      "페이블 스타트업"
+    ]
+  },
+  {
+    "id": "cryptocom-places-70m-bet-on-aicom-domain-ahead-of--20260208",
+    "title": "Crypto.com Places $70M Bet on AI.com Domain Ahead of Super Bowl",
+    "title_ko": "Crypto.com, 슈퍼볼 앞두고 AI.com 도메인에 7천만 달러 베팅",
+    "summary": "Crypto.com founder Kris Marszalek has acquired the AI.com domain for $70 million, marking the priciest domain purchase in history. The record-breaking deal, paid in cryptocurrency, aims to launch a personal AI agent site during the upcoming Super Bowl. Marszalek believes AI represents one of the greatest technological waves of our lifetime, justifying the significant investment despite questions regarding the return on such high-value domain purchases.",
+    "summary_ko": "크립토닷컴(Crypto.com) 설립자 크리스 마잘렉(Kris Marszalek)은 AI.com 도메인을 7천만 달러에 인수하여, 역사상 가장 비싼 도메인 구매 기록을 세웠습니다. 암호화폐로 지불된 이 기록적인 거래는 다가오는 슈퍼볼 기간 동안 개인 AI 에이전트 사이트를 출시하는 것을 목표로 합니다. 마잘렉은 AI가 우리 생애 가장 거대한 기술적 물결 중 하나라고 믿고 있으며, 고가 도메인 구매의 수익성에 대한 의문에도 불구하고 이번 막대한 투자를 정당화하고 있습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "TechCrunch",
+    "sourceUrl": "https://techcrunch.com/2026/02/08/crypto-com-places-70m-bet-on-ai-com-domain-ahead-of-super-bowl/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 67,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 5,
+      "reach": 22,
+      "longTerm": 18,
+      "socialEthics": 2,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Tech/AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "테크/AI",
+      "기술"
+    ],
+    "productServices": [
+      "Agent AI",
+      "Automation AI",
+      "Text AI"
+    ],
+    "productServices_ko": [
+      "에이전트 AI",
+      "자동화 AI",
+      "텍스트 AI"
+    ],
+    "coreElements": [
+      "Data",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "데이터",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Crypto.com",
+      "AI.com",
+      "Domain purchase",
+      "Kris Marszalek",
+      "AI agent"
+    ],
+    "searchKeywords_ko": [
+      "크립토닷컴",
+      "AI.com",
+      "도메인 구매",
+      "크리스 마잘렉",
+      "AI 에이전트"
+    ]
+  },
+  {
+    "id": "ocado-to-cut-1000-jobs-amid-challenges-in-automate-20260208",
+    "title": "Ocado to Cut 1,000 Jobs Amid Challenges in Automated Fulfillment Centers",
+    "title_ko": "오카도, 자동화 물류센터 난항으로 1,000명 감원 예정",
+    "summary": "Ocado, a UK-based online grocer and warehouse robotics specialist, is set to cut approximately 1,000 jobs, representing 5% of its total workforce. This significant decision comes after a particularly challenging year for its automated fulfillment centers.",
+    "summary_ko": "영국 기반 온라인 식료품 및 창고 로봇 전문 기업인 오카도가 전체 인력의 5%에 해당하는 약 1,000명의 인력을 감축할 계획이다. 이는 자동화 물류센터가 특히 난항을 겪은 한 해를 보낸 후 내려진 중대한 결정이다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Reuters",
+    "sourceUrl": "https://www.reuters.com/business/retail-consumer/uks-ocado-axe-up-1000-jobs-cost-cutting-drive-sunday-times-reports-2026-02-08/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 59,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 5,
+      "reach": 14,
+      "longTerm": 13,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Economy",
+      "Robotics/Physical AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "경제",
+      "로보틱스/물리 AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Ocado",
+      "Job Cuts",
+      "Robotics",
+      "Automation",
+      "Online Grocer"
+    ],
+    "searchKeywords_ko": [
+      "오카도",
+      "감원",
+      "로봇 공학",
+      "자동화",
+      "온라인 식료품점"
+    ]
+  },
+  {
+    "id": "machina-labs-secures-124m-to-expand-ai-driven-robo-20260208",
+    "title": "Machina Labs Secures $124M to Expand AI-Driven Robotic Metal-Forming Factories",
+    "title_ko": "마키나 랩스, AI 기반 로봇 금속 성형 공장 확장을 위해 1억 2,400만 달러 확보",
+    "summary": "Machina Labs has successfully raised $124 million in Series C funding. This capital injection is intended to significantly expand its AI-driven robotic metal-forming factories. The company targets key sectors including defense, aerospace, and advanced mobility with its specialized manufacturing solutions.",
+    "summary_ko": "마키나 랩스가 시리즈 C 펀딩으로 1억 2,400만 달러를 성공적으로 유치했습니다. 이번 자금 조달은 AI 기반 로봇 금속 성형 공장을 대폭 확장하는 데 사용될 예정입니다. 이 회사는 국방, 항공우주, 첨단 모빌리티 등 주요 분야에 특화된 제조 솔루션을 제공합니다.",
+    "why_it_matters": "This news is significant for AI industry professionals as it showcases substantial investment in the real-world application of AI, specifically within robotic manufacturing and physical AI. It underscores the growing market demand for AI-driven automation in critical sectors like defense and aerospace, indicating a strong trend towards integrating advanced AI with industrial robotics for scalable production.",
+    "why_it_matters_ko": "이 소식은 AI의 실제 응용, 특히 로봇 제조 및 물리적 AI(physical AI) 분야에 대한 상당한 투자를 보여준다는 점에서 AI 산업 전문가들에게 중요합니다. 이는 국방 및 항공우주와 같은 핵심 분야에서 AI 기반 자동화에 대한 시장 수요가 증가하고 있음을 강조하며, 확장 가능한 생산을 위해 첨단 AI와 산업용 로봇을 통합하려는 강력한 추세를 시사합니다.",
+    "source": "Robotics and Automation News",
+    "sourceUrl": "https://roboticsandautomationnews.com/2026/02/08/machina-labs-raises-124-million-to-scale-manufacturing-infrastructure/98760/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 89.0,
+    "impactDetails": {
+      "industry": 20,
+      "tech": 22,
+      "reach": 11,
+      "longTerm": 21,
+      "socialEthics": 15,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Finance/Investment",
+      "Robotics/Physical AI",
+      "Defense/Security",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "금융/투자",
+      "로보틱스/물리 AI",
+      "국방/보안",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing",
+      "Data"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅",
+      "데이터"
+    ],
+    "searchKeywords": [
+      "Machina Labs",
+      "AI robotics",
+      "Metal forming",
+      "Series C funding",
+      "Manufacturing automation"
+    ],
+    "searchKeywords_ko": [
+      "마키나 랩스",
+      "AI 로봇",
+      "금속 성형",
+      "시리즈 C 투자",
+      "제조 자동화"
+    ]
+  },
+  {
+    "id": "ocado-announces-1000-job-cuts-amid-struggles-in-au-20260208",
+    "title": "Ocado Announces 1,000 Job Cuts Amid Struggles in Automation Division",
+    "title_ko": "오카도, 자동화 부문 고전 속 1,000명 감원 발표",
+    "summary": "Ocado, a UK-based online grocer and warehouse robotics specialist, plans to cut up to 1,000 jobs, or 5% of its workforce. This decision follows a challenging year for the company's automated fulfillment centers. The job cuts are part of a broader cost-cutting initiative.",
+    "summary_ko": "영국 기반의 온라인 식료품 업체이자 창고 로봇 기술 전문 기업인 오카도가 최대 1,000명(전체 인력의 5%)을 감원할 계획이다. 이러한 결정은 동사의 자동화된 풀필먼트 센터들이 어려운 한 해를 보낸 데 따른 것이다. 이번 감원은 광범위한 비용 절감 노력의 일환으로 추진된다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Reuters",
+    "sourceUrl": "https://www.reuters.com/business/retail-consumer/uks-ocado-axe-up-1000-jobs-cost-cutting-drive-sunday-times-reports-2026-02-08/",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 68,
+    "impactDetails": {
+      "industry": 15,
+      "tech": 5,
+      "reach": 16,
+      "longTerm": 14,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Economy",
+      "Robotics/Physical AI",
+      "Tech/AI"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "경제",
+      "로보틱스/물리 AI",
+      "테크/AI"
+    ],
+    "productServices": [
+      "Automation AI",
+      "Robotics"
+    ],
+    "productServices_ko": [
+      "자동화 AI",
+      "로보틱스"
+    ],
+    "coreElements": [
+      "Computing",
+      "Algorithm"
+    ],
+    "coreElements_ko": [
+      "컴퓨팅",
+      "알고리즘"
+    ],
+    "searchKeywords": [
+      "Ocado job cuts",
+      "warehouse automation",
+      "robotics industry",
+      "online grocery",
+      "business challenges"
+    ],
+    "searchKeywords_ko": [
+      "오카도 감원",
+      "창고 자동화",
+      "로봇 산업",
+      "온라인 식료품",
+      "사업적 어려움"
+    ]
+  },
+  {
+    "id": "agibot-hosts-worlds-first-robot-led-gala-in-shangh-20260208",
+    "title": "Agibot Hosts World's First Robot-Led Gala in Shanghai",
+    "title_ko": "아기봇, 상하이에서 세계 최초 로봇 주도 갈라 개최",
+    "summary": "Chinese company Agibot recently staged 'Agibot Night 2026' in Shanghai. The 60-minute gala was promoted as the world's first large live show performed entirely by humanoid robots.",
+    "summary_ko": "중국 기업 아기봇은 최근 상하이에서 '아기봇 나이트 2026'을 개최했습니다. 60분간 진행된 이 갈라쇼는 전적으로 휴머노이드 로봇이 공연하는 세계 최초의 대규모 라이브 쇼로 홍보되었습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "Agibot",
+    "sourceUrl": "https://www.prnewswire.com/news-releases/agibot-hosts-agibot-night-a-robot-led-live-gala-show-302682037.html",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 76,
+    "impactDetails": {
+      "industry": 16,
+      "tech": 20,
+      "reach": 15,
+      "longTerm": 15,
+      "socialEthics": 10,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Robotics/Physical AI",
+      "Entertainment/Creative",
+      "Tech/AI",
+      "Business",
+      "Research/Innovation"
+    ],
+    "categories_ko": [
+      "로보틱스/물리 AI",
+      "엔터테인먼트",
+      "테크/AI",
+      "비즈니스",
+      "연구/혁신"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Agent AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "에이전트 AI"
+    ],
+    "coreElements": [
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Agibot",
+      "Robot Gala",
+      "Humanoid Show",
+      "Shanghai Robotics",
+      "Live Robot Performance"
+    ],
+    "searchKeywords_ko": [
+      "아기봇",
+      "로봇 갈라쇼",
+      "휴머노이드 로봇 공연",
+      "상하이 로봇",
+      "로봇 라이브 공연"
+    ]
+  },
+  {
+    "id": "amazon-prime-air-delivery-drone-crashes-into-apart-20260208",
+    "title": "Amazon Prime Air Delivery Drone Crashes into Apartment Building in Texas",
+    "title_ko": "아마존 프라임 에어 배송 드론, 텍사스 아파트 건물에 추락",
+    "summary": "An Amazon Prime Air MK30 delivery drone crashed into the side of an apartment building in Richardson, Texas. The incident caused smoke but no injuries were reported.",
+    "summary_ko": "텍사스 리처드슨에서 아마존 프라임 에어 MK30 배송 드론이 아파트 건물 외벽에 추락했습니다. 이 사고로 연기가 발생했으나, 인명 피해는 보고되지 않았습니다.",
+    "why_it_matters": null,
+    "why_it_matters_ko": null,
+    "source": "The Verge",
+    "sourceUrl": "https://www.theverge.com/tech/875475/amazon-delivery-drone-crash-texas",
+    "publishedDate": "2026-02-08",
+    "likes": 0,
+    "viewCount": 0,
+    "shareCount": 0,
+    "impactScore": 70,
+    "impactDetails": {
+      "industry": 12,
+      "tech": 8,
+      "reach": 17,
+      "longTerm": 15,
+      "socialEthics": 18,
+      "exposure_score": 0
+    },
+    "categories": [
+      "Business",
+      "Hardware",
+      "Robotics/Physical AI",
+      "Technology"
+    ],
+    "categories_ko": [
+      "비즈니스",
+      "하드웨어",
+      "로보틱스/물리 AI",
+      "기술"
+    ],
+    "productServices": [
+      "Robotics",
+      "Automation AI",
+      "Edge/On-Device AI"
+    ],
+    "productServices_ko": [
+      "로보틱스",
+      "자동화 AI",
+      "엣지/온디바이스 AI"
+    ],
+    "coreElements": [
+      "Safety/Ethics",
+      "Algorithm",
+      "Computing"
+    ],
+    "coreElements_ko": [
+      "안전/윤리",
+      "알고리즘",
+      "컴퓨팅"
+    ],
+    "searchKeywords": [
+      "Amazon Prime Air",
+      "delivery drone",
+      "drone crash",
+      "Texas",
+      "robotics safety"
+    ],
+    "searchKeywords_ko": [
+      "아마존 프라임 에어",
+      "배송 드론",
+      "드론 추락",
+      "텍사스",
+      "로봇 안전"
+    ]
+  }
+]
