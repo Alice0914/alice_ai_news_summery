@@ -31,7 +31,22 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Python
+__pycache__/
 
-
-
-
+# Unnecessary files
+image/imag2.jpg
+data/mock_news.json
+backend/data/final_news_output.json
+backend/data/final_news_output0214.json
+backend/notebook/final_news_output_202.json
+backend/agents/test.ipynb
+backend/data/deduplication_log_1770601983.json
+backend/data/deduplication_log_1770602253.json
+backend/data/deduplication_log_1770603510.json
+backend/data/deduplication_log_1770604224.json
+backend/data/deduplication_log_1770606131.json
+test/app_v1.py
+test/firebase_integration_table_structure_v1.md
+scripts/inject_random_images.py
+public/discord_icon.png
