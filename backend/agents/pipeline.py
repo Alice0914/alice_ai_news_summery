@@ -35,7 +35,7 @@ from .collectors import (
 )
 
 # Processors
-from .processors import Deduplicator, ScorerTagger, Translator
+from .processors import Deduplicator, ScorerTagger, Translator, FirestoreUploader
 
 
 def _collect_from_source(collector_class, start_date: str, end_date: str) -> list:
@@ -178,7 +178,7 @@ def translate_and_save(articles: list, end_date: str, output_dir: str = None) ->
         json.dump(final_articles, f, indent=2, ensure_ascii=False)
     
     print(f"\n✅ Saved {len(final_articles)} articles to: {output_path}\n")
-    return output_path
+    return output_path, final_articles
 
 
 def run_pipeline(start_date: str, end_date: str, output_dir: str = None) -> str:
@@ -224,7 +224,10 @@ def run_pipeline(start_date: str, end_date: str, output_dir: str = None) -> str:
     scored_articles = score_and_tag(unique_articles)
     
     # Step 4: Translate & Save
-    output_path = translate_and_save(scored_articles, end_date, output_dir)
+    output_path, final_articles = translate_and_save(scored_articles, end_date, output_dir)
+    
+    # Step 5: Upload to Firestore
+    upload_count = upload_to_firestore(final_articles, end_date)
     
     # Summary
     elapsed = datetime.now() - start_time
@@ -232,9 +235,56 @@ def run_pipeline(start_date: str, end_date: str, output_dir: str = None) -> str:
     print("✅ PIPELINE COMPLETE")
     print(f"   Total Time: {elapsed}")
     print(f"   Output: {output_path}")
+    print(f"   Uploaded: {upload_count} articles to Firestore")
     print("=" * 60 + "\n")
     
     return output_path
+
+
+def upload_to_firestore(articles: list, target_date: str) -> int:
+    """
+    Step 5: Upload final articles to Firestore.
+    
+    Args:
+        articles: Final formatted articles
+        target_date: Target date in YYYY-MM-DD format
+        
+    Returns:
+        Number of articles uploaded
+    """
+    print("=" * 60)
+    print("STEP 5: Upload to Firestore")
+    print("=" * 60)
+    
+    uploader = FirestoreUploader()
+    count = uploader.run(articles, target_date)
+    
+    print(f"\nUploaded: {count} articles\n")
+    return count
+
+
+def get_smart_dates() -> tuple:
+    """
+    Smart date logic for the recommended schedule:
+    - Mon: collect Fri + Sat + Sun (3 days)
+    - Tue-Fri: collect yesterday only
+    - Sat/Sun: should not run (handled by cron)
+    
+    Returns:
+        (start_date, end_date) tuple in YYYY-MM-DD format
+    """
+    from datetime import timedelta
+    today = datetime.now()
+    weekday = today.weekday()  # 0=Mon, 6=Sun
+    
+    if weekday == 0:  # Monday → collect Fri+Sat+Sun
+        start = today - timedelta(days=3)
+        end = today - timedelta(days=1)
+    else:  # Tue-Fri → collect yesterday
+        start = today - timedelta(days=1)
+        end = today - timedelta(days=1)
+    
+    return start.strftime("%Y-%m-%d"), end.strftime("%Y-%m-%d")
 
 
 # CLI Entry Point
@@ -244,12 +294,17 @@ if __name__ == "__main__":
     if len(sys.argv) >= 3:
         start = sys.argv[1]
         end = sys.argv[2]
+    elif len(sys.argv) == 2 and sys.argv[1] == "--smart":
+        start, end = get_smart_dates()
+        print(f"🧠 Smart mode: {start} ~ {end}")
     else:
-        # Default to today
-        today = datetime.now().strftime("%Y-%m-%d")
-        start = today
-        end = today
+        # Default to yesterday
+        from datetime import timedelta
+        yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+        start = yesterday
+        end = yesterday
         print(f"Usage: python pipeline.py <start_date> <end_date>")
-        print(f"Defaulting to: {start} ~ {end}")
+        print(f"       python pipeline.py --smart  (auto weekday logic)")
+        print(f"Defaulting to yesterday: {start} ~ {end}")
     
     run_pipeline(start, end)
