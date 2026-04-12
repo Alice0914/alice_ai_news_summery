@@ -88,8 +88,8 @@ const AdminUpload = () => {
                         return;
                     }
                     const dateParts = item.publishedDate.split('-');
-                    if (dateParts.length < 2) return;
-                    const docId = `${dateParts[0]}-${dateParts[1]}`; // YYYY-MM
+                    if (dateParts.length < 3) return; // Ensure we have YYYY-MM-DD
+                    const docId = `${dateParts[0]}-${dateParts[1]}-${dateParts[2].split('T')[0].split(' ')[0]}`; // YYYY-MM-DD
                     if (!groupedData[docId]) groupedData[docId] = [];
                     groupedData[docId].push(item);
                 });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getCountFromServer, collection } from 'firebase/firestore';
+import { getCountFromServer, collectionGroup, collection } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 import { Users, AlertCircle } from 'lucide-react';
 
@@ -12,9 +12,15 @@ const AdminStats = () => {
         const fetchStats = async () => {
             try {
                 setLoading(true);
-                const coll = collection(db, 'user_log');
-                const snapshot = await getCountFromServer(coll);
-                setVisitorCount(snapshot.data().count);
+                // First get subcollection logs
+                const logsGroup = collectionGroup(db, 'access_logs');
+                const logsSnapshot = await getCountFromServer(logsGroup);
+                
+                // Then get legacy logs just in case
+                const legacyColl = collection(db, 'user_log');
+                const legacySnapshot = await getCountFromServer(legacyColl);
+                
+                setVisitorCount(logsSnapshot.data().count + legacySnapshot.data().count);
             } catch (err) {
                 console.error("Error fetching stats:", err);
                 setError("Failed to load visitor statistics. Check console for details.");

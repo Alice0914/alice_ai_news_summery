@@ -269,9 +269,31 @@ const UserApp = () => {
 
             if (!hasInitializedFilters.current) {
               hasInitializedFilters.current = true;
-              if (preferences.categories) setSelectedInterests(migrateIds(preferences.categories, CATEGORY_ID_MAP_REV));
-              if (preferences.productServices) setSelectedServices(migrateIds(preferences.productServices, SERVICE_ID_MAP_REV));
-              if (preferences.coreElements) setSelectedCore(migrateIds(preferences.coreElements, CORE_ID_MAP_REV));
+              
+              const migratedCats = migrateIds(preferences.categories || [], CATEGORY_ID_MAP_REV);
+              const migratedServs = migrateIds(preferences.productServices || [], SERVICE_ID_MAP_REV);
+              const migratedCore = migrateIds(preferences.coreElements || [], CORE_ID_MAP_REV);
+              
+              if (preferences.categories) setSelectedInterests(migratedCats);
+              if (preferences.productServices) setSelectedServices(migratedServs);
+              if (preferences.coreElements) setSelectedCore(migratedCore);
+              
+              // Auto-migrate legacy preferences to UI standard
+              if (
+                JSON.stringify(migratedCats) !== JSON.stringify(preferences.categories || []) ||
+                JSON.stringify(migratedServs) !== JSON.stringify(preferences.productServices || []) ||
+                JSON.stringify(migratedCore) !== JSON.stringify(preferences.coreElements || [])
+              ) {
+                console.log("🔄 Auto-migrating legacy preferences to English IDs...");
+                const newPrefs = {
+                  categories: migratedCats,
+                  productServices: migratedServs,
+                  coreElements: migratedCore,
+                  language: preferences.language || 'en'
+                };
+                saveUserPreferences(user.uid, newPrefs);
+                setSavedPreferences(newPrefs);
+              }
             }
           }
         });
@@ -468,17 +490,23 @@ const UserApp = () => {
       const now = new Date();
 
 
+      // Legacy monthly docs (for backward compatibility)
       const currentYear = now.getFullYear();
       const currentMonth = String(now.getMonth() + 1).padStart(2, '0');
-      const currentDocId = `${currentYear}-${currentMonth}`;
-
+      const legacyCurrentDoc = `${currentYear}-${currentMonth}`;
 
       const prevDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-      const prevYear = prevDate.getFullYear();
-      const prevMonth = String(prevDate.getMonth() + 1).padStart(2, '0');
-      const prevDocId = `${prevYear}-${prevMonth}`;
+      const legacyPrevDoc = `${prevDate.getFullYear()}-${String(prevDate.getMonth() + 1).padStart(2, '0')}`;
 
-      const targetDocs = [currentDocId, prevDocId];
+      // New daily docs (past 14 days)
+      const dailyDocs = [];
+      for (let i = 0; i < 14; i++) {
+          const d = new Date(now);
+          d.setDate(d.getDate() - i);
+          dailyDocs.push(d.toISOString().substring(0, 10));
+      }
+
+      const targetDocs = [legacyCurrentDoc, legacyPrevDoc, ...dailyDocs];
 
       try {
         console.log(`Fetching news for months: ${targetDocs.join(', ')}...`);

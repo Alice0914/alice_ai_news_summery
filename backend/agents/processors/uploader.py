@@ -85,16 +85,16 @@ class FirestoreUploader:
             print("[Uploader] No articles to upload.")
             return 0
 
-        # Determine collection path: news_feeds/{YYYY-MM}
+        # Determine collection path: news_feeds/{YYYY-MM-DD}
         try:
             dt = datetime.strptime(target_date, "%Y-%m-%d")
-            month_key = dt.strftime("%Y-%m")
+            doc_id = dt.strftime("%Y-%m-%d")
         except ValueError:
-            month_key = datetime.now().strftime("%Y-%m")
+            doc_id = datetime.now().strftime("%Y-%m-%d")
 
-        doc_ref = self.db.collection("news_feeds").document(month_key)
+        doc_ref = self.db.collection("news_feeds").document(doc_id)
 
-        print(f"[Uploader] Uploading {len(articles)} articles to news_feeds/{month_key}...")
+        print(f"[Uploader] Uploading {len(articles)} articles to news_feeds/{doc_id}...")
 
         try:
             # Get existing document
@@ -110,12 +110,12 @@ class FirestoreUploader:
                 merged_news = existing_news + new_articles
 
                 doc_ref.set({"news": merged_news}, merge=True)
-                print(f"[Uploader] ✅ Merged {len(new_articles)} new articles (total: {len(merged_news)}) into news_feeds/{month_key}")
+                print(f"[Uploader] ✅ Merged {len(new_articles)} new articles (total: {len(merged_news)}) into news_feeds/{doc_id}")
                 return len(new_articles)
             else:
                 # Create new document
                 doc_ref.set({"news": articles})
-                print(f"[Uploader] ✅ Created news_feeds/{month_key} with {len(articles)} articles")
+                print(f"[Uploader] ✅ Created news_feeds/{doc_id} with {len(articles)} articles")
                 return len(articles)
 
         except Exception as e:

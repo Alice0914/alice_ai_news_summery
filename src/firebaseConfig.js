@@ -13,6 +13,8 @@ import {
     updateDoc,
     arrayUnion,
     arrayRemove,
+    addDoc,
+    collectionGroup,
 } from 'firebase/firestore';
 import {
     getAuth,
@@ -197,12 +199,20 @@ export const logUserAccess = async () => {
         }
 
         const now = new Date();
-        const docId = now.toISOString().replace(/T/, '_').replace(/\..+/, '') + '-' + now.getMilliseconds();
+        const user = auth.currentUser;
 
-        await setDoc(doc(db, 'user_log', docId), {
-
-            datetime: serverTimestamp(),
-        });
+        if (user) {
+            // New structure: users/{uid}/access_logs/{auto-id}
+            await addDoc(collection(db, 'users', user.uid, 'access_logs'), {
+                datetime: serverTimestamp(),
+            });
+        } else {
+            // Fallback for completely anonymous/unauth users if needed
+            const docId = now.toISOString().replace(/T/, '_').replace(/\..+/, '') + '-' + now.getMilliseconds();
+            await setDoc(doc(db, 'user_log', docId), {
+                datetime: serverTimestamp(),
+            });
+        }
 
         if (process.env.NODE_ENV !== 'production') {
             console.log('✅ User access logged to Firestore');
@@ -211,7 +221,7 @@ export const logUserAccess = async () => {
 
         if (error.code === 'permission-denied') {
             console.error('❌ Firestore permission denied. Check your Firestore security rules.');
-            console.error('   You need to allow writes to the "user_log" collection.');
+            console.error('   You need to allow writes to the "access_logs" subcollection.');
             console.error('   Example rule: allow write: if true; (for testing only)');
         } else {
             console.error("Error logging user access:", error);
@@ -509,16 +519,14 @@ export const toggleLike = async (userId, newsItem, isCurrentlyLiked) => {
     let docId;
     try {
         const dateStr = newsItem.publishedDate;
-        const dateObj = new Date(dateStr);
-        if (isNaN(dateObj)) throw new Error("Invalid Date");
-        const year = dateObj.getFullYear();
-        const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-        docId = `${year}-${month}`;
+        if (!dateStr || typeof dateStr !== 'string') throw new Error("Invalid Date String");
+        
+        // Use YYYY-MM-DD format based on publishedDate string (e.g., '2026-04-10')
+        docId = dateStr.substring(0, 10);
     } catch (e) {
-        console.warn("Could not parse date for docId, fallback to current month?", e);
-
-
-        docId = newsItem.publishedDate.substring(0, 7);
+        console.warn("Could not parse date for docId, fallback to current day?", e);
+        const now = new Date();
+        docId = now.toISOString().substring(0, 10);
     }
 
     const newsDocRef = doc(db, 'news_data', docId);
