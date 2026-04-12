@@ -33,19 +33,23 @@ yarn-error.log*
 
 # Python
 __pycache__/
+*.pyc
+
+# Firebase credentials (NEVER commit!)
+serviceAccountKey.json
+*serviceAccountKey*.json
+
+# Generated data files
+backend/data/final_data/
+backend/data/deduplication/
 
 # Unnecessary files
 image/imag2.jpg
 data/mock_news.json
-backend/data/final_news_output.json
-backend/data/final_news_output0214.json
-backend/notebook/final_news_output_202.json
+backend/data/final_news_output*.json
+backend/notebook/
 backend/agents/test.ipynb
-backend/data/deduplication_log_1770601983.json
-backend/data/deduplication_log_1770602253.json
-backend/data/deduplication_log_1770603510.json
-backend/data/deduplication_log_1770604224.json
-backend/data/deduplication_log_1770606131.json
+backend/agents/processors/scorer_tagger copy.py
 test/app_v1.py
 test/firebase_integration_table_structure_v1.md
 scripts/inject_random_images.py

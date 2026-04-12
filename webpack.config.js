@@ -49,7 +49,7 @@ module.exports = (env) => {
   console.log('🔧 Build Mode:', isAdmin ? 'Admin Tool' : 'User App');
 
   return {
-    entry: './index.js',
+    entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.[contenthash].js',

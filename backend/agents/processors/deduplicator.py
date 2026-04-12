@@ -296,7 +296,7 @@ class Deduplicator:
             # Save to backend/data if possible, else current dir
             date_suffix = f"_{target_date}" if target_date else ""
             log_filename = f"deduplication_log_{int(time.time())}{date_suffix}.json"
-            log_path = os.path.join(os.getcwd(), 'backend', 'data', log_filename)
+            log_path = os.path.join(os.getcwd(), 'backend', 'data', 'deduplication', log_filename)
             
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, 'w', encoding='utf-8') as f:

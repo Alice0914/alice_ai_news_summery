@@ -85,7 +85,20 @@ class ReviewAgent:
 
         print(f"[ReviewAgent] Reviewing {len(articles)} articles...")
 
+        # Blocked source URL prefixes
+        blocked_url_prefixes = ['https://x.com']
+
         for article in articles:
+            source_url = article.get('sourceUrl', '')
+            if any(source_url.startswith(prefix) for prefix in blocked_url_prefixes):
+                invalid_entry = {
+                    "article": article,
+                    "reasons": [f"Blocked source URL: {source_url}"]
+                }
+                invalid_list.append(invalid_entry)
+                print(f"  [-] Article Rejected ({article.get('title', 'No Title')[:30]}...): Blocked source URL")
+                continue
+
             result = self.run(article)
             if result['valid']:
                 valid_list.append(article)

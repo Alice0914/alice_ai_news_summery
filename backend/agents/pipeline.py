@@ -162,7 +162,7 @@ def translate_and_save(articles: list, end_date: str, output_dir: str = None) ->
     # Determine output path
     if output_dir is None:
         output_dir = os.path.abspath(os.path.join(
-            os.path.dirname(__file__), '..', '..', 'backend', 'notebook'
+            os.path.dirname(__file__), '..', 'data', 'final_data'
         ))
     
     # Create filename with date
