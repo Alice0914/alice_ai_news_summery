@@ -266,9 +266,9 @@ def upload_to_firestore(articles: list, target_date: str) -> int:
 def get_smart_dates() -> tuple:
     """
     Smart date logic for the recommended schedule:
-    - Mon: collect Fri + Sat + Sun (3 days)
-    - Tue-Fri: collect yesterday only
-    - Sat/Sun: should not run (handled by cron)
+    - Mon: collect Sat + Sun (2 days)
+    - Tue-Sat: collect yesterday (1 day)
+    - Sun: should not run (handled by cron)
     
     Returns:
         (start_date, end_date) tuple in YYYY-MM-DD format
@@ -277,10 +277,10 @@ def get_smart_dates() -> tuple:
     today = datetime.now()
     weekday = today.weekday()  # 0=Mon, 6=Sun
     
-    if weekday == 0:  # Monday → collect Fri+Sat+Sun
-        start = today - timedelta(days=3)
+    if weekday == 0:  # Monday → collect Sat+Sun
+        start = today - timedelta(days=2)
         end = today - timedelta(days=1)
-    else:  # Tue-Fri → collect yesterday
+    else:  # Tue-Sat → collect yesterday
         start = today - timedelta(days=1)
         end = today - timedelta(days=1)
     

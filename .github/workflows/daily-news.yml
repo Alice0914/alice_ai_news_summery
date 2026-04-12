@@ -2,8 +2,8 @@ name: Daily AI News Pipeline
 
 on:
   schedule:
-    # Run Mon-Fri at 10:00 UTC (6:00 AM ET)
-    - cron: '0 10 * * 1-5'
+    # Run Mon-Sat at 10:00 UTC (6:00 AM ET)
+    - cron: '0 10 * * 1-6'
   workflow_dispatch:  # Allow manual trigger from GitHub UI
 
 jobs:
