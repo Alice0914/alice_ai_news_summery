@@ -12,6 +12,7 @@ export const PERIODS = [
 export const TIME_RANGES = [
     { id: 'today', label: 'Today' },
     { id: 'yesterday', label: 'Yesterday' },
+    { id: 'weekend_catchup', label: 'Weekend (Fri-Sun)' },
     { id: 'this_week', label: 'This Week' },
     { id: 'last_week', label: 'Last Week' },
     { id: 'this_month', label: 'This Month' },

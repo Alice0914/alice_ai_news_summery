@@ -404,8 +404,16 @@ const UserApp = () => {
     }
   };
 
+  const getDefaultDateFilter = () => {
+    const day = new Date().getDay();
+    // 0: Sun, 1: Mon, 2: Tue, 3: Wed, 4: Thu, 5: Fri, 6: Sat
+    if (day === 1) return 'weekend_catchup'; // Monday shows Fri-Sun
+    if (day >= 2 && day <= 5) return 'yesterday'; // Tue-Fri shows yesterday
+    return 'this_week'; // Sat-Sun shows this week's top
+  };
+
   const [filterPeriod, setFilterPeriod] = useState('important');
-  const [dateFilter, setDateFilter] = useState('last_week');
+  const [dateFilter, setDateFilter] = useState(getDefaultDateFilter);
   const [currentNews, setCurrentNews] = useState([]);
   const [newsLoading, setNewsLoading] = useState(true);
   const [preferencesModalOpen, setPreferencesModalOpen] = useState(false);
@@ -632,6 +640,9 @@ const UserApp = () => {
             break;
           case 'yesterday':
             isMatch = diffDays === 1;
+            break;
+          case 'weekend_catchup':
+            isMatch = diffDays >= 1 && diffDays <= 3;
             break;
           case 'this_week': {
             const day = today.getDay();
