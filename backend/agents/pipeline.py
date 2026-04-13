@@ -63,8 +63,21 @@ def collect_all_parallel(start_date: str, end_date: str) -> list:
     print("STEP 1: Parallel Data Collection")
     print("=" * 60)
     
+    from .collectors import (
+        AnthropicCollector,
+        ClaudeCollector,
+        MITCollector,
+        NVIDIACollector,
+        OpenAICollector,
+        XAICollector,
+        RobotCollector,
+        RuntimeCollector,
+        TechCrunchCollector
+    )
+
     collectors = [
         AnthropicCollector,
+        ClaudeCollector,
         MITCollector,
         NVIDIACollector,
         OpenAICollector,

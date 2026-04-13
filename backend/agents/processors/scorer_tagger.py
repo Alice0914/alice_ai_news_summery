@@ -73,6 +73,8 @@ Evaluate based on:
 - Technical significance
 - Audience reach
 - Long-term implications
+- CRITICAL BONUS: Give a HIGH SCORE to news dealing with large-scale adoption by general users (e.g. App Store ranking entry, MAU surge, etc.) as this is very important for AI popularization.
+- CRITICAL BONUS: Give a HIGH SCORE to news about new AI technologies from Claude, OpenAI, Gemini, Grok, or announcements of highly performant open-source models.
 
 Output JSON ONLY:
 {{

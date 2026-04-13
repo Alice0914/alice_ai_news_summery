@@ -5,6 +5,7 @@ Imports all news collector agents.
 """
 
 from .anthropic_collector import AnthropicCollector
+from .claude_collector import ClaudeCollector
 from .mit_collector import MITCollector
 from .nvidia_collector import NVIDIACollector
 from .openai_collector import OpenAICollector
@@ -15,6 +16,7 @@ from .techcrunch_collector import TechCrunchCollector
 
 __all__ = [
     "AnthropicCollector",
+    "ClaudeCollector",
     "MITCollector",
     "NVIDIACollector",
     "OpenAICollector",

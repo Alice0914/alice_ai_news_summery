@@ -17,6 +17,7 @@ SOURCE_PRIORITY = {
     "OpenAI": 10,
     "Google": 10,
     "Anthropic": 10,
+    "Claude": 10,
     "NVIDIA": 10,
     "xAI": 10,
     "DeepMind": 10,
