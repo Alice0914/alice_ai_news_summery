@@ -68,10 +68,27 @@ const ShareModal = ({ isOpen, onClose, news, onConfirm }) => {
     }
   };
 
-  const handleSNSShare = (platform) => {
+  const handleSNSShare = async (platform) => {
     const encodedFullText = encodeURIComponent(fullShareText);
     const encodedUrl = encodeURIComponent(shareUrl);
     const encodedTitle = encodeURIComponent(news.title);
+
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (platform === 'linkedin' && isMobile) {
+      try {
+        await navigator.clipboard.writeText(fullShareText);
+      } catch (err) {
+        console.error('Copy for LinkedIn mobile failed', err);
+      }
+      
+      alert(i18n.language === 'ko' 
+        ? '✅ 뉴스 요약이 복사되었습니다!\n\nLinkedIn 모바일 앱은 텍스트 자동 입력을 지원하지 않으므로, 앱이 열리면 새 게시물에 직접 [붙여넣기] 해주세요.' 
+        : '✅ News summary copied!\n\nSince the LinkedIn mobile app doesn\'t support auto-populating text, please [Paste] it directly into a new post.');
+      
+      window.location.href = 'https://www.linkedin.com/feed/';
+      return;
+    }
 
     const shareUrls = {
       threads: `https://www.threads.net/intent/post?text=${encodedFullText}`,
