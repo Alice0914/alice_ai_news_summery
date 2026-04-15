@@ -407,13 +407,14 @@ const UserApp = () => {
   const getDefaultDateFilter = () => {
     const day = new Date().getDay();
     // 0: Sun, 1: Mon, 2: Tue, 3: Wed, 4: Thu, 5: Fri, 6: Sat
-    if (day === 1) return 'weekend_catchup'; // Monday shows Fri-Sun
-    if (day >= 2 && day <= 5) return 'yesterday'; // Tue-Fri shows yesterday
-    return 'this_week'; // Sat-Sun shows this week's top
+    // Mon-Fri: 'daily' (Today's News - Firebase already fetches correct dates)
+    // Sat-Sun: 'weekly' (This Week's News - Firebase fetches Mon-Fri)
+    if (day >= 1 && day <= 5) return 'daily';
+    return 'weekly'; // Sat (6) or Sun (0)
   };
 
   const [filterPeriod, setFilterPeriod] = useState('important');
-  const [dateFilter, setDateFilter] = useState('all');
+  const [dateFilter, setDateFilter] = useState(getDefaultDateFilter());
   const [currentNews, setCurrentNews] = useState([]);
   const [newsLoading, setNewsLoading] = useState(true);
   const [preferencesModalOpen, setPreferencesModalOpen] = useState(false);
@@ -1726,12 +1727,14 @@ const UserApp = () => {
                     <span className="break-words">
                       {(() => {
 
-                        if (dateFilter === 'today' && filterPeriod === 'important') {
+                        if ((dateFilter === 'today' || dateFilter === 'daily') && filterPeriod === 'important') {
                           return t('today_high_impact');
                         }
 
 
                         const prefix = {
+                          daily: t('today') + t('possessive_suffix'),
+                          weekly: t('this_week') + t('possessive_suffix'),
                           today: t('today') + t('possessive_suffix'),
                           yesterday: t('yesterday') + t('possessive_suffix'),
                           this_week: t('this_week') + t('possessive_suffix'),
@@ -2160,6 +2163,8 @@ const UserApp = () => {
                     <span className="w-1.5 h-6 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.6)]"></span>
                     {(() => {
                       const prefix = {
+                        daily: t('today_news_prefix') || "Today's",
+                        weekly: t('this_week_news_prefix') || "This Week's",
                         today: t('today_news_prefix') || "Today's",
                         yesterday: t('yesterday_news_prefix') || "Yesterday's",
                         this_week: t('this_week_news_prefix') || "This Week's",
