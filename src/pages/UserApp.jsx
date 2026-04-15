@@ -269,15 +269,15 @@ const UserApp = () => {
 
             if (!hasInitializedFilters.current) {
               hasInitializedFilters.current = true;
-              
+
               const migratedCats = migrateIds(preferences.categories || [], CATEGORY_ID_MAP_REV);
               const migratedServs = migrateIds(preferences.productServices || [], SERVICE_ID_MAP_REV);
               const migratedCore = migrateIds(preferences.coreElements || [], CORE_ID_MAP_REV);
-              
+
               if (preferences.categories) setSelectedInterests(migratedCats);
               if (preferences.productServices) setSelectedServices(migratedServs);
               if (preferences.coreElements) setSelectedCore(migratedCore);
-              
+
               // Auto-migrate legacy preferences to UI standard
               if (
                 JSON.stringify(migratedCats) !== JSON.stringify(preferences.categories || []) ||
@@ -413,7 +413,7 @@ const UserApp = () => {
   };
 
   const [filterPeriod, setFilterPeriod] = useState('important');
-  const [dateFilter, setDateFilter] = useState(getDefaultDateFilter);
+  const [dateFilter, setDateFilter] = useState('all');
   const [currentNews, setCurrentNews] = useState([]);
   const [newsLoading, setNewsLoading] = useState(true);
   const [preferencesModalOpen, setPreferencesModalOpen] = useState(false);
@@ -496,25 +496,34 @@ const UserApp = () => {
 
     const fetchNews = async () => {
       const now = new Date();
+      const day = now.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
 
-
-      // Legacy monthly docs (for backward compatibility)
-      const currentYear = now.getFullYear();
-      const currentMonth = String(now.getMonth() + 1).padStart(2, '0');
-      const legacyCurrentDoc = `${currentYear}-${currentMonth}`;
-
-      const prevDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-      const legacyPrevDoc = `${prevDate.getFullYear()}-${String(prevDate.getMonth() + 1).padStart(2, '0')}`;
-
-      // New daily docs (past 14 days)
+      // Determine which daily document dates to fetch based on weekday
       const dailyDocs = [];
-      for (let i = 0; i < 14; i++) {
+
+      if (day === 1) {
+        // Monday: fetch Fri, Sat, Sun (3 docs)
+        for (let i = 3; i >= 1; i--) {
           const d = new Date(now);
           d.setDate(d.getDate() - i);
           dailyDocs.push(d.toISOString().substring(0, 10));
+        }
+      } else if (day >= 2 && day <= 5) {
+        // Tue-Fri: fetch yesterday only (1 doc)
+        const d = new Date(now);
+        d.setDate(d.getDate() - 1);
+        dailyDocs.push(d.toISOString().substring(0, 10));
+      } else {
+        // Sat (6) or Sun (0): fetch Mon-Fri of this week (5 docs)
+        const daysBackToMonday = day === 0 ? 6 : day - 1;
+        for (let i = 0; i < 5; i++) {
+          const d = new Date(now);
+          d.setDate(d.getDate() - daysBackToMonday + i);
+          dailyDocs.push(d.toISOString().substring(0, 10));
+        }
       }
 
-      const targetDocs = [legacyCurrentDoc, legacyPrevDoc, ...dailyDocs];
+      const targetDocs = [...dailyDocs];
 
       try {
         console.log(`Fetching news for months: ${targetDocs.join(', ')}...`);
