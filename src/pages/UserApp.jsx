@@ -498,6 +498,14 @@ const UserApp = () => {
       const now = new Date();
       const day = now.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
 
+      // Format date as YYYY-MM-DD using LOCAL time (not UTC)
+      const toLocalDateStr = (date) => {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
+      };
+
       // Determine which daily document dates to fetch based on weekday
       const dailyDocs = [];
 
@@ -506,20 +514,20 @@ const UserApp = () => {
         for (let i = 3; i >= 1; i--) {
           const d = new Date(now);
           d.setDate(d.getDate() - i);
-          dailyDocs.push(d.toISOString().substring(0, 10));
+          dailyDocs.push(toLocalDateStr(d));
         }
       } else if (day >= 2 && day <= 5) {
         // Tue-Fri: fetch yesterday only (1 doc)
         const d = new Date(now);
         d.setDate(d.getDate() - 1);
-        dailyDocs.push(d.toISOString().substring(0, 10));
+        dailyDocs.push(toLocalDateStr(d));
       } else {
         // Sat (6) or Sun (0): fetch Mon-Fri of this week (5 docs)
         const daysBackToMonday = day === 0 ? 6 : day - 1;
         for (let i = 0; i < 5; i++) {
           const d = new Date(now);
           d.setDate(d.getDate() - daysBackToMonday + i);
-          dailyDocs.push(d.toISOString().substring(0, 10));
+          dailyDocs.push(toLocalDateStr(d));
         }
       }
 
