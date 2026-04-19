@@ -258,7 +258,7 @@ class Deduplicator:
                     is_duplicate, ce_score = self._is_duplicate_cross_encoder(title1, title2)
                     
                     # Higher threshold for Cross-Encoder
-                    if ce_score > 0.95:
+                    if ce_score > 0.90:
                         # Mark j as duplicate
                         keep_mask[j] = False
                         # Increment exposure score for i
