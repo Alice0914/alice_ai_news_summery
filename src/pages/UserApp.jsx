@@ -507,6 +507,26 @@ const UserApp = () => {
         return `${y}-${m}-${d}`;
       };
 
+      // Helper: fetch docs from Firestore and return news array
+      const fetchDocs = async (docIds) => {
+        const fetchPromises = docIds.map(id => getDoc(doc(db, 'news_feeds', id)));
+        const snapshots = await Promise.all(fetchPromises);
+        let news = [];
+        snapshots.forEach((snap, index) => {
+          const docId = docIds[index];
+          if (snap.exists()) {
+            const data = snap.data();
+            if (data.news && Array.isArray(data.news)) {
+              console.log(`Loaded ${data.news.length} items from ${docId}`);
+              news = [...news, ...data.news];
+            }
+          } else {
+            console.warn(`No data found for ${docId}`);
+          }
+        });
+        return news;
+      };
+
       // Determine which daily document dates to fetch based on weekday
       const dailyDocs = [];
 
@@ -532,34 +552,30 @@ const UserApp = () => {
         }
       }
 
-      const targetDocs = [...dailyDocs];
-
       try {
-        console.log(`Fetching news for months: ${targetDocs.join(', ')}...`);
+        console.log(`Fetching news for dates: ${dailyDocs.join(', ')}...`);
 
-        const fetchPromises = targetDocs.map(id => getDoc(doc(db, 'news_feeds', id)));
-        const snapshots = await Promise.all(fetchPromises);
+        let allNews = await fetchDocs(dailyDocs);
 
-        let allNews = [];
-
-        snapshots.forEach((snap, index) => {
-          const docId = targetDocs[index];
-          if (snap.exists()) {
-            const data = snap.data();
-            if (data.news && Array.isArray(data.news)) {
-              console.log(`Loaded ${data.news.length} items from ${docId}`);
-              allNews = [...allNews, ...data.news];
+        // Fallback: if no news found, progressively try older dates (up to 3 extra days back)
+        if (allNews.length === 0) {
+          const [y, m, d] = dailyDocs[0].split('-');
+          const earliestDate = new Date(parseInt(y), parseInt(m) - 1, parseInt(d));
+          
+          for (let fallback = 1; fallback <= 3; fallback++) {
+            const fallbackDate = new Date(earliestDate);
+            fallbackDate.setDate(fallbackDate.getDate() - fallback);
+            const fallbackId = toLocalDateStr(fallbackDate);
+            console.log(`No news found, trying fallback date: ${fallbackId}...`);
+            allNews = await fetchDocs([fallbackId]);
+            if (allNews.length > 0) {
+              console.log(`✅ Fallback successful: found ${allNews.length} items from ${fallbackId}`);
+              break;
             }
-          } else {
-            console.warn(`No data found for ${docId}`);
           }
-        });
-
+        }
 
         let uniqueNews = Array.from(new Map(allNews.map(item => [item.id, item])).values());
-
-
-
 
         uniqueNews.sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
 
