@@ -8,7 +8,6 @@ MODEL_PRO = "gemini-2.5-pro"
 MODEL_PRO_ULTRA = "gemini-2.5-pro"
 MODEL_FLASH = "gemini-2.5-flash"
 MODEL_GROK = "grok-4-1-fast-reasoning"
-# MODEL_EMBEDDING = "models/gemini-embedding-001"
 MODEL_EMBEDDING = "models/gemini-embedding-2-preview"
 
 # Source Priority (Higher = More Authoritative)
