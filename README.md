@@ -3,6 +3,10 @@
 > **Catch up on AI in 60 seconds. Share it in one tap.**
 > A bilingual (English / Korean) news app that hand-picks the day's most important AI stories, ranks them by impact, summarizes them, and lets you broadcast them to Threads / X / LinkedIn / Reddit / WhatsApp instantly.
 
+<p align="center">
+  <img src="docs/demo.gif" alt="App demo" width="700"/>
+</p>
+
 The whole product is built around two promises:
 
 1. **Read fast.** Every story is pre-deduplicated, pre-scored 0–100, and reduced to a 2–3 sentence summary plus a "Why it matters" hook — so a full daily briefing takes about a minute.
