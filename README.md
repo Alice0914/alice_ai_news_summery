@@ -53,9 +53,7 @@ The product has two halves that meet in Firestore: a **daily backend pipeline** 
 
    ┌────────────────────────────────────────────────────────────────────┐
    │  STEP 1 — Parallel Collection                                      │
-   │  ThreadPoolExecutor fans out to 9 collectors:                      │
-   │  Anthropic · Claude · OpenAI · xAI · NVIDIA · MIT ·                │
-   │  Robot · Runtime · TechCrunch                                      │
+   │  ThreadPoolExecutor fans out to 9 source collectors                │
    │  → raw articles tagged with source authority tier (1 / 5 / 10)     │
    └────────────────────────────────┬───────────────────────────────────┘
                                     ▼
@@ -311,131 +309,52 @@ Exact shape written to Firestore (and `final_news_output_*.json`):
 
 ```
 root/
-├── src/                        ← Frontend (React)
-│   ├── App.jsx                 ← Router
-│   ├── pages/UserApp.jsx       ← Main app, feed + Top-K + sharing wiring
+├── src/                          ← Frontend (React)
+│   ├── index.js                  ← React entry point
+│   ├── index.css                 ← Tailwind + global styles
+│   ├── App.jsx                   ← User-facing router
+│   ├── AdminApp.jsx              ← Admin router
+│   ├── i18n.js                   ← i18next config (EN / KO)
+│   ├── firebaseConfig.js         ← Firebase setup & API
+│   ├── pages/UserApp.jsx         ← Main app: feed + Top-K + sharing wiring
 │   ├── components/
-│   │   ├── auth/               ← Login / signup
-│   │   ├── onboarding/         ← First-run flow
-│   │   ├── news/               ← TopNewsCard, SimpleNewsItem
-│   │   ├── share/ShareModal    ← One-tap social share (formatter + intents)
-│   │   ├── filter/             ← Category / date filters
-│   │   ├── common/             ← Shared components
-│   │   ├── icons/              ← Custom SVG icons
-│   │   └── admin/              ← Admin tools
-│   ├── constants/              ← Categories, services, mappings (mirror of backend)
-│   ├── locales/                ← en.json, ko.json
-│   ├── assets/                 ← Images
-│   ├── utils/                  ← Helpers
-│   ├── firebaseConfig.js       ← Firebase setup & API
-│   └── i18n.js                 ← Multilingual config
+│   │   ├── PreferencesPage.jsx
+│   │   ├── auth/                 ← Login / signup
+│   │   ├── onboarding/           ← First-run flow
+│   │   ├── news/                 ← TopNewsCard, SimpleNewsItem
+│   │   ├── share/                ← ShareModal — one-tap social share
+│   │   ├── filter/               ← Category / date filters
+│   │   ├── layout/               ← GlobalStyles & layout shells
+│   │   ├── common/               ← Shared components
+│   │   ├── icons/                ← Custom SVG icons
+│   │   ├── ui/                   ← Badge, Icons, primitives
+│   │   └── admin/                ← Admin tools
+│   ├── constants/                ← Categories, services, mappings (mirror of backend)
+│   ├── locales/                  ← en.json, ko.json
+│   ├── assets/                   ← Images
+│   └── utils/                    ← Helpers
 │
-├── backend/                    ← Backend (Python)
+├── backend/                      ← Backend (Python)
 │   └── agents/
-│       ├── config.py           ← Models, source priority, taxonomy maps
-│       ├── pipeline.py         ← Main orchestrator (5 steps)
-│       ├── taxonomy.py         ← Category classification schema
-│       ├── workflow.py         ← Workflow helper
-│       ├── collectors/         ← 9 source collectors (RSS / API)
+│       ├── config.py             ← Models, source priority, taxonomy maps
+│       ├── pipeline.py           ← Main orchestrator (5 steps)
+│       ├── taxonomy.py           ← Category classification schema
+│       ├── workflow.py           ← Workflow helper
+│       ├── collectors/           ← 9 source collectors (RSS / API)
 │       └── processors/
-│           ├── deduplicator.py ← 4-stage dedup
-│           ├── scorer_tagger.py← Tournament scoring + tagging
-│           ├── translator.py   ← Korean translation
-│           ├── review_agent.py ← Pre-upload validation
-│           └── uploader.py     ← Firestore upload
+│           ├── deduplicator.py   ← 4-stage dedup
+│           ├── scorer_tagger.py  ← Tournament scoring + tagging
+│           ├── translator.py     ← Korean translation
+│           └── uploader.py       ← Firestore upload
 │
-├── public/                     ← Static files (index.html, favicon, manifest)
-├── .github/workflows/          ← daily-news.yml cron
-├── .claude/skills/             ← Claude Code context files
-└── CLAUDE.md                   ← Claude Code project guide
+├── public/                       ← Static files (index.html, favicon, manifest)
+├── .github/workflows/            ← daily-news.yml cron
+├── requirements.txt              ← Python dependencies
+├── package.json                  ← Frontend dependencies
+├── webpack.config.js             ← Bundler config
+├── tailwind.config.js            ← Tailwind config
+└── vercel.json                   ← Vercel deploy config
 ```
-
-### Frontend ↔ Backend sync points
-
-When you change pipeline taxonomy, update both sides together or the UI will break:
-
-| Backend (source of truth) | Frontend (must mirror) |
-|---------------------------|------------------------|
-| `CATEGORY_MAP` in `config.py` | `CATEGORY_ID_MAP` in `src/constants/index.js` |
-| `SERVICE_MAP` in `config.py` | `SERVICE_ID_MAP` in `src/constants/index.js` |
-| `CORE_MAP` in `config.py` | `CORE_ID_MAP` in `src/constants/index.js` |
-| Korean tag values | i18n keys in `src/locales/ko.json` |
-| English tag keys | i18n keys in `src/locales/en.json` |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm
-- Python 3.10+ (for the backend pipeline)
-- Firebase project with Firestore + Auth enabled
-
-### Installation
-
-```bash
-git clone <repo-url>
-cd ai_one_minute_trend
-npm install
-pip install -r requirements.txt
-```
-
-### Environment Setup
-
-Create `.env.local` in the project root:
-
-```
-# Firebase (frontend)
-FIREBASE_API_KEY=your_key
-FIREBASE_AUTH_DOMAIN=your_domain.firebaseapp.com
-FIREBASE_PROJECT_ID=your_project_id
-FIREBASE_STORAGE_BUCKET=your_bucket.firebasestorage.app
-FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-FIREBASE_APP_ID=your_app_id
-
-# Backend pipeline
-GOOGLE_API_KEY=your_gemini_key
-XAI_API_KEY=your_grok_key
-```
-
-For the pipeline's Firestore upload, also place `serviceAccountKey.json` at the project root **or** set `FIREBASE_SERVICE_ACCOUNT_KEY` to the JSON contents (GitHub Actions path).
-
-### Run Development Server
-
-```bash
-npm run dev          # opens at http://localhost:3002
-```
-
-### Build for Production
-
-```bash
-npm run build        # output in dist/
-```
-
-### Run the Backend Pipeline
-
-```bash
-# Specific date range
-python -m backend.agents.pipeline 2026-05-07 2026-05-07
-
-# Smart mode (Mon: Sat+Sun, Tue–Sat: yesterday)
-python -m backend.agents.pipeline --smart
-```
-
----
-
-## 🌐 Deployment
-
-Frontend deploys to Vercel — push to `main` triggers auto-deploy.
-
-```bash
-# Manual deploy
-npx vercel --prod
-```
-
-Backend pipeline runs in GitHub Actions on the cron in [`.github/workflows/daily-news.yml`](.github/workflows/daily-news.yml) (Mon–Sat 10:00 UTC).
 
 ---
 
