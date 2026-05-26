@@ -21,6 +21,10 @@ build/
 *.swo
 *~
 
+# Claude Code (local dev tooling)
+CLAUDE.md
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
